@@ -1,0 +1,19 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\Software\ODBC\ODBC.INI\ODBC Data Sources]
+"nWKbl"="SQL Server"
+
+[HKEY_LOCAL_MACHINE\Software\ODBC\ODBC.INI\nWKbl]
+"Driver"="C:\\WINDOWS\\SYSTEM\\sqlsrv32.dll"
+"Server"=""
+"Database"=""
+"LastUser"=""
+
+[HKEY_LOCAL_MACHINE\Software\ODBC\ODBC.INI\ODBC Data Sources]
+"hWKbl"="SQL Server"
+
+[HKEY_LOCAL_MACHINE\Software\ODBC\ODBC.INI\hWKbl]
+"Driver"="C:\\WINDOWS\\SYSTEM\\sqlsrv32.dll"
+"Server"=""
+"Database"=""
+"LastUser"=""

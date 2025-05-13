@@ -1,0 +1,115 @@
+var comm = {
+    ajax : function (url, para) {
+        let reResp = null;
+        $.ajax({
+            url: url,
+            type: "POST",
+            dataType: "json",
+            data: JSON.stringify(para),
+            async: false,
+            contentType: "application/json",
+            success: function (resp) {
+                reResp = resp;
+            },
+            error: function (resp, status, err) {
+                console.error("system error");
+                console.error(err);
+                swal_gp.icon('처리 중 오류가 발생하였습니다. \n관리자에게 문의하세요', '','');
+                reResp = "error";
+            }
+        });
+        return reResp;
+    },
+    movePage : function(url, data, type){
+        var $form = $("<form>").attr("action", url).attr("method", type ? type : "POST").appendTo("body");
+        if(data){
+            data.forEach(function(val){
+                $("<input>").attr({type:"hidden", name : val.nm, value : val.val}).appendTo($form);
+            });
+        }
+        $form.submit().remove();
+    },
+    reqInfoParse : function (info ,str) {
+        if(!str || str.length < 10){
+            return info;
+        } else {
+            return JSON.parse(str.replaceAll('&quot;' , '"'))
+        }
+    },
+    makeDatePicker : function (el, self) {
+    	$('#'+el).daterangepicker({
+			"locale": {
+				"format": "YYYY-MM-DD",
+				"separator": " ~ ",
+				"applyLabel": "확인",
+				"cancelLabel": "취소",
+				"fromLabel": "From",
+				"toLabel": "To",
+				"customRangeLabel": "Custom",
+				"weekLabel": "W",
+				"daysOfWeek": ["월", "화", "수", "목", "금", "토", "일"],
+				"monthNames": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+				"firstDay": 1
+			},
+			"drops": "down"
+		}, function (start, end, label) {
+			self.searchInfo[el] = start.format('YYYY-MM-DD') + ' ~ ' +end.format('YYYY-MM-DD');
+			self.searchInfo[el + 'Str'] = start.format('YYYY-MM-DD');
+			self.searchInfo[el + 'End'] = end.format('YYYY-MM-DD');
+		});
+	}
+}
+
+let json = {
+	agencys : [
+		{cd : 'A01' , nm : 'K리그'},
+		{cd : 'A02' , nm : 'KBO'},
+		{cd : 'A03' , nm : 'KBL'},
+		{cd : 'A04' , nm : 'WKBL'},
+		{cd : 'A05' , nm : 'KOVO'},
+		{cd : 'A06' , nm : 'KPGA'},
+		{cd : 'A07' , nm : 'KLPGA'},
+	],
+	excelCol1 : [
+		{cd : 'COLLECTION_DATE', nm : '작성일' , type : ""},
+		{cd : 'WRITE_DATE', nm : '판매글 날짜' , type : ""},
+		{cd : 'SITE', nm : '판매 사이트' , type : ""},
+		{cd : 'URL', nm : '판매 사이트 URL' , type : ""},
+		{cd : 'SPORTS_BAK', nm : '종목' , type : ""},
+		{cd : 'HOME_NAME', nm : '홈팀' , type : ""},
+		{cd : 'AWAY_NAME', nm : '원정팀' , type : ""},
+		{cd : 'GAME_DATE', nm : '경기일' , type : ""},
+		{cd : 'ORIGINAL_PRICE', nm : '티켓 정가' , type : "int"},
+		{cd : 'SALE_PRICE', nm : '판매가' , type : "int"},
+		{cd : 'CNT', nm : '매수' , type : "int"},
+		{cd : 'SELLER_ID', nm : '판매자 아이디' , type : ""},
+		{cd : 'COMMENTS', nm : '추가내용' , type : ""},
+		{cd : 'SEAT_TEXT', nm : '좌석 ' , type : ""},
+		{cd : 'SEAT_YN', nm : '좌석 확인 여부' , type : ""},
+		{cd : 'ORIGINAL_FILE_NAME', nm : '파일명' , type : ""},
+		{cd : 'REG_DATE', nm : '작성일' , type : ""},
+	],
+	excelCol2 : [
+		{cd : 'REPORT_TITLE', nm : '신고제목' , type : ""},
+		{cd : 'REPORT_NAME', nm : '성명' , type : ""},
+		{cd : 'REPORT_TEL', nm : '연락처' , type : ""},
+		{cd : 'REPORT_EMAIL', nm : '이메일' , type : ""},
+		{cd : 'COLLECTION_DATE', nm : '작성일 ' , type : ""},
+		{cd : 'WRITE_DATE', nm : '판매글 날짜' , type : ""},
+		{cd : 'SITE', nm : '판매 사이트' , type : ""},
+		{cd : 'URL', nm : '판매 사이트 URL' , type : ""},
+		{cd : 'SPORTS_BAK', nm : '종목' , type : ""},
+		{cd : 'HOME_NAME', nm : '홈팀' , type : ""},
+		{cd : 'AWAY_NAME', nm : '원정팀' , type : ""},
+		{cd : 'GAME_DATE', nm : '경기일' , type : ""},
+		{cd : 'ORIGINAL_PRICE', nm : '티켓 정가' , type : "int"},
+		{cd : 'SALE_PRICE', nm : '판매가' , type : "int"},
+		{cd : 'CNT', nm : '매수' , type : "int"},
+		{cd : 'SELLER_ID', nm : '판매자 아이디' , type : ""},
+		{cd : 'COMMENTS', nm : '추가내용' , type : ""},
+		{cd : 'SEAT_TEXT', nm : '좌석 ' , type : ""},
+		{cd : 'SEAT_YN', nm : '좌석 확인 여부' , type : ""},
+		{cd : 'ORIGINAL_FILE_NAME', nm : '파일명' , type : ""},
+		{cd : 'REG_DATE', nm : '작성일' , type : ""},
+	],
+}

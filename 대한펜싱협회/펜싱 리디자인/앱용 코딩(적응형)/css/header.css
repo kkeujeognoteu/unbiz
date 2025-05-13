@@ -1,0 +1,43 @@
+
+.header{ position:relative; width:100%; background:#fff; padding:1rem 1.2rem; box-sizing:border-box; }
+.header h1{ position:relative; width:11rem; height:2.5rem; display:flex; align-items:center; }
+.header h1 a{ display:block; }
+.header h1 a:after{ content:''; position:absolute; width:100%; height:100%; background:url(../images/logo.png)no-repeat; background-size:contain; top:0; left:0; }
+
+/* 햄버거 버튼 */
+.hamb_nav{ float:right; }
+.hamb_nav:after{ content:''; display:block; clear:both; }
+.hamb_nav input{ display:none; }
+.hamb_nav .menu_hamb{ width:auto; height:80px; position:absolute; transition:.5s ease-in-out; top:0; right:0; cursor:pointer; }
+.hamb_nav input:checked ~ label .menu_hamb{ width:100%; height:0.23rem; position:absolute; }
+.hamburguer{ display:block; width:1.3rem; height:0.23rem; border-radius:2px; background:#000; position:absolute; right:1.3rem; top:2.15rem; transition:.5s ease-in-out; }
+.hamburguer:after, .hamburguer:before{ width:1.8rem; height:0.23rem; content:''; background:#000; position:absolute; transition:.5s ease-in-out; right:0; }
+.hamburguer:before{ top:-0.6rem; width:1.8rem; }
+.hamburguer:after{ bottom:-0.6rem; height:0.25rem }
+.hamb_nav input:checked ~ label .hamburguer{ transform:rotate(45deg); width:1.8rem; z-index: 999; }
+.hamb_nav input:checked ~ label .hamburguer:after{ transform:rotate(90deg); bottom:0; }
+.hamb_nav input:checked ~ label .hamburguer:before{ opacity:0; }
+.hamb_nav input:checked ~ .ul_mb1{ opacity:1; width:100%; left:0; background:#fff; z-index:99 }
+.ul_mb1{ position:absolute; list-style:none; font-size:1rem; opacity:0; transition:.5s .1s ease-in-out; left:780px; top:0; }
+
+.ulmbLogin{ padding:2rem 1.2rem; }
+.ulmbLogin p{ width:15rem; margin:2rem auto; }
+.ulmbLogin p img{ width:100%; }
+.ulmbLogin ul{ display:flex; }
+.languge_ul{ justify-content:flex-end; margin-right:2.5rem; }
+.languge_ul .eng{ position:relative; padding-left:1rem; margin-left:1rem; }
+.languge_ul .eng:after{ content:''; position:absolute; width:0.05rem; height:0.8rem; left:0; top:0.35rem; background:#cacaca; }
+
+.ul_mb1 .ulmb_menu{ display:flex; border-top:0.2rem solid #000; margin-top:2rem; }
+.ul_mb1 .ulmb_menu > div{ display:flex; flex-direction:column; }
+.ul_mb1 .ulmb_menu > div ul{ display:flex; flex-direction:column; }
+.ul_mb1 .ulmb_menu > div ul li{ padding:1.2rem 1.5rem; }
+.ul_mb1 .ulmb_menu > div ul li a{  }
+.ul_mb1 .ulmb_menu .ulmb_L{ width:10rem; background:#ececec }
+.ul_mb1 .ulmb_menu .ulmb_L li.active{ background:#ea002c; }
+.ul_mb1 .ulmb_menu .ulmb_L li.active a{ color:#fff; }
+.ul_mb1 .ulmb_menu .ulmb_R { width:20rem; }
+.ul_mb1 .ulmb_menu .ulmb_R ul{ width:100%; display:none; }
+.ul_mb1 .ulmb_menu .ulmb_R ul.active{ display:block; }
+.ul_mb1 .ulmb_menu .ulmb_R li:hover a, .ul_mb1 .ulmb_menu .ulmb_R li.active a{ color:#ea002c }
+

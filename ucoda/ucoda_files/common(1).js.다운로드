@@ -1,0 +1,151 @@
+const SECOND = 1000;
+/**
+ * swal 커스텀
+ * */
+let swal_gp = {
+    option : {
+        //timer : 1500,
+        button: {
+            text : '확인'
+        },
+    },
+    /**
+     * 경고창을 생성한다
+     * @param title 제목
+     * @param text 본문
+     * @param paramOption 옵션
+     * @returns {Object} swal Object
+     */
+    alert : function (title, text, paramOption){
+        let option = $.extend({}, this.option, paramOption);
+        if(text){
+            return swal(title, text, option);
+        } else {
+            return swal(title, option);
+        }
+    },
+    /**
+     * 아이콘이 있는 경고창을 생성한다
+     * @param title 제목
+     * @param text 본문
+     * @param paramOption 옵션
+     * @returns {Object} swal Object
+     */
+    icon : function (title, text, icon){
+        return this.alert(title, text, {icon: icon});
+    },
+    /**
+     * 확인창을 생성한다.
+     * @param title 제목
+     * @param text 본문
+     * @returns {Object} swal Object
+     */
+    confirm : function (title, text){
+        return swal({
+            title: title,
+            text: text,
+            icon: "warning",
+            buttons:['취소','진행'],
+            dangerMode: true,
+        });
+    },
+    /**
+     * 아이콘이 있는 경고창을 생성한다
+     * @param title 제목
+     * @param text 본문
+     * @param paramOption 옵션
+     * @returns {Object} swal Object
+     */
+    error : function (){
+        return this.alert("오류 발생", "처리 중 오류가 발생하였습니다.", {icon: "error"});
+    },
+};
+
+/**
+ * 페이지 이동
+ * @param {String} url  주소
+ * @param {Object} data 데이터
+ * @param {String} type 전송타입
+ */
+function movePage(url, data, type) {
+    var $form = $("<form>").attr("action", url).attr("method", type ? type : "POST").appendTo("body");
+    if(data){
+        data.forEach(function(val){
+            $("<input>").attr({type:"hidden", name : val.nm, value : val.val}).appendTo($form);
+        });
+    }
+    $form.submit().remove();
+};
+
+/**
+ * 코드생성
+ */
+let codeMaker = {
+    /**
+     * 코드 리스트 반환
+     * @param  {String}
+     * @returns {[]} 만들어진 코드 리스트 반환
+     */
+    getCodes : function (arr){
+        let codeArr = [];
+        arr.forEach(function (info){
+            let codes = info.split('|');
+            codeArr.push({cd : codes[0], nm : codes[1]});
+        });
+        return codeArr;
+    },
+}
+
+let comm = {
+    /**
+     * 페이지 이동
+     * @param {String} url  주소
+     * @param {Object} data 데이터
+     * @param {String} type 전송타입
+     */
+    movePage : function(url, data, type){
+        let $form = $("<form>").attr("action", url).attr("method", type ? type : "POST").appendTo("body");
+        if(data){
+            data.forEach(function(val){
+                $("<input>").attr({type:"hidden", name : val.nm, value : val.val}).appendTo($form);
+            });
+        }
+        $form.submit().remove();
+    },
+    doAjax : function (url, para, type) {
+        let reResp = null;
+        $.ajax({
+            url:  url,
+            type: type ? type : "POST",
+            dataType: "json",
+            data: JSON.stringify(para),
+            async: false,
+            contentType: "application/json",
+            success: function (resp) { reResp = resp; },
+            error: function (resp, status, err) {
+                console.error("system error");
+                console.error(err);
+            }
+        });
+        return reResp;
+    },
+    doAjaxGet : function (url) {
+        let reResp = null;
+        $.ajax({
+            url:  url,
+            type: 'GET',
+            dataType: "json",
+            async: false,
+            contentType: "application/json",
+            success: function (resp) { reResp = resp; },
+            error: function (resp, status, err) {
+                console.error("system error");
+                console.error(err);
+            }
+        });
+        return reResp;
+    },
+    getSession : function (variableName) {
+        return comm.doAjax('/adm/session.tf', {variableName : variableName});
+    }
+}

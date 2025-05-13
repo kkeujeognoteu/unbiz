@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/sub.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/icon.css" rel="stylesheet">
+    <link href="../css/header.css" rel="stylesheet">
+    <link href="../css/footer.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    <title>종사자</title>
+    <script>
+
+        /* header */
+        function tglAllMenu(){
+            $('body').toggleClass('dimm');
+            if($('#header').hasClass('open')){
+                $('#header').removeClass('open')
+                $('body').removeClass('fix');
+                $('#wing').removeClass('inHeader');
+                $('.menu_all').removeClass('close');
+                $('.logo').removeClass('wht');
+                if($('#fullpage').length > 0 && $(window).width()>1024){
+                    $.fn.fullpage.setAllowScrolling(true);
+                    $.fn.fullpage.setKeyboardScrolling(true);
+                }
+            }else {
+                $('#header').addClass('open')
+                $('body').addClass('fix');
+                $('#wing').addClass('inHeader');
+                $('.logo').addClass('wht');
+                $('.btn_menu').addClass('close');
+
+                if($('#fullpage').length > 0 && $(window).width()>1024){
+                    $.fn.fullpage.setAllowScrolling(false);
+                    $.fn.fullpage.setKeyboardScrolling(false);
+                }
+            }
+            
+        }
+    
+        $(document).ready(function() {
+
+
+            function numberWithCommas(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+            
+            function animateNum(agency, cntNum){
+                $({ val : 0 }).animate({ val : cntNum }, {
+                duration: 1000,
+                step: function() {
+                    var num = numberWithCommas(Math.floor(this.val));
+                    $("#" + agency + "SpeTotal").text(num);
+                },
+                complete: function() {
+                    var num = numberWithCommas(Math.floor(this.val));
+                    $("#" + agency + "SpeTotal").text(num);
+                }
+                });
+            }
+            
+            let agencySpe = {
+                'A01' : 5117271,
+                'A02' : 154654654,
+                'A03' : 23213123,
+                'A04' : 0,
+                'A05' : 5121,
+            }
+            
+            for(let agency in agencySpe){
+                animateNum(agency, agencySpe[agency]);
+            }
+            $('.bannerAreaCont').slick({
+                slidesToShow: 8,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 2000,
+                responsive: [{
+                    breakpoint: 1080,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 6
+                    }
+                },
+                {
+                    breakpoint: 780,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 4,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 2,
+                    }
+                }
+            ]
+            });
+            $('.LeagueRankWrap').slick({
+                slidesToShow: "auto",
+                slidesToScroll: 1,
+                infinite: true,
+                responsive: [{
+                    breakpoint: 1080,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 780,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 380,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
+            ]
+            });
+            // $(window).on('resize', function() {
+            //     $('.LeagueRankWrap').slick('resize');
+            // });
+            
+      });
+
+    </script>
+</head>
+
+<body>
+    <div class="conain">
+        <div class="wrap">
+            <header class="header subHeader" id="header">
+                <div class="headWrap">
+                    <div class="topSubMenu">
+                        <ul>
+                            <li>
+                                <a href="#">한국프로스포츠협회</a>
+                            </li>
+                            <li>
+                                <a href="#">사이트맵</a>
+                            </li>
+                            <li>
+                                <a href="#">개선의견</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="topMenu">
+                        <h1 class="logo">
+                            <a href="#"></a>
+                        </h1>
+                        <div id="menu">
+                            <ul class="lst">
+                                <li class="dl" id="gnb1">
+                                    <a href="#">관중 현황</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">전체 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">일자별 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">구단별 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">시·도별 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">역대 관중 현황</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">일정/결과</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">금주의 일정</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">전체 일정・결과</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">리그 순위</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dl active" id="gnb1">
+                                    <a href="#">통계/현황</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">e-나라지표</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">SNS</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">경기장</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">종사자</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">스폰서</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">역대우승팀</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">테마통계</a>
+                                        </li>
+                                    </ul>   
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">자료실</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">PROSVIEW</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">스포츠 윤리 교육</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">관람객 성향 조사</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">기타 자료</a>
+                                        </li>
+                                    </ul>    
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">단체/구단</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">프로 단체 정보</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">프로 구단 정보</a>
+                                        </li>
+                                    </ul> 
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rightMenu">
+                            <button type="button" class="btn_menu close" onclick="tglAllMenu();">
+                                <span class="line"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="subPg">
+                <div class="subNavWRap">
+                    <div class="subNav">
+                        <ul>
+                            <li class="dl_link">
+                                <a href="#">e-나라지표</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">SNS</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">경기장</a>
+                            </li>
+                            <li class="dl_link active">
+                                <a href="#">종사자</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">스폰서</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">역대우승팀</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">테마통계</a>
+                            </li>
+                        </ul>
+                    </div>    
+                </div>
+                <div class="section01">
+                    <div class="slcBtnBox">
+                        <div class="topSltWRap">
+                            <ul class="topSlt">
+                                <li><a href="#">전체</a></li>
+                                <li><a href="#">KBO</a></li>
+                                <li>
+                                    <a href="#">K리그</a>
+                                </li>
+                                <li><a href="#">KBL</a></li>
+                                <li><a href="#">WKBL</a></li>
+                                <li>
+                                    <a href="#">KOVO</a>
+                                </li>
+                                <li><a href="#">KPGA</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="subCont">
+                        <div class="subttl">
+                            <div class="subTitle subCom">
+                                <h3>단체별 상황</h3>
+                            </div>
+                        </div>
+                        <div class="subTb totalTb ">
+                            <div class="grapTb scrollTable">
+                                <div class="newTblWrap reportTable">
+                                    <p>(단위 : 수)</p>
+                                    <div class="scrollHead">
+                                        <table class="newTbl_basic">
+                                            <colspan>
+                                                <col width="3%"> <!--  -->
+                                                <col width="8%"> <!-- 딘체 -->
+                                                <col width="14%"> <!-- 임직원 -->
+                                                <col width="5%"> <!-- 기록원 -->
+                                                <col width="5%"> <!-- 심판 -->
+                                                <col width="5%"> <!-- 감독관 -->
+                                                <col width="5%"> <!-- 감독 -->
+                                                <col width="5%"> <!-- 소속선수 -->
+                                                <col width="5%"> <!-- 코칭스태프 -->
+                                                <col width="5%"> <!-- 합계 -->
+                                            </colspan>
+                                            <thead>
+                                                <tr>
+                                                    <th rowspan="2"></th>
+                                                    <th rowspan="2">단체</th>
+                                                    <th colspan="8">종사자</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>임직원</th>
+                                                    <th>기록원</th>
+                                                    <th>심판</th>
+                                                    <th>감독관</th>
+                                                    <th>감독</th>
+                                                    <th>소속선수</th>
+                                                    <th>코칭스태프</th>
+                                                    <th>합계</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div class="scrollBody">
+                                        <table class="newTbl_basic">
+                                            <colspan>
+                                                <col width="3%"> <!--  -->
+                                                <col width="8%"> <!-- 딘체 -->
+                                                <col width="14%"> <!-- 임직원 -->
+                                                <col width="5%"> <!-- 기록원 -->
+                                                <col width="5%"> <!-- 심판 -->
+                                                <col width="5%"> <!-- 감독관 -->
+                                                <col width="5%"> <!-- 감독 -->
+                                                <col width="5%"> <!-- 소속선수 -->
+                                                <col width="5%"> <!-- 코칭스태프 -->
+                                                <col width="5%"> <!-- 합계 -->
+                                            </colspan>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>KLEAGUE</td>
+                                                    <td> 35 </td>
+                                                    <td> 12 </td>
+                                                    <td> 59 </td>
+                                                    <td> 11 </td>
+                                                    <td> 25 </td>
+                                                    <td> 0 </td>
+                                                    <td> 276 </td>
+                                                    <td> 418 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>KLEAGUE</td>
+                                                    <td>FC안양</td>
+                                                    <td>1 </td>
+                                                    <td>12 </td>
+                                                    <td>12 </td>
+                                                    <td>33 </td>
+                                                    <td>2 </td>
+                                                    <td>2 </td>
+                                                    <td>60</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>KLEAGUE</td>
+                                                    <td>안산그리너스FC</td>
+                                                    <td>1 </td>
+                                                    <td>7 </td>
+                                                    <td>7 </td>
+                                                    <td>38 </td>
+                                                    <td>38 </td>
+                                                    <td>1 </td>
+                                                    <td>54</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>KLEAGUE</td>
+                                                    <td>수원삼성블루윙즈</td>
+                                                    <td>1 </td>
+                                                    <td>16 </td>
+                                                    <td>16 </td>
+                                                    <td>42 </td>
+                                                    <td>6 </td>
+                                                    <td>6 </td>
+                                                    <td>81</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>KLEAGUE</td>
+                                                    <td>부천FC 1995</td>
+                                                    <td>1 </td>
+                                                    <td>11 </td>
+                                                    <td>9 </td>
+                                                    <td>35 </td>
+                                                    <td>1 </td>
+                                                    <td>1 </td>
+                                                    <td>57</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>KLEAGUE</td>
+                                                    <td>FC안양</td>
+                                                    <td>1 </td>
+                                                    <td>12 </td>
+                                                    <td>12 </td>
+                                                    <td>33 </td>
+                                                    <td>2 </td>
+                                                    <td>2 </td>
+                                                    <td>60</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>KLEAGUE</td>
+                                                    <td>안산그리너스FC</td>
+                                                    <td>1 </td>
+                                                    <td>7 </td>
+                                                    <td>7 </td>
+                                                    <td>38 </td>
+                                                    <td>38 </td>
+                                                    <td>1 </td>
+                                                    <td>54</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>KLEAGUE</td>
+                                                    <td>수원삼성블루윙즈</td>
+                                                    <td>1 </td>
+                                                    <td>16 </td>
+                                                    <td>16 </td>
+                                                    <td>42 </td>
+                                                    <td>6 </td>
+                                                    <td>6 </td>
+                                                    <td>81</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>KLEAGUE</td>
+                                                    <td>안산그리너스FC</td>
+                                                    <td>1 </td>
+                                                    <td>7 </td>
+                                                    <td>7 </td>
+                                                    <td>38 </td>
+                                                    <td>38 </td>
+                                                    <td>1 </td>
+                                                    <td>54</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>KLEAGUE</td>
+                                                    <td>수원삼성블루윙즈</td>
+                                                    <td>1 </td>
+                                                    <td>16 </td>
+                                                    <td>16 </td>
+                                                    <td>42 </td>
+                                                    <td>6 </td>
+                                                    <td>6 </td>
+                                                    <td>81</td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="subttl subCom">
+                            <div class="subTitle ">
+                                <h3>구단별 상황</h3>
+                            </div>
+                        </div>
+                        <div class="subTb totalTb ">
+                            <div class="grapTb scrollTable">
+                                <div class="newTblWrap reportTable" >
+                                    <p>(단위 : 수)</p>
+                                    <div class="scrollHead">
+                                        <table class="newTbl_basic">
+                                            <colspan>
+                                                <col width="3%"> <!--  -->
+                                                <col width="8%"> <!-- 딘체 -->
+                                                <col width="10%"> <!-- 구단 -->
+                                                <col width="5%"> <!-- 감독 -->
+                                                <col width="5%"> <!-- 임직원 -->
+                                                <col width="5%"> <!-- 코칭스태프 -->
+                                                <col width="5%"> <!-- 국내선수 -->
+                                                <col width="5%"> <!-- 외국인선수 -->
+                                                <col width="5%"> <!-- 합계 -->
+                                            </colspan>
+                                            <thead>
+                                                <tr>
+                                                    <th rowspan="2"></th>
+                                                    <th rowspan="2">단체</th>
+                                                    <th rowspan="2">구단</th>
+                                                    <th colspan="6">종사자</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>감독</th>
+                                                    <th>임직원</th>
+                                                    <th>코칭스태프</th>
+                                                    <th>국내선수</th>
+                                                    <th>외국인선수</th>
+                                                    <th>합계</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div class="scrollBody">
+                                        <table class="newTbl_basic">
+                                            <colspan>
+                                                <col width="3%"> <!--  -->
+                                                <col width="8%"> <!-- 딘체 -->
+                                                <col width="10%"> <!-- 구단 -->
+                                                <col width="5%"> <!-- 감독 -->
+                                                <col width="5%"> <!-- 임직원 -->
+                                                <col width="5%"> <!-- 코칭스태프 -->
+                                                <col width="5%"> <!-- 국내선수 -->
+                                                <col width="5%"> <!-- 외국인선수 -->
+                                                <col width="5%"> <!-- 합계 -->
+                                            </colspan>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>KLEAGUE</td>
+                                                    <td> 35 </td>
+                                                    <td> 12 </td>
+                                                    <td> 59 </td>
+                                                    <td> 11 </td>
+                                                    <td> 25 </td>
+                                                    <td> 0 </td>
+                                                    <td> 276 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>KLEAGUE</td>
+                                                    <td>FC안양</td>
+                                                    <td>1 </td>
+                                                    <td>12 </td>
+                                                    <td>12 </td>
+                                                    <td>33 </td>
+                                                    <td>2 </td>
+                                                    <td>2 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>KLEAGUE</td>
+                                                    <td>안산그리너스FC</td>
+                                                    <td>1 </td>
+                                                    <td>7 </td>
+                                                    <td>7 </td>
+                                                    <td>38 </td>
+                                                    <td>38 </td>
+                                                    <td>1 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>KLEAGUE</td>
+                                                    <td>수원삼성블루윙즈</td>
+                                                    <td>1 </td>
+                                                    <td>16 </td>
+                                                    <td>16 </td>
+                                                    <td>42 </td>
+                                                    <td>6 </td>
+                                                    <td>6 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>KLEAGUE</td>
+                                                    <td>부천FC 1995</td>
+                                                    <td>1 </td>
+                                                    <td>11 </td>
+                                                    <td>9 </td>
+                                                    <td>35 </td>
+                                                    <td>1 </td>
+                                                    <td>1 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>KLEAGUE</td>
+                                                    <td>FC안양</td>
+                                                    <td>1 </td>
+                                                    <td>12 </td>
+                                                    <td>12 </td>
+                                                    <td>33 </td>
+                                                    <td>2 </td>
+                                                    <td>2 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>KLEAGUE</td>
+                                                    <td>안산그리너스FC</td>
+                                                    <td>1 </td>
+                                                    <td>7 </td>
+                                                    <td>7 </td>
+                                                    <td>38 </td>
+                                                    <td>38 </td>
+                                                    <td>1 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>KLEAGUE</td>
+                                                    <td>수원삼성블루윙즈</td>
+                                                    <td>1 </td>
+                                                    <td>16 </td>
+                                                    <td>16 </td>
+                                                    <td>42 </td>
+                                                    <td>6 </td>
+                                                    <td>6 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>KLEAGUE</td>
+                                                    <td>안산그리너스FC</td>
+                                                    <td>1 </td>
+                                                    <td>7 </td>
+                                                    <td>7 </td>
+                                                    <td>38 </td>
+                                                    <td>38 </td>
+                                                    <td>1 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>KLEAGUE</td>
+                                                    <td>수원삼성블루윙즈</td>
+                                                    <td>1 </td>
+                                                    <td>16 </td>
+                                                    <td>16 </td>
+                                                    <td>42 </td>
+                                                    <td>6 </td>
+                                                    <td>6 </td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- bannerArea -->
+            <div class="bannerArea">
+                <div class="bannerAreaWrap">
+                    <div class="bannerAreaCont">
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner00.png">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner01.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner02.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner03.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner04.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner05.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner06.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#">
+                                <img src="../images/main/footBanner07.gif">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- footer -->
+            <footer class="footer">
+                <div class="footerTop">
+                    <div class="ftInner">
+                        <ul class="left">
+                            <li>
+                                <a href="#">개인정보처리방침</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="#">사이트맵</a>
+                            </li>
+                        </ul>
+                        <ul class="site">
+                            <li class="dataBtn">
+                                <button type="button" class="navRight">데이터 활용 신청</button>
+                            </li>
+                            <li>
+                                <a>관련사이트</a>
+                                <ul class="relatedSite">
+                                    <li>
+                                        <a href="http://data.kleague.com" target="_blank">K LEAGUE 데이터포털</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://datalab.wkbl.or.kr" target="_blank">WKBL 데이터랩</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://data.klpga.co.kr/" target="_blank">KLPGA 데이터센터</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://k-rankings.klpga.co.kr/" target="_blank">KLPGA K-Rankings</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footerBot">
+                    <div class="ftCont">
+                        <div class="footerLogo">
+                            <h1>
+                                <img src="../images/main/logo_footer.png">
+                            </h1>
+                        </div>
+                        <div class="footInfo">
+                            <ul>
+                                <li>
+                                    서울특별시 중구 통일로 2길 16 AIA타워 5층 TEL 02&#41;6190-5900 FAX 02&#41;6190-5901
+                                </li>
+                                <li>
+                                    Copyright&copy;2019 사단법인 한국프로스포츠협회. All right reserved
+                                </li>
+                                <li>이 사업은 문화체육관광부와 국민체육진흥공단의 재정후원을 받고 있습니다.</li>
+                                <li class="chrome">이 웹사이트는 Chrome 브라우저에 최적화되어있습니다.</li>
+                            </ul>
+                        </div>
+                        <div class="footersponse">
+                            <p>
+                                <img src="../images/main/logo_footer2.png">
+                            </p>
+                            <p>
+                                <img src="../images/main/logo_footer3.png">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

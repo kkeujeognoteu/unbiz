@@ -1,0 +1,17 @@
+div, p, span, h1, h2, h3, h4, h5{ padding:0; margin:0; }
+ul, li{ padding:0; margin:0; list-style:none; }
+.membershipCard_01{ position:absolute; top:110px; left:0; }
+.membershipCard_wrap{ max-width:700px; transform:rotate(90deg); transform-origin:bottom top; margin-top:30%; width:430px; min-width:auto; height:100%; }
+.membershipCard_content{ padding:10px 20px 20px 30px; border:1px solid #000; border-radius:20px; background:url(../img/backImg.svg)no-repeat; background-size:cover; max-height:320px; box-sizing:border-box; }
+.membershipCard_content > h2{ max-width:280px; padding-left:18px; padding-bottom:20px; }
+.membershipCard_content > h2 img{ width:100%; }
+.membershipCard_txt{ display:flex; gap:15px; justify-content:space-between; margin-top:22px }
+.membershipCard_txt .membershipCard_member{ position:relative; width:25%; height:165px; }
+.membershipCard_txt .membershipCard_member img{ width:100%; height:100%; object-fit:cover }
+.membershipCard_txt .membershipCard_member:after{ content:''; position:absolute; width:60%; height:50%; background:url(../img/backImg02.svg)no-repeat; left:-15px; bottom:-44px; }
+.membershipCard_txt .membershipCard_cont { width:40%; }
+.membershipCard_txt .membershipCard_cont h3{ border-bottom:2px solid #be956a; padding-bottom:5px; font-weight:800; font-size:16px }
+.membershipCard_txt .membershipCard_cont li{ padding:5px 0; font-size:16px; }
+.membershipCard_txt .membershipCard_cont .membership_title{ text-transform:uppercase; font-weight:600; }
+.membershipCard_txt .membershipCard_info{ width:27%; }
+.membershipCard_txt .membershipCard_info h2{ margin-bottom:10px; font-size:16px; }

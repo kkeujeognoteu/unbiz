@@ -1,0 +1,144 @@
+.boxShw{ box-shadow:1px 1px 3px rgba(0,0,0,.2); margin:10px; }
+.overBack, .overs:before{ background:#86654b }
+.domeBack, .dome:before{ background:#0f1957; }
+.txtCenter{ text-align:center; }
+.txtLeft{ text-align:left; }
+.txtRight{ text-align:right; }
+
+.proWrap{ display:flex; gap:10px; }
+.proWrap .proBox01{ width:50%; background:#fff; box-shadow:0 0 1px rgba(0,0,0,.5); border-radius:10px; }
+.proWrap .proBox01 .proHead{ padding:10px; border-radius:10px 10px 0 0; text-align:center; }
+.proWrap .proBox01 .proHead p{ font-size:16px; color:#fff; font-weight:600 }
+.proWrap .proBox01 .proBody{ padding:10px; }
+.proBox01 .proCont{ display:flex; }
+.proBox01 .proCont .proLstBox{ width:100%; padding:10px; }
+.proBox01 .proCont .proLstBox .proTop{ position:relative; text-align:center; border-radius:10px 10px 0 0; }
+.proBox01 .proCont .proLstBox .proTop:before{ content:''; position:absolute; width:100%; height:5px; border-radius:10px 10px 0 0; left:0; top:0; }
+.proBox01 .proCont .proLstBox .proTop h2{ border-bottom:1px solid #cacaca; padding:10px; }
+.proBox01 .proCont .proLstBox .proTop .proTitle div{ padding:10px; }
+.proBox01 .proCont .proLstBox .proTop .proTitle div p { font-weight:600 }
+.proBox01 .proCont .proLstBox .proTop .proTitle div p + p{ margin-top:5px; font-size:14px; font-weight:500; color:#666 }
+
+.proChkTt .proChkBox{ display:flex; }
+.proChkTt .proChkBox + .proChkBox{ border-top:1px solid #cacaca; }
+.proChkTt .proChkBox p{ text-align:center; border-left: 1px solid #cacaca; padding:10px 3px;  }
+.proChkTt .proChkBox p:nth-child(1){ width:60%; border-left:0; }
+.proChkTt .proChkBox p:nth-child(2){ width:20%; }
+.proChkTt .proChkBox p:nth-child(3){ width:20%; }
+
+/* test */
+.proWrap .proBox02{ width:30%; background:#fff; box-shadow:0 0 1px rgba(0,0,0,.5); border-radius:10px; }
+.proWrap .proBox02 .proHead{ padding:10px; border-radius:10px 10px 0 0; text-align:center; }
+.proWrap .proBox02 .proHead p{ font-size:16px; color:#fff; font-weight:600 }
+.proWrap .proBox02 .proBody{ padding:10px; }
+.proBox02 .proCont{ display:flex; gap:10px }
+.proBox02 .proCont .proLstBox{ width:100%; padding:10px; }
+.proBox02 .proCont .proLstBox .proTop{ position:relative; text-align:center; border-radius:10px 10px 0 0; }
+.proBox02 .proCont .proLstBox .proTop:before{ content:''; position:absolute; width:100%; height:5px; border-radius:10px 10px 0 0; left:0; top:0; }
+.proBox02 .proCont .proLstBox .proTop h2{ border-bottom:1px solid #cacaca; padding:10px; }
+.proBox02 .proCont .proLstBox .proTop .proTitle div{ padding:10px; }
+.proBox02 .proCont .proLstBox .proTop .proTitle div p { font-weight:600 }
+.proBox02 .proCont .proLstBox .proTop .proTitle div p + p{ margin-top:5px; font-size:14px; font-weight:500; color:#666 }
+
+.proChkTt .proChkBox{ display:flex; }
+.proChkTt .proChkBox + .proChkBox{ border-top:1px solid #cacaca; }
+.proChkTt .proChkBox p{ text-align:center; border-left: 1px solid #cacaca; padding:10px 3px;  }
+.proChkTt .proChkBox p:nth-child(1){ width:68%; border-left:0; }
+.proChkTt .proChkBox p:nth-child(2){ width:16%; }
+.proChkTt .proChkBox p:nth-child(3){ width:16%; }
+
+/* 사업평가 평가지표 */
+.evalWrap{ margin-top:0; }
+.evalTitle { position:relative; background:#fff; padding:15px 30px; border-radius:20px; box-shadow:2px 2px 3px rgba(0,0,0,.3) }
+.evalTitle .evalSlt{ display:flex; gap:20px; }
+.evalTitle .evalSlt div{ display:flex; gap:10px; align-items:center; width:33%; }
+.evalTitle .evalTxt{ margin:20px 0 0; padding-top:10px; border-top:1px solid #cacaca }
+.evalTitle .evalTxt h2{ margin-bottom:10px; }
+.evalTitle .evalTxt h2 span{ font-size:22px; }
+.evalTitle .evalTxt > div{ display:flex; align-items:center; }
+.evalTitle .evalTxt div p{ display:inline-block; line-height:1.2; margin:5px 0; color:#666 }
+.evalTitle .evalTxt div p + p{ position:relative; margin-left:30px; padding-left:30px; }
+.evalTitle .evalTxt div p + p:before{ content:''; position:absolute; width:1px; height:14px; background:#cacaca; top:3px; left:0; }
+.evalTitle .evalTxt p .title{ position:relative; display:inline-block; width:80px; font-weight:600; padding-right:10px; }
+.evalTitle .evalTxt p .title:after{ content:''; position:absolute; width: 1px;  }
+
+.evalTitle .evalSlt div p{ width:120px; }
+.evalTitle .evalSlt div select{ width:100%; }
+
+.evalTitle .evalTxt p .title, .evalTitle .evalSlt div p{ position:relative; padding-left:10px; }
+.evalTitle .evalTxt p .title:after, .evalTitle .evalSlt div p:after{ content:''; position:absolute; width:5px; height:5px; background:#0f1957; left:0; top:9px; }
+
+.evalCont .evalTb{ position:relative; margin-top:30px; }
+.evalCont .evalTb table{ position:relative; border-collapse: collapse; width:calc(100% - 300px); table-layout:fixed; border:1px solid #cacaca; background:#fff; margin-left:50px; z-index:1 }
+.evalCont table th, .evalCont table td{ border:1px solid #cacaca; padding:5px; text-align:center; }
+.evalCont table th:last-child, .evalCont table td:last-child{ border-right:0; }
+.evalCont table th{ word-break: keep-all; font-size:15px; }
+.evalCont table td{ position:relative; }
+.evalCont .evalTb table th:nth-child(1){ width:8%; }
+.evalCont .evalTb table th:nth-child(2){ width:52%; }
+.evalCont .evalTb table th:nth-child(3){ width:5%; }
+.evalCont .evalTb table th:nth-child(n+4):nth-child(-n+8){ width:10px; }
+.evalCont .evalTb table td:nth-child(n+4):nth-child(-n+8){ padding:0; }
+.evalCont .evalTb table td p + p{ padding-left:20px; }
+.evalCont .evalTb table td textarea{ width:100%; box-sizing:border-box; border:1px solid #cacaca; resize:none; }
+.evalCont .evalTb table td .chkboxDiv{ display:flex; align-items:center; justify-content:center; }
+.evalCont .evalTb table .txt td .chkboxDiv.active .chkRadio{ position:absolute; width:100%; height:100%; background:#0f1957; color:#fff }
+.evalCont table td p{ line-height:1.5 }
+.evalCont table td input[type="radio"] {
+    appearance: none;
+    width: 1.25em;
+    height: 1.25em;
+    transition: border 0.5s ease-in-out;
+
+    position:absolute; width:100%; height:100%; left:0; top:0; box-sizing:border-box; margin:0;
+}
+
+.evalCont table td input[type="radio"]:checked { background:#0f1957; }
+
+.evalCont table td input[type="radio"]:checked + span{ position:relative; color:#fff; }
+
+
+.evalCont table td input[type="radio"]:hover { cursor: pointer; }
+
+.evalCont table td input[type="radio"]:hover + span {
+    cursor: pointer;
+}
+
+.evalCont table td input[type="radio"]:disabled {
+    background-color: lightgray;
+    box-shadow: none;
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.evalCont table td input[type="radio"]:disabled + span {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* 평가점수현황 */
+.scoreBtn{ margin-left:auto; margin-right:20px; }
+.scoreBtn button{ background:#0f1957; padding:7px 15px; color:#fff; font-size:16px; }
+.scoreBtn .home{ background:#333; margin-left:5px; }
+
+/* 검색창 좌우버튼 */
+.evalBtnTop{ position:relative; width:80px; height:30px; bottom:0; right:0; }
+.evalBtnTop .btn{ position:absolute; width:35px; height:35px; background-size:cover; background-repeat:no-repeat; top:0; text-indent:-99999px; }
+.evalBtnTop .prev{ background-image:url(../images/next.png); left:0; transform:rotate(-180deg) }
+.evalBtnTop .next{ background-image:url(../images/next.png); right:0; }
+
+/* 테이블 좌우버튼 */
+.evalBtn{ position:absolute; width:100%; height:100%; top:0; }
+.evalBtn .btn{ position:absolute; width:35px; height:35px; background-size:cover; background-repeat:no-repeat; top:50%; transform:translateY(-50%); text-indent:-99999px; }
+.evalBtn .prev{ background-image:url(../images/next.png); left:0; transform:rotate(-180deg) }
+.evalBtn .next{ background-image:url(../images/next.png); right:200px; }
+
+/* wraningPg 경고창 */
+.wraningPg{ min-height:calc(100vh - 140px); display:block; align-content: center; text-align:center; }
+.wraningPg .wraningCont{ width:440px; margin:auto; word-break:keep-all }
+.wraningPg .wraningCont h2{ position:relative; font-size:40px; font-weight:800; padding-top:110px; }
+.wraningPg .wraningCont h2:after{ content:''; position:absolute; width:100px; height:100px; top:0; left:50%; background:url(../images/warning.png)no-repeat; background-size:contain; transform:translateX(-50%); }
+.wraningPg .wraning{ margin-top:20px; }
+.wraningPg .wraning p{ line-height:1.3; padding:3px 0; }
+.wraningPg .wraning p, .wraningPg .wraning p span{ font-size:20px;  }
+.wraningPg .wraning p span{ color:#0f1957; font-weight:600 }

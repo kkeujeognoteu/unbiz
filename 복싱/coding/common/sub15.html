@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link href="../css/fonts.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/sub.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/header.css" rel="stylesheet">
+    <link href="../css/footer.css" rel="stylesheet">
+
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/ungveloper/web-fonts/GmarketSans/font-face.css" />
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/ungveloper/web-fonts/GmarketSans/font-family.css" />
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <title>복싱</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+    </style>
+    <script>
+        /* 상단바 */
+        function tglAllMenu(){
+            $('.btn_menu').toggleClass('dimm');
+            if($('.menuBar').hasClass('active')){
+                $('.menuBar').removeClass('active')
+            }else {
+                $('.menuBar').addClass('active');
+                $('.btn_menu').addClass('active');
+            }  
+        }
+    </script>
+</head>
+<body>
+    <div class="contain">
+        <header id="header" class="header" >
+            <div class="topHead">
+                <h1 class="logo">
+                    <a href="#" href="#"></a>
+                </h1>
+                <div class="headTit">
+                    <p><span class="blue">국제화</span>를 통한 국위선양!!</p>
+                    <p><span class="blue">국민 스포츠</span>로서의 복싱!!</p>
+                </div>
+                <div class="topPlay">
+                    <p class="boxing">복싱가족&#126;</p>
+                    <ul>
+                        <li>
+                            <p class="playTxt">오늘</p>
+                            <p class="playNm">308명</p>
+                        </li>
+                        <li>
+                            <p class="playTxt">월간</p>
+                            <p class="playNm">308명</p>
+                        </li>
+                        <li>
+                            <p class="playTxt">연간</p>
+                            <p class="playNm">308명</p>
+                        </li>
+                        <li>
+                            <p class="playTxt">전체</p>
+                            <p class="playNm">308명</p>
+                        </li>
+                        <li>
+                            <p class="playTxt">경기인등록인 수</p>
+                            <p class="playNm">308명</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="loginWrap">
+                    <ul>
+                        <li class="login">
+                            <a href="#" href="">로그인</a>
+                        </li>
+                        <li class="logout">
+                            <a href="#" href="">회원가입</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menuBar" id="lnb">
+                <div class="topMenu">
+                    <div id="menu">
+                        <ul class="lst">
+                            <li class="dl" id="gnb1">
+                                <a href="#">협회소개</a>
+                                
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">종목소개</a>
+                                
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">선수소개</a>
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">대회정보</a>
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">공인체육관</a>
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">복싱단증</a>
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">커뮤니티</a>
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">자료실</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rightMenu">
+                        <!-- <button type="button" class="navRight pc">데이터 활용 신청</button> -->
+                        <button type="button" class="btn_menu close" onclick="tglAllMenu();">
+                            <span class="line"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="allMenu">
+                    <div class="allMenuWrap">
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="../common/sub03.html">환영사</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="../common/sub04.html">연혁</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">임원소개</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">역대 회장</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">시도협회</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">상임심판</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">비젼</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">찾아오시는길</a>
+                            </li>
+                        </ul>
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="./contents/sub01.html">유래</a>
+                            </li>
+                        </ul>
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="#">국가대표 명단</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">역대 메달리스트</a>
+                            </li>
+                        </ul>
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="./contents/sub07.html">행사일정</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">경기결과</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="./contents/sub06.html">대회정보</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="./contents/sub08.html">경기동영상</a>
+                            </li>
+                        </ul>    
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="#">공인체육관이란?</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">공인체육관 신청</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">공인체육관 확인</a>
+                            </li>
+                        </ul>
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="#">복싱단증</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">단증심사공고 및 신청</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">단증재발급 신청</a>
+                            </li>
+                        </ul> 
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="#">공지사항</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">주택특별공급</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">묻고답하기</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">경영공시</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">경조사</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">채용공고</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">포토갤러리</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">선수고충처리센터</a>
+                            </li>
+                        </ul> 
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="#">정관</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">경기규칙</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">각종규정</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="subMenuWrap">
+                <div class="subMenu">
+                    <ul>
+                        <li class="home">
+                            <i></i>
+                        </li>
+                        <li class="subD1">
+                            <a href="#">종목소개 <i class="sltIcon"></i></a>
+                            <ul class="subD2">
+                                <li>
+                                    <a href="#">협회소개</a>
+                                </li>
+                                <li>
+                                    <a href="#">종목소개</a>
+                                </li>
+                                <li>
+                                    <a href="#">선수소개</a>
+                                </li>
+                                <li>
+                                    <a href="#">대회정보</a>
+                                </li>
+                                <li>
+                                    <a href="#">공인체육관</a>
+                                </li>
+                                <li>
+                                    <a href="#">복싱단증</a>
+                                </li>
+                                <li>
+                                    <a href="#">자료실</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="subD1">
+                            <a href="#">찾아오시는길 <i class="sltIcon"></i></a>
+                            <ul class="subD2">
+                                <li class="dl_link">
+                                    <a href="./contents/sub02.html">환영사</a>
+                                </li>
+                                <li class="dl_link">
+                                    <a href="#">연혁</a>
+                                </li>
+                                <li class="dl_link">
+                                    <a href="./contents/sub05.html">임원소개</a>
+                                </li>
+                                <li class="dl_link">
+                                    <a href="#">역대 회장</a>
+                                </li>
+                                <li class="dl_link">
+                                    <a href="#">시도협회</a>
+                                </li>
+                                <li class="dl_link">
+                                    <a href="#">상임심판</a>
+                                </li>
+                                <li class="dl_link">
+                                    <a href="#">비젼</a>
+                                </li>
+                                <li class="dl_link">
+                                    <a href="#">찾아오시는길</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div id="section">
+            <!-- 컨텐츠 -->
+            <div class="subPg">
+                <div class="subCont">
+                    <h2 class="titleIco">선수고충처리센터</h2>
+                    <div class="serviceTit">
+                        <h3><span>여러분의 즐거운 선수 생활!</span> 스포츠 윤리센터가 책임지고 지켜드립니다!</h3>
+                        <div>
+                            <p>혹시 지도자나 선배, 동료로부터 <span>인권침해</span>를 당하셨나요?</p>
+                            <p>아니면 <span>주변의 선수가 피해 당하고 있는 사실</span>을 알고 계시나요?</p>
+                        </div>
+                    </div>
+                    <div class="serviceCont">
+                        <p class="font20">스포츠 인권 관련 침해는 <span class="fontBlue font20 font500">선수 본인은 물론 그 사실을 알고 있는 누구나 신고 및 상담이 가능</span>하니 알고 있는 사실  그대로 신고 및 상담을 신청해 주세요</p>
+                        <ul>
+                            <li>
+                                <div class="cicleLine">
+                                    <img src="../../images/icon04.png">
+                                    <p class="font28 font600">비밀보장</p>
+                                </div>
+                                <p>신고/상담한 내용이나 민원인의 신원정보는 외부에 유출되지 않습니다.</p>
+                            </li>
+                            <li>
+                                <div class="cicleLine">
+                                    <img src="../../images/icon02.png">
+                                    <p class="font28 font600">철저한 조사</p>
+                                </div>
+                                <p>신고한 사항은 철저한 조사와 조치를 위하여 결과를 회신해 드립니다.</p>
+                            </li>
+                            <li>
+                                <div class="cicleLine">
+                                    <img src="../../images/icon03.png">
+                                    <p class="font28 font600">추가적 조치</p>
+                                </div>
+                                <p>스포츠 인권 침해에 대한 피해가 막대하여 사법적 절차나 의료 서비스가 필요할 경우 최선을 다해 도와드립니다.</p>
+                            </li>
+                        </ul>
+                        <p class="font28 fontBlue font600">대한민국의 미래를 밝혀나갈 스포츠 선수들의 인권보호를 최우선으로 합니다.
+                        </p>
+                        <p class="mgTop20 font18">스포츠 선수로서 인권을 보호받지 못하고 있다면 “<span class="font600 fontBlack font18">글 남기기</span>"를 통해 신고 및 상담을 해보세요<br>스포츠 윤리센터의 전문 상담원이 여러분과 함께 고민을 나눕니다.</p>
+                        <div class="serviceBtm">
+                            <div class="serviceL">
+                                <h3 class="font28">상담받기</h3>
+                                <p>혹시 누군가가 행복하게 운동할 권리를<br>
+                                    방해하고 있나요?<br>
+                                    “<span class="fontBlue font600">상담</span>"의 문을 두드려보세요.</p>
+                                <button class="skyblueBtn">바로가기</button>
+                            </div>
+                            <div class="serviceR">
+                                <h3 class="font28">신고하기</h3>
+                                <p>폭력/성폭력/기타 인권침해 관련하여<br>
+                                    피해를 당하거나, 당한 사람을 알고 있다면<br>
+                                    바로 "<span class="fontBlue font600">신고</span>" 해주세요.</p>
+                                <button class="skyblueBtn">바로가기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+            <div class="footer">
+                <div class="footLogo">
+                    <img src="../images/footLogo.png" alt="footlogo">
+                </div>
+                <div class="footInfo">
+                    <p><a href="#">사단법인 대한복싱협회</a> / 사업자등록번호 : 230-82-00209 / 대표자 : 최찬웅</p>
+                    <p>(05540) 서울특별시 송파구 올림픽로 424 올림픽회관 신관 208 / Tel. (02) 420-4251~3 / Fax. (02) 420-4250 / Mail. boxing@sports.or.kr</p>
+                    <p class="copy">COPYRIGHT &copy;2024 Korea Boxing Association.ALL RIGHTS RESERVED.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

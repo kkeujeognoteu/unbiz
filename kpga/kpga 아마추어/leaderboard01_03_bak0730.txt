@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/style.css" rel="stylesheet" />
+    <title>리더보드</title>
+</head>
+<body>
+    <div class="contain">
+        <div class="header">
+            <div class="headerCont">
+                <h1 class="logo">
+                    <img src="./images/logo.png">
+                </h1>
+                <!--<div class="hamb_nav">
+                    <input id="check" type="checkbox">
+                    <label for="check">
+                        <div class="menu_hamb">
+                            <span class="hamburguer"></span>
+                        </div>
+                    </label>
+                    <ul class="ul_mb1">
+                        <li>
+                            <a href="">정보</a>
+                        </li>
+                        <li>
+                            <a href="">리더보드</a>
+                        </li>
+                    </ul>
+                </div>-->
+            </div>
+        </div>
+        <div class="section">
+            <div class="wrap">
+                <div class="playerInfoWrap">
+                    <div class="playerInfo">
+                        <div class="infoLeft">
+                            <p><img src="./images/gameLogo.svg"></p>
+                        </div>
+                        <div class="infoRight">
+                            <!--<h2>주니어 투어</h2>-->
+                            <p>한화 파이낸스 컵 2024</p>
+                            <ul>
+                                <li>제이드팰리스 GC(서(West), 동(East) 코스)</li>
+                                <li>2024. 08. 27(화)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabMenu">
+                    <ul>
+                        <li>정보</li>
+                        <li class="active">리더보드</li>
+                        <!--<li>홀별진행</li>
+                        <li>조별보기</li>-->
+                        <li>홀별성적</li>
+                        <li>출발시간표</li>
+                    </ul>
+                </div>
+                <div class="container">
+                    <div class="winner comon_leader">
+                        <h2>우승자</h2>
+                        <div class="winnerBox">
+                            <div class="winnerName">
+                                <p class="teamLogo">
+                                    <img src="./images/classic.svg">
+                                </p>
+                                <p>최원우</p>
+                            </div>
+                            <div class="winnerScore">
+                                <!--<div>
+                                    <span class="txt">상금</span>
+                                    <span class="score">0 won</span>
+                                </div>-->
+                                <div>
+                                    <span class="txt">합계</span>
+                                    <span class="score">133</span>
+                                </div>
+                                <div>
+                                    <span class="txt">Total</span>
+                                    <span class="score">-11</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playerTb comon_leader">
+                        <!-- <h2>Match</h2> -->
+                        <div class="matchGroup " >
+                            <table class="matchTb">
+                                <colgroup>
+                                    <col width="35%"> <!-- 팀 -->
+                                    <col width="10%"> <!-- 결과 -->
+                                    <col width="10%"> <!-- match -->
+                                    <col width="10%"> <!-- 결과 -->
+                                    <col width="35%"> <!-- 매치 -->
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th colspan="5" class="alignLeft">
+                                            <p>1조</p>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="team_Player classic_player">
+                                                <div class="classic_group matchTeam">
+                                                    <div class="classic_img">
+                                                        <img src="./images/classic.svg">
+                                                    </div>
+                                                    <div class="classic_txt">
+                                                        <p>최원우</p>
+                                                        <p>어피치</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="match_result win">
+                                            <div class="match_resultBox">
+                                                <p>1UP</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="match_player">
+                                                <p>MATCH1</p>
+                                            </div>
+                                        </td>
+                                        <td class="match_result lose">
+                                            <div class="match_resultBox">
+                                                <p>1DN</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="team_Player neo_player">
+                                                <div class="neo_group matchTeam">
+                                                    <div class="neo_txt">
+                                                        <p>최원우</p>
+                                                        <p>어피치</p>
+                                                    </div>
+                                                    <div class="neo_img">
+                                                        <img src="./images/neo.svg">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="matchDropDown">
+                                        <td colspan="5">
+                                            <div class="matchSubBox">
+                                                <table class="matchscore_L subScoreBox" hidden>
+                                                    <colgroup>
+                                                        <col width="">
+                                                        <col width="">
+                                                        <col width="">
+                                                        <col width="">
+                                                        <col width="">
+                                                        <col width="">
+                                                        <col width="">
+                                                        <col width="">
+                                                        <col width="">
+                                                        <col width="">
+                                                        <col width="">
+                                                        <col width="">
+                                                        <col width="">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th rowspan="2" colspan="2">HOLE</th>
+                                                            <th colspan="11">West Course(Out)</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>1</th>
+                                                            <th>2</th>
+                                                            <th>3</th>
+                                                            <th>4</th>
+                                                            <th>5</th>
+                                                            <th>6</th>
+                                                            <th>7</th>
+                                                            <th>8</th>
+                                                            <th>9</th>
+                                                            <th>OUT</th>
+                                                            <th></th>
+                                                        </tr>
+                                                        <tr class="gray">
+                                                            <th class="white">MATCH1</th>
+                                                            <th>Par</th>
+                                                            <th>5</th>
+                                                            <th>4</th>
+                                                            <th>4</th>
+                                                            <th>5</th>
+                                                            <th>3</th>
+                                                            <th>4</th>
+                                                            <th>3</th>
+                                                            <th>4</th>
+                                                            <th>4</th>
+                                                            <th>36</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="teamScore classic_L">
+                                                            <td rowspan="2">
+                                                                <div>
+                                                                    <img src="./images/classic.svg">
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>라이언</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>5</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>5</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>3</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>2</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>36</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>72</p>
+                                                                </div>
+                                                            </td>
+                                                        </tr> 
+                                                        <tr class="teamScore classic_L">
+                                                            <td>
+                                                                <div>
+                                                                    <p>라이언</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>5</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>5</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>3</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>2</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>36</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>72</p>
+                                                                </div>
+                                                            </td>
+                                                        </tr> 
+                                                        <tr class="teamScore scoreResult">
+                                                            <td colspan="2">
+                                                                <p>SCORE</p>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>1UP</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="teamScore classic_L">
+                                                            <td rowspan="2">
+                                                                <div>
+                                                                    <img src="./images/neo.svg">
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>라이언</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>5</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>5</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>3</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>2</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>36</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>72</p>
+                                                                </div>
+                                                            </td>
+                                                        </tr> 
+                                                        <tr class="teamScore classic_L">
+                                                            <td>
+                                                                <div>
+                                                                    <p>라이언</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>5</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>5</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>3</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>2</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>36</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>72</p>
+                                                                </div>
+                                                            </td>
+                                                        </tr> 
+                                                        <tr class="teamScore scoreResult">
+                                                            <td colspan="2">
+                                                                <p>SCORE</p>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>1UP</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="matchscore_R subScoreBox" hidden>
+                                                    <colgroup>
+                                                        <col width="">
+                                                        <col width="">
+                                                        <col width="">
+                                                        <col width="">
+                                                        <col width="">
+                                                        <col width="">
+                                                        <col width="">
+                                                        <col width="">
+                                                        <col width="">
+                                                        <col width="">
+                                                        <col width="">
+                                                        <col width="">
+                                                        <col width="">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th rowspan="2" colspan="2">HOLE</th>
+                                                            <th colspan="11">West Course(Out)</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>1</th>
+                                                            <th>2</th>
+                                                            <th>3</th>
+                                                            <th>4</th>
+                                                            <th>5</th>
+                                                            <th>6</th>
+                                                            <th>7</th>
+                                                            <th>8</th>
+                                                            <th>9</th>
+                                                            <th>IN</th>
+                                                            <th>합계</th>
+                                                        </tr>
+                                                        <tr class="gray">
+                                                            <th class="white">MATCH1</th>
+                                                            <th>Par</th>
+                                                            <th>5</th>
+                                                            <th>4</th>
+                                                            <th>4</th>
+                                                            <th>5</th>
+                                                            <th>3</th>
+                                                            <th>4</th>
+                                                            <th>3</th>
+                                                            <th>4</th>
+                                                            <th>4</th>
+                                                            <th>36</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="teamScore classic_L">
+                                                            <td rowspan="2">
+                                                                <div>
+                                                                    <img src="./images/classic.svg">
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>라이언</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>5</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>5</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>3</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>2</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>36</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>72</p>
+                                                                </div>
+                                                            </td>
+                                                        </tr> 
+                                                        <tr class="teamScore classic_L">
+                                                            <td>
+                                                                <div>
+                                                                    <p>라이언</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>5</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>5</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>3</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>2</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>36</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>72</p>
+                                                                </div>
+                                                            </td>
+                                                        </tr> 
+                                                        <tr class="teamScore scoreResult">
+                                                            <td colspan="2">
+                                                                <p>SCORE</p>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>1UP</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="teamScore classic_L">
+                                                            <td rowspan="2">
+                                                                <div>
+                                                                    <img src="./images/neo.svg">
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>라이언</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>5</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>5</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>3</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>2</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>36</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>72</p>
+                                                                </div>
+                                                            </td>
+                                                        </tr> 
+                                                        <tr class="teamScore classic_L">
+                                                            <td>
+                                                                <div>
+                                                                    <p>라이언</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>5</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>5</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>3</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>2</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>4</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>36</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>72</p>
+                                                                </div>
+                                                            </td>
+                                                        </tr> 
+                                                        <tr class="teamScore scoreResult">
+                                                            <td colspan="2">
+                                                                <p>SCORE</p>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p>1UP</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                                <div class="macthList" hidden>
+                                                    <div class="">
+                                                        <div class="machsubTb_West">
+                                                            <div class="match_L matchCom">
+                                                                <div class="matchHole orange">
+                                                                    <p>Hole</p>
+                                                                </div>
+                                                                <div class="matchPar">
+                                                                    <p class="white">MATCH 1</p>
+                                                                    <p class="gray">Par</p>
+                                                                </div>
+                                                                <div class="mathTeamPlayer">
+                                                                    <div class="mathTeam">
+                                                                        <img src="./images/classic.svg">
+                                                                    </div>
+                                                                    <div class="matchPlayer">
+                                                                        <div>
+                                                                            <p>라이언</p>
+                                                                        </div>
+                                                                        <div>
+                                                                            <p>어피치</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="matchScore">
+                                                                    <p class="gray">SCORE</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="match_R matchCom">
+                                                                <div class="matchHole orange">
+                                                                    <div class="matchWest">
+                                                                        <div class="matchWest_P">
+                                                                            <p>West Course(Out)
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="matchWest_numb matchNumb">
+                                                                            <p>1</p>
+                                                                            <p>2</p>
+                                                                            <p>3</p>
+                                                                            <p>4</p>
+                                                                            <p>5</p>
+                                                                            <p>6</p>
+                                                                            <p>7</p>
+                                                                            <p>8</p>
+                                                                            <p>9</p>
+                                                                            <p class="mobile">9</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="matchPar matchNumb">
+                                                                    <p class="gray">5</p>
+                                                                    <p class="gray">4</p>
+                                                                    <p class="gray">4</p>
+                                                                    <p class="gray">5</p>
+                                                                    <p class="gray">3</p>
+                                                                    <p class="gray">4</p>
+                                                                    <p class="gray">3</p>
+                                                                    <p class="gray">4</p>
+                                                                    <p class="gray">4</p>
+                                                                    <p class="gray mobile"></p>
+                                                                </div>
+                                                                <div class="mathTeamPlayer">
+                                                                    <div class="mathTeam matchNumb">
+                                                                        <p>1</p>
+                                                                        <p>2</p>
+                                                                        <p>3</p>
+                                                                        <p>4</p>
+                                                                        <p>5</p>
+                                                                        <p>6</p>
+                                                                        <p>7</p>
+                                                                        <p>8</p>
+                                                                        <p>9</p>
+                                                                        <p class="mobile"></p>
+                                                                    </div>
+                                                                    <div class="mathTeam matchNumb">
+                                                                        <p>1</p>
+                                                                        <p>2</p>
+                                                                        <p>3</p>
+                                                                        <p>4</p>
+                                                                        <p>5</p>
+                                                                        <p>6</p>
+                                                                        <p>7</p>
+                                                                        <p>8</p>
+                                                                        <p>9</p>
+                                                                        <p class="mobile"></p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="matchScore matchNumb">
+                                                                    <p>1</p>
+                                                                    <p>2</p>
+                                                                    <p>3</p>
+                                                                    <p>4</p>
+                                                                    <p>5</p>
+                                                                    <p>6</p>
+                                                                    <p>7</p>
+                                                                    <p>8</p>
+                                                                    <p>9</p>
+                                                                    <p class="mobile"></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="machsubTb_West machsubTb_East">
+                                                        <div>
+                                                            <div class="match_L matchCom mobile">
+                                                                <div class="matchHole orange">
+                                                                    <p>Hole</p>
+                                                                </div>
+                                                                <div class="matchPar">
+                                                                    <p class="white">MATCH 1</p>
+                                                                    <p class="gray">Par</p>
+                                                                </div>
+                                                                <div class="mathTeamPlayer">
+                                                                    <div class="mathTeam">
+                                                                        <img src="./images/classic.svg">
+                                                                    </div>
+                                                                    <div class="matchPlayer">
+                                                                        <div>
+                                                                            <p>라이언</p>
+                                                                        </div>
+                                                                        <div>
+                                                                            <p>어피치</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="matchScore">
+                                                                    <p class="gray">SCORE</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="match_R matchCom">
+                                                                <div class="matchHole orange">
+                                                                    <div class="matchWest">
+                                                                        <div class="matchWest_P">
+                                                                            <p>East Course(In)
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="matchWest_numb matchNumb">
+                                                                            <p>10</p>
+                                                                            <p>11</p>
+                                                                            <p>12</p>
+                                                                            <p>13</p>
+                                                                            <p>14</p>
+                                                                            <p>15</p>
+                                                                            <p>16</p>
+                                                                            <p>17</p>
+                                                                            <p>18</p>
+                                                                            <p>합계</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="matchPar matchNumb">
+                                                                    <p class="gray">5</p>
+                                                                    <p class="gray">4</p>
+                                                                    <p class="gray">4</p>
+                                                                    <p class="gray">5</p>
+                                                                    <p class="gray">3</p>
+                                                                    <p class="gray">4</p>
+                                                                    <p class="gray">3</p>
+                                                                    <p class="gray">4</p>
+                                                                    <p class="gray">4</p>
+                                                                    <p class="gray"></p>
+                                                                </div>
+                                                                <div class="mathTeamPlayer">
+                                                                    <div class="mathTeam matchNumb">
+                                                                        <p>1</p>
+                                                                        <p>2</p>
+                                                                        <p>3</p>
+                                                                        <p>4</p>
+                                                                        <p>5</p>
+                                                                        <p>6</p>
+                                                                        <p>7</p>
+                                                                        <p>8</p>
+                                                                        <p>9</p>
+                                                                        <p></p>
+                                                                    </div>
+                                                                    <div class="mathTeam matchNumb">
+                                                                        <p>1</p>
+                                                                        <p>2</p>
+                                                                        <p>3</p>
+                                                                        <p>4</p>
+                                                                        <p>5</p>
+                                                                        <p>6</p>
+                                                                        <p>7</p>
+                                                                        <p>8</p>
+                                                                        <p>9</p>
+                                                                        <p></p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="matchScore matchNumb">
+                                                                    <p>1</p>
+                                                                    <p>2</p>
+                                                                    <p>3</p>
+                                                                    <p>4</p>
+                                                                    <p>5</p>
+                                                                    <p>6</p>
+                                                                    <p>7</p>
+                                                                    <p>8</p>
+                                                                    <p>9</p>
+                                                                    <p></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="team_Player classic_player">
+                                                <div class="classic_group matchTeam">
+                                                    <div class="classic_img">
+                                                        <img src="./images/classic.svg">
+                                                    </div>
+                                                    <div class="classic_txt">
+                                                        <p>최원우</p>
+                                                        <p>어피치</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="match_result win">
+                                            <div class="match_resultBox">
+                                                <p>1UP</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="match_player">
+                                                <p>MATCH1</p>
+                                            </div>
+                                        </td>
+                                        <td class="match_result lose">
+                                            <div class="match_resultBox">
+                                                <p>1DN</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="team_Player neo_player">
+                                                <div class="neo_group matchTeam">
+                                                    <div class="neo_txt">
+                                                        <p>최원우</p>
+                                                        <p>어피치</p>
+                                                    </div>
+                                                    <div class="neo_img">
+                                                        <img src="./images/neo.svg">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="team_Player classic_player">
+                                                <div class="classic_group matchTeam">
+                                                    <div class="classic_img">
+                                                        <img src="./images/classic.svg">
+                                                    </div>
+                                                    <div class="classic_txt">
+                                                        <p>최원우</p>
+                                                        <p>어피치</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="match_result win">
+                                            <div class="match_resultBox">
+                                                <p>1UP</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="match_player">
+                                                <p>MATCH1</p>
+                                            </div>
+                                        </td>
+                                        <td class="match_result lose">
+                                            <div class="match_resultBox">
+                                                <p>1DN</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="team_Player neo_player">
+                                                <div class="neo_group matchTeam">
+                                                    <div class="neo_txt">
+                                                        <p>최원우</p>
+                                                        <p>어피치</p>
+                                                    </div>
+                                                    <div class="neo_img">
+                                                        <img src="./images/neo.svg">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footerWRap">
+                <h1>
+                    <img src="./images/logo.png">
+                </h1>
+                <p>Copyright &copy; 2024 유엔비즈, Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

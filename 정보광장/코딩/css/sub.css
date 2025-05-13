@@ -1,0 +1,1059 @@
+/* 일정 결과 테이블 */
+.tbTop { margin-bottom:15px; }
+.tbTop .tbLeft{ float:left; }
+.tbTop .tbLeft select{ background-position:right 3px center }
+.tbTop .total{ float:right; }
+.tbTop .total{ text-align:right; margin:20px 0 15px; }
+.tbTop .total p{ color:#666 }
+.tbTop .total strong{ color:#80674b; }
+.tbTop:after{ content:''; display:block; clear:both; }
+
+.filt_th{ display:flex; gap:10px; justify-content:center; }
+.filt_th .filterWRap{ display:flex; flex-direction: column; gap:3px; }
+.filt_th .filterWRap.filt_Up{ justify-content:center; }
+.filt_th .filterWRap span{ display:block; width:12px; height:12px; }
+.filt_th .filterWRap span img{ width:100%; height:100%; vertical-align:top; }
+
+.schWeekTb{ margin-top:20px; }
+.schWeekTb .total{ text-align:right; margin:20px 0 0; }
+.schWeekTb .total span{ color:#666 }
+.schWeekTb .total i{ color:#80674b; }
+.schWeekTb table .playerClub{ color:#333; font-weight:600 }
+.schWeekTb table .player{ display:flex; justify-content:center; align-items:center; gap:40px; }
+.schWeekTb table .player .vs{ font-size:15px; color:#000; font-weight:600; width:40px; }
+.schWeekTb table .player span{ width:calc(100% - 40px); }
+
+@media(max-width:1080px){    
+
+    /* 일정 결과 */  
+    .shcList{ border:1px solid #cacaca; border-radius:10px; margin-bottom:15px; }
+    .shcList.active{ border:4px solid #86654b }
+    .shcList .schDate{ display:flex; justify-content:space-between; align-items:center; padding:15px; border-bottom:1px solid #cacaca; background:#f5f5f5; border-radius:10px 10px 0 0 }    
+    .shcList .schDate .clubName{ padding:5px 15px; background:#e20d18; color:#fff; border-radius:50px; font-weight:600 }
+    .shcList .schDate .playDate span{ color:#333; font-size:18px; }
+    .shcList .schDate .playDate span + span{ padding-left:10px; }
+    .shcList .schDate .wedth_icon{ width:25px; }
+    .shcList .schDate .wedth_icon img{ width:100%; }
+    
+    .shcList .schBox{ display:flex; flex-direction: column; padding:0 25px; }
+    .shcList .schBox > div{ display:flex; align-items:center; gap:10px; padding:15px 0; }    
+    .shcList .schBox .schPlaytop{ justify-content:center; }
+    .shcList .schBox .schPlayBtm{ justify-content:space-between; margin:0 20px;}
+    .shcList .schBox .schPlayBtm p { color:#666 }
+    .shcList .schBox .schPlayBtm .schPlayNm{ border:1px solid #666; border-radius:50px; padding:5px 20px; font-size:15px; }
+    .shcList .schBox .tbRight{ width:calc(100% - 160px); }
+    .shcList .schBox .tbRight > div{ padding:15px; }
+    .shcList .schBox .schPlaytop { border-bottom:1px solid #cacaca }
+    .shcList .schBox .schPlaytop p{ display:flex; justify-content:center; width:100%; }
+    .shcList .schBox .schPlaytop p span, .shcList .schBox .schPlayBtm p{ font-size:20px; }
+    .shcList .schBox .schPlaytop .scoreTxt{ width:150px; justify-content:space-between; align-items:center; gap:0 }
+    .shcList .schBox .schPlaytop .score{ width:50px; text-align:center; }
+
+    .vs{ font-size:12px; }
+}
+
+@media(max-width:780px){
+    /* 일정 결과 */
+    
+    .slcPc{ display:none; }
+    
+    .schedule > div{ padding:10px; }
+
+    .shcList .schDate{ justify-content:center; padding:10px; }
+    .shcList .schDate .playDate { padding-left:15px; }
+    .shcList .schDate .wedth_icon{ margin-left:auto; }
+
+    .shcList .schDate .clubName{ font-size:14px; }
+    .shcList .schDate .playDate span{ font-size:16px; }
+    .shcList .schBox .schPlaytop p span, .shcList .schBox .schPlayBtm p{ font-size:18px; }
+
+}
+@media(max-width:380px){
+    
+    /* 일정 결과 */
+    .topSltWRap ul{ width:230%; }
+    .topSltWRap ul > li{ font-size:14px; }
+
+    .shcList .schDate{ padding:5px 10px; }    
+    .shcList .schDate .clubName{ font-size:12px; }
+    .shcList .schDate .playDate span{ font-size:14px; }
+    .shcList .schBox .schPlaytop p span, .shcList .schBox .schPlayBtm p{ font-size:15px; }
+
+    .Kleague_lst{ padding-left:182px; }
+    .Kovo_lst{ padding-left:470px; }
+
+}
+
+/* 전체관중 */
+.download_btn { display:flex !important; justify-content: flex-end; }
+.download_btn button{ display:flex; align-items:center; background:#fff; border:1px solid #cacaca; border-radius:50px; padding:10px 20px; font-size:16px; }
+.download_btn button .down_icon{ background:url(../images/download.png)no-repeat; width:20px; height:20px; background-size:contain; margin-left:10px; }
+
+/* 관중 띠배너 */
+.subTitle .titleSlt{ padding-left:60px; display:flex; gap:10px; }
+.subTitle .titleSlt + .titleSlt{ padding-left:30px; }
+.subTitle .titleSlt span{ color:#fff; display:flex; align-items:center; }
+.subTitle .titleSlt button{ padding:10px 20px; }
+
+.xi-chart-line{ background:url(../images/sub/xi-chart-line.svg)no-repeat; width:25px; height:20px; }
+.xi-chart-bar{ background:url(../images/sub/xi-chart-bar.svg)no-repeat; width:15px; height:15px; }
+.xi-chart-bar02{ background:url(../images/sub/xi-chart-bar02.svg)no-repeat; width:15px; height:12px; }
+.xi-renew{ background:url(../images/sub/xi-renew.svg)no-repeat center left; padding-left:25px; background-size:20px 20px; }
+.xi-list-number{ background:url(../images/sub/xi-list-number.svg)no-repeat center left; padding-left:25px; background-size:20px 20px;  }
+
+/* 차트 표 */
+.totalTb{ margin-top:20px; }
+.totalTb .total{ width:100%; display:flex; justify-content: space-between; margin:5px 0 24px; }
+.totalTb .total h3{ margin:auto; font-size:20px; }
+.totalTb .total p{ color:#666; font-size:16px; }
+.totalTb table tr td p{ color:#666; font-weight:400 }
+.totalTb table tr td.td_bg p{ font-weight:600; color:#333 }
+.totalTb table tfoot td{ background:#f5f5f5 }
+.totalTb table tfoot td p{ font-weight:600 }
+
+/* 리그순위 */
+.LeagueRanking{ position:relative; }
+.LeagueRanking:before{ content:''; position:absolute; width:100%; height:40px; background:#0f1957; left:0; top:-10px; z-index:0 }
+.LeagueRankWrap { position:relative; display:flex; align-items:flex-start; gap:10px; }
+.rankBox { width:13.68%; border:1px solid #cacaca; box-shadow:1px 0 3px rgba(153,153,153,.3); border-radius:30px; background:#fff; margin-right:10px; }
+.rankBox:last-child{ margin-right:0; }
+.rankBox .rankSort{ display:flex; width:100%; height:74px; text-align:center; }
+.rankBox .rankSort .rankImg{ display:flex; align-items:center;  width:40px; height:40px; margin:auto; }
+.rankBox .rankSort .rankImg img{ width:100%; height:100%; object-fit: contain; }
+.rankBox .rankSeason{ padding:10px 0; }
+.rankBox .rankSeason p{ width:100%; text-align:center; color:#fff; font-size:14px; }
+.rankBox .rankSeason.kleagueSeason{ background:#bb3d32 }
+.rankBox .rankSeason.kboSeason{ background:#122151 }
+.rankBox .rankSeason.kblSeason{ background:#f0a03a }
+.rankBox .rankSeason.wkblSeason{ background:#c76c9a }
+.rankBox .rankSeason.kovoSeason{ background:#619ae6 }
+.rankBox .rankSeason.kpgaSeason{ background:#20473e }
+.rankBox .rankSeason.klpgaSeason{ background:#ea682c }
+
+.rankBox .rankList h2{ font-size:16px; padding:10px 0; text-align:center; }
+.rankBox .rankList ul{ padding:10px 15px; }
+.rankBox .rankList li{ padding:10px 0 10px 10px; border-bottom:1px dotted #f5f5f5;color:#666; display:flex; gap:5px; align-items:center; }
+.rankBox .rankList li .rankNum{ width:30px; height:30px; background:#f5f5f5; display:flex; align-items:center; justify-content: center; border-radius:100%; }
+.rankBox .rankList li .rankTxt{ font-size:14px;  }
+
+.rankBox .rank_kleague{ background:#f8ebea; }
+.rankBox .rank_kbo{ background:#e7e8ed; }
+.rankBox .rank_kbl{ background:#fdf5eb; }
+.rankBox .rank_wkbl{ background:#f9f0f5; }
+.rankBox .rank_kovo{ background:#eff5fc; }
+.rankBox .rank_kpga{ background:#e8eceb; }
+.rankBox .rank_klpga{ background:#fdf0e9; }
+
+@media(max-width:1080px){
+
+    /* 리그순위 */
+    .rankMobile{ margin-top:20px; }
+    .LeagueRanking:before{ display:none; }
+    .LeagueRanking .slick-slider .slick-track, .LeagueRanking .slick-slider .slick-list{ width:100%; }
+    .rankLst{ border:2px solid #cacaca; background:#fff; box-shadow:8px 0 16px rgba(153,153,153,.3); border-radius:20px; }
+    .rankLst + .rankLst{ margin-top:15px; }
+    .rankLst .rankDate{ display:flex; align-items:center; background:#f5f5f5; border-radius:20px 20px 0 0; border-bottom:2px solid #cacaca; padding:10px 25px; }
+    .rankLst .rankDate p{ font-size:22px; font-weight:600 }
+    .rankLst .rankDate .ranking{ color:#e20d18; }
+    .rankLst .rankDate .rankPlayName{ color:#000; margin-left:10px; }
+    .rankLst .rankDate .clubName{ margin-left:auto; padding:5px 15px; background:#e20d18; border-radius:50px; color:#fff; font-size:18px; }
+    .rankLst .rankCont{ padding:10px 25px; }
+    .rankLst .rankCont table{ width:100%; border-collapse: collapse; }
+    .rankLst .rankCont table td { color:#666; text-align:center; padding:10px 0; }
+    .rankLst .rankCont table tr:nth-child(2) td{ border-top:2px solid #cacaca }
+    .rankLst .rankCont table td p{ font-size:20px; }
+    .rankLst .rankCont table td strong{ font-size:22px; }
+
+    /* 관중 */
+    .subPg .section01{ padding:0 15px; }
+}
+
+@media(max-width:780px){
+    
+    .rankBox{ margin:0 5px; }
+    .rankLst .rankDate p{ font-size:18px; }
+    .rankLst .rankDate .clubName{ font-size:14px; }
+    .rankLst .rankCont table td p, .rankLst .rankCont table td strong{ font-size:16px; }
+    
+    /* 관중 띠 */
+    .subTitle .titleSlt button, .subCom select{ padding:5px 15px; }
+    
+}
+
+@media(max-width:380px){
+    
+    .rankBox{ margin:0; }
+    .rankLst .rankCont{ padding:5px 15px; }
+    .rankLst .rankDate{ padding:5px 25px; }
+    .rankLst .rankDate .rankPlayName{ font-size:16px; }
+    .rankLst .rankDate .clubName{ padding:3px 15px; font-size:13px; }
+    .rankLst .rankCont table td{ padding:8px 0 }
+    .rankLst .rankCont table td p, .rankLst .rankCont table td strong{ font-size:14px; }
+}
+
+/* board */
+.boardTop{ display:flex; justify-content:space-between; align-items:flex-end; padding-bottom:15px; border-bottom:1px solid #000 }
+.boardTop .boardCom { display:flex; align-items:center; gap:10px; }
+.boardTop .boardCom .bordMo{ display:flex; gap:10px; }
+.boardTop .boardCom select, .boardTop .boardCom input, .boardTop .boardCom button{ border:1px solid #cacaca; color:#666; height:40px; box-sizing:border-box }
+.boardTop .boardCom select{ width:130px; padding:10px 15px; }
+.boardTop .boardCom input{ width:575px; padding:5px 15px; }
+.boardTop .boardCom button{ width:100px; background:#000; color:#fff; border:none; }
+
+.boardTt span{ color:#666666 }
+.boardTt .total{ color:#80674b; }
+
+.galleryBoard{ margin-top:45px; }
+.galleryBoard .boardWrap{ display:grid; grid-template-columns:repeat(4, 1fr); background:#fff; gap:35px }
+.galleryBoard .boardWrap .boardList{ box-shadow:5px 0 10px rgba(102,102,102,.3); }
+.galleryBoard .boardWrap .boardList a{ padding:10px; }
+.galleryBoard .boardWrap .boardList .boardImg{ position:relative; width:100%; height:0; padding-top:calc(1200/900 * 100%); text-align:center; }
+.galleryBoard .boardWrap .boardList .boardImg img{ position:absolute; top:0; left:0; width:100%; height:100%; }
+.galleryBoard .boardWrap .boardList .boardImg .noImg{ position:absolute; width:100px; height:100px; top:50%; left:50%; transform:translate(-50%, -50%) }
+.galleryBoard .boardWrap .boardList .boardTxt{ padding:10px; }
+.galleryBoard .boardWrap .boardList .boardTxt p{ padding-top:10px; }
+.galleryBoard .boardWrap .boardList .boardTxt .boardTtl{ font-size:18px; color:#333; }
+.galleryBoard .boardWrap .boardList .boardTxt .data{ font-size:14px; color:#666 }
+
+@media(max-width:1080px){
+    .boardTop, .boardTop .boardCom { flex-direction:column; width:100%; }
+    .boardTop{ border-bottom:none; }
+    .boardTop .boardCom{ position:relative; }
+    .boardTop .boardCom div{ width:100%; }
+    .boardTop .boardCom select, .boardTop .boardCom input{ border-radius:50px; }
+    .boardTop .boardCom select{ width:100%; appearance:none; background:url(../images/icon_down.png)no-repeat right 15px center; background-size:30px; padding-right:50px; }
+    .boardTop .boardCom .bordMo{ position:relative; }
+    .boardTop .boardCom input{ position:relative; width:100%; padding-right:50px; }
+    .boardTop .boardCom button{ background:transparent; }
+    .boardTop .boardCom button.search{ position:absolute; top:50%; right:20px; transform:translateY(-50%); width:20px; height:20px; background:url(../images/search.png)no-repeat; background-size:cover; }
+    .boardTop .boardTt{ margin-top:20px; }
+
+    .galleryBoard .boardWrap{ grid-template-columns: repeat(3, 1fr); gap:20px; }
+}
+
+@media(max-width:780px){
+    
+
+    .galleryBoard{ margin-top:5px; }
+    .galleryBoard .boardWrap{ grid-template-columns: repeat(2, 1fr); gap:15px; }
+    .galleryBoard .boardWrap .boardList .boardImg .noImg{ width:80px; height:80px; }
+    .galleryBoard .boardWrap .boardList .boardTxt .boardTtl{ font-size:16px; }
+    .galleryBoard .boardWrap .boardList .boardTxt .data{ font-size:13px; }
+}
+@media(max-width:380px){
+    .galleryBoard .boardWrap .boardList .boardTxt .boardTtl{ font-size:14px; padding-top:5px; }
+    .galleryBoard .boardWrap .boardList .boardTxt .data{ font-size:12px; }
+}
+
+/* 공지사항식 표 */
+.noticTop{ border-bottom:0; }
+.noticBoard{ margin-top:20px }
+.noticBoard .noticTable { border-bottom:1px solid #000}
+.noticBoard .noticTable table{ width:100%; border-collapse: collapse; }
+.noticBoard .noticTable table th, .noticBoard .noticTable table td{ padding:10px 5px; }
+.noticBoard .noticTable table th{ border-top:1px solid #000; border-bottom:1px solid #000 }
+.noticBoard .noticTable table td{ border-bottom:1px solid #cacaca; color:#333 }
+.noticBoard .noticTable table td{ text-align:center; }
+.noticBoard .noticTable table .left{ text-align:left; }
+.noticBoard .noticTable table .file img{ width:25px; }
+
+@media(max-width:380px){
+    .noticBoard{ margin-top:10px; }
+    .noticBoard .noticTable table th, .noticBoard .noticTable table td{ font-size:14px; }
+}
+
+/* 프로단체 정보 */
+#proGroup{ justify-content:space-between; }
+.subTtlRight, .subTtlRight .subTtlbtn, .subTtlRight .subTtlSns{ display:flex; gap:10px; align-items:center; }
+.subTtlRight .subTtlbtn p { border:1px solid #fff; border-radius:50px; padding:10px 38px; }
+.subTtlRight .subTtlbtn p button{ color:#fff; }
+.subTtlRight .subTtlSns{ margin-left:35px; }
+.subTtlRight .subTtlSns p button{ display:flex; align-items:center; justify-content:center; background:#84868c; width:40px; height:40px; border-radius:100%; }
+.subTtlRight .subTtlSns p button i{ width:25px; height:25px; background-size:100%; }
+
+.proGroupInfo{ margin-top:40px; }
+.proGroupInfo table{ width:100%; border-top:1px solid #000; border-bottom:1px solid #000 }
+.proGroupInfo table th, .proGroupInfo table td{ padding:26px; border-bottom:1px solid #cacaca; }
+.proGroupInfo table tr:last-child th, .proGroupInfo table tr:last-child td{ border-bottom:0; }
+.proGroupInfo table th{ background:#f5f5f5; font-weight:500; text-align:right; color:#333 }
+
+.instar{ background:url(../images/instagram.png)no-repeat center; }
+.facebook{ background:url(../images/facebook.png)no-repeat center; }
+.youtoube{ background:url(../images/youtube.png)no-repeat center; }
+
+@media(max-width:1080px){
+    .subTtlRight .subTtlbtn p{ padding:8px 10px; }
+}
+@media(max-width:780px){
+    .subTtlRight{ position:absolute; width:100%; bottom:-50px; left:0; }
+    .subTtlRight .subTtlbtn p{ border:1px solid #cacaca; width:50%; display:flex; justify-content: center; }
+    .subTtlRight .subTtlbtn p button{ color:#666; }
+    .subTtlRight .subTtlSns{ margin-left:auto }
+    .subTtlRight .subTtlSns p button{ width:30px; height:30px; }
+
+    .proGroupInfo{ margin-top:70px; }
+    .proGroupInfo table th, .proGroupInfo table td{ padding:15px; }
+}
+
+@media(max-width:380px){
+    .proGroupInfo table th, .proGroupInfo table td{ font-size:14px; word-break:keep-all }
+    .subTtlRight, .subTtlRight .subTtlbtn, .subTtlRight .subTtlSns{ gap:5px; }
+    .subTtlRight .subTtlbtn p{ padding:7px 8px; }
+    .subTtlRight .subTtlbtn p button{ padding:0; }
+}
+
+/* 프로구단정보 */
+#proPlayer .subTtlRight{ margin-left:auto; }
+
+/* 일자별 관중 */
+.dayNum h3 span{ background:#84868c; color:#fff; padding:10px 10px 10px 40px; margin-left:20px; font-size:18px; }
+
+.subTb .daysTotalTb{ display:flex; margin-top:0; }
+.subTb .daysTotalTb div table th{ border:0; color:#000; font-weight:400 }
+.subTb .daysTotalTb div table th, .daysTotalTb div table td{ padding:8px 4px; }
+.subTb .daysTotalTb div table td { border-bottom:0; }
+.subTb .daysTotalTb div table td p{ color:#000 }
+.subTb .daysTotalTb div table td .white{ background:#fff; padding:2px 0; border-radius:50px; color:#333 }
+.subTb tr:last-child td{ border-bottom:0; }
+.subTb .daysTotalTb .left{ width:70%; }
+.subTb .daysTotalTb .right{ width:30%; }
+.subTb tfoot{ padding:20px; background:#f5f5f5; border-bottom:1px solid #000; border-top:1px solid #cacaca; }
+
+/* 데이터 활용 신청 */
+.dataApplication h2{ text-align:center; border-bottom:1px solid #000; padding-bottom:30px; font-size:35px; }
+.dataApplication .datAplWrap{ text-align:center; padding:30px 90px; }
+.dataApplication .datAplWrap .dataAplTxt{ background:#f5f5f5; padding:40px 0; margin-top:55px; }
+.dataApplication .datAplWrap .dataAplTxt p{ font-size:23px; word-break: break-all; }
+
+.contactTb{ margin-top:50px; }
+.contactTb table{ border-top:2px solid #333; border-bottom:2px solid #333; }
+.contactTb table textarea{ width:100%; border:1px solid #d1d1d1; resize:none; }
+.contactTb table textarea:focus{ border:1px solid #d1d1d1; outline:0; }
+.contactTb table th, .contactTb table td{ padding:25px 20px; border-bottom:1px solid #cacaca; }
+.contactTb table th { background:#f5f5f5; text-align:left; }
+.contactTb table th p{ position:relative; padding-left:25px; color:#333; font-weight:500 }
+.contactTb table th p:after{ content:''; position:absolute; width:20px; height:20px; left:0; top:0; background:url(../images/bullet.png)no-repeat; background-size:cover;  }
+.contactTb table td p input{ width:100%; border:1px solid #d1d1d1; height:43px; box-sizing:border-box; }
+.contactTb table td .commonInp{ display:flex; align-items:center; gap:5px; }
+.contactTb table td .emailInp span{ width:30%; }
+.contactTb table td .emailInp span:nth-child(2){ width:5%; }
+.contactTb table td .emailInp span select{ width:100%; border:1px solid #cacaca; background-position:right 5px center; color:#333 }
+
+@media(max-width:1080px){
+    .dataApplication .datAplWrap{ padding:30px 20px; }
+    .dataApplication .datAplWrap img{ width:100%; }
+    .dataApplication .datAplWrap .dataAplTxt{ padding:30px 20px; margin-top:30px; }
+    .dataApplication .datAplWrap .dataAplTxt p{ font-size:18px; }
+
+    .contactTb table th, .contactTb table td{ padding:15px 10px; }   
+}
+
+@media(max-width:780px){
+    .dataApplication h2{ font-size:25px; padding-bottom:20px; }
+    .dataApplication .datAplWrap{ padding:20px 0; }
+    .dataApplication .datAplWrap .dataAplTxt p{ font-size:16px; }
+
+    .contactTb table th p{ font-size:16px; padding-left:20px; }
+    .contactTb table th p:after{ width:15px; height:15px; top:5px; }
+    .contactTb table td p input{ height:45px; }
+}
+@media(max-width:380px){
+    .dataApplication h2{ font-size:22px; padding-bottom:15px; }
+    .dataApplication .datAplWrap .dataAplTxt{ padding:20px; }
+    .dataApplication .datAplWrap .dataAplTxt p{ font-size:15px; }
+    .dataApplication .datAplWrap .dataAplTxt p strong{ word-break:keep-all }
+    .contactTb{ margin-top:30px; }
+    .contactTb table th{ padding-left:10px; }
+    .contactTb table th p{ font-size:14px; padding-left:20px; }
+    .contactTb table th p:after{ width:15px; height:15px; }
+    .contactTb table th, .contactTb table td{ padding:8px 5px; }
+    .contactTb table td p input, .contactTb table td p select{ height:38px; }
+    .contactTb table td .commonInp{ gap:3px; }
+    .contactTb table td .emailInp span{ width:100%; }
+    .contactTb table td .emailInp span:nth-child(2){ font-size:14px; }
+    .contactTb table td .emailInp span select{ width:100%; padding:5px; font-size:12px; background-size:16px; }
+}
+
+/* 시도별 관중 */
+.subCom.cityNumTb{ margin-top:0; }
+.cityNumTb{ margin-top:20px; }
+.cityNum .titleSlt select{ width:100px; }
+
+/* 지도 */
+.subMap{ margin-top:40px; }
+.subMap .visualRight{ padding:50px; }
+.subMap .visualRight .mapImg{ position:relative; width:392px; margin:auto }
+.subMap .mapRionTxt{ position:absolute; width:auto;  }
+.subMap .mapRionTxt button{ padding:10px 15px; border-radius:10px; border:1px solid #86654b; background:#fff; box-sizing:border-box; font-weight:600 }
+.subMap .mapRionTxt button span{ display:block; color:#0f1957; }
+.subMap .mapRionTxt button:hover{ background:#86654b; color:#fff; transition:.3s }
+.subMap .mapRionTxt button:hover span{ color:#fff; }
+.subMap .mapRionTxt button span + span{ padding-top:5px; font-weight:500 }
+.subMap .map01{ top:0; left:50px; }
+.subMap .map02{ top:70px; left:-30px; }
+.subMap .map03{ top:110px; left:90px; }
+.subMap .map04{ top:50px; right:80px; }
+.subMap .map05{ top:180px; left:0; }
+.subMap .map06{ top:240px; left:100px; }
+.subMap .map07{ top:170px; right:130px; }
+.subMap .map08{ bottom:230px; right:100px; }
+.subMap .map09{ top:210px; right:0; }
+.subMap .map10{ bottom:190px; left:10px; }
+.subMap .map11{ bottom:100px; left:70px; }
+.subMap .map12{ bottom:150px; right:130px; }
+.subMap .map13{ bottom:180px; right:-15px; }
+.subMap .map14{ bottom:110px; right:30px; }
+.subMap .map15{ bottom:100px; left:-50px; }
+.subMap .map16{ bottom:-30px; left:60px; }
+
+@media(max-width:1080px){
+    .subCom.cityNum{ margin-top:0; }
+}
+
+/* 역대관중 */
+.bestNumCont + .bestNumCont{ margin-top:70px; }
+@media(max-width:1080px){
+    .bestNumCont + .bestNumCont{ margin-top:40px; }
+    .bestNumTb{ width:100%; max-height:500px; overflow:auto; }
+}
+@media(max-width:780px){
+    .bestNumTb th, .bestNumTb td{ font-size:14px; }
+}
+
+/* e나라지표 */
+.infoEdit{ margin-top:20px; padding:0 50px; }
+.infoEdit li{ position:relative; margin:5px 0; padding-left:13px; font-size:18px; }
+.infoEdit li:after{content:''; position:absolute; width:5px; height:1px; background:#333; left:0; top:15px; }
+
+@media(max-width:780px){
+    .infoEdit{ padding:0 20px; margin-top:0 }
+}
+@media(max-width:380px){
+    .infoEdit li{ font-size:16px; }
+}
+
+/* 모달 */
+/* .modalCover {
+    overflow: hidden;
+    background: rgba(0,0,0,.6);
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+} */
+
+.modal {
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    ;/*background-color: rgb(0,0,0);background-color: rgba(0,0,0,0.4);*/
+}
+
+.modalClose {
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    position:absolute; right:10px; top:5px;
+}
+
+.modalClose:hover, .modalClose:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modalCont {
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #fefefe;
+    margin: 9% auto;
+    border: 1px solid #888;
+    width: 600px;
+    overflow: hidden;
+    box-shadow: 2px 2px 6px rgba(0,0,0,.2)
+}
+
+.modalHeader {
+    position:relative;
+    border-bottom: 1px solid #0f1957;
+    padding-bottom: 10px;
+    background:#0f1957;
+    padding:10px 0
+}
+
+.modalHeader > .tit {
+    font-size: 18px;
+    line-height: 28px;
+    color:#fff;
+    font-weight:600;
+    text-align:center;
+}
+
+.modalBody {
+    box-sizing: border-box;
+    width: 100%;
+    word-break: break-all;
+    line-height: 1.4;
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 20px 20px 10px;
+}
+.modalFooter {
+    padding:10px 20px 20px;
+    text-align: center;
+}
+
+.modalFooter button{ padding:15px 35px; background:#86654b; border-radius:50px; color:#fff; }
+
+/* 조회설정 */
+.modalBody .schEdit{ display:flex; gap:20px; }
+.modalBody .schEdit > div{ width:50%; border:1px solid #cacaca; border-radius:20px; }
+.modalBody .schEdit .schHead{ background:#84868c; color:#fff; padding:18px 20px;  border-radius:20px 20px 0 0; }
+.modalBody .schEdit .schHead label{ font-size:18px; }
+.modalBody .schEdit .schBody{ padding:10px 20px 20px; }
+.modalBody .schEdit .schBody .itemsList{ padding:5px 0 }
+.modalBody .schEdit .schBody .itemsList label{ font-size:16px; }
+
+.modalBody .schEdit input[type="checkbox"]{
+display: none;
+}
+.modalBody .schEdit  input[type="checkbox"] + label{
+    display: inline-block;
+    position: relative;
+    padding-left:30px;
+}
+.modalBody .schEdit input[type="checkbox"] + label::before{
+    display:block;
+    content:'';
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    line-height:20px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top:0;
+    border:1px solid #ddd;
+    color:blue;
+}
+
+.modalBody .schEdit input[type="checkbox"]:checked + label::before{
+    content:'✔';
+}
+
+/* 행렬전환 */
+.processEdit h3 img{ margin-right:10px; vertical-align:middle; }
+.processEdit .itemsList button{ border:1px solid #cacaca; background:#f5f5f5; width:100%; padding:10px 0; font-size:16px; }
+
+/* 스포츠 윤리교육 */
+.filDown{ cursor:pointer; display:inline-block; border:1px solid #0f47ad; color:#0f47ad; font-size:14px; border-radius:5px; padding:8px 20px; padding-left:30px; background:url(../images/sub/icon_edu.png)no-repeat left 10px center; }
+.slideDown span{ vertical-align:middle; }
+.slideDown img{ width:25px; vertical-align:middle; }
+.noticBoard .noticTable table td.slideDwon_Td{ padding:0; }
+.slideDwon_Cont{ background:#f5f5f5; padding:15px 100px; text-align:left; }
+@media(max-width:1080px){
+    .filDown_Td img{ width:20px; margin: auto; }
+    .slideDwon_Cont{ padding:20px 25px; }
+}
+@media(max-width:780px){
+    .filDown_Td img{ width:20px; margin: auto; }
+    .slideDwon_Cont{ padding:10px 15px; }
+    .slideDwon_Cont iframe{ width:100%; max-height:400px; height:280px; }
+}
+@media(max-width:380px){
+    .slideDwon_Cont iframe{ width:100%; max-height:250px; }
+}
+
+/* SNS */
+.snsChart{ margin-top:50px; padding-top:20px; }
+.newTbl_basicWrap {
+    border-bottom: 1px solid #cacaca;
+    margin-top:50px;
+}
+
+.newTbl_basic {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.newTbl_basic thead tr th {
+    vertical-align: middle;
+    font-size: 15px;
+    background:#f5f5f5;
+    border:1px solid #cacaca
+}
+.newTbl_basic thead tr th a{
+    display:inline-block;
+}
+.newTbl_basic th,.newTbl_basic td {
+    padding: 8px 5px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.newTbl_basic tbody tr td {
+    vertical-align: middle;
+    font-size: 15px;
+    border:1px solid #cacaca
+}
+
+
+/* 경기장 */
+.subTb .reportTable table th, .subTb .reportTable table td{ padding:10px; }
+.subTb .reportTable table tr:last-child td{ border-bottom:1px solid #cacaca }
+
+@media(max-width:1080px){
+    .newTbl_basic{ width:170%; }
+}
+@media(max-width:780px){
+    .newTbl_basic{ width:360%; }
+}
+@media(max-width:380px){
+    .newTbl_basic{ width:500%; }
+}
+
+.newTblWrap p{ float:right; padding-bottom:10px; }
+
+@media(max-width:1080px){
+    .sponsTb{ width:150%; }
+
+}
+@media(max-width:780px){
+    .sponsTb{ width:280%; }
+
+}
+@media(max-width:380px){
+    .sponsTb{ width:350%; }
+
+}
+
+/* 역대 우승팀 */
+
+
+.comm_tab2 {
+    display: block;
+    clear: both;
+    margin-top: 25px;
+}
+
+.comm_tab2:after {
+    display: block;
+    height: 0;
+    content: ".";
+    font-size: 0;
+    visibility: hidden;
+    clear: both
+}
+
+
+.comm_tab2>.tab_menu {
+    border-bottom: 2px solid #0b427e;
+    padding: 0;
+    margin: 0;
+}
+
+.comm_tab2>.tab_menu>li {
+    list-style: none;
+    float: left;
+    text-align: center;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.comm_tab2>.tab_menu .tabTit {
+    margin-bottom: -3px;
+    width: 100px;
+    display: block;
+    padding: 10px;
+    color: #797979;
+    border: 1px solid #ccc;
+    border-bottom: 2px solid #0b427e;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.comm_tab2>.tab_menu .on {
+    position: relative;
+}
+
+.comm_tab2>.tab_menu .on .tabTit {
+    border: 2px solid #0b427e;
+    display: block;
+    border-bottom: 2px solid #fff;
+    font-weight: bold;
+    color: #0b427e
+}
+.comm_tab2>.tab_cont {
+    float: left;
+    width: 100%;
+    clear: both;
+}
+
+.comm_tab2>.tab_cont .tabBox {
+    padding: 30px 0;
+    font-size: 14px;
+    color: #666;
+    background-color: #fff;
+}
+
+
+/*tab*/
+
+.newChamWrap .newCham_timeline {
+    overflow: hidden;
+}
+
+.newChamWrap .newCham_timeline .horizontal-timeline {
+    max-width: 1280px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 25px 0;
+}
+
+.newChamWrap .newCham_timeline .horizontal-timeline .timeline {
+    width: 75%;
+}
+
+.newChamWrap .newCham_timeline .horizontal-timeline .events-content li[data-horizontal-timeline], .horizontal-timeline .events-content li[data-date] {
+    box-sizing: border-box;
+    border-radius: 0px !important;
+    background: none;
+    cursor: default;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.newChamWrap .newCham_timeline .horizontal-timeline .events {
+    background: #dfdfdf
+}
+
+.newChamWrap .newCham_timeline .horizontal-timeline .events a.selected::after, .horizontal-timeline .events a.older-event::after {
+    background-color: #085796 !important;
+    border: none !important;
+}
+
+.newChamWrap .newCham_timeline .horizontal-timeline .filling-line {
+    background-color: #fd8204
+}
+
+.newChamWrap .newCham_timeline .horizontal-timeline .events a {
+    font-weight: bold;
+    background: #dfe2e7;
+    color: #000;
+    padding: 10px 20px !important;
+    border-radius: 15px;
+    bottom: 22px;
+}
+
+.newChamWrap .newCham_timeline .horizontal-timeline .events a.selected {
+    background: #085796;
+    color: #fff;
+}
+
+.newChamWrap .newCham_timeline .horizontal-timeline .events a::after {
+    background-color: #fff;
+    border: 3px solid #fd8204;
+    border-radius: 100%;
+    box-sizing: border-box;
+    bottom: -25px;
+}
+
+.newChamWrap .newCham_timeline .timeline-navigation#leftNav {
+    left: -10px;
+}
+
+.newChamWrap .newCham_timeline .timeline-navigation#rightNav {
+    right: -10px;
+}
+
+.newChamWrap .newCham_timeline .timeline-navigation#rightNav .scroll-right {
+}
+
+.newChamWrap .newCham_timeline .timeline-navigation a {
+    color: #085796;
+    transition: all ease .2s;
+}
+
+.newChamWrap .newCham_timeline .timeline-navigation a:hover {
+    color: #064577
+}
+
+.newChamWrap .newCham_timeline .timeline-navigation a.inactive {
+    color: #d3d3d3
+}
+
+.newChamWrap .newCham_timeline .timeline-navigation a.inactive:hover {
+    color: #d3d3d3
+}
+
+.newChamWrap .newCham_timeline .timelineCont {
+    padding: 20px 0 40px;
+}
+
+.newChamWrap .newCham_timeline .timelineCont ul li {
+    display: inline-block;
+    width: 49%;
+    vertical-align: middle;
+    line-height: 120px;
+    min-height: 120px;
+    text-align: center;
+}
+
+.newChamWrap .newCham_timeline .timelineCont ul li:first-child {
+    font-size: 24px;
+    background: url('../images/sub/timeline_txt.png')no-repeat center;
+    text-align: right;
+    color: #085796;
+}
+
+.newChamWrap .newCham_timeline .timelineCont ul li:first-child span {
+    font-weight: bold;
+}
+
+.newChamWrap .newCham_timeline .timelineCont ul li:last-child {
+    background: url('../images/sub/timeline_chams.png')no-repeat center;
+}
+
+.newChamWrap .newCham_timeline .timelineCont ul li:last-child img {
+    width: 100px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.newChamWrap .newCham_timeline .timelineCont ul li:last-child span {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    margin-left: 20px;
+}
+
+
+.newChamWrap{ line-height:1; font-size:14px; color:#666 }
+.newChamWrap .newCham_statics .newcham_statics_box {
+    border: 1px solid #e3e3e3;
+    float: left;
+    width: calc(33.333% - 10px);
+    margin-right: 15px;
+    padding: 20px 15px;
+    box-sizing: border-box;
+    height: 300px;
+}
+
+.newChamWrap .newCham_statics .newcham_statics_box .newChamTit {
+    font-weight: bold;
+    color: #000;
+    font-size: 14px;
+}
+
+.newChamWrap .newCham_statics .newcham_statics_box01 .champ {
+    padding-top: 30px;
+}
+
+.newChamWrap .newCham_statics .newcham_statics_box01 .champ p {
+    text-align: center;
+    font-weight: bold;
+}
+
+.newChamWrap .newCham_statics .newcham_statics_box01 .champ p.team {
+    font-size: 18px;
+    color: #000
+}
+
+.newChamWrap .newCham_statics .newcham_statics_box01 .champ p.teamEn {
+    font-weight: normal;
+    margin-top: 10px;
+    color:#666;
+    font-size:14px;
+}
+
+.newChamWrap .newCham_statics .newcham_statics_box01 .champ img {
+    width: 100px;
+    margin: 20px auto;
+    text-align: center;
+    display: block;
+}
+
+.newChamWrap .newCham_statics .newcham_statics_box01 .champ .champIfBox {
+    display: block;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.newChamWrap .newCham_statics .newcham_statics_box01 .champ.double .champIfBox {
+    display: inline-block;
+    width: 49%;
+    vertical-align: middle;
+}
+
+.newChamWrap .newCham_statics .newcham_statics_box02 p.etc {
+    text-align: right;
+    margin-top: 20px;
+    ;color: #000;
+    font-size: 13px;
+    font-style: italic
+}
+
+.newChamWrap .newCham_statics .newcham_statics_box02 ul { line-height:1 }
+
+.newChamWrap .newCham_statics .newcham_statics_box02 ul li {
+    width: 100%;
+    border-bottom: 2px solid #ed9daa;
+    margin: 5px 0;
+    font-size:14px;
+}
+
+.newChamWrap .newCham_statics .newcham_statics_box02 ul li span {
+    float: left;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.newChamWrap .newCham_statics .newcham_statics_box02 ul li span.champNum {
+    width: 10%;
+    background: #e78091;
+    color: #fff;
+}
+
+.newChamWrap .newCham_statics .newcham_statics_box02 ul li span.champName {
+    width: 30%;
+    background: #fae6e9;
+    color: #9c4040;
+    font-weight: bold;
+}
+
+.newChamWrap .newCham_statics .newcham_statics_box02 ul li span.champCount {
+    width: 60%;
+    padding: 0;
+}
+
+.newChamWrap .newCham_statics .newcham_statics_box02 ul li span.champCount div {
+    background: #a35e73;
+    color: #fff;
+    padding: 5px 0;
+    margin-top: 5px;
+    text-align: right;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.newChamWrap .newCham_statics .newcham_statics_box03 {
+    margin-right: 0;
+}
+
+.newChamWrap .newCham_statics .newcham_statics_box03 table {
+    margin-top: 25px;
+    width: 100%;
+    font-size:14px;
+}
+
+.newChamWrap .newCham_statics .newcham_statics_box03 table tbody tr th {
+    vertical-align: middle;
+    padding: 10px;
+    border-top: 2px solid #000;
+    border-bottom: 1px solid #000;
+    text-align: center;
+    font-weight: bold;
+    color: #000;
+    word-break: auto-phrase;
+}
+
+.newChamWrap .newCham_statics .newcham_statics_box03 table tbody tr td {
+    border-bottom: 1px solid #b1d4f1;
+    text-align: center;
+    padding: 10px;
+    color:#666;
+}
+
+.newChamWrap .newCham_statics .newcham_statics_box03 table tbody tr:last-child td {
+    border-bottom: 2px solid #000;
+}
+
+
+.newChamWrap .newCham_total {
+    margin-top: 20px;
+    border: 1px solid #e3e3e3;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.newChamWrap .newCham_total .newChamTit {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.newChamWrap .newCham_total .championWrap {
+    overflow-x: auto;
+    display: block;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.newChamWrap .newCham_total .championWrap ul {
+    width: 100%;
+    border-top: 2px solid #000;
+}
+
+.newChamWrap .newCham_total .championWrap ul li {
+    display: block;
+    width: 20%;
+    float: left;
+    text-align: center;
+    border-right: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.newChamWrap .newCham_total .championWrap ul li:nth-child(5n) {
+    border-right: none;
+}
+
+.newChamWrap .newCham_total .championWrap ul li:last-child {
+    border-right: none;
+}
+
+.newChamWrap .newCham_total .championWrap ul li p {
+    padding: 14px 10px;
+    font-size: 13px;
+}
+
+.newChamWrap .newCham_total .championWrap ul li p:first-child {
+    background: #f2f2f2;
+    font-weight: bold;
+    font-size: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.newChamWrap .newCham_total .championWrap ul li p:last-child {
+    height: 40px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ccc;
+    line-height: 40px;
+    box-sizing:unset
+}
+
+.newChamWrap .newCham_total .championWrap .championBox {
+    margin-bottom: 20px;
+}
+
+.newChamWrap .newCham_total .championWrap .championBox > p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.clearfix:after{ content:''; clear:both; display:block; }
+
+@media(max-width:1080px){
+    
+    .newChamWrap .newCham_statics .newcham_statics_box{ width:100%; margin:10px 0; float:none; height:auto; }
+}
+
+@media(max-width:780px){
+    .newChamWrap .newCham_total .championWrap .championBox{ min-width:780px; overflow-x:auto; }
+}

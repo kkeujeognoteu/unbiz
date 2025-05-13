@@ -1,0 +1,78 @@
+body, html{ font-size:16px; }
+div, h1, h2, h3, h4, h5, h6, span, p, ul, li, a{ padding:0; margin:0; }
+li, a{ list-style:none; }
+select{ border:1px solid #d3d3d3; }
+.wrap{ max-width:780px; margin:0 auto; }
+
+
+/* common */
+.team_A{ background:#028513; color:#fff; }
+.team_B{ background:#023c85; color:#fff; }        
+
+.bracket_cont .brack_team_player .brack_player:before{ content:''; position:absolute; width:27%; background:transparent; box-sizing: border-box; border-right:1px solid #a6a6a6; right:-27%; }
+
+.bracket_cont .brack_team_player .player_1st:before{ height:106%; top:50%; border-top:1px solid #a6a6a6; }
+.bracket_cont .brack_team_player .player_2nd:before{ height:103%; bottom:50%; border-bottom:1px solid #a6a6a6; }
+/* 우승자 표시 */
+.bracket_cont .brack_team_player .brack_player.win1st { border-right:2px solid #003eff; box-shadow:3px 3px 3px rgba(0,0,0,.3); }
+.bracket_cont .brack_team_player .brack_player.win1st:before{ border-top:2px solid #003eff; border-right:2px solid #003eff;}
+
+.bracket_cont .brack_team_player .brack_player.win2nd { position:relative; border-right:2px solid #003eff; box-shadow:3px 3px 3px rgba(0,0,0,.3); }
+.bracket_cont .brack_team_player .brack_player.win2nd:before{ border-bottom:2px solid #003eff; border-right:2px solid #003eff; }
+.bracket_cont .brack_team_win{ position:relative; margin-left:0; width:32%; }
+.bracket_cont .brack_team_win .player_3nd:after{ content:''; position:absolute; width:20%; height:1px; background:#a6a6a6; left:-20%; top:50%; }
+.bracket_cont .brack_team_win .player_3nd.win:after{ height:2px; background:#003eff; }
+
+
+
+/* bracket */
+.bracket{ margin-top:30px; }
+.bracket_cont h2{ font-size:16px; text-align:center; word-break:keep-all; }
+.bracket_cont h2 span{ display:block; font-size:20px; font-weight:600; color:#0713b5; padding-top:5px; }
+.bracket_cont .brack_slt{ display:flex; }
+.bracket_cont .brack_slt select, .bracket_cont .brack_slt button{ margin-left:auto; height:30px; }
+.bracket_cont .brack_slt select{ width:100%; margin-right:10px; }
+.bracket_cont .brack_slt button{ width:20%; background:#777; color:#fff; border:1px solid #777; }
+
+/* header */
+.bracket_round{ margin-top:30px; }
+.bracket_round ul{ display:flex; justify-content:space-between; align-items:center; }
+.bracket_round li{ cursor:pointer; }
+.bracket_round li:nth-child(2){ width:calc(100% - 60px); text-align:center; font-size:16px; font-weight:800; }
+.bracket_round .prev, .bracket_round .next{ text-indent:-99999px; }
+.bracket_round .prev{ background:url(images/left-arrow.png)no-repeat; width:20px; height:20px; background-size:cover; }
+.bracket_round .next{ background:url(images/right-arrow.png)no-repeat; width:20px; height:20px; background-size:cover; }
+.bracket_round select{ width:100%; text-align:center; border:none; padding:10px; font-size:16px; font-weight:600; box-sizing:border-box; -webkit-appearance:none; -moz-appearance: none; appearance: none; }
+
+/* 대진표 리스트 */
+.brack_team { margin-top:30px; }
+.brack_team .brack_teamList{ display:flex; align-items:center; justify-content:center; width:100%; }
+.brack_team .brack_teamList + .brack_teamList{ margin-top:30px; }
+.brack_team .brack_teamList .brack_team_player{ width:72%; }
+
+.brack_team .brack_teamList .brack_player p{ font-size:13px; }
+.brack_team .brack_teamList .brack_player{ position:relative; display:table; border:1px solid #a6a6a6; width:72%; }
+.brack_team .brack_teamList .brack_player + .brack_player{ margin-top:20px; }
+
+.brack_team .brack_teamList .brack_player .brack_teample{ display:table-cell; vertical-align:middle; width:40px; text-align:center; padding:10px 0; box-sizing:border-box; }
+.brack_team .brack_teamList .brack_player .brack_playerCont{ border-left:1px solid #a6a6a6; font-size:13px; }
+.brack_team .brack_teamList .brack_player .brack_playerCont > div{ padding:10px 5px; }
+.brack_team .brack_teamList .brack_player .brack_playerCont .brack_teamName{ border-top:1px solid #a6a6a6; }
+
+.brack_team .brack_teamList .brack_time{ margin:5px 0; width:72%; text-align:center; padding:10px 5px; box-sizing:border-box; }
+.brack_team .brack_teamList .brack_time p{ font-weight:600; }
+
+.brack_team .brack_teamList .player_3nd{ width:100%; box-shadow:3px 3px 3px rgba(0,0,0,.3); }
+.brack_team .brack_teamList .player_3nd .brack_teample{ width:40px; }
+.brack_team .brack_teamList .player_3nd .brack_playerCont{ width:100%; border-left:0; text-align:center; }
+
+@media(max-width:320px){
+    .bracket_cont .brack_team_player{ width:65%; }
+    .brack_team_win{ width:35%; }
+    .brack_team_win:after{ width:17%; left:-17%; }
+    .bracket_cont .win2nd:before, .bracket_cont .player_2nd:before, .bracket_cont .player_1st:before{ width:20%; right:-20%; }
+    .bracket_cont .brack_player .brack_teample{ width:20%; font-size:12px; }
+    .bracket_cont .player_3nd .brack_teample{ width:100%; }
+    .bracket_cont .brack_player.player_1st, .bracket_cont .brack_player.player_2nd{ width:76%; }
+    .bracket_cont .brack_player .brack_playerCont p{ font-size:12px; }
+}

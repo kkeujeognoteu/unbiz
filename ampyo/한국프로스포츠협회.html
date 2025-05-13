@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://175.117.50.24:18305/adm/report/list -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="shortcut icon" href="data:image/x-icon" type="image/x-icon">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta property="fb:app_id" content="979202502115745">
+	<meta property="og:site_name" content="한국프로스포츠협회">
+	<meta property="og:title" content="">
+	<meta property="og:url" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="">
+	<meta name="naver-site-verification" content="543134fdd34fec32a9571a4fade4477e5ddf3c62">
+	<title>한국프로스포츠협회</title>
+	<link rel="stylesheet" href="./한국프로스포츠협회_files/style.css">
+
+	<script type="text/javascript" src="./한국프로스포츠협회_files/jquery-1.12.4.min.js.다운로드"></script>
+	<script type="text/javascript" src="./한국프로스포츠협회_files/moment.min.js.다운로드"></script>
+	<script type="text/javascript" src="./한국프로스포츠협회_files/common.js.다운로드"></script>
+
+	<script type="text/javascript" src="./한국프로스포츠협회_files/vue.js.다운로드"></script>
+	<script type="text/javascript" src="./한국프로스포츠협회_files/pagingDesign.js.다운로드"></script>
+	<!--   <script type="text/javascript" src="/resources/adm/js/vuwgoodtable.js"></script> -->
+
+	<script type="text/javascript" src="./한국프로스포츠협회_files/daterangepicker.min.js.다운로드"></script>
+	<link rel="stylesheet" type="text/css" href="./한국프로스포츠협회_files/daterangepicker.css">
+
+
+<script type="text/javascript">
+	let app;
+	$(document).ready(function () {
+		app = new Vue({
+			el: "#app",
+			components: { paging : pagingTemplate },
+			data: function () {
+				return {
+					search : {
+						pageSize : 10,
+						total : 0,
+						pageNo: 0,
+						pageStartNo : 0,
+					},
+					searchInfo : {
+						reportTitle : '',
+						reportName : '',
+						reportTel : '',
+						reportEmail : '',
+						collectionDate : '',
+						collectionDateStr : '', // 수집일
+						collectionDateEnd : '',
+						sports : '', // 대상종목
+						originalPrice : '', // 정가
+						sellerId : '', // 판매자아이디
+						site : '', // 사이트
+						url : '', // 사이트 url
+						homeTeam : '',
+						awayTeam : '',
+						seatText : '', // 좌석
+						seatYn: false, // 좌석여부
+						gameDate : '',
+						gameDateStr : '',
+						gameDateEnd : '',
+						cnt : '', // 판매대수
+						salePrice : '', // 판매가
+					},
+					code : {
+						teams :[],
+						agencys : [],
+						excelCols : [],
+					},
+					list :[],
+					select : {
+						downType : 'select',
+						seq : [],
+						excelCol : [
+							{cd : 'COLLECTION_DATE', nm : '작성일' , type : ""},
+							{cd : 'SITE', nm : '판매 사이트' , type : ""},
+							{cd : 'URL', nm : '판매 사이트 URL' , type : ""},
+							{cd : 'WRITE_DATE', nm : '판매글 날짜' , type : ""},
+							{cd : 'SPORTS_BAK', nm : '종목' , type : ""},
+							{cd : 'HOME_NAME', nm : '홈팀' , type : ""},
+							{cd : 'AWAY_NAME', nm : '원정팀' , type : ""},
+							{cd : 'GAME_DATE', nm : '경기일' , type : ""},
+							{cd : 'ORIGINAL_PRICE', nm : '판매가' , type : "int"},
+							{cd : 'SALE_PRICE', nm : '판매 가격' , type : "int"},
+							{cd : 'CNT', nm : '매수' , type : "int"},
+							{cd : 'SELLER_ID', nm : '판매자 아이디' , type : ""},
+							{cd : 'SEAT_TEXT', nm : '좌석 ' , type : ""},
+							{cd : 'SEAT_YN', nm : '좌석 확인 여부' , type : ""},
+							{cd : 'ORIGINAL_FILE_NAME', nm : '파일명' , type : ""},
+						],
+						watermark : false,
+					},
+					modal : {
+						isOpen : false,
+					}
+				}
+			},
+			created: function () {
+				const self = this;
+				self.init(self);
+			},
+			mounted: function () {
+				const self = this;
+				comm.makeDatePicker('collectionDate', self);
+				comm.makeDatePicker('gameDate', self);
+			},
+			filters: {
+				currency: function (value) {
+					value = value ? value : 0;
+					let num = new Number(value);
+					return num == 0 ? '' : num.toFixed(0).replace(/(\d)(?=(\d{3})+(?:\.\d+)?$)/g, "$1,")
+				},
+				dateFormatMMDDHHMM: function (value) {
+					if(value){
+						return moment(value).format("MM-DD HH:MM");
+					} else {
+						return '';
+					}
+				},
+				showLittle: function (value) {
+					if(value.length > 20){
+						value = value.substr(0,20)+'...';
+					}
+					return value;
+				},
+			},
+			methods: {
+				init : function (self) {
+					let teams = comm.ajax('/code/team', {seasonCode : 2024});
+					self.code.teams = teams;
+					self.code.agencys = json.agencys;
+					self.code.excelCols = json.excelCol2;
+
+					self.doBase().resetSearch();
+					self.doBase().getList();
+				},
+				searchIndex: function (index) {
+					var self = this;
+					self.search.pageNo = index;
+					self.doBase().getList();
+				},
+				goDetail: function(info) {
+					comm.movePage('/adm/report/detail', [{nm : 'seq' , val : info.SEQ}], 'POST');
+				},
+				doBase : function () {
+					var self  = this;
+					return {
+						getList : function( type ){
+							if(type =='s')
+								self.search.pageNo = 0 ;
+							self.search.pageSize = Number(self.search.pageSize);
+							self.search.pageStartNo = Number(self.search.pageNo) * Number(self.search.pageSize);
+							let param = $.extend({}, self.search, self.searchInfo);
+							let resp = comm.ajax('/adm/report/list/list', param);
+							self.search.total = resp.total;
+							self.list = resp.total > 0 ? resp.list  : [];
+						},
+						resetSearch : function() {
+							let str = moment().subtract(30, 'days').format('YYYY-MM-DD');
+							let end = moment().add(30, 'days').format('YYYY-MM-DD');
+							self.searchInfo = {
+								collectionDate : str + ' ~ ' + end,
+								collectionDateStr : str, // 수집일
+								collectionDateEnd : end,
+								sports : '', // 대상종목
+								// originalPrice : '', // 정가
+								sellerId : '', // 판매자아이디
+								site : '', // 사이트
+								url : '', // 사이트 url
+								homeTeam : '',
+								awayTeam : '',
+								seatText : '', // 좌석
+								seatYn: false, // 좌석여부
+								gameDate :  str + ' ~ ' + end,
+								gameDateStr : str,
+								gameDateEnd : end,
+								cnt : '', // 판매대수
+								salePrice : '', // 판매가
+							}
+						},
+						changeAgency : function () {
+							self.searchInfo.homeTeam = '';
+							self.searchInfo.awayTeam = '';
+						},
+						getCodeNm : function(type, key, txt, val) {
+							let fInfo = self.code[type].find(function(e) {
+								return e[key] == val;
+							});
+							return fInfo  ? fInfo[txt] : '';
+						},
+						modal : function(isOpen) {
+							self.modal.isOpen = isOpen;
+						},
+					}
+				},
+				doFile : function() {
+					var self  = this;
+					return {
+						showExcel : function(downType) {
+							self.select.downType = downType;
+							if(self.select.seq.length > 0 || downType == 'all'){
+								self.doBase().modal(true);
+							} else {
+								alert('다운받을 항목을 선택해주세요.');
+							}
+						},
+						doExcelDown : function () {
+							var form_post = document.createElement("form");
+							form_post.setAttribute("method", "POST");
+							form_post.setAttribute("action", "/adm/report/excel");
+							form_post.setAttribute("target", "");
+							form_post.setAttribute("id", "downForm");
+							document.body.appendChild(form_post);
+
+							var titleIn = document.createElement("input");
+							titleIn.setAttribute("type", "hidden");
+							titleIn.setAttribute("name", "title");
+							titleIn.setAttribute("value", JSON.stringify(self.select.excelCol));
+							form_post.appendChild(titleIn);
+
+							let infoParam = {
+								fileName : '암표거래_암표신고_'+ moment().format('YYYY_MM_DD')
+								, downType : self.select.downType
+								, watermark : self.select.watermark ? 'Y' : 'N'
+							};
+							if(infoParam.downType == 'all'){
+								infoParam = $.extend(infoParam , self.searchInfo);
+							} else {
+								infoParam['seqList'] = self.select.seq;
+							}
+							var infoIn = document.createElement("input");
+							infoIn.setAttribute("type", "hidden");
+							infoIn.setAttribute("name", "info");
+							infoIn.setAttribute("value", JSON.stringify(infoParam));
+							form_post.appendChild(infoIn);
+
+							var listIn = document.createElement("input");
+							listIn.setAttribute("type", "hidden");
+							listIn.setAttribute("name", "list");
+							listIn.setAttribute("value", JSON.stringify(self.select.seq));
+							form_post.appendChild(listIn);
+							form_post.submit();
+							$('#downForm').remove();
+						},
+						isWatermark : function () {
+							let arr = self.select.excelCol.filter(function(e) {
+								return ['REPORT_NAME', 'REPORT_TEL','REPORT_EMAIL'].indexOf(e.cd) > -1;
+							});
+							return arr.length > 0;
+						}
+					}
+				}
+			}
+		});
+	});
+</script></head>
+
+<body>
+	<div class="monitoringWrap">
+		<div id="app" class="wrap"><div class="headeer"><div class="header_wrap"><div><h1 class="logo"><img src="./한국프로스포츠협회_files/logo.png"> <span>암표 신고 관리자</span></h1></div> <div class="nav"><ul><li><a href="http://175.117.50.24:18305/adm/monitoring/list"><i></i> 암표거래 모니터링 </a></li> <li><a href="http://175.117.50.24:18305/adm/report/list"><i></i> 암표신고 관리 </a></li> <li><a href="http://175.117.50.24:18305/admin/monitoring/main"> 구버전으로 가기 </a></li></ul></div> <div class="logout"><a><img src="./한국프로스포츠협회_files/logout.png"> 로그아웃  </a></div></div></div> <!----> <div class="contents"><div class="monitoring"><div class="common_title"><h2 class="title">암표신고 관리</h2> <ul class="sub_nav"><li><img src="./한국프로스포츠협회_files/home.png"></li> <li><a href="http://175.117.50.24:18305/adm/report/list#"> Home </a></li> <li>/</li> <li class="acitve"><a href="http://175.117.50.24:18305/adm/report/list#"> 암표신고 관리 </a></li></ul></div> <div class="filter_wrap"><div class="filter_title"><p> 검색필터 <img src="./한국프로스포츠협회_files/filter_search.png"></p></div> <div class="filter_cont"><div class="filter_table"><div class="tb_row"><div class="th"><h3>신고제목</h3></div> <div class="td"><div class="t1 inp01"><input type="text"></div></div> <div class="th"><h3>성명</h3></div> <div class="td"><div class="t1 inp01"><input type="text"> <label>&nbsp;&nbsp;&nbsp;</label></div></div> <div class="th"><h3>전화번호</h3></div> <div class="td"><div class="t1 inp01"><input type="text"> <label>&nbsp;&nbsp;&nbsp;</label></div></div> <div class="th"><h3>이메일</h3></div> <div class="td"><div class="t1 inp01"><input type="text"> <label>&nbsp;&nbsp;&nbsp;</label></div></div></div> <div class="tb_row"><div class="th"><h3>작성일</h3></div> <div class="td"><div class="t1 collectionDate"><div class="collectionDate_cont"><input type="text" id="collectionDate" readonly="readonly" class="inp1"> <label class="collectionDate_icon"><img src="./한국프로스포츠협회_files/date.png"></label></div></div></div> <div class="th"><h3>좌석 위치</h3></div> <div class="td"><div class="t1 seating inpWidth"><div><input type="text"></div> <div class="seating_chk"><input type="checkbox" id="seatYn" value="Y"> <label for="seatYn"></label></div></div></div> <div class="th"><h3>판매자 아이디</h3></div> <div class="td"><div class="t1 inp02 inpWidth"><input type="text"></div></div></div> <div class="tb_row"><div class="th"><h3>경기일정</h3></div> <div class="td"><div class="t1 collectionDate"><div class="collectionDate_cont"><input type="text" id="gameDate" readonly="readonly" class="inp1"> <label class="collectionDate_icon"><img src="./한국프로스포츠협회_files/date.png"></label></div></div></div> <div class="th"><h3>대상종목</h3></div> <div class="td"><div class="t1 searchSports inpWidth"><select><option value="">선택</option> <option value="A01">K리그</option><option value="A02">KBO</option><option value="A03">KBL</option><option value="A04">WKBL</option><option value="A05">KOVO</option><option value="A06">KPGA</option><option value="A07">KLPGA</option></select></div></div> <div class="th"><h3>홈팀</h3></div> <div class="td"><div class="t1 searchSports inpWidth"><select><option value="">선택</option> <!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></select></div></div> <div class="th"><h3>원정팀</h3></div> <div class="td"><div class="t1 searchSports inpWidth"><select><option value="">선택</option> <!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></select></div></div></div> <div class="tb_row"><div class="th"><h3>판매사이트</h3></div> <div class="td"><div class="t1 site"><select><option value="">선택</option> <option value="당근마켓">당근마켓</option> <option value="티켓베이">티켓베이</option> <option value="번개장터">번개장터</option> <option value="트위터">트위터</option> <option value="중고나라">중고나라</option> <option value="기타">기타</option></select> <input type="text"></div></div> <div class="th"><h3>판매가</h3></div> <div class="td"><div class="t1 inp01"><input type="number"> <label>원</label></div></div> <div class="th"><h3>티켓정가</h3></div> <div class="td"><div class="t1 inp01"><input type="number"> <label>원</label></div></div> <div class="th"><h3>매수</h3></div> <div class="td"><div class="t1 inp01"><input type="number"> <label>개</label></div></div></div></div> <div class="filter_button"><button type="button" class="btn black_btn">검색어 초기화</button> <button type="button" class="btn blue_btn">검색</button></div></div></div> <div class="monitoring_board"><div class="boardBtn"><div class="left"><div class="total">총 : <span>8 </span>개</div> <select><option value="10">10개</option> <option value="50">50개</option> <option value="100">100개</option> <option value="200">200개</option></select> <!----> <button class="btn down03 down"><img src="./한국프로스포츠협회_files/exelAll.png"> 전체
+								</button></div></div> <table class="monitoringTable"><colgroup><col width="2%"> <col width="3%"> <col width="%"> <col width="5%"> <col width="8%"> <col width="8%"> <col width="8%"> <col width="5%"> <col width="8%"> <col width="10%"> <col width="4%"> <col width="4%"> <col width="3%"> <col width="7%"> <col width="7%"> <col width="3%"> <col width="5%"></colgroup> <tbody><tr><th></th> <th>No.</th> <th>신고제목</th> <th>성명</th> <th>전화번호</th> <th>이메일</th> <th>작성일</th> <th>판매사이트</th> <th>URL</th> <th>경기</th> <th>티켓 정가</th> <th>판매가</th> <th>매수</th> <th>판매자 아이디</th> <th colspan="2">좌석위치 여부</th> <th>파일</th></tr> <tr><td><input type="checkbox" name="seq" value="10"></td> <td class="hand">8</td> <td class="hand">ㅇㄴㅁㄹㄹㅇㄴㅁ</td> <td class="hand">김긱미</td> <td class="hand">154-8856-4564</td> <td class="hand">2154646@nate.com</td> <td class="hand">2024-03-20 16:44:23</td> <td class="hand">중고나라</td> <td class="hand">https://web.joongna.com/</td> <td class="hand">
+											04-04 21:04
+											KOVO <br>
+											IBK기업은행 알토스
+											VS
+											인천 대한항공 점보스
+										</td> <td class="hand">123</td> <td class="hand">88,446</td> <td class="hand">2</td> <td class="hand">ㅁㄴㄹㅇㄴㅁ</td> <td class="hand">  </td> <td class="hand"><!----></td> <td><a href="http://175.117.50.24:18305/resources/upload/re_report/20240320/9206e8de-e34e-4c56-8bea-b61ae2b22cb2.png" download="free-icon-homepage-1822873.png">파일다운</a></td></tr><tr><td><input type="checkbox" name="seq" value="9"></td> <td class="hand">7</td> <td class="hand">ㄹㅇㄴㅁ</td> <td class="hand">ㅇㄹㅇㄴㅁ</td> <td class="hand">456-456-4564</td> <td class="hand">313256@yahoo.com</td> <td class="hand">2024-03-20 16:43:20</td> <td class="hand">중고나라</td> <td class="hand">https://m.bunjang.co.kr/produc</td> <td class="hand">
+											03-26 16:03
+											KBL <br>
+											울산 현대모비스 피버스
+											VS
+											원주 DB 프로미
+										</td> <td class="hand">5,000</td> <td class="hand">NaN</td> <td class="hand">1,321</td> <td class="hand">231</td> <td class="hand"> 2156 </td> <td class="hand"><!----></td> <td><a href="http://175.117.50.24:18305/resources/upload/re_report/20240320/711e0612-c731-48d0-8a78-253a9fcde851.png" download="free-icon-broken-shield-3375160.png">파일다운</a></td></tr><tr><td><input type="checkbox" name="seq" value="8"></td> <td class="hand">6</td> <td class="hand">ㄹㅇㄴㅁ</td> <td class="hand">ㄹㅇㄴㅁㄹㅇㄴ</td> <td class="hand">123-1561-4565</td> <td class="hand">23302@hanmail.net</td> <td class="hand">2024-03-20 16:41:45</td> <td class="hand">당근마켓</td> <td class="hand">https://www.daangn.com/article</td> <td class="hand">
+											03-22 20:03
+											KBO <br>
+											NC다이노스
+											VS
+											KT위즈
+										</td> <td class="hand">1,234</td> <td class="hand">123,456</td> <td class="hand">3</td> <td class="hand">ㅇㄹㄻ</td> <td class="hand"> 123 </td> <td class="hand"><img alt="" src="./한국프로스포츠협회_files/icon_checkbox.png"></td> <td><a href="http://175.117.50.24:18305/resources/upload/re_report/20240320/29a9e96b-8572-4b4e-8ab5-77c8c7f65020.png" download="free-icon-ad-block-8943235.png">파일다운</a></td></tr><tr><td><input type="checkbox" name="seq" value="7"></td> <td class="hand">5</td> <td class="hand">신고</td> <td class="hand">신신신</td> <td class="hand">010-2064-5216</td> <td class="hand">afdsfdsa@naver.com</td> <td class="hand">2024-03-20 16:25:05</td> <td class="hand">티켓베이</td> <td class="hand"></td> <td class="hand">
+											03-23 14:03
+											KBO <br>
+											KIA타이거즈
+											VS
+											키움히어로즈
+										</td> <td class="hand">14,000</td> <td class="hand">60,000</td> <td class="hand">2</td> <td class="hand">뜌릭</td> <td class="hand"> 53번 </td> <td class="hand"><img alt="" src="./한국프로스포츠협회_files/icon_checkbox.png"></td> <td><a href="http://175.117.50.24:18305/resources/upload/re_report/20240320/a2f94905-6556-42c1-874c-954a466d838c.png" download="IMG_9848.png">파일다운</a></td></tr><tr><td><input type="checkbox" name="seq" value="6"></td> <td class="hand">4</td> <td class="hand">신고합니다</td> <td class="hand">vcfad</td> <td class="hand">010-4879-8789</td> <td class="hand">dfsfds@google.com</td> <td class="hand">2024-03-14 17:54:21</td> <td class="hand">티켓베이</td> <td class="hand">https://www.ticketbay.co.kr/we</td> <td class="hand">
+											03-22 21:03
+											KBO <br>
+											올스타전B
+											VS
+											올스타전A
+										</td> <td class="hand">13,245</td> <td class="hand">156,456</td> <td class="hand">3</td> <td class="hand">fdasfafds</td> <td class="hand">  </td> <td class="hand"><!----></td> <td><a href="http://175.117.50.24:18305/resources/upload/re_report/20240314/60d0fa87-a1cd-486c-88c4-6059a4019481.png" download="20240314_기아타이거즈_K8+121블록+20열+1번,2번.png">파일다운</a></td></tr><tr><td><input type="checkbox" name="seq" value="5"></td> <td class="hand">3</td> <td class="hand">프로농구 </td> <td class="hand">신신신</td> <td class="hand">010-8789-8989</td> <td class="hand">kdsfdsa@naver.com</td> <td class="hand">2024-03-14 17:46:26</td> <td class="hand">트위터</td> <td class="hand">	https://x.com/Yangpa4180/stat</td> <td class="hand">
+											03-17 16:03
+											K리그 <br>
+											대구FC
+											VS
+											수원FC
+										</td> <td class="hand">50,000</td> <td class="hand">100,000</td> <td class="hand">2</td> <td class="hand">@Yangpa4180</td> <td class="hand"> E열 24번 </td> <td class="hand"><img alt="" src="./한국프로스포츠협회_files/icon_checkbox.png"></td> <td><a href="http://175.117.50.24:18305/resources/upload/re_report/20240314/407cff26-ed25-4298-8f4c-d4f433d6828e.png" download="20240314_+울산_W78910.png">파일다운</a></td></tr><tr><td><input type="checkbox" name="seq" value="4"></td> <td class="hand">2</td> <td class="hand">암표암표</td> <td class="hand">뚜식</td> <td class="hand">010-0525-0525</td> <td class="hand">FDFDSA@naver.com</td> <td class="hand">2024-03-07 17:14:24</td> <td class="hand">트위터</td> <td class="hand">https://twitter.com/FCBarcelon</td> <td class="hand">
+											03-23 20:03
+											K리그 <br>
+											울산 HD FC
+											VS
+											안산 그리너스FC
+										</td> <td class="hand">12,345</td> <td class="hand">123,456</td> <td class="hand">1</td> <td class="hand">apfhdapfhd</td> <td class="hand"> N열 123 </td> <td class="hand"><img alt="" src="./한국프로스포츠협회_files/icon_checkbox.png"></td> <td><a href="http://175.117.50.24:18305/resources/upload/re_report/20240307/075760cb-e12c-47c1-bd30-2a779237bafa.png" download="free-icon-checked-5461184.png">파일다운</a></td></tr><tr><td><input type="checkbox" name="seq" value="3"></td> <td class="hand">1</td> <td class="hand">암</td> <td class="hand">신경서</td> <td class="hand">010-2066-6155</td> <td class="hand">ksshin616@gmail.com</td> <td class="hand">2024-03-07 13:52:15</td> <td class="hand">트위터</td> <td class="hand">fdsafd</td> <td class="hand">
+											03-15 01:03
+											KBL <br>
+											서울 SK 나이츠
+											VS
+											울산 현대모비스 피버스
+										</td> <td class="hand">21,212</td> <td class="hand">545,644</td> <td class="hand">2</td> <td class="hand">dafdca</td> <td class="hand"> fdsafdsa </td> <td class="hand"><img alt="" src="./한국프로스포츠협회_files/icon_checkbox.png"></td> <td><a href="http://175.117.50.24:18305/resources/upload/re_report/20240307/1d965779-fe70-4580-9c6f-82a405808013.png" download="Microsoft-Teams-Symbol.png">파일다운</a></td></tr></tbody></table> <div class="paging"><ul><!----> <li class="active"><p>1</p></li> <!----> <!----></ul></div></div></div></div></div>
+	</div>
+
+<div class="daterangepicker ltr show-calendar opensright"><div class="ranges"></div><div class="drp-calendar left"><div class="calendar-table"></div><div class="calendar-time" style="display: none;"></div></div><div class="drp-calendar right"><div class="calendar-table"></div><div class="calendar-time" style="display: none;"></div></div><div class="drp-buttons"><span class="drp-selected">2024-02-25 ~ 2024-04-25</span><button class="cancelBtn btn btn-sm btn-default" type="button">취소</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled" type="button">확인</button> </div></div><div class="daterangepicker ltr show-calendar opensright"><div class="ranges"></div><div class="drp-calendar left"><div class="calendar-table"></div><div class="calendar-time" style="display: none;"></div></div><div class="drp-calendar right"><div class="calendar-table"></div><div class="calendar-time" style="display: none;"></div></div><div class="drp-buttons"><span class="drp-selected">2024-02-25 ~ 2024-04-25</span><button class="cancelBtn btn btn-sm btn-default" type="button">취소</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled" type="button">확인</button> </div></div><div id="fatkun-drop-panel">
+        <a id="fatkun-drop-panel-close-btn">×</a>
+            <div id="fatkun-drop-panel-inner">
+                <div class="fatkun-content">
+                    <svg class="fatkun-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5892"><path d="M494.933333 782.933333c2.133333 2.133333 4.266667 4.266667 8.533334 6.4h8.533333c6.4 0 10.666667-2.133333 14.933333-6.4l2.133334-2.133333 275.2-275.2c8.533333-8.533333 8.533333-21.333333 0-29.866667-8.533333-8.533333-21.333333-8.533333-29.866667 0L533.333333 716.8V128c0-12.8-8.533333-21.333333-21.333333-21.333333s-21.333333 8.533333-21.333333 21.333333v588.8L249.6 475.733333c-8.533333-8.533333-21.333333-8.533333-29.866667 0-8.533333 8.533333-8.533333 21.333333 0 29.866667l275.2 277.333333zM853.333333 874.666667H172.8c-12.8 0-21.333333 8.533333-21.333333 21.333333s8.533333 21.333333 21.333333 21.333333H853.333333c12.8 0 21.333333-8.533333 21.333334-21.333333s-10.666667-21.333333-21.333334-21.333333z" p-id="5893"></path></svg>
+                    <div class="fatkun-title">Drag and Drop</div>
+                    <div class="fatkun-desc">The image will be downloaded</div>
+                </div>
+            </div>
+    </div></body></html>

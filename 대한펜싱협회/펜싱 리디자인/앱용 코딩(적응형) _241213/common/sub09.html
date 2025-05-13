@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/sub.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <title>증명서 발급</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/slick-theme.css"/>
+
+</head>
+<body>
+    <div class="appWrap">
+        <!-- header -->
+        <header class="header">
+            <h1 class="logo">
+                <a href=""></a>
+            </h1>
+            <div class="hamb_nav">
+                <input id="check" type="checkbox">
+                <label for="check">
+                    <div class="menu_hamb">
+                        <span class="hamburguer"></span>
+                    </div>
+                </label>
+                <div class="ul_mb1">
+                    <div class="ulmbLogin">
+                        <ul class="languge_ul">
+                            <li class="kor">
+                                <a>KOR</a>
+                            </li>
+                            <li class="eng">
+                                <a>ENG</a>
+                            </li>
+                        </ul>
+                        <p>
+                            <img src="../images/logo.png">
+                        </p>
+                        <ul>
+                            <li>
+                                <a>로그인</a>
+                            </li>
+                            <li>
+                                <a>회원가입</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ulmb_menu">
+                        <div class="ulmb_L">
+                            <ul>
+                                <li class="active">
+                                    <a href="#tab1" class="tabBtn">협회소개</a>
+                                </li>
+                                <li>
+                                    <a href="#tab2" class="tabBtn">대회정보</a>
+                                </li>
+                                <li>
+                                    <a href="#tab3" class="tabBtn">선수정보</a>
+                                </li>
+                                <li>
+                                    <a href="#tab4" class="tabBtn">증명서</a>
+                                </li>
+                                <li>
+                                    <a href="#tab5" class="tabBtn">미디어</a>
+                                </li>
+                                <li>
+                                    <a href="#tab6" class="tabBtn">커뮤니티</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ulmb_R">
+                            <ul id="tab1" class="tabCont">
+                                <li class="active">
+                                    <a href="">인사말</a>
+                                </li>
+                                <li>
+                                    <a href="">연혁</a>
+                                </li>
+                                <li>
+                                    <a href="">목적 및 기능</a>
+                                </li>
+                                <li>
+                                    <a href="">제 규정(경영 공시)</a>
+                                </li>
+                                <li>
+                                    <a href="">조직도</a>
+                                </li>
+                                <li>
+                                    <a href="">임원소개</a>
+                                </li>
+                                <li>
+                                    <a href="">산하단체·시도연맹</a>
+                                </li>
+                                <li>
+                                    <a href="">찾아오시는 길</a>
+                                </li>
+                            </ul>
+                            <ul id="tab2" class="tabCont">
+                                <li>
+                                    <a href="">일정/결과</a>
+                                </li>
+                                <li>
+                                    <a href="">참가신청</a>
+                                </li>
+                                <li>
+                                    <a href="">SK Telecom 그랑프리</a>
+                                </li>
+                                <li>
+                                    <a href="">부산 주니어 월드컵</a>
+                                </li>
+                            </ul>
+                            <ul id="tab3" class="tabCont">
+                                <li>
+                                    <a href="">선수안내</a>
+                                </li>
+                                <li>
+                                    <a href="">팀안내</a>
+                                </li>
+                                <li>
+                                    <a href="">선수등록</a>
+                                </li>
+                                <li>
+                                    <a href="">지도자등록</a>
+                                </li>
+                                <li>
+                                    <a href="">팀등록</a>
+                                </li>
+                            </ul>
+                            <ul id="tab4" class="tabCont">
+                                <li>
+                                    <a href="">증명서발급</a>
+                                </li>
+                            </ul>
+                            <ul id="tab5" class="tabCont">
+                                <li>
+                                    <a href="">공지사항</a>
+                                </li>
+                                <li>
+                                    <a href="">시/도협회 공지</a>
+                                </li>
+                                <li>
+                                    <a href="">행사일정</a>
+                                </li>
+                                <li>
+                                    <a href="">주요뉴스</a>
+                                </li>
+                                <li>
+                                    <a href="">펜싱정보</a>
+                                </li>
+                                <li>
+                                    <a href="">펜싱동영상</a>
+                                </li>
+                                <li>
+                                    <a href="">포토갤러리</a>
+                                </li>
+                                <li>
+                                    <a href="">자료실</a>
+                                </li>
+                            </ul>
+                            <ul id="tab6" class="tabCont">
+                                <li>
+                                    <a href="">자유게시판</a>
+                                </li>
+                                <li>
+                                    <a href="">팬포토</a>
+                                </li>
+                                <li>
+                                    <a href="">Q&A</a>
+                                </li>
+                                <li>
+                                    <a href="">협회에게바란다</a>
+                                </li>
+                                <li>
+                                    <a href="">스포츠윤리센터</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    const tabMenu = document.querySelectorAll(".ulmb_menu .ulmb_L ul li");
+                    const tabContent = document.querySelectorAll(".ulmb_menu .ulmb_R ul");
+
+                    tabMenu.forEach(function(item, index){
+                        item.addEventListener('click', function(e){
+                            
+                            tabContent.forEach(function(content){
+                                e.preventDefault();
+                                content.classList.remove("active");
+                            })
+
+                            tabMenu.forEach(function(content){
+                                content.classList.remove("active");
+                            })
+
+                            tabMenu[index].classList.add("active");
+                            tabContent[index].classList.add("active");
+                        })
+                    })
+                </script>
+            </div>
+        </header>
+        <!-- subVisual -->
+        <div id="sub-visual" class="subPg">
+			<div class="subTop left-wrap">
+                <div class="subVisual">
+                    <p id="titleP" class="title">증명서 발급 신청</p>
+                </div>
+                <div class="left-bottom top_gnb">
+                    <ul class="lnb" id="menuUl">
+                        <li class="home">
+                            <p></p>
+                        </li>
+                        <li id="menu1">
+                            <a href="#none">대회정보</a>
+                            <ul class="gnb_3depth" id="menu1Sub" style="display: none;">
+                                <li><a href="/intro/greet">협회소개</a></li>
+                                <li><a href="/game/compList?code=game">대회정보</a></li>
+                                <li><a href="/player/playerStatusView">선수안내 및 등록</a></li>
+                                <li><a href="/attestation/attestationList">증명서</a></li>
+                                <li><a href="/board/list?code=notice">미디어</a></li>
+                                <li><a href="/board/list?code=free">커뮤니티</a></li>
+                            </ul>
+                        </li>
+                        <li id="menu2"><a href="#none">국내대회일정/결과</a>
+                            <ul class="gnb_3depth" id="menu2Sub" style="display: none;">
+                                <li><a href="/intro/greet">인사말</a></li>
+                                <li><a href="/intro/list?code=history">연혁</a></li>
+                                <li><a href="/intro/object">목적 및 기능</a></li>
+                                <li><a href="/intro/rule">제 규정(경영 공시)</a></li>
+                                <li><a href="/intro/executive">임원소개</a></li>
+                                <li><a href="/intro/federation">산하단체·시도연맹</a></li>
+                                <li><a href="/intro/location">찾아오시는 길</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+			</div>
+		</div>
+        <!-- container -->
+        <div class="subCont">
+            <div class="info_wrap">
+                <div class="img_box">
+                    <img src="../images/attestIcon.png" alt="">
+                </div>
+                <div class="txt_box">
+                    <p class="tit">발급하려는 증명서의 발급처를 선택하세요</p>
+                    <p class="txt"><strong>대한체육회 발행증명서</strong> (경기실적증명서, 국가대표선수 확인서, 국가대표후보선수확인서, 팀등록확인서, 지도자등록확인서, 꿈나무선수확인서, 청소년선수확인서)는 하단 <strong>대한체육회 실적 발급</strong>을 이용바랍니다</p>
+                </div>
+                <div class="btnStyle">
+                    <button type="button" onclick="window.open('https://g1.sports.or.kr/index.do','_blank')" class="back_red bord20">실급발급 바로가기</button>
+                </div>
+            </div>
+            
+            <div class="tableCont mt30">
+                <div class="subTable01 subTableCom">
+                    <table>
+                        <colgroup>
+                            <col width="60%">
+                            <col width="20%">
+                            <col width="20%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th><p>증명서 종류</p></th>
+                                <th><p>발급 수수료</p></th>
+                                <th><p>신청하기</p></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><p class="text_left">지도실적증명서</p></td>
+                                <td><p>무료</p></td>
+                                <td><p class="btnStyle"><button class="back_red bord20 width100">신청</button></p></td>
+                            </tr>
+                            <tr>
+                                <td><p class="text_left">지도실적증명서</p></td>
+                                <td><p>무료</p></td>
+                                <td><p class="btnStyle"><button class="back_red bord20 width100">신청</button></p></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <footer id="footer">
+            <div class="bannerArea">
+                <div class="bannerAreaWrap">
+                    <div class="bannerAreaLsit">
+                        <a href="">
+                            <img src="../images/bannerArea01.png" />
+                        </a>
+                    </div>
+                    <div class="bannerAreaLsit">
+                        <a href="">
+                            <img src="../images/bannerArea02.png" />
+                        </a>
+                    </div>
+                    <div class="bannerAreaLsit">
+                        <a href="">
+                            <img src="../images/bannerArea03.png" />
+                        </a>
+                    </div>
+                    <div class="bannerAreaLsit">
+                        <a href="">
+                            <img src="../images/bannerArea04.png" />
+                        </a>
+                    </div>
+                    <div class="bannerAreaLsit">
+                        <a href="">
+                            <img src="../images/bannerArea05.png" />
+                        </a>
+                    </div>
+                    <div class="bannerAreaLsit">
+                        <a href="">
+                            <img src="../images/bannerArea06.png" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footWrap">
+                    <div class="ftTop">
+                        <ul>
+                            <li class="personal">
+                                <a href="">개인정보처리방침</a>
+                            </li>
+                            <li>
+                                <a href="">이용약관</a>
+                            </li>
+                            <li>
+                                <a href="">사이트맵</a>
+                            </li>
+                            <li>
+                                <a href="">Contanct Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footCont">
+                        <div class="footLogo">
+                            <img src="../images/footLogo.png" alt="푸터 로고">
+                        </div>
+                        <div class="footTo">
+                            <div>
+                                <p>
+                                    <span class="footTxt">TODAY</span>
+                                    <span class="num">1,078</span>
+                                </p>
+                                <p>
+                                    <span class="footTxt">MONTH</span>
+                                    <span class="num">46,055</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="footInfo">
+                            <p>(05540) 서울특별시 송파구 올림픽로 424 올림픽공원 SK올림픽핸드볼경기장 104호</p>
+                            <p>TEL. (02) 420-4289 / FAX. (02) 425-5284</p>
+                            <p class="copy">COPYRIGHT&copy;2024 KOREAN FENCING FEDERATION.ALL RIGHTS RESERVED.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/slick.min.js"></script>
+    <script>
+        /* 일정 결과 */
+        var swiper = new Swiper(".schSwiper", {
+            slidesPerView: 6,
+            spaceBetween: 30,
+            centeredSlides: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                // 768px 이상에서는 3개의 슬라이드를 보여줌
+                280: {
+                    slidesPerView: 1.3,
+                    spaceBetween: 20,
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                },
+                780: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                },
+                1080: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                },
+            }
+
+        });
+        
+        /* 스폰서 */
+        var swiper = new Swiper(".sponSwiper", {
+            slidesPerView: 1,
+            centeredSlides: true,
+            autoplay:true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+
+        
+        /* 국가대표 소개 */
+        $('.fencPlayer').slick({
+            centerMode: true,
+            centerPadding: '60px',
+            slidesToShow: 3,
+            dots : true,
+            autoplay: true, //자동실행
+            arrows: true, //좌우버튼
+            responsive: [
+                {
+                breakpoint: 780,
+                settings: {
+                    arrows: true, //좌우버튼
+                    centerMode: true,
+                    centerPadding: '2rem',
+                    slidesToShow: 3,
+                }
+                },
+                {
+                breakpoint: 480,
+                settings: {
+                    arrows: true, //좌우버튼
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 1,
+                }
+                }
+            ]
+        });
+
+        let sw = 0;
+        $('.btn_pause').click(function(){
+        if(sw==0){
+            $('.btn_pause').addClass('on');
+            $('.fencPlayer').slick('slickPause')
+            sw = 1;
+        }else{
+            $('.btn_pause').removeClass('on');
+            $('.fencPlayer').slick('slickPlay')
+            sw = 0;
+            }
+        });
+
+        /* footArea */
+        $('.bannerAreaWrap').slick({
+            centerPadding: '60px',
+            slidesToShow: 7,
+            responsive: [
+                {
+                breakpoint: 780,
+                    settings: {
+                        centerPadding: '40px',
+                        slidesToShow: 3,
+                        arrows:false,
+                    }
+                },
+                {
+                breakpoint: 480,
+                settings: {
+                    centerPadding: '40px',
+                    slidesToShow: 3,
+                    arrows:false,
+                }
+                }
+            ]
+        });
+    </script>
+    <script>
+        /* top ranked fencers 탭 */
+        const fencerTabMenu = document.querySelectorAll(".fencersTab > ul > li");
+        const fencerTabContent = document.querySelectorAll(".fenTabCont");
+
+        fencerTabMenu.forEach(function(item, index){
+            fencerTabContent[0].classList.add("active");
+            item.addEventListener('click', function(e){
+                
+                fencerTabContent.forEach(function(content){
+                    e.preventDefault();
+                    content.classList.remove("active");
+                })
+
+                fencerTabMenu.forEach(function(content){
+                    content.classList.remove("active");
+                })
+
+                fencerTabMenu[index].classList.add("active");
+                fencerTabContent[index].classList.add("active");
+            })
+        })
+    </script>
+</body>
+</html>

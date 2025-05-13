@@ -1,0 +1,65 @@
+/* header */
+#header .topHead{ width:1440px; margin:auto; padding:34px 0 16px; display:flex; align-items:center; }
+#header .topHead .logo{ background:url(../images/main/logo.svg)no-repeat; background-size:contain; width:230px; height:60px; }
+#header .topHead .logo a{ display:block; width:100%; height:100%; }
+#header .headTit{ margin-left:60px; }
+#header .headTit p, #header .headTit span{ font-size:20px; font-weight:600; font-style:italic }
+#header .headTit span{ color:#005AAA }
+#header .topPlay{ position:relative; margin-left:auto; margin-right:10px; }
+#header .topPlay:after{ content:''; position:absolute; width:100px; height:135px; background:url(../images/main/character.png)no-repeat; background-size:contain; top:-16px; left:-60px; }
+#header .topPlay .boxing{ position:absolute; top:-15px; left:30px; padding:3px 20px; background:#005AAA; color:#fff; font-weight:500; font-size:16px; border:1px solid #fff; box-shadow:0 1px 2px rgba(0,0,0,.2); border-radius:50px; }
+#header .topPlay ul{ display:flex; gap:25px; background:#ECECEC; padding:20px 38px 7px; border-radius:0 50px 50px 0; }
+#header .topPlay ul .playNm{ color:#005AAA; padding-top:10px; font-size:15px; font-weight:500 }
+
+#header .loginWrap { display:flex; background:#ececec; padding:22px 20px; border-radius:50px; }
+#header .loginWrap ul{ display:flex; align-items:center; }
+#header .loginWrap ul li a{ font-weight:600; }
+#header .loginWrap ul .login a{ color:#005AAA; }
+#header .loginWrap ul .logout{ position:relative; padding-left:8px; margin-left:8px; }
+#header .loginWrap ul .logout:after{ content:''; position:absolute; width:1px; height:14px; top:3px; left:0; background:#999; }
+#header .loginWrap ul .logout a{ color:#666; }
+
+#header .topPlay ul, #header .loginWrap{ height:76px; }
+
+.fixed{ position:fixed; left:0; top:0; width:100%; }
+#header .menuBar{ position:relative; display:flex; flex-direction:column; padding:10px 0; background:#005AAA; justify-content:center }
+#header .menuBar .topMenu{ position:relative; display:flex; justify-content:space-around; align-items:center; width:1440px; margin:auto; }
+#header #menu .lst{ display:flex; }
+#header #menu .lst li{ width:170px;padding:0 10px; }
+#header #menu .lst li a{ position:relative; color:#fff; line-height:50px; font-size:20px; font-weight:500; transition:.5s; }
+#header #menu .lst li a:after{ content:''; position:absolute; bottom:-20px; left:50%; width:0; height:3px; background:#cacaca; transition:.3s; }
+#header #menu .lst li:hover a:after{ left:0; width:100%; }
+
+#header .menuBar .allMenu{ background:#fff; padding:16px 0 32px; display:none; }
+#header .menuBar .allMenu .allMenuWrap{ width:1440px; display:flex; margin:auto; }
+#header .menuBar .allMenu .allMenuWrap li{ width:170px; padding:0 10px; }
+#header .menuBar .allMenu .allMenuWrap li a{ position:relative; font-size:16px; font-weight:500; line-height:40px; color:#333; transition:.5s }
+#header .menuBar .allMenu .allMenuWrap li a:after{ content:''; position:absolute; bottom:0; left:50%; width:0; height:1px; background:#005AAA; transition:.3s; }
+#header .menuBar .allMenu .allMenuWrap li:hover a{ color:#005AAA }
+#header .menuBar .allMenu .allMenuWrap li:hover a:after{ left:0; width:100%; }
+
+#header .menuBar.active .allMenu{ display:block; position:absolute; top:70px; left:0; width:100%; z-index:99; box-shadow:0 2px 2px rgba(0,0,0,.2); }
+#header .menuBar.active #menu .lst li{ top:0; text-align:left; }
+
+/* 버튼 */
+#header .rightMenu{ display:flex; align-items:center;}
+#header .rightMenu .btn_login.login{display:block;width:50px;height:50px;background-image:url('/images/main/icon_login.png');background-position:center;background-repeat:no-repeat;}
+#header .rightMenu .btn_login.logout{display:block;width:50px;height:50px;background-image:url('/images/main/icon_logout.png');background-position:center;background-repeat:no-repeat;}
+#header .rightMenu .btn_mypage{display:block;width:50px;height:50px;background-image:url('/images/main/mypage.png');background-position:center;background-repeat:no-repeat;}
+
+#header .rightMenu .btn_menu{  position:relative; background:transparent; border:none;  cursor:pointer; }
+#header .rightMenu .btn_menu .line{ position:absolute; background:#fff; margin:0; width:30px; height:2px; top:50%; left:0; margin-top:-1px; } 
+#header .rightMenu .btn_menu .line{ display: none; }
+#header .rightMenu .btn_menu:before{ content:''; position:absolute; width:30px; top:12px; left:10px; bottom:12px; border-top:2px solid #fff; border-bottom:2px solid #fff; }
+#header .rightMenu .btn_menu:after{ content:''; position:absolute; width:25px; height:2px; top:50%; left:15px; margin-top:-1px; background:#fff; }
+#header .rightMenu [class^=btn]{width:50px; height:50px; text-align:center; line-height:50px;}
+
+#header .menuBar.active .rightMenu .btn_menu .line{ opacity:0; }
+#header .menuBar.active .rightMenu .btn_menu:before{ top:50%; left:50%; width:28px; height:2px; margin:-1px 0 0 -14px; border:none; background:#fff; transform:rotate(45deg); }
+#header .menuBar.active .rightMenu .btn_menu:after{ top:50%; left:50%; width:28px; height:2px; margin:-1px 0 0 -14px; border:none; background:#fff; transform:rotate(-45deg); }
+
+/* 로그아웃 */
+#header .logoutWrap{ display:flex; flex-direction: column; justify-content: center; padding:20px 38px; background:#ECECEC; border-radius:50px; gap:5px; }
+#header .logoutWrap ul{ background:none; padding:0; height:auto; }
+#header .logoutWrap p{ color:#666 }
+

@@ -1,0 +1,50 @@
+h1, h2, h3, h4, h5, h6, p, div, ul, li, span, strong{ margin:0; padding:0; box-sizing: border-box; font-size:11pt }
+
+li{ list-style:none; }
+
+#crape{ background:url(images/penBack.svg)no-repeat; }
+
+body { width: 100%; height: 100%; margin: 0; padding: 0; background-color: #ddd; }
+* { box-sizing: border-box; -moz-box-sizing: border-box; }
+.paper { width: 210mm; min-height: 297mm; padding: 20mm; /* set contents area */ margin: 10mm auto; border-radius: 5px; background:#fff url(images/penBack.svg)no-repeat;  background-size:95%; background-position:center; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); }
+
+.content { padding: 10mm 5mm; height: 257mm; }
+.paper + .paper .paperTable { margin-top:0 !important; }
+.paper .content h1{ text-align:center; letter-spacing:20pt; font-size:18pt; }
+.paper .content .paperCont h2{ margin-top:35pt; }
+.paper .content .paperCont ul{ margin-top:10pt; }
+.paper .content .paperCont ul li{ margin:10px 0; }
+.paper .content .paperCont ul li span{ display:inline-block; vertical-align:top; font-size:10pt }
+.paper .content .paperCont ul li .letspac{ letter-spacing:10px; }
+.paper .content .paperCont ul li .paperTitle{ position:relative; text-align:justify; width:100px; height:26px; padding-right:15px; }
+.paper .content .paperCont ul li .paperTitle:after{ content:''; display:inline-block; width:100%; }
+.paper .content .paperCont ul li .paperTitle:before{ content:':'; position:absolute; right:5px; }
+.paper .content .paperCont .paperTable{ /*height:240px;*/ margin-top:18pt; }
+.paper .content .paperCont table{ width:100%; border-collapse: collapse; border:1px solid #000; page-break-inside:avoid; -webkit-region-break-inside:avoid; position:relative; }
+.paper .content .paperCont table th, .paper .content .paperCont table td{ text-align:center; border-left:1px solid #000; border-top:1px solid #000; padding:7pt; }
+.paper .content .paperCont table th p{ font-size:11pt }
+.paper .content .paperCont table td{ height:45px; padding:0 3pt; }
+.paper .content .paperCont table td p{ font-size:10pt; line-height:1.3; }
+
+.paper .content .paperCont .paperFoot{ margin-top:40pt; text-align:center; }
+.paper .content .paperCont .paperFoot p + p{ margin-top:20pt; }
+.paper .content .paperCont .paperFoot p  span{ padding-right:15px; }
+.paper .content .paperCont .foot{ margin-top:35pt; }
+.paper .content .paperCont .foot span{ letter-spacing: 0; font-size:18pt; padding-right:10pt }
+
+@page {
+
+size: A4;
+
+margin: 0;
+
+}
+
+@media print {
+
+html, body { width: 210mm; height: 297mm; background: #fff; margin:0; padding:0; position:relative; }
+
+.paper { margin: 0; border: initial; border-radius: initial; width: initial; min-height: initial; box-shadow: initial; background: initial; background:#fff url(images/penBack.svg)no-repeat; background-size:95%; background-position:center; page-break-after: always; }
+
+
+}

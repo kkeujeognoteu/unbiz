@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NanumSquareNeoLight';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.ttf) format("truetype");
+}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 400;src: url(../NotoSans/NotoSans-Regular.woff2) format('woff2'),url(../NotoSans/NotoSans-Regular.woff) format('woff'),url(../NotoSans/NotoSans-Regular.otf) format('opentype');}
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 500;src: url(../NotoSans/NotoSans-Medium.woff2) format('woff2'),url(../NotoSans/NotoSans-Medium.woff) format('woff'),url(../NotoSans/NotoSans-Medium.otf) format('opentype');}
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 600;src: url(../NotoSans/NotoSans-Bold.woff2) format('woff2'),url(../NotoSans/NotoSans-Bold.woff) format('woff'),url(../NotoSans/NotoSans-Bold.otf) format('opentype');}
+

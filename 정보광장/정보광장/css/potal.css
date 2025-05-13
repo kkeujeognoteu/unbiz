@@ -1,0 +1,13 @@
+.subNavWRap{ background:#f5f5f5; height:45px; }
+.subNavWRap .subNav { width:1440px; margin:0 auto; }
+.subNavWRap .subNav ul{ display:flex; }
+.subNavWRap ul li{ padding:12px 30px;  }
+.subNavWRap ul li:first-child{ padding:12px;  }
+.subNavWRap ul li:nth-child(-n+3){ border-left:1px solid #cacaca; }
+
+.subNavWRap ul .home{ width:47px; }
+.subNavWRap ul .home .homeIcon{ position:relative; }
+.subNavWRap ul .home .homeIcon:after{ content:''; position:absolute; width:20px; height:20px; background:url(../images/sub/home.png)no-repeat; background-size:contain; top:5px; }
+
+#header.subHeader{ padding-bottom:1px; }
+.subPg{ padding:180px 0 50px; }

@@ -1,0 +1,42 @@
+/* 메인 콘텐츠 - 아이콘 */
+.section01 .mainCont .mainList li.ic_01 a p{ background:url(../images/main/icon/icon01.png)no-repeat; background-position:center top;  }
+.section01 .mainCont .mainList li.ic_02 a p{ background:url(../images/main/icon/icon02.png)no-repeat; background-position:center top; }
+.section01 .mainCont .mainList li.ic_03 a p{ background:url(../images/main/icon/icon03.png)no-repeat; background-position:center top; }
+.section01 .mainCont .mainList li.ic_04 a p{ background:url(../images/main/icon/icon04.png)no-repeat; background-position:center top; }
+
+@media(max-width:1080px){
+    .section01 .mainCont .mainList li.ic_01 a p{ background-position:left center; background-size:40px; }
+    .section01 .mainCont .mainList li.ic_02 a p{ background-position:left center; background-size:45px;  }
+    .section01 .mainCont .mainList li.ic_03 a p{ background-position:left center; background-size:40px;  }
+    .section01 .mainCont .mainList li.ic_04 a p{ background-position:left center; background-size:45px;  }
+}
+
+@media(max-width:780px){
+    .section01 .mainCont .mainList li.ic_01 a p{ background-size:35px }
+    .section01 .mainCont .mainList li.ic_02 a p{ background-size:40px }
+    .section01 .mainCont .mainList li.ic_03 a p{ background-size:38px; background-position:left 7px top 3px; }
+    .section01 .mainCont .mainList li.ic_04 a p{ background-size:40px; background-position:left 10px top 10px }
+}
+@media(max-width:380px){
+    .section01 .mainCont .mainList li.ic_01 a p{ background-position:top 15px center; }
+    .section01 .mainCont .mainList li.ic_02 a p{ background-position:top 15px center; }
+    .section01 .mainCont .mainList li.ic_03 a p{ background-position:top 15px center; }
+    .section01 .mainCont .mainList li.ic_04 a p{ background-position:top 20px center; }
+}
+
+/* 금주의 일정 아이콘 */
+.klg{ background:url(../images/main/KLEAGUE.svg)no-repeat; }
+.kbo{ background:url(../images/main/KBO.svg)no-repeat; }
+.kbl{ background:url(../images/main/KBL.svg)no-repeat; background-size:25px; }
+.wkbl{ background:url(../images/main/WKBL.svg)no-repeat; background-size:25px; }
+.kpga{ background:url(../images/main/player06.png)no-repeat; background-size:25px; }
+.klpga{ background:url(../images/main/play02.png)no-repeat; background-size:16px; }
+.kovo{ background:url(../images/main/player07.png)no-repeat; background-size:25px; }
+
+@media(max-width:780px){
+    .klg, .kbo, .kbl, .wkbl, .kpga, .klpga, .kovo{ background:none; }
+}
+
+@media(max-width:380px){
+
+}

@@ -1,0 +1,107 @@
+html, body{ margin:0; padding:0; width:100%; height:100%; overflow-x:hidden; }
+div, h1, h2, h3, h4, h5, h6, p, span, ul, li, a, button, strong, dl, dt, dd, input, button{ margin:0; padding:0; font-size:16px; font-family:"Noto Sans", sans-serif; font-weight:400; color:#333; box-sizing:border-box; letter-spacing:-.7px; line-height:1.2; }
+li, a{ list-style:none; text-decoration:none; color:#333 }
+.blue{ color:#005AAA }
+input{ box-sizing: border-box; }
+input:focus{ border:none; outline:none; }
+input[type="file"]{ margin-top:10px }
+table{ border-collapse:collapse; width:100%; }
+table th, table td{ padding:18px 0; }
+button{ border:none; }
+
+.btn{ border:none; border-radius:10px; font-weight:500; background:transparent; cursor:pointer; }
+.skyblueBtn{ background:#005AAA; color:#fff; padding:7px 30px; }
+.blueBtn{ background:#072153; color:#fff; padding:7px 30px; }
+.mintBtn{ background:#98CBE5; color:#fff; padding:7px 30px; }
+.fontBlue{ color:#005AAA; }
+.fontBlack{ color:#000 }
+.fontred{ color:#E72120 }
+
+.font16{ font-size:16px; }
+.font18{ font-size:18px; }
+.font20{ font-size:20px; }
+.font24{ font-size:24px; }
+.font28{ font-size:28px; }
+
+.font500{ font-weight:500; }
+.font600{ font-weight:600; }
+
+.mgTop10{ margin-top:10px; }
+.mgTop20{ margin-top:20px; }
+.mgTop40{ margin-top:40px; }
+
+.text-Left{ text-align:left; }
+.text-center{ text-align:center; }
+
+.backf8f8f8{ background:#f8f8f8; }
+.lineHeight{ line-height:1.5; }
+
+
+.width900{ width:900px; margin:60px auto 0; }
+
+.subComMt{ margin-top:60px; }
+
+/* pageing */
+.pageing{ margin-top:80px; }
+.pageing ul{ display:flex; align-items:center; justify-content: center; gap:10px; }
+.pageing ul li{ display:flex; align-items:center; justify-content: center; cursor:pointer; width:36px; height:36px; }
+.pageing ul li:hover, .pageing ul li.active{ background:#005AAA; border-radius:100%; }
+.pageing ul li:hover p, .pageing ul li.active p{ color:#fff; transition:.3s; }
+.pageing ul .arrw{ border:1px solid #cacaca; border-radius:100%;  }
+.pageing ul .arrw:hover{ background:none; }
+.pageing ul .arrw i{ display:inline-block; width:10px; height:12px; background-size:cover; }
+.pageing ul .inPrev i{ background:url(../images/inPrev.png)no-repeat; }
+.pageing ul .prev{ margin-right:10px; }
+.pageing ul .prev i{ background:url(../images/prev.png)no-repeat; }
+.pageing ul .inNext i{ background:url(../images/inPrev.png)no-repeat; transform:rotate(-180deg); }
+.pageing ul .next{ margin-right:10px; }
+.pageing ul .next i{ background:url(../images/prev.png)no-repeat; transform:rotate(-180deg); }
+
+/* 찾아오시는길 */
+.mapCont{ margin-top:70px; }
+.mapImg .mapLanding{ margin:auto; }
+
+/* 탭메뉴 */
+.infoTab{ display:flex; flex-wrap:wrap; border-top:1px solid #cacaca; border-left:1px solid #cacaca; }
+.infoTab li{ width:20%; text-align:center; border:1px solid #cacaca; color:#005AAA; background:#fff; padding:15px 0; cursor:pointer; border-top:1px solid transparent; border-left:1px solid transparent; }
+.infoTab li:hover, .infoTab li.active{ background:#005AAA; border:1px solid #005AAA; color:#fff; transition:.5s; }
+
+/* 탭메뉴02 */
+.tabMenu01{ display:flex; flex-wrap:wrap; border-bottom:1px solid #000; }
+.tabMenu01 li{ width:15%; background:#f5f5f5; color:#999; border:1px solid #cacaca; border-bottom:0; padding:15px 0; text-align:center; cursor:pointer; border-right:0; }
+.tabMenu01 li:last-child{ border-right:1px solid #cacaca }
+.tabMenu01 li.active{ position:relative; background:#fff; border:1px solid #cacaca; color:#000; font-weight:600; border-bottom:0; border-top:0; }
+.tabMenu01 li.active:after{ content:''; position:absolute; width:100%; height:2px; background:#005AAA; top:0; left:0; }
+
+/* select box */
+.noticSelect p{ display:flex; justify-content: space-between; align-items:center; width:148px; padding:10px 20px; border:1px solid #cacaca; background:#fff; color:#666; cursor:pointer; }
+.noticSelect .slctBox{ display:none; position:absolute; }
+.slctBox02{ display:flex; gap:10px; justify-content: center; }
+.singleRvTxt { padding-top:20px; margin-top:20px; border-top:1px solid #cacaca; }
+.singleRvTxt p{ line-height:1.5; font-size:18px; padding:3px 0; }
+
+/* 라디오박스 , 체크박스 */
+.form-group{ display:flex; gap:15px; }
+.form-group .i-checks1 label{ line-height:1.5; padding:5px; }
+.form-group .i-checks1 label input[type="radio"], .form-group .i-checks1 label span{ vertical-align:middle; line-height:1; padding-left:3px }
+.form-group .i-checks1 label input[type="radio"]{ appearance: none; border:max(2px, 0.1rem) solid #cacaca; border-radius:100%; width:25px; height:25px; transition:border 0.3s ease-in-out; }
+.form-group .i-checks1 label input[type="radio"]:checked{ border:0.4rem solid #005AAA; }
+.form-group .i-checks1 label input[type="radio"]:focus-visible{ outline-offset:max(2px, 0.1rem); outline:max(2px, 0.1rem) dotted tomato; }
+.form-group .i-checks1 label input[type="radio"]:hover{ box-shadow:0 0 0 max(4px, 0.2rem) #F0F6FC; cursor:pointer; }
+.form-group .i-checks1 label input[type="radio"]:hover + span{ cursor:pointer; }
+.form-group .i-checks1 label input[type="radio"]:disabled{ background-color:#F0F6FC; box-shadow:none; opacity:0.7; cursor:not-allowed; }
+.form-group .i-checks1 label input[type="radio"]:disabled + span{ opacity: 0.7; cursor:not-allowed }
+
+.form-group .i-checks1 label input[type="checkbox"], .form-group .i-checks1 label span{ vertical-align:middle; line-height:1; padding-left:3px }
+.form-group .i-checks1 label input[type="checkbox"]{ appearance: none; border:max(2px, 0.1rem) solid #cacaca; width:25px; height:25px; transition:border 0.3s ease-in-out; }
+.form-group .i-checks1 label input[type="checkbox"]:checked{ border:0.4rem solid #005AAA; }
+.form-group .i-checks1 label input[type="checkbox"]:focus-visible{ outline-offset:max(2px, 0.1rem); outline:max(2px, 0.1rem) dotted tomato; }
+.form-group .i-checks1 label input[type="checkbox"]:hover{ box-shadow:0 0 0 max(4px, 0.2rem) #F0F6FC; cursor:pointer; }
+.form-group .i-checks1 label input[type="checkbox"]:hover + span{ cursor:pointer; }
+.form-group .i-checks1 label input[type="checkbox"]:disabled{ background-color:#F0F6FC; box-shadow:none; opacity:0.7; cursor:not-allowed; }
+.form-group .i-checks1 label input[type="checkbox"]:disabled + span{ opacity: 0.7; cursor:not-allowed }
+
+.porvinArrBtn{ position:absolute; width:100%; top:50%; left:0; transform:translateY(-50%); }
+.porvinArrBtn button{ position:absolute; background:rgba(255,255,255,.3) url(../images/left-arrow.png) no-repeat center; width:50px; height:50px; border-radius:100%; background-size:20px; cursor:pointer; text-indent:-9999px }
+.porvinArrBtn .next{ right:10px; transform:rotate(180deg) }
+.porvinArrBtn .prev{ left:10px; }

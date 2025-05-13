@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    
+    <link href="./css/fonts.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
+    <link href="./css/common.css" rel="stylesheet">
+    <link href="./css/header.css" rel="stylesheet">
+    <link href="./css/footer.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>복싱</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+    </style>
+    <script>
+        /* 상단바 */
+        function tglAllMenu(){
+            $('.btn_menu').toggleClass('dimm');
+            if($('.menuBar').hasClass('active')){
+                $('.menuBar').removeClass('active')
+            }else {
+                $('.menuBar').addClass('active');
+                $('.btn_menu').addClass('active');
+            }
+
+            var lnb = $("#lnb").offset().top;
+            $(window).scroll(function() {
+                var window = $(this).scrollTop();
+
+                if(lnb <= window) {
+                $("#lnb").addClass("fixed");
+                } else {
+                $("#lnb").removeClass("fixed");
+                }
+            })  
+        }
+    </script>
+</head>
+<body>
+    <div class="contain">
+        <header id="header" class="header" >
+            <div class="topHead">
+                <h1 class="logo">
+                    <a href="#" href="#"></a>
+                </h1>
+                <div class="headTit">
+                    <p><span class="blue">국제화</span>를 통한 국위선양!!</p>
+                    <p><span class="blue">국민 스포츠</span>로서의 복싱!!</p>
+                </div>
+                <div class="topPlay">
+                    <p class="boxing">복싱가족&#126;</p>
+                    <ul>
+                        <li>
+                            <p class="playTxt">오늘</p>
+                            <p class="playNm">308명</p>
+                        </li>
+                        <li>
+                            <p class="playTxt">월간</p>
+                            <p class="playNm">308명</p>
+                        </li>
+                        <li>
+                            <p class="playTxt">연간</p>
+                            <p class="playNm">308명</p>
+                        </li>
+                        <li>
+                            <p class="playTxt">전체</p>
+                            <p class="playNm">308명</p>
+                        </li>
+                        <li>
+                            <p class="playTxt">경기인등록인 수</p>
+                            <p class="playNm">308명</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="loginWrap logoutWrap">
+                    <ul>
+                        <li class="login">
+                            <a href="#" href="">회원정보 변경 및 탈퇴</a>
+                        </li>
+                        <li class="logout">
+                            <a href="#" href="">로그아웃</a>
+                        </li>
+                    </ul>
+                    <p>안녕하세요 강지훈님 반갑습니다.</p>
+                </div>
+            </div>
+            <div class="menuBar" id="lnb">
+                <div class="topMenu">
+                    <div id="menu">
+                        <ul class="lst">
+                            <li class="dl" id="gnb1">
+                                <a href="#">협회소개</a>
+                                
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">종목소개</a>
+                                
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">선수소개</a>
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">대회정보</a>
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">공인체육관</a>
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">복싱단증</a>
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">커뮤니티</a>
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">자료실</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rightMenu">
+                        <!-- <button type="button" class="navRight pc">데이터 활용 신청</button> -->
+                        <button type="button" class="btn_menu close" onclick="tglAllMenu();">
+                            <span class="line"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="allMenu">
+                    <div class="allMenuWrap">
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="./contents/sub02.html">환영사</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">연혁</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="./contents/sub05.html">임원소개</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">역대 회장</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">시도협회</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">상임심판</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">비젼</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">찾아오시는길</a>
+                            </li>
+                        </ul>
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="./contents/sub01.html">유래</a>
+                            </li>
+                        </ul>
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="#">국가대표 명단</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">역대 메달리스트</a>
+                            </li>
+                        </ul>
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="./contents/sub07.html">행사일정</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">경기결과</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="./contents/sub06.html">대회정보</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="./contents/sub08.html">경기동영상</a>
+                            </li>
+                        </ul>    
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="#">공인체육관이란?</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">공인체육관 신청</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">공인체육관 확인</a>
+                            </li>
+                        </ul>
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="#">복싱단증</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">단증심사공고 및 신청</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">단증재발급 신청</a>
+                            </li>
+                        </ul> 
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="#">공지사항</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">주택특별공급</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">묻고답하기</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">경영공시</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">경조사</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">채용공고</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">포토갤러리</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">선수고충처리센터</a>
+                            </li>
+                        </ul> 
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="#">정관</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">경기규칙</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">각종규정</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="section">
+            <div class="mainaAsideL floatMenu">
+                <div class="asideSpons floatAsideBox">
+                    <p class="asideLst">
+                        <img src="./images/main/asideSponsor01.png" alt="스폰서 이미지">
+                    </p>
+                </div>
+            </div>
+            <div class="mainaAsideR floatMenu">
+                <div class="asideSns floatAsideBox">
+                    <a href="#" class="asideLst">
+                        <img src="./images/main/youtube.png" alt="스폰서 이미지">
+                    </a>
+                    <a href="#" class="asideLst">
+                        <img src="./images/main/instergram.png" alt="스폰서 이미지">
+                    </a>
+                    <a href="#" class="asideLst">
+                        <img src="./images/main/facebook.png" alt="스폰서 이미지">
+                    </a>
+                </div>
+            </div>
+            <!-- 비주얼 -->
+            <div class="visualWrap">
+                <div class="visual">
+                    <div class="visualLeft">
+                        <div class="visualSlide">
+                            <img src="./images/main/visual01.jpg" alt="비주얼 이미지">
+                        </div>
+                    </div>
+                    <div class="visualRight">
+                        <p class="visualImg">
+                            <img src="./images/main/bannerLogo.png">
+                        </p>
+                        <p class="visualTxt">
+                            생활체육 복싱의 활성화를 통한<br>복싱 저변 확대 및 국민체력 향상!<br>엘리트 복싱의 지원, 육성을 통한 국위선양!<br> <strong>대한복싱협회</strong>가 함께합니다.
+                        </p>
+                    </div>
+                    <div class="topQick">
+                        <ul>
+                            <li>
+                                <a href="#"><img src="./images/main/icon01.png">경기인 등록</a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="./images/main/icon02.png">증명서 발급</a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="./images/main/icon03.png">대회 참가 신청</a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="./images/main/icon04.png">공인 체육관</a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="./images/main/icon05.png">복싱단증</a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="./images/main/icon06.png">공식 후원사</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 컨텐츠 -->
+            <div class="mainWrap">
+                <div class="mainCont">
+                    <div class="news">
+                        <h2>복싱협회 News</h2>
+                        <div class="mainCom newsCont">
+                            <div class="newsLight">
+                                <div class="comTab">
+                                    <ul>
+                                        <li class="active">전체</li>
+                                        <li>공지사항</li>
+                                        <li>주택특별공급</li>
+                                        <li>경기결과</li>
+                                        <li>채용공고</li>
+                                        <li>경조사</li>
+                                    </ul>
+                                    <a href="#">더보기 <img src="./images/pluse.png" alt="더보기"></a>
+                                </div>
+                                <div class="newTb">
+                                    <div class="newLst">
+                                        <p class="td1">경기결과</p>
+                                        <p class="td2">World Boxing Cup Ulaanbaatar 2024 대회 대진표 및 결과 안내</p>
+                                        <p class="td3">2024.09.23</p>
+                                    </div>
+                                    <div class="newLst">
+                                        <p class="td1">공지사항</p>
+                                        <p class="td2">한약재 도핑방지 실태조사협조요청에 따른 홍보</p>
+                                        <p class="td3">2024.09.23</p>
+                                    </div>
+                                    <div class="newLst">
+                                        <p class="td1">공지사항</p>
+                                        <p class="td2">2026 아시아경기대회 대비 국가대표(엘리트) 선발일정 및 엘리트, U19, U17 선발체급 안내</p>
+                                        <p class="td3">2024.09.23</p>
+                                    </div>
+                                    <div class="newLst">
+                                        <p class="td1">경기결과</p>
+                                        <p class="td2">World Boxing Cup Ulaanbaatar 2024 대회 대진표 및 결과 안내</p>
+                                        <p class="td3">2024.09.23</p>
+                                    </div>
+                                    <div class="newLst">
+                                        <p class="td1">공지사항</p>
+                                        <p class="td2">한약재 도핑방지 실태조사협조요청에 따른 홍보</p>
+                                        <p class="td3">2024.09.23</p>
+                                    </div>
+                                    <div class="newLst">
+                                        <p class="td1">공지사항</p>
+                                        <p class="td2">2026 아시아경기대회 대비 국가대표(엘리트) 선발일정 및 엘리트, U19, U17 선발체급 안내</p>
+                                        <p class="td3">2024.09.23</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="newsRight">
+                                <img src="./images/main/image01.png" alt="기부참여하기">
+                                <button type="button" class="btn "><i></i>기부 참여하기</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="schadule">
+                        <h2>대회일정</h2>
+                        <div class="mainCom scheduleCont">
+                            <div class="comTab">
+                                <ul>
+                                    <li class="active">전체</li>
+                                    <li>국내대회</li>
+                                    <li>생활대회</li>
+                                    <li>국제대회</li>
+                                </ul>
+                                <a href="#">더보기 <img src="./images/pluse.png" alt="더보기"></a>
+                            </div>
+                            <div class="schBox">
+                                <div class="schLst">
+                                    <p class="title">국내대회</p>
+                                    <div class="schContBox">
+                                        <h3>제3회대한체육회장배 전국생활복싱대회 개최 안내</h3>
+                                        <div class="schDays">
+                                            <p>
+                                                <strong>기간</strong>
+                                                <span>2024.08.24 ~ 2024.08.25</span>
+                                            </p>
+                                            <p>
+                                                <strong>장소</strong>
+                                                <span>인천 선학체육관</span>
+                                            </p>
+                                        </div>
+                                        <div class="schMore">
+                                            <a href="#" class="">상세보기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="schLst">
+                                    <p class="title">국내대회</p>
+                                    <div class="schContBox">
+                                        <h3>2024 전국복싱우승권대회 개최 안내</h3>
+                                        <div class="schDays">
+                                            <p>
+                                                <strong>기간</strong>
+                                                <span>2024.08.24 ~ 2024.08.25</span>
+                                            </p>
+                                            <p>
+                                                <strong>장소</strong>
+                                                <span>인천 선학체육관</span>
+                                            </p>
+                                        </div>
+                                        <div class="schMore">
+                                            <a href="#" class="">상세보기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="schLst">
+                                    <p class="title">국내대회</p>
+                                    <div class="schContBox">
+                                        <h3>2024 경찰청장기전국복싱대회 개최 안내</h3>
+                                        <div class="schDays">
+                                            <p>
+                                                <strong>기간</strong>
+                                                <span>2024.08.24 ~ 2024.08.25</span>
+                                            </p>
+                                            <p>
+                                                <strong>장소</strong>
+                                                <span>인천 선학체육관</span>
+                                            </p>
+                                        </div>
+                                        <div class="schMore">
+                                            <a href="#" class="">상세보기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="schLst">
+                                    <p class="title">국내대회</p>
+                                    <div class="schContBox">
+                                        <h3>제54회 대통령배전국시도 복싱대회(중_고_대_일) 개최 안내</h3>
+                                        <div class="schDays">
+                                            <p>
+                                                <strong>기간</strong>
+                                                <span>2024.08.24 ~ 2024.08.25</span>
+                                            </p>
+                                            <p>
+                                                <strong>장소</strong>
+                                                <span>인천 선학체육관</span>
+                                            </p>
+                                        </div>
+                                        <div class="schMore">
+                                            <a href="#" class="">상세보기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="provincial border_top_blue">
+                                <img src="./images/mainBanner.png">
+                                <div class="porvinWrap">
+                                    <div class="title">
+                                        <p>시도협회</p>
+                                    </div>
+                                    <div class="porvinBox">
+                                        <div class="provLst">
+                                            <p>서울특별시복싱협회</p>
+                                            <a href="">바로가기</a>
+                                        </div>
+                                        <div class="provLst">
+                                            <p>부산광역시복싱협회</p>
+                                            <a href="">바로가기</a>
+                                        </div>
+                                        <div class="provLst">
+                                            <p>대구광역시복싱협회</p>
+                                            <a href="">바로가기</a>
+                                        </div>
+                                        <div class="provLst">
+                                            <p>인천광역시복싱협회</p>
+                                            <a href="">바로가기</a>
+                                        </div>
+                                        <div class="provLst">
+                                            <p>광주광역시복싱협회</p>
+                                            <a href="">바로가기</a>
+                                        </div>
+                                    </div>
+                                    <div class="provincialNotice">
+                                        <p class="provNoticeTitle">시도협회 단증심사 공고</p>
+                                        <ul>
+                                            <li>
+                                                <p>
+                                                    <strong>[공지]</strong>
+                                                    <span>서울특별시복싱협회 9월 승단심사 안내</span>
+                                                </p>
+                                                <p class="provNotiveDate">2024.09.01</p>
+                                            </li>
+                                        </ul>
+                                        <a href="#">더보기 <i></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery">
+                        <h2>복싱협회 갤러리</h2>
+                        <ul  class="galleryWRap">
+                            <li>
+                                <a href="#">
+                                    <div class="glThmb">
+                                        <img src="./images/thumb01.jpg">
+                                    </div>
+                                    <div class="glTxt">
+                                        <p>2024 파리올림픽 임애지 선수 메달 포상금 수여식</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="lstCss">
+                                <a href="#">
+                                    <div class="glThmb">
+                                        <img src="./images/thumb01.jpg">
+                                    </div>
+                                    <div class="glTxt">
+                                        <p>2024 파리올림픽 임애지 선수 메달 포상금 수여식</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="lstCss">
+                                <a href="#">
+                                    <div class="glThmb">
+                                        <img src="./images/thumb01.jpg">
+                                    </div>
+                                    <div class="glTxt">
+                                        <p>2024 파리올림픽 임애지 선수 메달 포상금 수여식</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="glThmb">
+                                        <img src="./images/thumb01.jpg">
+                                    </div>
+                                    <div class="glTxt">
+                                        <p>2024 파리올림픽 임애지 선수 메달 포상금 수여식</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="glThmb">
+                                        <img src="./images/thumb01.jpg">
+                                    </div>
+                                    <div class="glTxt">
+                                        <p>2024 파리올림픽 임애지 선수 메달 포상금 수여식</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="lstCss">
+                                <a href="#">
+                                    <div class="glThmb">
+                                        <img src="./images/thumb01.jpg">
+                                    </div>
+                                    <div class="glTxt">
+                                        <p>2024 파리올림픽 임애지 선수 메달 포상금 수여식</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="lstCss">
+                                <a href="#">
+                                    <div class="glThmb">
+                                        <img src="./images/thumb01.jpg">
+                                    </div>
+                                    <div class="glTxt">
+                                        <p>2024 파리올림픽 임애지 선수 메달 포상금 수여식</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="glThmb">
+                                        <img src="./images/thumb01.jpg">
+                                    </div>
+                                    <div class="glTxt">
+                                        <p>2024 파리올림픽 임애지 선수 메달 포상금 수여식</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                    <div class="charge border_top_blue">
+                        <div class="title">
+                            <p>수수료</p>
+                        </div>
+                        <ul class="chargeWrap">
+                            <li>
+                                <p class="chgTitle">단체등록</p>
+                                <div class="chargeTxt">
+                                    <p><strong>신규등록</strong> : 100,000 원</p>
+                                    <p><strong>재등록</strong> : 50,000 원</p>
+                                    <p><strong>입금계좌번호</strong> : <span>하나은행</span> 224-910084-51404</p>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="chgTitle">선수등록</p>
+                                <div class="chargeTxt">
+                                    <p><strong>선수등록 수수료</strong> : 1인당 100,000원</p>
+                                    <p><strong>입금계좌번호</strong> : <span>하나은행</span> 224-890022-25304</p>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="chgTitle">지도자등록</p>
+                                <div class="chargeTxt">
+                                    <p><strong>지도자등록 수수료</strong> :  1인당 100,000원</p>
+                                    <p><strong>입금계좌번호</strong> : <span>하나은행</span> 224-910075-34304</p>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="chgTitle">선수관리 담당자등록</p>
+                                <div class="chargeTxt">
+                                    <p><strong>심판등록 수수료</strong> : 1인당 100,000원</p>
+                                    <p><strong>입금계좌번호</strong> : <span>하나은행</span> 224-910071-94404</p>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="chgTitle">공인 체육관</p>
+                                <div class="chargeTxt">
+                                    <p><strong>등록 수수료</strong> : 100,000 원</p>
+                                    <p><strong>재등록</strong> : 50,000 원</p>
+                                    <p><strong>입금계좌번호</strong> : <span>하나은행</span> 224-890027-35104</p>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="chgTitle">지도자등록</p>
+                                <div class="chargeTxt">
+                                    <p><strong>지도자등록 수수료</strong> : 1인당 100,000원</p>
+                                    <p><strong>입금계좌번호</strong> : <span>하나은행</span> 224-910075-34304</p>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="chgTitle">각종 증명서</p>
+                                <div class="chargeTxt">
+                                    <p><strong>발급수수료</strong> : 1부당 - 2,000원</p>
+                                    <p><strong>상장재발급</strong> : 1부당 - 3,000원</p>
+                                    <p><strong>입금계좌번호</strong> : <span>하나은행</span> 224-890019-32504</p>
+                                    <p><strong>우편물배송(등기)</strong> : (등기) - 3,000원</p>
+                                    <p class="right">(소포) - 5,000원 [별도추가]</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sponWrap">
+                        <div class="sponGroup sponCom">
+                            <p>관련단체</p>
+                            <ul>
+                                <li>
+                                    <a><img src="./images/spoon_01.jpg" alt="스폰서"></a>
+                                </li>
+                                <li>
+                                    <a><img src="./images/spoon_02.jpg" alt="스폰서"></a>
+                                </li>
+                                <li>
+                                    <a><img src="./images/spoon_03.jpg" alt="스폰서"></a>
+                                </li>
+                                <li>
+                                    <a><img src="./images/spoon_04.jpg" alt="스폰서"></a>
+                                </li>
+                                <li>
+                                    <a><img src="./images/spoon_05.jpg" alt="스폰서"></a>
+                                </li>
+                                <li>
+                                    <a><img src="./images/spoon_06.jpg" alt="스폰서"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sponsor sponCom">
+                            <p>후원사</p>
+                            <ul>
+                                <li>
+                                    <a><img src="./images/spoon_01.jpg" alt="스폰서"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+            <div class="footer">
+                <div class="footLogo">
+                    <img src="./images/footLogo.png" alt="footlogo">
+                </div>
+                <div class="footInfo">
+                    <p><a href="#">사단법인 대한복싱협회</a> / 사업자등록번호 : 230-82-00209 / 대표자 : 최찬웅</p>
+                    <p>(05540) 서울특별시 송파구 올림픽로 424 올림픽회관 신관 208 / Tel. (02) 420-4251~3 / Fax. (02) 420-4250 / Mail. boxing@sports.or.kr</p>
+                    <p class="copy">COPYRIGHT &copy;2024 Korea Boxing Association.ALL RIGHTS RESERVED.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,173 @@
+function StringBuffer() {
+    this.__strings__ = new Array;
+}
+
+StringBuffer.prototype.append = function (str) {
+    this.__strings__.push(str);
+    return this;
+};
+
+StringBuffer.prototype.toString = function () {
+    return this.__strings__.join("");
+};
+
+function gfn_AjaxError(req, status, e) {
+    var errContent = "";
+    errContent += 'Error Code : ' + req.status + '\n';
+    errContent += 'Message : ' + req.responseText + '\n';
+    errContent += 'Error : ' + e.toString() + '\n';
+    gfn_Alert(errContent);
+}
+
+function gfn_Alert(msg) {
+    alert(msg);
+}
+
+function gfn_Confirm(msg) {
+    return confirm(msg);
+}
+
+function gfn_goMenu(menuCode) {
+
+    var params = {
+        "MENU_CODE": menuCode
+    };
+    $.ajax({
+        url: '/home/getMenuInfo.do',
+        data: params,
+        type: 'POST',
+        success: function(data) {
+            if (data) {
+                data = JSON.parse(data);
+
+                var $frmKOCCommon= $("#frmKOCCommon");
+                if($frmKOCCommon.length < 1) {
+                    $frmKOCCommon = $("<form/>").attr({id:"frmKOCCommon", method:'POST'});
+                    $(document.body).append($frmKOCCommon);
+                }
+                $frmKOCCommon.empty();
+                $("#frmKOCCommon").attr('target', data[0].TARGET);
+                $("#frmKOCCommon").attr('action', data[0].URL);
+                $frmKOCCommon.submit();
+            }
+        }
+    });
+
+}
+
+function gfn_Download(bdId, tIdx, fileDir, fileSystemName) {
+
+    var $frmKOCCommon= $("#frmKOCCommon");
+    if($frmKOCCommon.length < 1) {
+        $frmKOCCommon = $("<form/>").attr({id:"frmKOCCommon", method:'POST'});
+        $(document.body).append($frmKOCCommon);
+    }
+    $frmKOCCommon.empty();
+    $("#frmKOCCommon").attr('action', '/home/download.do');
+    $("#frmKOCCommon").attr('target', '_blank');
+
+    /* 정보 세팅 */
+    $("<input>").attr({type:"hidden", name:"BD_ID", value:$.trim(bdId)}).appendTo($frmKOCCommon);
+    $("<input>").attr({type:"hidden", name:"T_IDX", value:$.trim(tIdx)}).appendTo($frmKOCCommon);
+    $("<input>").attr({type:"hidden", name:"FILE_DIR", value:$.trim(fileDir)}).appendTo($frmKOCCommon);
+    $("<input>").attr({type:"hidden", name:"FILE_SYSTEM_NAME", value:$.trim(fileSystemName)}).appendTo($frmKOCCommon);
+
+    $frmKOCCommon.submit();
+}
+
+function isEmail(strEmail) {
+    var emailReg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+    if(emailReg.test(strEmail))
+        return true;
+    return false;
+
+}
+
+//$('input').attr('autocomplete', 'off');
+
+
+//메인팝업관련
+function getCookie(cookieName) {
+	
+    var cookieValue = null;
+    var posName = document.cookie.indexOf(escape(cookieName) + "=");
+    if (posName != -1) {
+        var posValue = posName + (escape(cookieName) + "=").length;
+        var endPos = document.cookie.indexOf(";", posValue);
+        if (endPos != -1) {
+            cookieValue = unescape(document.cookie.substring(posValue, endPos));
+        } else {
+            cookieValue = unescape(document.cookie.substring(posValue));
+        }
+    }
+    return cookieValue;
+}
+
+function setCookie(name, value, expirehours) {
+
+    var todayDate = new Date();
+    todayDate.setHours(todayDate.getHours() + expirehours);
+    document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toUTCString() + ";";
+
+}
+
+function clearCookie(name) {
+    var today = new Date();
+    var expire_date = new Date(today.getTime() - 86400);
+    document.cookie = name + "= " + "; expires=" + expire_date.toUTCString();
+}
+
+function closeLayerEvent(obj, name, expirehours){
+	if($(':input[name="chkEvent"]:checked').val() == 'yes'){
+		 setCookie(name, "yes", expirehours);
+	}
+	$('#'+obj).hide();
+}
+
+function getStyle(obj) {
+    return (document.getElementById(obj).style);
+}
+//메인팝업관련
+
+function lfn_showPopUp(popupID ,idx, type) {
+	
+	lfn_centerPopup(popupID);
+
+    $("#popup000").css({
+        zIndex: 100 - 1
+    }).fadeIn('fast');
+
+    $("#" + popupID).css({
+        zIndex: 100 + 1
+    }).fadeIn('fast');
+    
+    $('#USER_IDX').val(idx);
+    $('#TYPE').val(type);
+}
+
+function lfn_centerPopup(popupID){
+    var windowWidth = document.documentElement.clientWidth;
+    var windowHeight = document.documentElement.clientHeight;
+    var popupHeight = $("#" + popupID).height();
+    var popupWidth = $("#" + popupID).width();
+    var scrollTop = document.body.scrollTop;
+
+    var ytop = 0;
+    if (popupHeight < windowHeight) {
+        ytop = scrollTop + ((windowHeight - popupHeight) / 2);
+    }
+
+    $("#" + popupID).css({
+        "position": "absolute",
+        "top": ytop,
+        "left": (windowWidth - popupWidth) / 2
+    });
+    $("#popup000").css({
+        "height": $(document).height()
+    });
+}
+
+function lfn_disablePopup(popupID){
+    $("#popup000").hide();
+    $("#" + popupID).hide();
+}

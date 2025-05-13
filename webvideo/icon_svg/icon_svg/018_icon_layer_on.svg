@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_1" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-width: 1.2px;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-2 {
+        stroke-width: .8px;
+      }
+
+      .cls-4 {
+        fill: #3c73cb;
+      }
+
+      .cls-4, .cls-5 {
+        stroke-width: 0px;
+      }
+
+      .cls-5 {
+        fill: #aaddf7;
+      }
+
+      .cls-3 {
+        stroke-width: 1.5px;
+      }
+    </style>
+  </defs>
+  <g>
+    <rect class="cls-4" x="1" y="1" width="38" height="38" rx="8.25" ry="8.25"/>
+    <path class="cls-5" d="m30.74,2c4,0,7.26,3.25,7.26,7.26v21.49c0,4-3.25,7.26-7.26,7.26H9.26c-4,0-7.26-3.25-7.26-7.26V9.26c0-4,3.25-7.26,7.26-7.26h21.49m0-2H9.26C4.14,0,0,4.14,0,9.26v21.49c0,5.11,4.14,9.26,9.26,9.26h21.49c5.11,0,9.26-4.14,9.26-9.26V9.26c0-5.11-4.14-9.26-9.26-9.26h0Z"/>
+  </g>
+  <g>
+    <polygon class="cls-3" points="20.5 24.61 5.41 16.5 20.5 8.39 34.59 16.5 20.5 24.61"/>
+    <polyline class="cls-1" points="32.4 20.24 34.59 21.5 20.5 29.61 5.41 21.5 7.78 20.23"/>
+    <polyline class="cls-2" points="32.4 25.24 34.59 26.5 20.5 34.61 5.41 26.5 7.78 25.23"/>
+  </g>
+</svg>

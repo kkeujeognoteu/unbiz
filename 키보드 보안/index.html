@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키보드 보안</title>
+    <style>
+        div, button{ padding:0; margin:0; box-sizing:border-box; font-size:16px; }
+        button{ border:none; background:#fff; }
+        .wrap{ max-width:780px; width:100%; margin: auto; font-size:1rem; }
+        .keyboardMid{ text-align:center; }
+        .keyboardCont{ padding:10px; background:#b3c8c3 }
+        .keyboardCont .keyboardList{ display:flex; gap:10px; }
+        .keyboardCont .keyboardList button{ width:100%; padding:10px 15px; }
+        .keyboardCont .keyboardList .num{ width:81px; height:70px; }
+        .keyboardCont .keyboardList .num button{ width:100%; height:100%; }
+        .keyboardCont .keyboardLeft{ display:flex; flex-wrap:wrap; gap:10px; width:80%; }
+        .keyboardCont .keyboardRight{ width:20%; display:flex; flex-direction:column; gap:10px; align-items:center; }
+    </style>
+    <script>
+
+        function rd(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function rePos(){
+            //버튼 숫자 재배치
+             
+            let innerHtmlStr = '';            
+            /*
+            for(let i = 1; i <= 12; i++){
+                if(i > 10){
+                    innerHtmlStr +=  '<div class="num"> </div>';
+                } else if(i == 10){
+                    innerHtmlStr += '<div class="num"><button>0</button></div>'
+                } else {
+                    innerHtmlStr +=  '<div class="num"> <button>'+ (i)+'</button> </div>';
+                }                
+            }   */
+
+
+            let arr = [];
+            while (1 == 1) {
+                let randNum = rd(1,12);
+
+                if(arr.indexOf(randNum) == -1){
+                    arr.push(randNum);
+                }
+                if(arr.length == 12){
+                    break;
+                }
+            }
+
+            
+
+            for(let i = 0; i < 12; i++){
+                let idx = arr[i];
+                if(idx > 10){
+                    innerHtmlStr +=  '<div class="num"> </div>';
+                } else if(idx == 10){
+                    innerHtmlStr += '<div class="num"><button>0</button></div>'
+                } else {
+                    innerHtmlStr +=  '<div class="num"> <button>'+ (idx)+'</button> </div>';
+                }                
+            }   
+
+            document.getElementById('pos').innerHTML = innerHtmlStr;
+
+        }
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="keyboardWrap">
+            <h2>주민번호 뒷번호</h2>
+            <div class="keyboardMid">
+                <p>주민번호 뒷번호 7자리를 입력해 주세요</p>
+            </div>
+            <div class="keyboardCont">
+                <div class="keyboardList">
+                    <div class="keyboardLeft" id="pos">
+                       
+                    </div>
+                    <div class="keyboardRight">
+                        <div class="num">
+                            <button>x</button>
+                        </div>
+                        <div class="num">
+                            <button>전체 삭제</button>
+                        </div>
+                        <div class="num">
+                            <button type="button" onclick="rePos()">재배치</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

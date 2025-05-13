@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>펜싱 출석체크 앱</title>
+    <style>
+        @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+        body, html{ margin:0; padding:0; width:100%; overflow-x:hidden; background:#f5f5f5; }
+        div, h1, h2, h3, h4, h5, h6, span, p, a, li, ul, button, header, section, footer{ margin:0; padding:0; line-height:1.2; letter-spacing:-.7px; font-family:'Noto Sans KR', sans-serif; font-size:16px; box-sizing:border-box; color:#333; font-weight:400; box-sizing:border-box; letter-spacing: -.7px; }
+        table, td, th{ box-sizing:border-box }
+        button{ background:transparent; padding:8px 10px; border:none; }
+        a{ text-decoration:none; }
+        ul, li, ol{ list-style:none; }
+        input, select{ box-sizing:border-box }
+
+        #app{ max-width:780px; height:100vh; margin:auto; background:#fff; }
+        header{ background:#f5f5f5; height:80px; padding:10px 15px; display:flex; align-items:center; }
+        .AttendanceWrap{ display:flex; flex-direction:column; /*align-items:center; justify-content: center;*/ height:100%; text-align:center; padding:15px; }
+        .AttendanceWrap .attTitle{ position:relative; font-size:1.2rem; font-weight:600; text-align:left; color:#E31736; padding-left:10px; }
+        
+        .st1{ fill:none; stroke:#FFFFFF; stroke-width:7px; stroke-miterlimit:10; stroke-dashoffset: 0; stroke-dasharray: 60; }
+        .attOk_Chk { padding-top:90px; }
+        .attOk_Chk p{ text-align:center; }
+        .attOk_Chk p svg{ margin-left:50px }
+        .attOk_Chk .st1{ stroke:#E31736; animation: dash 0.3s linear alternate 1; }
+        
+        .AttendanceWrap .attok_Txt{ margin-top:50px;}
+        .AttendanceWrap .attok_Txt .attokTitle{ font-size:1.3rem; color:#000; font-weight:600 }
+        .AttendanceWrap .attok_Txt .attokTitle .name{ display:block; font-weight:700; color:#E31736; font-size:1.5rem; margin-bottom:0.3rem; }
+        .AttendanceWrap .attok_Txt .attokTitle .data{ font-weight:700; color:#000; font-size:1.3rem; letter-spacing: -.7px; padding-right:5px; }
+        .attTxt_Box{ margin-top:30px; padding:2rem; background:linear-gradient(92deg, #e317366e 0%, #e31736a1 100%); border-radius:10px; }
+        .attTxt_Box p{ color:#fff; font-weight:600; font-size:3rem; }
+        .attTxt_Box .attok_Data{ font-size:1rem; }
+        .attTxt_Box .attok_Time{ margin-top:0.2rem; }
+        .attTxt_Box .attok_Price{ margin-top:2rem; font-size:1.2rem; font-weight:400 }
+        
+        @keyframes dash {
+            from {
+                stroke-dashoffset: 60;
+            }
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .attBtn{ margin-top:2rem; padding-top:1rem; border-top:2px solid rgba(255,255,255,.5); }
+        .attBtn button{ color:#fff; font-weight:600; padding:0; }
+
+        .attLogo{ width:150px; margin:auto; margin-bottom:10px; }
+        .attLogo img{ width:100%; }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- <header>
+            <h1 class="logo"></h1>
+        </header> -->
+        <section class="AttendanceWrap">
+            <h2 class="attTitle">[심판 1급] 행사명 테스트 심판 1급 신청</h2>
+            <div class="attOk_Chk">
+                <p>
+                    <svg width="150" xmlns="http://w3.org/2000/svg" version="1.1" viewbox="0 0 80 40">
+                        <polyline class="st1" points="9.06 20.89 25.85 35.74 50.46 9.35"/>
+                    </svg>
+                </p>
+            </div>
+            <div class="attok_Txt">
+                <h2 class="attokTitle"><span class="name">강유진님!</span> <span class="data">오전1</span>에 출석체크 완료 되었습니다.</h2>
+                <div class="attTxt_Box">
+                    <p class="attok_Data">2024년 12월 24일</p>
+                    <p class="attok_Time">09:00</p>
+                    <p class="attok_Price">올림픽파크 주 경기장</p>
+                    <div class="attBtn">
+                        <button type="button" class="redBack">확인하기</button>
+                    </div>
+                </div>
+            </div>
+            <div class="attLogo">
+                <img src="./logo.png" />
+            </div>
+        </section>
+        <!-- <footer id="footer">
+            <div class="footCont">
+                <a href="#" class="footLogo">
+                    <img src="./footLogo.png">
+                </a>
+                <p class="copy">copyright &copy; 2024 대한펜싱협회</p>
+            </div>
+        </footer> -->
+    </div>
+</body>
+</html>

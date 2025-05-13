@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>암표신고 관리자</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/edit.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="headeer">
+            <div class="header_wrap">
+                <div>
+                    <h1 class="logo">
+                        <img src="images/logo.png">
+                        <span>암표 신고 관리자</span>
+                    </h1>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li class="active">
+                            <a href="index.html">
+                                <i class=""></i>
+                                암표거래 모니터링
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html">
+                                <i></i>
+                                암표신고 관리
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html">
+                                구버전으로 가기
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="logout">
+                    <a>
+                        <img src="images/logout.png">
+                        로그아웃
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- content -->
+        <div class="contents">
+            <div class="monitoring">
+                <!-- common title -->
+                <div class="common_title">
+                    <h2 class="title">암표거래 모니터링</h2>                    
+                    <ul class="sub_nav">
+                        <li>
+                            <img src="images/home.png">
+                        </li>
+                        <li>
+                            <a href="#">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            /
+                        </li>
+                        <li class="acitve">
+                            <a href="#">
+                                암표거래 모니터링
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- filter search -->
+                <div class="table_wrap">
+                    <table class="table_basic ver2" border="0">
+                        <colgroup>
+                            <col style="width:3%;">
+                            <col style="width:7%;">
+                            <col style="width:6%;">
+                            <col style="width:7%;">
+                            <col style="width:8%;">
+                            <col style="width:6%;">
+                            <col style="width:8%;">
+                            <col style="width:8%;">
+                            <col style="width:8%;">
+                            <col style="width:5%;">
+                            <col style="width:5%;">
+                            <col style="width:5%;">
+                            <col style="width:3%;">
+                            <col style="width:7%;">
+                            <col style="width:7%;">
+                            <col style="width:10%;">
+                            <col style="width:auto">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>수집일</th>
+                                <th>판매사이트</th>
+                                <th>URL</th>
+                                <th>판매글 게재일</th>
+                                <th>대상종목</th>
+                                <th>홈팀</th>
+                                <th>원정팀</th>
+                                <th colspan="2">경기</th>
+                                <th>정가</th>
+                                <th>판매가</th>
+                                <th>매수</th>
+                                <th>판매자아이디</th>
+                                <th colspan="2">좌석위치</th>
+                                <th>첨부</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="appendTr">
+                                <td><button type="button" class="btn btnDelete"><i class="fas fa-minus"></i></button></td>
+                                <td class="collection_date">2024-03-05 17:56</td>
+                                <td><input type="text" id="" class="form-control site" placeholder="판매사이트"></td>
+                                <td><input type="text" id="" class="form-control url" placeholder="URL"></td>
+                                <td>
+                                    <div class="input-group">
+                                        <input type="text" autocomplete="off" class="date_input write_date" placeholder="yyyy-mm-dd" id="datepicker03">
+                                        <label class="input-group-addon" for="datepicker03"><i class="fas fa-calendar-week" style="color:#fff;"></i></label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <select class="form-control sports">
+                                        <option value="">선택</option>
+                                        
+                                        <option value="A01">Kleague</option>
+                                        
+                                        <option value="A02">KBO</option>
+                                        
+                                        <option value="A03">KBL</option>
+                                        
+                                        <option value="A04">WKBL</option>
+                                        
+                                        <option value="A05">KOVO</option>
+                                        
+                                        <option value="A06">KPGA</option>
+                                        
+                                        <option value="A07">KLPGA</option>
+                                        
+                                    </select>
+                                </td>
+                                <td class="td_home_team">
+                                    <select class="form-control home_team">
+                                        <option value="">대상종목 선택</option>
+                                    </select>
+                                </td>
+                                <td class="td_away_team">
+                                    <select class="form-control away_team">
+                                        <option value="">대상종목 선택</option>
+                                    </select>
+                                </td>
+                                <td style="padding:8px 1px 8px 4px !important;">
+                                    <div class="input-group">
+                                        <input type="text" autocomplete="off" class="date_input game_date1" placeholder="yyyy-mm-dd" id="datepicker01">
+                                        <label class="input-group-addon" for="datepicker01"><i class="fas fa-calendar-week" style="color:#fff;"></i></label>
+                                    </div>
+                                </td>
+                                <td style="padding:0 4px 0 0 !important; text-align: left;">
+                                    <input type="text" id="" class="form-control game_date2" placeholder="시" style="width: 45%; display: inline-block;">
+                                    <input type="text" id="" class="form-control game_date3" placeholder="분" style="width: 45%; display: inline-block;">
+                                </td>
+                                <td><input type="text" id="" class="form-control original_price numberOnly" placeholder="정가"></td>
+                                <td><input type="text" id="" class="form-control sale_price numberOnly" placeholder="판매가"></td>
+                                <td><input type="text" id="" class="form-control cnt numberOnly" placeholder="매수"></td>
+                                <td><input type="text" id="" class="form-control seller_id" placeholder="판매자아이디"></td>
+                                <td>
+                                    <input type="text" id="" class="form-control comments" placeholder="좌석위치">
+                                </td>
+                                <td class="td_seat_yn">
+                                    <input type="checkbox" id="seat_yn" class="seat_yn">
+                                    <label for="seat_yn"></label>
+                                </td>
+                                <td>
+                                    <input type="file" name="file" class="hide hide_file" accept="exe">
+                                    <button type="button" class="btn uploadBtn" style="width: 100%;text-overflow: ellipsis;overflow: hidden;">업로드</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="17">
+                                    <button type="button" class="btn btnPlus"><i class="fas fa-plus"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="btnWrap alignR mgT20">
+                        <a class="btnMd cancel">취소</a>
+                        <a class="btnMd btnAdd">작성</a>
+                    </div>
+                </div>
+
+                <!-- monitoring table -->
+                <div class="monitoring_board">
+                    <div class="boardBtn">
+                        <div class="left">
+                            <select>
+                                <option>10개</option>
+                                <option>100개</option>
+                                <option>200개</option>
+                                <option>300개</option>
+                                <option>400개</option>
+                                <option>500개</option>
+                            </select>
+                            <button class="btn down01 down">
+                                <img src="images/file.png">
+                                선택목록 파일 다운로드
+                            </button>
+                            <button class="btn down02 down">
+                                <img src="images/exele.png">
+                                선택목록 엑셀 다운로드
+                            </button>
+                            <button class="btn down03 down">
+                                <img src="images/exelAll.png">
+                                전체목록 엑셀 다운로드
+                            </button>
+                        </div>
+                        <div class="right">
+                            <button class="btn blue_btn">등록</button>
+                        </div>
+                    </div>
+                    <div class="monitoring_table">
+                        <div class="tb_row">
+                            <div class="th">
+                                <input type="checkbox">
+                            </div>
+                            <div class="th">No.</div>
+                            <div class="th">수집일</div>
+                            <div class="th">판매사이트</div>
+                            <div class="th">URL</div>
+                            <div class="th">경기일정</div>
+                            <div class="th">대상종목</div>
+                            <div class="th">홈팀</div>
+                            <div class="th">원정팀</div>
+                            <div class="th">티켓 정가</div>
+                            <div class="th">티켓 판매가</div>
+                            <div class="th">판매매수</div>
+                            <div class="th">판매자 아이디</div>
+                            <div class="th">좌석위치</div>
+                        </div>
+                        <div class="tb_row">
+                            <div class="td">
+                                <input type="checkbox">
+                            </div>
+                            <div class="td">88586</div>
+                            <div class="td">2024-02-16 12:26</div>
+                            <div class="td">티켓베이</div>
+                            <div class="td">https://www.ticketbay.co.kr/web/pro...</div>
+                            <div class="td">2024-02-16</div>
+                            <div class="td">KOVO</div>
+                            <div class="td">정관장 레드스파크스 배구단</div>
+                            <div class="td">흥국생명배구단 핑크스파이더스</div>
+                            <div class="td">35,000</div>
+                            <div class="td">100,000</div>
+                            <div class="td">1</div>
+                            <div class="td">팽긴인</div>
+                            <div class="td">2층 E24구역 H열 9번</div>
+                        </div>
+                        <div class="tb_row">
+                            <div class="td">
+                                <input type="checkbox">
+                            </div>
+                            <div class="td">88586</div>
+                            <div class="td">2024-02-16 12:26</div>
+                            <div class="td">티켓베이</div>
+                            <div class="td">https://www.ticketbay.co.kr/web/pro...</div>
+                            <div class="td">2024-02-16</div>
+                            <div class="td">KOVO</div>
+                            <div class="td">정관장 레드스파크스 배구단</div>
+                            <div class="td">흥국생명배구단 핑크스파이더스</div>
+                            <div class="td">35,000</div>
+                            <div class="td">100,000</div>
+                            <div class="td">1</div>
+                            <div class="td">팽긴인</div>
+                            <div class="td">2층 E24구역 H열 9번</div>
+                        </div>
+                        <div class="tb_row">
+                            <div class="td">
+                                <input type="checkbox">
+                            </div>
+                            <div class="td">88586</div>
+                            <div class="td">2024-02-16 12:26</div>
+                            <div class="td">티켓베이</div>
+                            <div class="td">https://www.ticketbay.co.kr/web/pro...</div>
+                            <div class="td">2024-02-16</div>
+                            <div class="td">KOVO</div>
+                            <div class="td">정관장 레드스파크스 배구단</div>
+                            <div class="td">흥국생명배구단 핑크스파이더스</div>
+                            <div class="td">35,000</div>
+                            <div class="td">100,000</div>
+                            <div class="td">1</div>
+                            <div class="td">팽긴인</div>
+                            <div class="td">2층 E24구역 H열 9번</div>
+                        </div>
+                    </div>
+                    <div class="paging">
+                        <ul>
+                            <li class="prev">
+                                <a href="#">&lt;</a>
+                            </li>
+                            <li class="active">
+                                <a href="#">1</a>
+                            </li>
+                            <li>
+                                <a href="#">2</a>
+                            </li>
+                            <li>
+                                <a href="#">3</a>
+                            </li>
+                            <li>
+                                <a href="#">4</a>
+                            </li>
+                            <li class="next">
+                                <a href="#">&gt;</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bracket.css" rel="stylesheet">
+    <title>대진표</title>
+    <style>
+        .modal{ position:fixed; width:100%; height:100%; top:0; left:0; bottom:0; right:0; background:rgba(0,0,0,.3); padding:15px; box-sizing:border-box; overflow-y:auto; }
+        .modal .modalCont{ position:relative; max-width:380px; background:#fff; top:0; left:50%; transform:translateX(-50%); border-radius:10px; }
+        .modal .modalCont .modalHead{ padding:10px 15px; border-bottom:1px solid #d1d1d1 }
+        .modal .modalCont .modalHead h2{ font-size:18px; color:#202020; text-align:center; }
+        .modal .modalCont .modalBody{ padding:10px 15px; }
+        .modal .modalCont .modalBody h2{ font-size:16px; color:#202020 }
+        .modal .modalCont .modalBody ul{ margin-top:10px; }
+        .modal .modalCont .modalBody li{ position:relative; padding-left:10px; margin:5px 0; }
+        .modal .modalCont .modalBody li:after{ content:''; position:absolute; width:3px; height:3px; background:#333; left:0; top:10px; border-radius:100%; }
+        .modal .modalCont .modalBody p{ font-size:14px; color:#333; }
+
+        .ListBox{ margin-top:30px; }
+        .ListBox h3{ font-size:16px; color:#202020 }
+        .ListBoxCont{ display:flex; gap:10px; margin-top:10px; }
+        .ListBoxCont > div{ width:50%; }
+        .ListBoxCont .playerListBox{ border:1px solid #d1d1d1; }
+        .ListBoxCont .playerListBox > div { padding:5px 2px; }
+        .ListBoxCont .playerListBox div + div{ border-top:1px solid #d1d1d1; }
+        .ListBoxCont .playerListBox .playerList p{ font-size:14px; }
+
+        .modalTb_01{ margin-top:30px; }
+        .modalTb_01 table{ border-collapse: collapse; }
+        .modalTb_01 table th, .modalTb_01 table td{ border:1px solid #d1d1d1; padding:5px 2px; font-size:14px; }
+        .modalTb_01 table th{ color:#404040; font-weight:500 }
+        .modalTb_01 table td{ color:#404040; text-align:center; }
+        .modalTb_01 table td.tdName{ text-align:left; }
+
+        .modalFoot{ padding:10px 15px; border-top:1px solid #d1d1d1 }
+        .modalFoot .btn{ text-align:center; }
+        .modalFoot .btn button{ background:#202020; border:1px solid #202020; color:#fff; padding:5px 15px; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="bracket_cont">
+            <h2>초등부(1-3학년) 남자 플러레(개) - <span>엘리미나시옹디렉트</span></h2>
+            
+            <div class="bracket">
+                <div class="brack_slt">
+                    <select>
+                        <option>엘리미나시옹디렉트</option>
+                    </select>
+                    <button>적용</button>
+                </div>
+                <div class="bracket_round">
+                    <ul>
+                        <li class="prev">
+                            <a>prev</a>
+                        </li>
+                        <li>
+                            <select>
+                                <option>16강</option>
+                                <option>8강</option>
+                                <option>4강</option>
+                            </select>
+                        </li>
+                        <li class="next">
+                            <a>next</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="brack_team">
+                    <div class="brack_teamList">
+                        <!-- A group -->
+                        <div class="brack_team_player">
+                            <div class="brack_player player_1st win1st">
+                                <div class="brack_teample team_A">
+                                    <p>33</p>
+                                </div>
+                                <div class="brack_playerCont">
+                                    <div class="brack_playerName">
+                                        <p>정민우</p>
+                                    </div>
+                                    <div class="brack_teamName">
+                                        <p>엔에스펜싱클럽</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="brack_player brack_time">
+                                <p>Piste1 13:30</p>
+                            </div>
+                            <div class="brack_player player_2nd">
+                                <div class="brack_teample team_A">
+                                    <p>32</p>
+                                </div>
+                                <div class="brack_playerCont">
+                                    <div class="brack_playerName">
+                                        <p>윤서준</p>
+                                    </div>
+                                    <div class="brack_teamName">
+                                        <p>최병철펜싱클럽</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="brack_team_win">
+                            <div class="brack_player player_3nd win">
+                                <div class="brack_teample team_A">
+                                    <p>32</p>
+                                </div>
+                                <div class="brack_playerCont">
+                                    <div class="brack_playerName">
+                                        <p>윤서준</p>
+                                    </div>
+                                    <div class="brack_teamName">
+                                        <p>10 : 5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="brack_teamList">
+                        <div class="brack_team_player">
+                            <div class="brack_player player_1st">
+                                <div class="brack_teample team_A">
+                                    <p>17</p>
+                                </div>
+                                <div class="brack_playerCont">
+                                    <div class="brack_playerName">
+                                        <p>장예권</p>
+                                    </div>
+                                    <div class="brack_teamName">
+                                        <p>최병철펜싱클럽</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="brack_player brack_time">
+                                <p>Piste1 13:30</p>
+                            </div>
+                            <div class="brack_player player_2nd win2nd">
+                                <div class="brack_teample team_A">
+                                    <p>48</p>
+                                </div>
+                                <div class="brack_playerCont">
+                                    <div class="brack_playerName">
+                                        <p>김예준</p>
+                                    </div>
+                                    <div class="brack_teamName">
+                                        <p>노블레스펜싱클럽</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="brack_team_win">
+                            <div class="brack_player player_3nd win">
+                                <div class="brack_teample team_A">
+                                    <p>32</p>
+                                </div>
+                                <div class="brack_playerCont">
+                                    <div class="brack_playerName">
+                                        <p>윤서준</p>
+                                    </div>
+                                    <div class="brack_teamName">
+                                        <p>10 : 2</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- B group -->
+                    <div class="brack_teamList">
+                        <div class="brack_team_player">
+                            <div class="brack_player player_1st">
+                                <div class="brack_teample team_B">
+                                    <p>17</p>
+                                </div>
+                                <div class="brack_playerCont">
+                                    <div class="brack_playerName">
+                                        <p>장예권</p>
+                                    </div>
+                                    <div class="brack_teamName">
+                                        <p>최병철펜싱클럽</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="brack_player brack_time">
+                                <p>Piste1 13:30</p>
+                            </div>
+                            <div class="brack_player player_2nd win2nd">
+                                <div class="brack_teample team_B">
+                                    <p>48</p>
+                                </div>
+                                <div class="brack_playerCont">
+                                    <div class="brack_playerName">
+                                        <p>김예준</p>
+                                    </div>
+                                    <div class="brack_teamName">
+                                        <p>노블레스펜싱클럽</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="brack_team_win">
+                            <div class="brack_player player_3nd win">
+                                <div class="brack_teample team_B">
+                                    <p>32</p>
+                                </div>
+                                <div class="brack_playerCont">
+                                    <div class="brack_playerName">
+                                        <p>윤서준</p>
+                                    </div>
+                                    <div class="brack_teamName">
+                                        <p>10 : 2</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="brack_teamList">
+                        <div class="brack_team_player">
+                            <div class="brack_player player_1st win1st">
+                                <div class="brack_teample team_B">
+                                    <p>17</p>
+                                </div>
+                                <div class="brack_playerCont">
+                                    <div class="brack_playerName">
+                                        <p>장예권</p>
+                                    </div>
+                                    <div class="brack_teamName">
+                                        <p>최병철펜싱클럽</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="brack_player brack_time">
+                                <p>Piste1 13:30</p>
+                            </div>
+                            <div class="brack_player player_2nd">
+                                <div class="brack_teample team_B">
+                                    <p>48</p>
+                                </div>
+                                <div class="brack_playerCont">
+                                    <div class="brack_playerName">
+                                        <p>김예준</p>
+                                    </div>
+                                    <div class="brack_teamName">
+                                        <p>노블레스펜싱클럽</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="brack_team_win">
+                            <div class="brack_player player_3nd win">
+                                <div class="brack_teample team_B">
+                                    <p>32</p>
+                                </div>
+                                <div class="brack_playerCont">
+                                    <div class="brack_playerName">
+                                        <p>윤서준</p>
+                                    </div>
+                                    <div class="brack_teamName">
+                                        <p>10 : 2</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal">
+            <div class="modalCont">
+                <div class="modalHead">
+                    <h2>단체전 결과지</h2>
+                </div>
+                <div class="modalBody">
+                    <div>
+                        <h2>단체전 결과지</h2>
+                        <ul>
+                            <li>
+                                <p><span>대회명 :</span> _2025 전국남녀 종목별 오픈펜싱 선수권대회 겸 국가대표선수 선발대회</p>
+                            </li>
+                            <li>
+                                <p><span>일 자 : </span> 2025.01.14 - 2025.01.21</p>
+                            </li>
+                            <li>
+                                <p><span>장 소 : </span> 익산실내체육관/반다비체육센터</p>
+                            </li>
+                            <li>
+                                <p><span>종 별 : </span>남자 사브르(단)</p>
+                            </li>
+                        </ul>
+                        <div class="ListBox">
+                            <h3>32 엘리미나시옹디렉트 대진표의 단체전</h3>
+                            <div class="ListBoxCont">
+                                <div class="playerListBox">
+                                    <div class="playerList">
+                                        <p>단체 : 전북제일고등학교</p>
+                                    </div>
+                                    <div class="playerList">
+                                        <p>1&#41; 서준우</p>
+                                    </div>
+                                    <div class="playerList">
+                                        <p>2&#41; 진우성</p>
+                                    </div>
+                                    <div class="playerList">
+                                        <p>3&#41; 한루이</p>
+                                    </div>
+                                    <div class="playerList">
+                                        <p>R&#41; 안동근</p>
+                                    </div>
+                                </div>
+                                <div class="playerListBox">
+                                    <div class="playerList">
+                                        <p>단체 : 신도고등학교</p>
+                                    </div>
+                                    <div class="playerList">
+                                        <p>4&#41; 박호영</p>
+                                    </div>
+                                    <div class="playerList">
+                                        <p>5&#41; 임성민</p>
+                                    </div>
+                                    <div class="playerList">
+                                        <p>6&#41; 김민석</p>
+                                    </div>
+                                    <div class="playerList">
+                                        <p>R&#41; 유도현</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modalTb_01">
+                            <table>
+                                <colgroup>
+                                    <col width="25%"> <!-- 이름 -->
+                                    <col width="10%"> <!-- 득점 -->
+                                    <col width="10%"> <!-- 누계 -->
+                                    <col width="10%"> <!-- VS -->
+                                    <col width="10%"> <!-- 누계 -->
+                                    <col width="10%"> <!-- 득점 -->
+                                    <col width="25%"> <!-- 이름 -->
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>이름</th>
+                                        <th>득점</th>
+                                        <th>누계</th>
+                                        <th>VS</th>
+                                        <th>누계</th>
+                                        <th>득점</th>
+                                        <th>이름</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="tdName">3&#41; 한루이</td>
+                                        <td>5</td>
+                                        <td>5</td>
+                                        <td>5</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td class="tdName">6&#41; 김민석</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdName">1&#41; 서준우</td>
+                                        <td>5</td>
+                                        <td>10</td>
+                                        <td>10</td>
+                                        <td>6</td>
+                                        <td>5</td>
+                                        <td class="tdName">5&#41; 임성민</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdName">3&#41; 한루이</td>
+                                        <td>5</td>
+                                        <td>5</td>
+                                        <td>5</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td class="tdName">6&#41; 김민석</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdName">3&#41; 한루이</td>
+                                        <td>5</td>
+                                        <td>5</td>
+                                        <td>5</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td class="tdName">6&#41; 김민석</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modalFoot">
+                    <div class="btn">
+                        <button class="modalClose">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

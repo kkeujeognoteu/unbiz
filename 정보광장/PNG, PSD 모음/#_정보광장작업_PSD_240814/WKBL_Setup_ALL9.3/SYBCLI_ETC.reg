@@ -1,0 +1,22 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBCINST.INI\Adaptive Server Anywhere 7.0]
+"Driver"="C:\\SYBASE\\ASA702\\WIN32\\dbodbc7.dll"
+"Setup"="C:\\SYBASE\\ASA702\\WIN32\\dbodbc7.dll"
+
+[HKEY_LOCAL_MACHINE\Software\ODBC\ODBCINST.INI\ODBC Drivers]
+"Adaptive Server Anywhere 7.0"="Installed"
+
+[HKEY_LOCAL_MACHINE\Software\ODBC\ODBC.INI\wkblsyb]
+"Driver"="C:\\SYBASE\\ASA702\\WIN32\\dbodbc7.dll"
+"UID"="dba"
+"PWD"="sql"
+"Description"="WKBL"
+"DatabaseName"=""
+"EngineName"="wkblsvr"
+"AutoStop"="Yes"
+"Integrated"="No"
+"CommLinks"="TCPIP{},NetBIOS{},SharedMemory"
+
+[HKEY_LOCAL_MACHINE\Software\ODBC\ODBC.INI\ODBC Data Sources]
+"wkblsyb"="Adaptive Server Anywhere 7.0"

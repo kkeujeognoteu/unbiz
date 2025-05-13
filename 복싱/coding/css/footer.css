@@ -1,0 +1,9 @@
+
+/* 푸터 */
+#footer{ background:#333; }
+#footer .footer{ width:1440px; margin: auto; padding:40px 0; }
+#footer .footer > div{ display:inline-block; vertical-align:top; }
+#footer .footer .footInfo { margin-left:38px; }
+#footer .footer .footInfo p{ color:#777; font-size:14px; line-height:1.3; padding:3px 0; }
+#footer .footer .footInfo p a{ font-weight:600; color:#999 }
+#footer .footer .footInfo .copy{ color:#999; margin-top:20px; }

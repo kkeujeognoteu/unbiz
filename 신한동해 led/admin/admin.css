@@ -1,0 +1,60 @@
+.ft16{ font-size:16px }
+.ft18{ font-size:18px }
+.ft20{ font-size:20px }
+.ft30{ font-size:30px }
+.ft36{ font-size:36px }
+.ft40{ font-size:40px }
+.ft42{ font-size:42px }
+.ft44{ font-size:44px }
+.ft46{ font-size:46px }
+.ft48{ font-size:48px }
+.ft50{ font-size:50px }
+.ft52{ font-size:52px }
+.ft54{ font-size:54px }
+.ft56{ font-size:56px }
+.ft58{ font-size:58px }
+.ft60{ font-size:60px }
+.ft65{ font-size:65px }
+.ft80{ font-size:80px }
+.ft86{ font-size:86px }
+.ft90{ font-size:90px }
+.ft100{ font-size:100px }
+.ft110{ font-size:110px }
+.ft120{ font-size:120px }
+.ft130{ font-size:130px }
+.ft140{ font-size:140px }
+.ft150{ font-size:150px }
+.ft160{ font-size:160px }
+.ft170{ font-size:170px }
+.ft180{ font-size:180px }
+
+.red{ color:red; }
+.blue{ color:blue; }
+
+.alignLeft{ text-align:left }
+.alignCenter{ text-align:center }
+.alignRight{ text-align:right }
+
+body, html{ width:100%; height:100%; overflow:hidden; background:#000; }
+div, p, span, table, ul, li{ margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; color:#fff; font-size:20px; font-weight:400; box-sizing:border-box }
+select, button{ height:40px; box-sizing:border-box }
+
+.cont{ padding:10px 50px; }
+.wrap{ width:1200px; margin:auto; }
+
+
+.sltBox{ display:flex; align-items:center; margin-bottom:20px; height:150px; background:#333; padding:20px; border-radius:20px; }
+.sltBox .slt{ display:flex; align-items:center; gap:10px }
+.sltBox .slt p{ font-size:25px; }
+.sltBox select{ padding:5px 20px; }
+.sltBox .sltBtn{ margin-left:auto; }
+.sltBox .sltBtn button{ padding:5px 20px; }
+
+.wrap table{ width:100%; border-collapse:collapse; margin-top:50px; }
+.wrap table th{ border-bottom:3px solid #fff; }
+.wrap table th, .wrap table td{ padding:10px; }
+.wrap table th p{ font-weight:700; font-size:22px; }
+.wrap table td { text-align:center; border-bottom:1px solid #fff }
+.wrap table td p{ font-size:18px; }
+.wrap table tr:last-child td{ border-bottom:0; }
+.wrap table .name{ text-align:left; }

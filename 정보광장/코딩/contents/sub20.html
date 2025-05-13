@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/sub.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/icon.css" rel="stylesheet">
+    <link href="../css/header.css" rel="stylesheet">
+    <link href="../css/footer.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    <title>종사자</title>
+    <script>
+
+        /* header */
+        function tglAllMenu(){
+            $('body').toggleClass('dimm');
+            if($('#header').hasClass('open')){
+                $('#header').removeClass('open')
+                $('body').removeClass('fix');
+                $('#wing').removeClass('inHeader');
+                $('.menu_all').removeClass('close');
+                $('.logo').removeClass('wht');
+                if($('#fullpage').length > 0 && $(window).width()>1024){
+                    $.fn.fullpage.setAllowScrolling(true);
+                    $.fn.fullpage.setKeyboardScrolling(true);
+                }
+            }else {
+                $('#header').addClass('open')
+                $('body').addClass('fix');
+                $('#wing').addClass('inHeader');
+                $('.logo').addClass('wht');
+                $('.btn_menu').addClass('close');
+
+                if($('#fullpage').length > 0 && $(window).width()>1024){
+                    $.fn.fullpage.setAllowScrolling(false);
+                    $.fn.fullpage.setKeyboardScrolling(false);
+                }
+            }
+            
+        }
+    
+        $(document).ready(function() {
+
+
+            function numberWithCommas(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+            
+            function animateNum(agency, cntNum){
+                $({ val : 0 }).animate({ val : cntNum }, {
+                duration: 1000,
+                step: function() {
+                    var num = numberWithCommas(Math.floor(this.val));
+                    $("#" + agency + "SpeTotal").text(num);
+                },
+                complete: function() {
+                    var num = numberWithCommas(Math.floor(this.val));
+                    $("#" + agency + "SpeTotal").text(num);
+                }
+                });
+            }
+            
+            let agencySpe = {
+                'A01' : 5117271,
+                'A02' : 154654654,
+                'A03' : 23213123,
+                'A04' : 0,
+                'A05' : 5121,
+            }
+            
+            for(let agency in agencySpe){
+                animateNum(agency, agencySpe[agency]);
+            }
+            $('.bannerAreaCont').slick({
+                slidesToShow: 8,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 2000,
+                responsive: [{
+                    breakpoint: 1080,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 6
+                    }
+                },
+                {
+                    breakpoint: 780,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 4,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 2,
+                    }
+                }
+            ]
+            });
+            $('.LeagueRankWrap').slick({
+                slidesToShow: "auto",
+                slidesToScroll: 1,
+                infinite: true,
+                responsive: [{
+                    breakpoint: 1080,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 780,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 380,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
+            ]
+            });
+            // $(window).on('resize', function() {
+            //     $('.LeagueRankWrap').slick('resize');
+            // });
+            
+      });
+
+    </script>
+</head>
+
+<body>
+    <div class="conain">
+        <div class="wrap">
+            <header class="header subHeader" id="header">
+                <div class="headWrap">
+                    <div class="topSubMenu">
+                        <ul>
+                            <li>
+                                <a href="#">한국프로스포츠협회</a>
+                            </li>
+                            <li>
+                                <a href="#">사이트맵</a>
+                            </li>
+                            <li>
+                                <a href="#">개선의견</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="topMenu">
+                        <h1 class="logo">
+                            <a href="#"></a>
+                        </h1>
+                        <div id="menu">
+                            <ul class="lst">
+                                <li class="dl" id="gnb1">
+                                    <a href="#">관중 현황</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">전체 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">일자별 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">구단별 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">시·도별 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">역대 관중 현황</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">일정/결과</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">금주의 일정</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">전체 일정・결과</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">리그 순위</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dl active" id="gnb1">
+                                    <a href="#">통계/현황</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">e-나라지표</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">SNS</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">경기장</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">종사자</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">스폰서</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">역대우승팀</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">테마통계</a>
+                                        </li>
+                                    </ul>   
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">자료실</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">PROSVIEW</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">스포츠 윤리 교육</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">관람객 성향 조사</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">기타 자료</a>
+                                        </li>
+                                    </ul>    
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">단체/구단</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">프로 단체 정보</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">프로 구단 정보</a>
+                                        </li>
+                                    </ul> 
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rightMenu">
+                            <button type="button" class="btn_menu close" onclick="tglAllMenu();">
+                                <span class="line"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="subPg">
+                <div class="subNavWRap">
+                    <div class="subNav">
+                        <ul>
+                            <li class="dl_link">
+                                <a href="#">e-나라지표</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">SNS</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">경기장</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">종사자</a>
+                            </li>
+                            <li class="dl_link active">
+                                <a href="#">스폰서</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">역대우승팀</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">테마통계</a>
+                            </li>
+                        </ul>
+                        <div class="subTopSlt downBtn">
+                            <button>다운로드<i class="down_Ic"></i></button>
+                        </div>
+                    </div>    
+                </div>
+                <div class="section01">
+                    <div class="subCont">
+                        <div class="subTb schWeekTb">
+                            <div class="tbTop">
+                                <div class="tbLeft">
+                                    <p>데이터 최신 업데이트 : 하계 (9월), 동계 (11월)</p>
+                                </div>
+                            </div>
+                            <div class="grapTb">
+                                <div class="sponsTb">
+                                    <table>
+                                        <colgroup>
+                                            <col width="4%"> <!--  -->
+                                            <col width="16%"> <!-- 기업명 -->
+                                            <col width="16%"> <!-- 스폰서명 -->
+                                            <col width="16%"> <!-- 단체 -->
+                                            <col width="16%"> <!-- 구단 -->
+                                            <col width="16%"> <!-- 경기장 -->
+                                            <col width="16%"> <!-- 유니폼 -->
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>기업명</th>
+                                                <th>스폰서명</th>
+                                                <th>단체</th>
+                                                <th>구단</th>
+                                                <th>경기장</th>
+                                                <th>유니폼</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>(사)유니세프한국위원회</td>
+                                                <td>유니세프</td>
+                                                <td>KBO</td>
+                                                <td>롯데 </td>
+                                                <td>1</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>(주)참바른</td>
+                                                <td>부어치킨</td>
+                                                <td>KLEAGUE</td>
+                                                <td>수원 삼성 </td>
+                                                <td>1</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>2020전북 아태 마스터스대회 조직위원회</td>
+                                                <td>2022아태마스터스대회</td>
+                                                <td>KLEAGUE</td>
+                                                <td>전북 현대 </td>
+                                                <td>1</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>365병원</td>
+                                                <td>365병원</td>
+                                                <td>KBO</td>
+                                                <td>NC </td>
+                                                <td>1</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>9988병원</td>
+                                                <td>9988병원</td>
+                                                <td>KBL</td>
+                                                <td>서울SK </td>
+                                                <td>1</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>A Twosome Place</td>
+                                                <td>A Twosome Place</td>
+                                                <td>KLEAGUE</td>
+                                                <td>KLEAGUE </td>
+                                                <td>1</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>ABL생명보험</td>
+                                                <td>ABL생명</td>
+                                                <td>KBO</td>
+                                                <td>KBO </td>
+                                                <td>1</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>ASTORE</td>
+                                                <td>ASTORE</td>
+                                                <td>KLEAGUE</td>
+                                                <td>부천FC </td>
+                                                <td>0</td>
+                                                <td>1</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>ASTORE</td>
+                                                <td>ASTORE</td>
+                                                <td>KLEAGUE</td>
+                                                <td>포항 </td>
+                                                <td>0</td>
+                                                <td>1</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>AXIASOFT</td>
+                                                <td>AXIASOFT</td>
+                                                <td>KBO</td>
+                                                <td>LG </td>
+                                                <td>1</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>11</td>
+                                                <td>AXIASOFT</td>
+                                                <td>AXIASOFT</td>
+                                                <td>KBO</td>
+                                                <td>두산 </td>
+                                                <td>1</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>12</td>
+                                                <td>behringer</td>
+                                                <td>behringer</td>
+                                                <td>KBL</td>
+                                                <td>울산현대모비스 </td>
+                                                <td>1</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>13</td>
+                                                <td>BGF리테일</td>
+                                                <td>CU</td>
+                                                <td>KLEAGUE</td>
+                                                <td>인천 Utd </td>
+                                                <td>1</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>14</td>
+                                                <td>BHC</td>
+                                                <td>bhc 치킨</td>
+                                                <td>KBO</td>
+                                                <td>KT </td>
+                                                <td>1</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>15</td>
+                                                <td>BMW코리아</td>
+                                                <td>바바리안 모터스</td>
+                                                <td>KBO</td>
+                                                <td>KBO </td>
+                                                <td>2</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>16</td>
+                                                <td>BMW코리아</td>
+                                                <td>BMW</td>
+                                                <td>KBL</td>
+                                                <td>서울삼성 </td>
+                                                <td>0</td>
+                                                <td>1</td>
+                                            </tr>
+                                            <tr>
+                                                <td>17</td>
+                                                <td>BNK금융그룹</td>
+                                                <td>웰스타로보</td>
+                                                <td>KLEAGUE</td>
+                                                <td>경남 FC </td>
+                                                <td>1</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>18</td>
+                                                <td>BNK금융그룹</td>
+                                                <td>섬뱅크</td>
+                                                <td>KBO</td>
+                                                <td>롯데 </td>
+                                                <td>1</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>19</td>
+                                                <td>BNK금융그룹</td>
+                                                <td>경남은행</td>
+                                                <td>KLEAGUE</td>
+                                                <td>경남 FC </td>
+                                                <td>1</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>20</td>
+                                                <td>BNK금융그룹</td>
+                                                <td>BNK투자증권</td>
+                                                <td>WKBL</td>
+                                                <td>BNK 썸 </td>
+                                                <td>1</td>
+                                                <td>0</td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="7">
+                                                    <div class="daysTotalTb">
+                                                        <div class="left">
+                                                            <table>
+                                                                <colgroup>
+                                                                    <col width="25%">
+                                                                    <col width="15%">
+                                                                    <col width="15%">
+                                                                    <col width="15%">
+                                                                    <col width="15%">
+                                                                    <col width="15%">
+                                                                </colgroup>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th></th>
+                                                                        <th>K LEAGUE</th>
+                                                                        <th>KBO</th>
+                                                                        <th>KBL</th>
+                                                                        <th>WKBL</th>
+                                                                        <th>KOVO</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td><p>05월 29일 단체 관중 합계</p></td>
+                                                                        <td><p class="white">7,505</p></td>
+                                                                        <td><p class="white">0</p></td>
+                                                                        <td><p class="white">3,323</p></td>
+                                                                        <td><p class="white">2,214</p></td>
+                                                                        <td><p class="white">112,240</p></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <div class="right">
+                                                            <table>
+                                                                <colgroup>
+                                                                    <col width="40%">
+                                                                    <col width="30%">
+                                                                    <col width="30%">
+                                                                </colgroup>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th></th>
+                                                                        <th>합계</th>
+                                                                        <th>평균</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td><p>전종목</p></td>
+                                                                        <td><p class="white">13,462</p></td>
+                                                                        <td><p class="white">1,233</p></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="paging">
+                                <ul>
+                                    <li class="first arrow"></li>
+                                    <li class="prev arrow"></li>
+                                    <li class="active">1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li class="next arrow"></li>
+                                    <li class="last arrow"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- bannerArea -->
+            <div class="bannerArea">
+                <div class="bannerAreaWrap">
+                    <div class="bannerAreaCont">
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner00.png">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner01.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner02.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner03.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner04.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner05.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner06.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#">
+                                <img src="../images/main/footBanner07.gif">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- footer -->
+            <footer class="footer">
+                <div class="footerTop">
+                    <div class="ftInner">
+                        <ul class="left">
+                            <li>
+                                <a href="#">개인정보처리방침</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="#">사이트맵</a>
+                            </li>
+                        </ul>
+                        <ul class="site">
+                            <li class="dataBtn">
+                                <button type="button" class="navRight">데이터 활용 신청</button>
+                            </li>
+                            <li>
+                                <a>관련사이트</a>
+                                <ul class="relatedSite">
+                                    <li>
+                                        <a href="http://data.kleague.com" target="_blank">K LEAGUE 데이터포털</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://datalab.wkbl.or.kr" target="_blank">WKBL 데이터랩</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://data.klpga.co.kr/" target="_blank">KLPGA 데이터센터</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://k-rankings.klpga.co.kr/" target="_blank">KLPGA K-Rankings</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footerBot">
+                    <div class="ftCont">
+                        <div class="footerLogo">
+                            <h1>
+                                <img src="../images/main/logo_footer.png">
+                            </h1>
+                        </div>
+                        <div class="footInfo">
+                            <ul>
+                                <li>
+                                    서울특별시 중구 통일로 2길 16 AIA타워 5층 TEL 02&#41;6190-5900 FAX 02&#41;6190-5901
+                                </li>
+                                <li>
+                                    Copyright&copy;2019 사단법인 한국프로스포츠협회. All right reserved
+                                </li>
+                                <li>이 사업은 문화체육관광부와 국민체육진흥공단의 재정후원을 받고 있습니다.</li>
+                                <li class="chrome">이 웹사이트는 Chrome 브라우저에 최적화되어있습니다.</li>
+                            </ul>
+                        </div>
+                        <div class="footersponse">
+                            <p>
+                                <img src="../images/main/logo_footer2.png">
+                            </p>
+                            <p>
+                                <img src="../images/main/logo_footer3.png">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../include/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../include/css/sub.css" />
+    <link rel="stylesheet" type="text/css" href="../include/css/common.css" />
+    <script type="text/javascript" src="./include/js/jquery-3.3.1.min.js"></script><script type="text/javascript" src="../include/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../include/js/common.js?cc=0813111047"></script>
+    <script src="../include/js/main.js?cc=54202315124527"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@700&display=swap" rel="stylesheet">
+    <title>About</title>
+    
+    <script>
+
+        /* header */
+        function tglAllMenu(){
+            $('body').toggleClass('dimm');
+            if($('#header').hasClass('open')){
+                $('#header').removeClass('open')
+                $('body').removeClass('fix');
+                $('#wing').removeClass('inHeader');
+                $('.menu_all').removeClass('close');
+                $('.logo').removeClass('wht');
+                if($('#fullpage').length > 0 && $(window).width()>1024){
+                    $.fn.fullpage.setAllowScrolling(true);
+                    $.fn.fullpage.setKeyboardScrolling(true);
+                }
+            }else {
+                $('#header').addClass('open')
+                $('body').addClass('fix');
+                $('#wing').addClass('inHeader');
+                $('.logo').addClass('wht');
+                $('.btn_menu').addClass('close');
+
+                if($('#fullpage').length > 0 && $(window).width()>1024){
+                    $.fn.fullpage.setAllowScrolling(false);
+                    $.fn.fullpage.setKeyboardScrolling(false);
+                }
+            }
+            
+        }
+
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <header id="header">
+            <div class="header__inner">
+                <div class="topMenu">
+                    <h1 class="logo">
+                        <a href="../index.html"></a>
+                    </h1>
+                    <div id="menu">
+                        <ul class="lst">
+                            <li class="">
+                                <a href="../index.html">HOME</a>
+                            </li>
+                            <li class="active">
+                                <a href="./sub01.html">COMPANY</a>
+                                <ul class="depth2">
+                                    <li class="">
+                                        <a href="./sub01.html">회사소개</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="./sub02.html">연혁</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="./sub03.html">인증현황</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="">SR 이용 솔루션</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="">서비스 분야</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="">
+                                <a href="">TECHNOLOGY</a>
+                                <ul class="depth2">
+                                    <li class="">
+                                        <a href="">SuperResolution</a>
+                                    </li>
+                                </ul>
+                            </li> 
+                            <li class="">
+                                <a href="">PRODUCT</a>
+                                <ul class="depth2">
+                                    <li class="">
+                                        <a href="">180' 스티칭 카메라</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="">
+                                <a href="">GALLERY</a>
+                            </li>
+                        </ul>
+    
+                    </div>
+                    <div class="rightMenu">
+                        <!-- <button type="button" class="navRight pc">데이터 활용 신청</button> -->
+                        <button type="button" class="btn_menu close" onclick="tglAllMenu();">
+                            <span class="line"></span>
+                        </button>
+                    </div>
+                </div>           
+            </div>
+            <div class="subTopPg">
+                <div class="subTopImg">
+                    <img src="../images/sub01.png" alt="서브 탑이미지 ">
+                    <div class="subTitle">
+                        <h2>OUR<br> COMPANY</h2>
+                    </div>
+                </div>
+                <div class="subNav">
+                    <ul>
+                        <li>
+                            <a href="./sub01.html">회사소개</a>
+                        </li>
+                        <li class="active">
+                            <a href="./sub02.html">연혁</a>
+                        </li>
+                        <li>
+                            <a href="./sub03.html">인증현황</a>
+                        </li>
+                        <li>
+                            <a href="#">SR 솔루션</a>
+                        </li>
+                        <li>
+                            <a href="#">서비스 분야</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <section class="common history">
+            <div class="wrap">
+                <h2>연혁</h2>
+                <p>SUPER RESUOLUTION 기술 활용으로 발돋움 할 UNBIZ AI </p>
+                <div class="hisWrap">
+                    <div class="yearBg year_24">
+                        <p>2024</p>
+                    </div>
+                    <div class="historyBox">
+                        <div class="hisList imgL">
+                            <div class="hisLeft">
+                                <p>
+                                    <img src="../images/image05.png">
+                                </p>
+                            </div>
+                            <div class="hisRight historyTxt">
+                                <div>
+                                    <h3>4월</h3>
+                                    <ul>
+                                        <li>UNBIZ AI 설립</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hisList imgR">
+                            <div class="hisLeft historyTxt">
+                                <div>
+                                    <h3>6월</h3>
+                                    <ul>
+                                        <li>SUPER RESOLUTION 기술 연구 시작</li>
+                                        <li>모바일 엣지 컴퓨팅 기반 SUPER RESOLUTION 스트리밍 영상 전송 시스템 특허 취득</li>
+                                        <li>네트워크 트래픽 절감을 위한 모바일 엣지 컴퓨팅 기반 SUPER RESOLUTION 스트리밍 영상 전송 취득</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="hisRight">
+                                <p>
+                                    <img src="../images/patent.png">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="main__footer">
+            <div class="main__footer__grid">
+                <div class="footLogo">
+                    <p>
+                        <img src="../images/footerLogo.png">
+                    </p>
+                </div>
+                <div class="footTxt">
+                    <div>
+                        <ul>
+                            <li>
+                                <p>서울 강서구 마곡중앙6로 11 보타닉파크타워3, 907호</p>
+                            </li>
+                            <li>
+                                <p>TEL : 02-3667-3319</p>
+                            </li>
+                            <li>
+                                <p>MAIL : sales@unbiz.co.kr</p>
+                            </li>
+                            <li>
+                                <a href="#">개인정보 취급방침</a>
+                                <a href="#">오시는길</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="copyRight">
+                        <p>Copyright &copy; 2024 UNBIZAI Materials. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+    
+        </footer>
+    </div>
+</body>
+</html>

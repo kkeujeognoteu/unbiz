@@ -1,0 +1,463 @@
+/**
+ * 개발 공통 Common js : whlee
+ */
+
+$(document).ready(function() {
+	/* 검색 조건에 사용할 형제 종목코드를 불러온다 함수 호출 */
+	$("#defaultFrm").attr({
+		"onkeydown" : "return captureReturnKey(event)"
+	});
+
+	/* 재선택이 type이 정해져 있지 않아 서밋되는 경우가 있어 강제로 넣어준다 */
+	$(".ico_reselect").attr("type", "button");
+
+	$(".ico_reselect").on('click', function(e) {
+		if (!confirm("대회관리를 종료하시겠습니까?"))
+			return false;
+		$("#defaultPageForm").attr({
+			"action" : "/bo/competitionMgr/exitComp.do",
+			"method" : "get",
+			"target" : "_self"
+		}).submit();
+	});
+});
+
+function captureReturnKey(e) {
+	if (e.keyCode == 13 && e.srcElement.type != 'textarea')
+		return false;
+}
+
+/** 로딩레이어를 불러온다* */
+function popLoadingWrap() {
+	var innerHtml = "";
+
+	innerHtml += "	<div class='loadingWrap'>";
+	innerHtml += "	<div class='loading'>";
+	innerHtml += "		<div class='load_mask'>";
+	innerHtml += "			<img src='/publish/images/img_loading.gif' alt='로딩중'>";
+	innerHtml += "		</div>";
+	innerHtml += "	</div>";
+	innerHtml += "	</div>";
+
+	$("body").append(innerHtml);
+}
+
+/** 로딩레이어를 닫는다* */
+function closeLoadingWrap() {
+	$(".loadingWrap").remove();
+}
+
+/** 로딩 여부 체크 * */
+var _tmpLoadingYn = false;
+/*
+ * 로딩 여부를 체크한다 최초에 실행시에만 false를 반환하고 그 후에는 true만 반환한다. msg가 세팅되어 있지 않을 시 기본 메시지가
+ * 출력된다.
+ */
+function isLoading(msg) {
+	var tmpMsg = "처리중입니다. 잠시만 기다려주세요.";
+
+	if (!(msg == "" || msg == null || msg == "null" || msg == undefined || msg == "undefined"))
+		tmpMsg = msg;
+
+	if (_tmpLoadingYn) {
+		alert(tmpMsg);
+
+		return true;
+	} else {
+		_tmpLoadingYn = true;
+
+		return false;
+	}
+}
+/* 업무 처리가 끝나면 로딩 변수를 초기화 시킨다. */
+function endLoading() {
+	_tmpLoadingYn = false;
+}
+
+function getParam(url, name) {
+	// 메뉴코드를 읽어봐 인풋의 밸류로 넣어준다
+	var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(url);
+	if (results == null) {
+		return "";
+	} else {
+		return results[1] || 0;
+	}
+}
+
+function goPage(url) {
+	var mnCd = getParam(url, "mnCd");
+	if (mnCd != "")
+		$("input[name=mnCd]").val(mnCd);
+
+	$("#defaultPageForm").attr({
+		"action" : url,
+		"method" : "get",
+		"target" : "_self"
+	}).submit();
+}
+
+function goPage1(url) {
+	var adminId = getParam(url, "adminId");
+	var mypage = getParam(url, "mypage");
+	if (adminId != "")
+		$("input[name=adminId]").val(adminId);
+	//alert(adminId);
+	if (mypage != "")
+		$("input[name=mypage]").val(mypage);
+	//alert("mypage :: " + mypage);
+	$("#defaultPageForm").attr({
+		"action" : url,
+		"method" : "get",
+		"target" : "_self"
+	}).submit();
+}
+
+// 텍스트 숫자만 입력 가능 하도록 처리
+function inputFloat(event) {
+	event = event || window.event;
+	var keyID = (event.which) ? event.which : event.keyCode;
+	if ((keyID >= 48 && keyID <= 57) || (keyID >= 96 && keyID <= 105)
+			|| keyID == 8 || keyID == 9 || keyID == 46 || keyID == 37
+			|| keyID == 39 || keyID == 110 || keyID == 190)
+		return true;
+	else
+		return false;
+}
+function inputNumber(event) {
+	event = event || window.event;
+	var keyID = (event.which) ? event.which : event.keyCode;
+	if ((keyID >= 48 && keyID <= 57) || (keyID >= 96 && keyID <= 105)
+			|| keyID == 8 || keyID == 9 || keyID == 46 || keyID == 37
+			|| keyID == 39)
+		return true;
+	else
+		return false;
+}
+
+function removeChar(event) {
+	event = event || window.event;
+	var keyID = (event.which) ? event.which : event.keyCode;
+	if (keyID == 8 || keyID == 9 || keyID == 46 || keyID == 37 || keyID == 39)
+		return true;
+	else
+		event.target.value = event.target.value.replace(/[^.0-9]/g, "");
+}
+
+/*******************************************************************************
+ * 숫자 체크 함수
+ * 
+ * 파라미터의 갯수에 따라 리플레이스만 해주거나 메시지를 띄우고 기본값을 지정해 줄 수 있다.
+ *  *
+ ******************************************************************************/
+function checkNum(obj, msg, defaultVal) {
+	tmpVal = $(obj).val();
+	tmpDefVal = "";
+	regNumber = /[^0-9]/g;
+
+	if (msg != undefined && msg != "undefined") {
+		if (regNumber.test(tmpVal)) {
+			alert(msg);
+
+			if (tmpDefVal != undefined && tmpDefVal != "undefined")
+				tmpDefVal = defaultVal;
+			$(obj).val(tmpDefVal);
+		}
+	} else {
+		tmpDefVal = tmpVal.replace(regNumber, "");
+		$(obj).val(tmpDefVal);
+	}
+
+}
+
+/* 프린트 출력시 테이블 컬럼 소팅 및 사이즈 조절용 */
+function tableCustom(id) {
+	$("#" + id).colResizable({});
+}
+
+function tableCustomInit(id, lmtIdx){
+	var girdHtml = "";
+	var popupHtml = "";
+	var popupBtn = "";
+	
+	//그리드 생성
+	girdHtml += "<ul id='sortable' class='sortableItem'>";
+	$("#"+id+" thead tr th").each(function(idx){
+		girdHtml += "	<li>";
+		girdHtml += 	$(this).text();
+		girdHtml += "	</li>";
+	});
+	girdHtml += "</div>";
+
+	$("#"+id).before(girdHtml);
+
+	//추가 칸 제거
+	$("#"+id+" thead tr, #"+id+" tbody tr, #sortable").each(function() {
+		$(this).find("td, th, li").each(function(idx){
+			if( idx > lmtIdx ){
+				$(this).hide();
+			}
+		});
+	});
+	
+	var tmpTableArray = new Array();
+	var tmpThArray = new Array();
+	var tmpTdArray = new Array();
+	
+	$("#"+id+" thead tr th").each(function(idx) {
+		$(this).attr("sortOrder", idx);
+		
+		tmpThArray.push($(this).text());
+		tmpTdArray.push(new Array());
+	});
+	
+	$("#"+id+" tbody tr").each(function(idx) {
+		$(this).find("td").each(function(idx2){
+			$(this).attr("sortOrder", idx2);
+			
+			tmpTdArray[idx2].push($(this).text());
+		});
+	});
+	
+	$("#sortable li").each(function(idx){
+		var forSize = tmpThArray.length;
+		var idx = tmpThArray.indexOf($(this).text().trim());
+		
+		$(this).attr("sortOrder", idx);
+		
+		tmpTableArray.push(idx);
+	});
+	
+	var start;
+	
+	$("#sortable").sortable({
+		start : function(e, ui){
+			start = ui.item.index();
+
+			$("#"+id).colResizable({
+				disable : true
+			});
+			$("#"+id).colResizable({
+				disable : false
+			});
+		},
+		stop : function(e, ui){
+			var end = ui.item.index();
+
+			$("#"+id).colResizable({
+				disable : true
+			});
+			$("#"+id).colResizable({
+				disable : false
+			});
+
+			var tmpTxt;
+			var forSize = tmpTableArray.length;
+			var newOrderArray = new Array();
+			
+			$("#sortable li").each(function(idx){
+				newOrderArray.push($(this).attr("sortOrder"));
+			});
+			
+			$("#"+id+" thead tr th").each(function(idx){
+				var sortOrder = $(this).attr("sortOrder");
+				
+				$(this).text(tmpThArray[newOrderArray[sortOrder]]);
+			});
+			
+			visibleRefresh(id);
+			
+			$("#"+id+" tbody tr").each(function(idx){
+				$(this).find("td").each(function(idx2){
+					var sortOrder2 = $(this).attr("sortOrder");
+
+					$(this).text(tmpTdArray[newOrderArray[sortOrder2]][idx]);
+				});
+			});
+		}
+	});	
+	
+	//팝업 레이어 생성
+	popupHtml += "<div class='layer' id='tableItemLayer'>";
+	popupHtml += "	<div class='inner'>";
+	popupHtml += "		<div class='layer_area cmmn_layer' style='width:500px;'>";
+	popupHtml += "			<div class='layer_tit'>";
+	popupHtml += "				<h2>형식 선택</h2>";
+	popupHtml += "				<a href='javascript:void(0);' class='btnClose'>닫기</a>";
+	popupHtml += "			</div>";
+	popupHtml += "			<div class='layer_con'>";
+	popupHtml += "				<div class='grid_tbl'>";
+	popupHtml += "				<table>";
+	popupHtml += "					<thead>";
+	popupHtml += "						<tr><th scope='col'><span id='htmlTmp1'>형식 선택</span></th></tr>";
+	popupHtml += "					</thead>";
+	popupHtml += "					<tbody>";
+	popupHtml += "						<tr><td>";
+	$("#"+id+" thead tr th").each(function(idx){
+		popupHtml += "						<div><span>";
+		popupHtml += 						$(this).text();
+		popupHtml += "						<input type='checkbox' id='tmpTableItemArray' name='tmpTableItemArray' value='"+$(this).text()+"'>";
+		popupHtml += "						</span></div>";
+	});
+	popupHtml += "						</td></tr>";
+	popupHtml += "					</tbody>";
+	popupHtml += "				</table>";
+	popupHtml += "			</div>";
+	//popupHtml += "			<div class='btn_wrap'>";
+	//popupHtml += "				<button type='button' class='btnClose btn_m red' onclick='roundController.placeTableauQueueTmpSave(2);'>닫기</button></div>";
+	//popupHtml += "			</div>";
+	popupHtml += "		</div>";
+	popupHtml += "	</div>";
+	popupHtml += "	<input type='hidden' name='tmpTableIdValue' value='"+id+"' />";
+	popupHtml += "</div>";
+	
+	$("body").append(popupHtml);
+
+	//기본 체크
+	$("#"+id+" thead tr th").each(function(idx){
+		if( $(this).is(":visible") ){
+			var tmpVal = $(this).text().trim();
+			
+			$("input[name=tmpTableItemArray][value='"+tmpVal+"']").prop("checked", true);
+		}
+	});
+	
+	//버튼 그리기
+	popupBtn += "<button type='button' class='btn_s ico_add tableItemBtn'>형식 선택</button>";
+	$(".print_top_box > .btn_wrap").append(popupBtn);
+	
+	//레이어 오픈
+	$(".tableItemBtn").click(function(){
+		$("#tableItemLayer").show();
+	});
+	
+	//레이어 클로즈
+	$("#tableItemLayer .btnClose").click(function(){
+		$("#tableItemLayer").hide();
+	});
+	
+	//라디오 버튼 액션
+	$("input[name=tmpTableItemArray]").change(function(){
+		var tableId = $("input[name=tmpTableIdValue]").val();
+		var width = $("#"+tableId).width();
+		
+		visibleRefresh(tableId);
+		
+		if( $("#"+tableId).width() > width ){
+			var tdLength = $("#"+tableId+" thead tr th:visible").length;
+			var paddingWidth = 42;
+			
+			$("#"+tableId+" thead tr th:visible").each(function(idx){
+				$(this).width(width / ((width-(paddingWidth*tdLength))/tdLength));
+			});
+		}
+
+		$("#"+tableId).colResizable({
+			disable : true
+		});
+		$("#"+tableId).colResizable({
+			disable : false
+		});
+	});
+
+	$("#"+id).colResizable({
+		disable : true
+	});
+	$("#"+id).colResizable({
+		disable : false
+	});
+}
+
+function visibleRefresh(tableId){
+	$("input[name=tmpTableItemArray]").each(function(){
+		var itemIdx = $(this).val();
+		var status = $(this).is(":checked");
+		
+		var tmpValArray = new Array();
+
+		$("#"+tableId+" thead tr th").each(function(idx){
+			tmpValArray.push($(this).text());
+		});
+		
+		if( status ){
+			$("#"+tableId+" thead tr, #"+tableId+" tbody tr").each(function(){
+				$(this).find("td, th").each(function(idx){
+					var sortOrder = tmpValArray[idx];
+					
+					if( sortOrder == itemIdx ){
+						$(this).show();
+					}
+				});
+			});
+			$("#sortable").each(function(){
+				$(this).find("li").each(function(idx){
+					var sortOrder = tmpValArray[idx];
+
+					if( sortOrder == itemIdx ){
+						$(this).show();
+					}
+				});
+			});
+		}else{
+			$("#"+tableId+" thead tr, #"+tableId+" tbody tr").each(function(){
+				$(this).find("td, th").each(function(idx){
+					var sortOrder = tmpValArray[idx];
+
+					if( sortOrder == itemIdx ){
+						$(this).hide();
+					}
+				});
+			});
+			$("#sortable").each(function(){
+				$(this).find("li").each(function(idx){
+					var sortOrder = tmpValArray[idx];
+
+					if( sortOrder == itemIdx ){
+						$(this).hide();
+					}
+				});
+			});
+		}
+	});
+}
+
+
+function fnCustomContentPrint(id){
+	$("#"+id).colResizable({
+		disable : true
+	});
+	
+	window.print();
+	
+	$("#"+id).colResizable({
+		disable : false
+	});
+}
+
+function searchCaleander(){
+	/* datepicker */
+	$.datepicker.regional['ko'] = {
+		dateFormat : 'yy.mm.dd',
+		yearSuffix : ''
+	};
+	$.datepicker.setDefaults($.datepicker.regional['ko']);
+
+	$("#searchStartDate").datepicker({
+		showOn : "both", // 'focus' and 'button'
+		changeMonth : true,
+		changeYear : true,
+		buttonText : '',
+		onClose : function(selectedDate) {
+			$("#searchEndDate").datepicker("option", "minDate", selectedDate);
+		}
+	});
+
+	$("#searchEndDate").datepicker({
+		showOn : "both", // 'focus' and 'button'
+		changeMonth : true,
+		changeYear : true,
+		buttonText : '',
+		onClose : function(selectedDate) {
+			$("#searchStartDate").datepicker("option", "maxDate", selectedDate);
+		}
+	});
+}

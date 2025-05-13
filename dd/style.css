@@ -1,0 +1,11 @@
+
+body, html{ width:100%; font-size:16px; font-family: 'NanumGothic'; }
+body, html, div, span, p, li, ul, h1, h2, h3, h4, h5, h6, button, a{ margin:0; padding:0; }
+li, a{ list-style:none; text-decoration:none; }
+.wrap{ max-width:1200px; margin:0 auto; }
+
+.leadTab { margin-top:20px; }
+.leadTab ul{ display:block }
+.leadTab ul li{ display:inline-block; width:auto; margin:0 10px; }
+
+.leaderboardTB th span{ width:5px; height:10px; background:url(./images/ic-align-up-red.svg)no-repeat; }

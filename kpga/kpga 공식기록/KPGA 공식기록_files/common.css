@@ -1,0 +1,257 @@
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video{margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display: block;}
+body{line-height: 1;}
+ol, ul{list-style: none;}
+blockquote, q{quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after{content: '';content: none;}
+table{border-collapse: collapse;border-spacing: 0;}
+
+*{margin:0;padding:0;outline:none;box-sizing:border-box;}
+html, body{font-family:'Noto Sans KR',sans-serif;color:#000;font-size:16px;font-weight:normal;letter-spacing: -0.1px;}
+header, footer, section, article, div, table, ul, ol, a, button, form, input, select, textarea, em, i, p, dl, dt, dd, span, strong {font-family: 'Noto Sans KR', sans-serif;}
+table{border-collapse:collapse;width:100%;}
+ul, ol{list-style:none;}
+form, fieldset, img{border:0;}
+button{cursor:pointer;background:none;}
+a{color:#333;font-size:inherit;text-decoration:none;/* transition:all ease-in-out .3s; */}
+a:hover, a:active, a:visited, a:focus{color: inherit;text-decoration: none;}
+input, select, textarea, button{color:#333;font-size:inherit;border:0;font-family:'Noto Sans KR',sans-serif;}
+textarea{width:100%;resize:none;}
+textarea[readonly]{cursor:default;}
+iframe{width:100%;height:auto;border:0;}
+
+.cf:after{display: block;content: '';clear: both;}
+.hide{position: fixed;left: -10000px;overflow: hidden;font-size: 1px;line-height: 0;}
+.overh{overflow:hidden;}
+.fcWhite{color:#fff !important;}
+
+.fl{float:left !important;}
+.fr{float:right !important;}
+
+.Wrap{position:relative; max-height:100vh; height:100vh; background:#1c2826; /* background-image:url(/resources/front/images/bg.jpg); background-position:50% 50%; */}
+.subWrap{overflow:auto; width:100%; height:100%;}
+.w100{width:100% !important;}
+
+.mt05{margin-top:5px;}
+.mt15{margin-top:15px;}
+
+.mb15{margin-bottom:15px;}
+
+/*select*/
+.selectForm{width:100%; background: #fff; border: 1px solid #ddd; padding: 5px;}
+
+/* layout */
+.inner{width:100%; height:100%; padding:0 15px; position:relative;}
+button.btn, a.btn{padding:0 20px; text-align:center; font-size:18px;}
+
+
+/* header */
+header{position:relative; top:0; width:100%;}
+.headerWrap{width:100%; height:auto; position:absolute; top:0; left:0; z-index:99; padding:15px 0; background:#ccc; overflow:hidden;}
+.menuBtn {float:left; width:}
+.menuBtn i{font-size:35px;}
+
+.hTitle{width:calc(100% - 50px); float:left; padding-left:10px;}
+.hTitle p{font-size:20px;}
+.hTitle > span{font-size:14px; display:block; margin-top:5px; overflow:hidden;}
+.hTitle span span{float:right;}
+
+/* map */
+.mapWrap{position:absolute; z-index:1; left:0; top:0; width:100%; height:100vh;}
+
+/* login */
+.Wrap.loginBg{background:url(/resources/front/images/login_bg.jpg); background-size:100% 100%;}
+.conWrap.loginWrap{background:rgba(0,0,0,0.5); overflow-y:hidden;}
+input.form-control, select.form-control{font-size:18px;height: 45px; border-radius:20px;}
+.conWrap.loginWrap label{color:#fff; font-size:16px;}
+.conWrap.loginWrap p{color:#fff; margin-top:50px;}
+.conWrap.loginWrap button.btn{font-size:18px; border-radius:20px;}
+
+/*cate*/
+.cateWrap ul{overflow:hidden;}
+.cateWrap ul li{margin-bottom:20px;}
+.cateWrap ul li:last-child{margin-bottom:0;}
+/*.cateWrap ul li{width:50%; padding:7.5px; float:left;}*/
+.cateWrap ul li a{position: relative; text-align:center; display:block; overflow:hidden; width:100%; border-radius:20px; padding:30px; font-size:30px; line-height:50px; font-weight:700;}
+.cateWrap ul li:nth-child(1) a{background:#f7d164;}
+.cateWrap ul li:nth-child(2) a{background:#efcec7;}
+.cateWrap ul li:nth-child(3) a{background:#d2af97;}
+.cateWrap ul li:nth-child(4) a{background:#99d6e0;}
+.cateWrap ul li:nth-child(5) a{background:#ddd;}
+
+.cateWrap ul li a i{position:absolute; left:30px; top:30px; height:50px; float:left; font-size:50px; margin-bottom:5px;}
+
+/* sub */
+.subTitle{font-size:24px; text-align:center; margin:50px 0 30px;;}
+
+/* table */
+.tableWrap{width: 100%; table-layout: fixed; background:#fff;}
+.tableWrap table{table-layout:fixed;}
+.tableWrap th, .tableWrap td{word-break: break-all; padding: 10px 5px;border: 1px solid #ddd;color: #555;font-size: 16px;text-align: center;font-weight: 400;vertical-align: middle;line-height: 1.2em;}
+.tableWrap thead th{background-color: #000; color: #fff;}
+.tableWrap th{color: #222;font-weight: 500;}
+.tableWrap tbody td:first-child{background:#e7ffed; color: #264c93; border-bottom:1px solid #fff;}
+
+.tableWrap2{width: 100%; table-layout: fixed;  background:#fff;}
+.tableWrap2 table{table-layout:fixed;}
+.tableWrap2 th, .tableWrap2 td{word-break: break-all; padding: 10px 5px;border: 1px solid #ddd;color: #555;font-size: 16px;text-align: center;font-weight: 400;vertical-align: middle;line-height: 1.2em;}
+.tableWrap2 thead th{background-color: #000; color: #fff;}
+.tableWrap2 th{color: #222;font-weight: 500;}
+.tableWrap2 tbody td:first-child{background:#fafafa;color: #264c93;}
+
+.tableWrap tr.th2 th{background: #4a9bff;}
+
+/* leaderboad */
+.ldTableWrap{width: 100%; table-layout: fixed; background:#fff; border-radius:20px; overflow:hidden;}
+.ldTableWrap table{table-layout:fixed;}
+.ldTableWrap th{word-break: break-all; padding: 10px 5px; color: #555; font-size: 14px; line-height:30px; text-align: center;font-weight:700; vertical-align: middle;line-height: 1.2em;}
+.ldTableWrap td{word-break: break-all; padding: 10px 5px; color: #555; font-size: 18px; line-height:30px; text-align: center;font-weight:700; vertical-align: middle;line-height: 1.2em;}
+.ldTableWrap thead th{background-color: #a40001; color: #fff; font-weight:700;}
+.lastShot{background-color: #a40001 !important; color: #fff !important; font-weight:700 !important;}
+.ldTableWrap td{color:#900f14;}
+.ldTableWrap tbody td:first-child{background:#fff; color: #650c08; border-bottom:1px solid #fff; overflow: hidden;display: inline-block;max-width: 100%;text-overflow: ellipsis;white-space: nowrap;}
+
+.ldTableWrap tr.th2 th{background: #fff; color:#c08486;}
+
+.bBox{display:block; width:30px; height:30px; border:2px solid #900f14; margin:0 auto; line-height:26px;}
+.b1{position:relative; border-radius:50%;}
+.b2{position:relative;}
+.b3{position:relative;}
+.b3:after{content:''; display:block; position:absolute; border:2px solid #900f14; width:22px; height:22px; margin:auto; left:0; right:0; bottom:0; top:0;}
+
+
+/* exBox */
+.exBox{border:2px solid skyblue; padding:5px; background:rgba(255,255,255,0.7); margin-top:10px;}
+.exBox p{font-size:14px; line-height:20px;}
+
+/* fieldList */
+.conWrap{border-radius:10px; position:absolute; width:95%; max-height:calc(120vh - 300px); overflow-y:auto; top:100px; left:0; right:0; margin:auto; z-index:999; padding:30px 15px; background:rgba(255,255,255,0.9);}
+.addBox{position:absolute; width:95%; max-height:calc(100vh - 250px); overflow-y:auto; left:0; right:0; bottom:30px; margin:auto; z-index:99; padding:5px; }
+
+/* .playerWrap, .conWrap{position:absolute; width:95%; max-height:calc(100vh - 250px); overflow-y:auto; top:100px; left:0; right:0; margin:auto; z-index:99; padding:20px 5px; background:rgba(255,255,255,0.9);}
+.addBox{position:absolute; width:95%; max-height:calc(100vh - 250px); overflow-y:auto; left:0; right:0; bottom:30px; margin:auto; z-index:99; padding:5px; }
+ */
+
+.fieldList{overflow:hidden;}
+.fieldList ul li{width:33.333%; padding:7.5px; float:left;}
+.fieldList ul li a{text-align:center; display:block; width:100%; border-radius:20px; padding:20px 0; font-size:20px; font-weight:700;}
+.fieldList ul li:nth-child(1) a{background:#afefb1;}
+.fieldList ul li:nth-child(2) a{background:#35b539;}
+.fieldList ul li:nth-child(3) a{background:#c5c5c5;}
+.fieldList ul li:nth-child(4) a{background:#4767ff;}
+.fieldList ul li:nth-child(5) a{background:#ffcf80;}
+.fieldList ul li:nth-child(6) a{background:#ffffff;}
+.fieldList ul li:nth-child(7) a{background:#cf0a0a;}
+.fieldList ul li:nth-child(8) a{background:#ff54f7;}
+.fieldList ul li:nth-child(9) a{background:#6beef0;}
+
+.fieldList ul li.on a{background:#000; color:#fff !important;}
+/* greenBox */
+/* .greenBox{width:350px; margin:0 auto;} */
+/* .greenBox ul{overflow:hidden; background:#fff;} */
+/* .greenBox ul li{float:left; width:50%; height:175px;} */
+.greenBox{width:180px; margin:0 auto;}
+.greenBox ul{overflow:hidden; background:#fff;}
+.greenBox ul li{float:left; width:50%; height:90px;}
+
+.greenBox ul li .meterBox > button{position:relative; width:100%; height:100%;}
+.greenBox ul li .meterBox span{display:block; font-size:20px; position:absolute;}
+
+.greenBox ul li .meterBox.meter5M{width:100%; height:100%; border:2px solid #00b050; background:#fff;}
+.greenBox ul li .meterBox.meter3M{width:70%;height:70%;border: 2px solid #7eca88;  background:#fff;}
+.greenBox ul li .meterBox.meter1M{width:60%;height:60%;border: 2px solid #70f1aa;  background:#fff;}
+
+.greenBox ul li .meterBox.meter5M button.on{background:#00b050;}
+.greenBox ul li .meterBox.meter3M button.on{background:#7eca88;}
+.greenBox ul li .meterBox.meter1M button.on{background:#70f1aa;}
+
+.greenBox ul li:nth-child(1) .meterBox span{left:10px; top:10px;}
+.greenBox ul li:nth-child(1) .meterBox.meter3M{right:0; bottom:0;}
+.greenBox ul li:nth-child(1) .meterBox.meter1M{right:0; bottom:0;}
+
+.greenBox ul li:nth-child(2) .meterBox span{right:10px; top:10px;}
+.greenBox ul li:nth-child(2) .meterBox.meter3M{left:0; bottom:0;}
+.greenBox ul li:nth-child(2) .meterBox.meter1M{left:0; bottom:0;}
+
+.greenBox ul li:nth-child(3) .meterBox span{left:10px; bottom:10px;}
+.greenBox ul li:nth-child(3) .meterBox.meter3M{right:0; top:0;}
+.greenBox ul li:nth-child(3) .meterBox.meter1M{right:0; top:0;}
+
+.greenBox ul li:nth-child(4) .meterBox span{right:10px; bottom:10px;}
+.greenBox ul li:nth-child(4) .meterBox.meter3M{left:0; top:0;}
+.greenBox ul li:nth-child(4) .meterBox.meter1M{left:0; top:0;}
+
+.greenBox ul li:nth-child(1) .meterBox.meter3M,
+.greenBox ul li:nth-child(1) .meterBox.meter1M{border-right:0; border-bottom:0;}
+.greenBox ul li:nth-child(2) .meterBox.meter3M,
+.greenBox ul li:nth-child(2) .meterBox.meter1M{border-left:0; border-bottom:0;}
+.greenBox ul li:nth-child(3) .meterBox.meter3M,
+.greenBox ul li:nth-child(3) .meterBox.meter1M{border-right:0; border-top:0;}
+.greenBox ul li:nth-child(4) .meterBox.meter3M,
+.greenBox ul li:nth-child(4) .meterBox.meter1M{border-left:0; border-top:0;}
+
+.relat{position:relative !important;}
+.absol{position:absolute !important;}
+
+/* atCount */
+.atCountBox {margin-top:10px;}
+.atCountBox span{float:left; width:70px; height:46px; line-height:46px; font-size:14px;}
+.atCount {width:calc(100% - 75px); background:#fff; border:1px solid #ddd; padding:5px;}
+.count-result{width:calc(100% - 125px); text-align:center; height:45px; line-height:45px; font-size:24px;}
+
+/* top */
+.subTop{position:absolute; top:0; left:0; z-index:99;  width:100%; overflow:hidden; background:#000;margin-bottom:15px;}
+.subTop p{text-align:Center; font-size:28px; color:#fff; padding:15px 0;}
+.subTop button.btn{position:absolute; right:15px; top:0; bottom:0; margin:auto; height:40px; line-height:40px;}
+.subTop button.btn{background:#ccc;}
+
+.subTop2{position:absolute; top:0; left:0; z-index:99; width:100%; padding:10px 0; margin-top:-15px; background:#eee; margin-bottom:15px;}
+.subTop2 p span{display:inline-block; line-height:32px; vertical-align:top;}
+.subTop2 p .text1{font-size:24px; margin-right:30px;}
+
+.backBtn{display:block; position:absolute; left:15px; top:0; bottom:0; margin:auto; height:34px;}
+.backBtn img{height:100%;}
+
+/* bottom */
+.subBtm{position:Absolute; bottom:0; width:100%; margin-bottom:15px; z-index:99;}
+
+ul.playerList{overflow:hidden;}
+ul.playerList li{border-radius:10px; float:left; width:calc((100% - 10px)/3); margin-right:5px; background:#fff; border:3px solid #ccc; padding:5px;}
+ul.playerList li:last-child{margin-right:0;}
+
+ul.playerList li .bar{width:100%; height:10px; background-color:red; overflow:hidden; margin-bottom:10px;}
+ul.playerList li:nth-child(2) .bar{background-color:yellow;}
+ul.playerList li:nth-child(3) .bar{background-color:blue;}
+
+
+ul.playerList li .subBtmTop{overflow:hidden;}
+ul.playerList li .subBtmTop > p{font-size:18px; font-weight:500; text-align:center;}
+ul.playerList li .subBtmTop .playerName{overflow:hidden; text-align:center;}
+ul.playerList li .subBtmTop .playerName a{display:none; background:skyblue; color:#fff; padding:5px; width:100%; text-align:center; margin-bottom:5px;}
+ul.playerList li .subBtmTop .playerName span{display:block;font-size:20px; width:100%; text-align:center;}
+ul.playerList li .subBtmTop .playerName span.playerTa{width:auto; padding:10px; margin-top:10px; display:inline-block; border:2px solid red; border-radius:50%;}
+ul.playerList li:nth-child(2) .subBtmTop .playerName span.playerTa{border:2px solid yellow;}
+ul.playerList li:nth-child(3) .subBtmTop .playerName span.playerTa{border:2px solid blue;}
+
+.subBtm ul.playerList li .subBtmTop .playerName{margin:15px 0; }
+
+ul.playerList li .btmBtn{width:100%; font-size:20px; background: skyblue;color:#fff;text-align:center;display:block;padding:5px;}
+
+.subBtm ul.playerList li.on{background:#000;}
+.subBtm ul.playerList li.on span{color:#fff;}
+.subBtm ul.playerList li.on:nth-child(1){border:3px solid red;}
+.subBtm ul.playerList li.on:nth-child(2){border:3px solid yellow;}
+.subBtm ul.playerList li.on:nth-child(3){border:3px solid blue;}
+
+.playerInputBox{border-radius:10px; background:rgba(255,255,255,0.7); padding:10px; margin-bottom:10px;}
+
+.playerTasuBox{display:inline-block; background:rgba(255,255,255,0.8); padding:5px 10px; margin-bottom:10px; border:2px solid skyblue;}
+.playerTasuBox p{font-size:16px; margin:5px 0;}
+
+
+@media (max-width: 480px) {
+	.cateWrap ul li a{font-size:16px;}
+	.tableWrap a.btn{font-size:12px; padding:5px;}
+}

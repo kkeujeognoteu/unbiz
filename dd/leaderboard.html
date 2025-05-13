@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrap">
+        <div class="leadTab">
+            <ul>
+                <li class="active"><a>리더보드</a></li>
+                <li><a>출발시간표</a></li>
+                <li><a>홀별성적</a></li>
+            </ul>
+        </div>
+        <div class="leaderboardTB">
+            <table>
+                <colgroup class="pc">
+                    <col width="4%"> <!-- 즐겨찾기 -->
+                    <col width="4%"> <!-- 순위 -->
+                    <col width="4%"> <!-- 국가 -->
+                    <col width="47%"> <!-- 선수명 -->
+                    <col width="4%"> <!-- 합계 -->
+                    <col width="4%"> <!-- 오늘2R -->
+                    <col width="5%"> <!-- Thru -->
+                    <col width="4%"> <!-- 1R -->
+                    <col width="4%"> <!-- 2R -->
+                    <col width="4%"> <!-- 3R -->
+                    <col width="4%"> <!-- 4R -->
+                    <col width="4%"> <!-- total -->
+                </colgroup>
+                <colgroup class="mobile">
+                    <col width="4%"> <!-- 즐겨찾기 -->
+                    <col width="4%"> <!-- 순위 -->
+                    <col width="47%"> <!-- 선수명 -->
+                    <col width="4%"> <!-- 합계 -->
+                    <col width="4%"> <!-- 오늘2R -->
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>즐겨찾기</th>
+                        <th>순위</th>
+                        <th class="pc">국가</th>
+                        <th>선수명</th>
+                        <th>합계</th>
+                        <th>오늘2R</th>
+                        <th class="pc">Thru</th>
+                        <th class="pc">1R</th>
+                        <th class="pc">2R</th>
+                        <th class="pc">3R</th>
+                        <th class="pc">4R</th>
+                        <th class="pc">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="pc">
+                        <td colspan="12">
+                            <div class="myLeader alignLeft">
+                                <span>My Leaderboard</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="mobile">
+                        <td colspan="12">
+                            <div class="myLeader alignLeft">
+                                <span>My Leaderboard</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="12" class="fullLeader alignLeft">
+                            <div class="fullLeader alignLeft">
+                                <span>Full Leaderboard</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="active">
+                        <td class="favorites">
+                            <i class="ic-btn-minus-gray"></i>
+                        </td>
+                        <td>
+                            <span>1</span>
+                        </td>
+                        <td class="flag pc">
+                            <i class="KOR"></i>
+                        </td>
+                        <td class="alignLeft">
+                            <span>박지민</span>
+                        </td>
+                        <td>
+                            <span class="redBox sumBox">-15</span>
+                        </td>
+                        <td><span class="redTxt">-8</span></td>
+                        <td class="pc"><span>F</span></td>
+                        <td class="pc"><span>67</span></td>
+                        <td class="pc"><span>63</span></td>
+                        <td class="pc"><span>-</span></td>
+                        <td class="pc"><span>-</span></td>
+                        <td class="total pc"><span>130</span></td>
+                    </tr>
+                    <tr class="dropDown">
+                        <td colspan="12">
+                            <div class="dropDownWrap">
+                                <div class="dropDownCont">
+                                    <div class="dropRound">
+                                        <button type="button" class="active">1R</button>
+                                        <button type="button">2R</button>
+                                    </div>
+                                    <div class="rank">
+                                        <span>2R 순위</span>
+                                        <span>1</span>
+                                    </div>
+                                    <div class="scoreCont">
+                                        <div class="leftScroreTb">
+                                            <table>
+                                                <colgroup>
+                                                    <col width="8%"> <!-- hole -->
+                                                    <col width="3%"> <!-- 1 -->
+                                                    <col width="3%"> <!-- 2 -->
+                                                    <col width="3%"> <!-- 3 -->
+                                                    <col width="3%"> <!-- 4 -->
+                                                    <col width="3%"> <!-- 5 -->
+                                                    <col width="3%"> <!-- 6 -->
+                                                    <col width="3%"> <!-- 7 -->
+                                                    <col width="3%"> <!-- 8 -->
+                                                    <col width="3%"> <!-- 9 -->
+                                                    <col width="5%"> <!-- out -->
+                                                    <col width="5%"> <!--  -->
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th class="alignLeft">HOLE</th>
+                                                        <th>1</th>
+                                                        <th>2</th>
+                                                        <th>3</th>
+                                                        <th>4</th>
+                                                        <th>5</th>
+                                                        <th>6</th>
+                                                        <th>7</th>
+                                                        <th>8</th>
+                                                        <th>9</th>
+                                                        <th>OUT</th>
+                                                        <th class="mobile"></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="parTb">
+                                                        <td class="alignLeft">PAR</td>
+                                                        <td>4</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td>35</td>
+                                                        <td class="mobile"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="alignLeft">R2</td>
+                                                        <td>4</td>
+                                                        <td>5</td>
+                                                        <td class="icon ic-eagle-or-better socreIc">4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td class="icon ic-bogey">4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td>35</td>
+                                                        <td class="mobile"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="alignLeft">STATUS</td>
+                                                        <td>4</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td></td>
+                                                        <td class="mobile"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="rightScoreTb">
+                                            <table>
+                                                <colgroup>
+                                                    <col width="8%"> <!-- hole -->
+                                                    <col width="3%"> <!-- 10 -->
+                                                    <col width="3%"> <!-- 11 -->
+                                                    <col width="3%"> <!-- 12 -->
+                                                    <col width="3%"> <!-- 13 -->
+                                                    <col width="3%"> <!-- 14 -->
+                                                    <col width="3%"> <!-- 15 -->
+                                                    <col width="3%"> <!-- 16 -->
+                                                    <col width="3%"> <!-- 17 -->
+                                                    <col width="3%"> <!-- 18 -->
+                                                    <col width="5%"> <!-- in -->
+                                                    <col width="5%"> <!-- ttl -->
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th class="alignLeft mobile">HOLE</th>
+                                                        <th>10</th>
+                                                        <th>11</th>
+                                                        <th>12</th>
+                                                        <th>13</th>
+                                                        <th>14</th>
+                                                        <th>15</th>
+                                                        <th class="active">16</th>
+                                                        <th>17</th>
+                                                        <th>18</th>
+                                                        <th>IN</th>
+                                                        <th>TTL</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="parTb">
+                                                        <td class="alignLeft mobile">PAR</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td class="active">4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td class="inTb">35</td>
+                                                        <td class="ttlTb">71</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="alignLeft mobile">R2</td>
+                                                        <td>4</td>
+                                                        <td class="icon ic-double-bogey">4</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td class="icon ic-birdie">4</td>
+                                                        <td class="active">4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td class="inTb">35</td>
+                                                        <td class="ttlTb">71</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="alignLeft mobile">STATUS</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td class="active">4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td class="inTb"></td>
+                                                        <td class="ttlTb">-12</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <!--
+                                        <div class="scoreTable">
+                                            <table>
+                                                
+                                                <thead>
+                                                    <tr>
+                                                        <th class="alignLeft">HOLE</th>
+                                                        <th>1</th>
+                                                        <th>2</th>
+                                                        <th>3</th>
+                                                        <th>4</th>
+                                                        <th>5</th>
+                                                        <th>6</th>
+                                                        <th>7</th>
+                                                        <th>8</th>
+                                                        <th>9</th>
+                                                        <th>OUT</th>
+                                                        <th>10</th>
+                                                        <th>11</th>
+                                                        <th>12</th>
+                                                        <th>13</th>
+                                                        <th>14</th>
+                                                        <th>15</th>
+                                                        <th class="active">16</th>
+                                                        <th>17</th>
+                                                        <th>18</th>
+                                                        <th>IN</th>
+                                                        <th>TTL</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="parTb">
+                                                        <td class="alignLeft">PAR</td>
+                                                        <td>4</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td>35</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td class="active">4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td class="inTb">35</td>
+                                                        <td class="ttlTb">71</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="alignLeft">R2</td>
+                                                        <td>4</td>
+                                                        <td>5</td>
+                                                        <td class="icon ic-eagle-or-better socreIc">4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td class="icon ic-bogey">4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td>35</td>
+                                                        <td>4</td>
+                                                        <td class="icon ic-double-bogey">4</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td class="icon ic-birdie">4</td>
+                                                        <td class="active">4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td class="inTb">35</td>
+                                                        <td class="ttlTb">71</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="alignLeft">STATUS</td>
+                                                        <td>4</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td></td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td class="active">4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td class="inTb"></td>
+                                                        <td class="ttlTb">-12</td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td colspan="22">
+                                                            <ul>
+                                                                <li>
+                                                                    <i class="ic-eagle-or-better"></i>
+                                                                    <span>Eagle -</span>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="ic-birdie"></i>
+                                                                    <span>Birdie</span>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="ic-bogey"></i>
+                                                                    <span>Bogey</span>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="ic-double-bogey"></i>
+                                                                    <span>D.Bogey +</span>
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="favorites">
+                            <i class="ic-btn-minus-gray"></i>
+                        </td>
+                        <td>
+                            <span>2</span>
+                        </td>
+                        <td>
+                            <div class="flag">
+                                <i class="KOR"></i>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="alignLeft">
+                                <span>박지민</span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="eBox sumBox">-15</span>
+                        </td>
+                        <td><span class="eTxt today2R">E</span></td>
+                        <td><span>F</span></td>
+                        <td><span>67</span></td>
+                        <td><span>63</span></td>
+                        <td><span>-</span></td>
+                        <td><span>-</span></td>
+                        <td class="total"><span>130</span></td>
+                    </tr>
+                    <tr>
+                        <td class="favorites">
+                            <i class="ic-btn-minus-gray"></i>
+                        </td>
+                        <td>
+                            <span>T3</span>
+                        </td>
+                        <td>
+                            <div class="flag">
+                                <i class="KOR"></i>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="alignLeft">
+                                <span>박지민</span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="blueBox sumBox">+1</span>
+                        </td>
+                        <td><span class="blueTxt">+1</span></td>
+                        <td><span>F</span></td>
+                        <td><span>67</span></td>
+                        <td><span>63</span></td>
+                        <td><span>-</span></td>
+                        <td><span>-</span></td>
+                        <td class="total"><span>130</span></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <div class="leaderboardTB2">
+            <table>
+                <thead>
+                    <tr>
+                        <th>즐겨찾기</th>
+                        <th>순위</th>
+                        <th>선수명</th>
+                        <th>합계</th>
+                        <th class="pc">Thru</th>
+                        <th class="pc">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="pc Favorites">
+                        <td>
+                            <div class="Favorites alignLeft">
+                                <span>Favorites</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="allPlayers">
+                        <td class="fullLeader alignLeft">
+                            <div class="allPlayers alignLeft">
+                                <span>All Players</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="active">
+                        <td>
+                            <i class="ic-btn-minus-gray"></i>
+                        </td>
+                        <td>
+                            <span>1</span>
+                        </td>
+                        <td class="alignLeft">
+                            <span>박지민</span>
+                        </td>
+                        <td>
+                            <span class="redBox sumBox">-15</span>
+                        </td>
+                        <td class="pc"><span>F</span></td>
+                        <td class="total pc"><span>130</span></td>
+                    </tr>
+                    <tr class="dropDown">
+                        <td colspan="12">
+                            <div class="dropDownWrap">
+                                <div class="dropDownCont">
+                                    <div class="dropRound">
+                                        <button type="button" class="active">1R</button>
+                                        <button type="button">2R</button>
+                                    </div>
+                                    <div class="rank">
+                                        <span>2R 순위</span>
+                                        <span>1</span>
+                                    </div>
+                                    <div class="scoreCont">
+                                        <div class="leftScroreTb">
+                                            <table>
+                                                <colgroup>
+                                                    <col width="8%"> <!-- hole -->
+                                                    <col width="3%"> <!-- 1 -->
+                                                    <col width="3%"> <!-- 2 -->
+                                                    <col width="3%"> <!-- 3 -->
+                                                    <col width="3%"> <!-- 4 -->
+                                                    <col width="3%"> <!-- 5 -->
+                                                    <col width="3%"> <!-- 6 -->
+                                                    <col width="3%"> <!-- 7 -->
+                                                    <col width="3%"> <!-- 8 -->
+                                                    <col width="3%"> <!-- 9 -->
+                                                    <col width="5%"> <!-- out -->
+                                                    <col width="5%"> <!--  -->
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th class="alignLeft">HOLE</th>
+                                                        <th>1</th>
+                                                        <th>2</th>
+                                                        <th>3</th>
+                                                        <th>4</th>
+                                                        <th>5</th>
+                                                        <th>6</th>
+                                                        <th>7</th>
+                                                        <th>8</th>
+                                                        <th>9</th>
+                                                        <th>OUT</th>
+                                                        <th class="mobile"></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="parTb">
+                                                        <td class="alignLeft">PAR</td>
+                                                        <td>4</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td>35</td>
+                                                        <td class="mobile"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="alignLeft">R2</td>
+                                                        <td>4</td>
+                                                        <td>5</td>
+                                                        <td class="icon ic-eagle-or-better socreIc">4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td class="icon ic-bogey">4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td>35</td>
+                                                        <td class="mobile"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="alignLeft">STATUS</td>
+                                                        <td>4</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td></td>
+                                                        <td class="mobile"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="rightScoreTb">
+                                            <table>
+                                                <colgroup>
+                                                    <col width="8%"> <!-- hole -->
+                                                    <col width="3%"> <!-- 10 -->
+                                                    <col width="3%"> <!-- 11 -->
+                                                    <col width="3%"> <!-- 12 -->
+                                                    <col width="3%"> <!-- 13 -->
+                                                    <col width="3%"> <!-- 14 -->
+                                                    <col width="3%"> <!-- 15 -->
+                                                    <col width="3%"> <!-- 16 -->
+                                                    <col width="3%"> <!-- 17 -->
+                                                    <col width="3%"> <!-- 18 -->
+                                                    <col width="5%"> <!-- in -->
+                                                    <col width="5%"> <!-- ttl -->
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th class="alignLeft mobile">HOLE</th>
+                                                        <th>10</th>
+                                                        <th>11</th>
+                                                        <th>12</th>
+                                                        <th>13</th>
+                                                        <th>14</th>
+                                                        <th>15</th>
+                                                        <th class="active">16</th>
+                                                        <th>17</th>
+                                                        <th>18</th>
+                                                        <th>IN</th>
+                                                        <th>TTL</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="parTb">
+                                                        <td class="alignLeft mobile">PAR</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td class="active">4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td class="inTb">35</td>
+                                                        <td class="ttlTb">71</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="alignLeft mobile">R2</td>
+                                                        <td>4</td>
+                                                        <td class="icon ic-double-bogey">4</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td class="icon ic-birdie">4</td>
+                                                        <td class="active">4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td class="inTb">35</td>
+                                                        <td class="ttlTb">71</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="alignLeft mobile">STATUS</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td class="active">4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td class="inTb"></td>
+                                                        <td class="ttlTb">-12</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <!--
+                                        <div class="scoreTable">
+                                            <table>
+                                                
+                                                <thead>
+                                                    <tr>
+                                                        <th class="alignLeft">HOLE</th>
+                                                        <th>1</th>
+                                                        <th>2</th>
+                                                        <th>3</th>
+                                                        <th>4</th>
+                                                        <th>5</th>
+                                                        <th>6</th>
+                                                        <th>7</th>
+                                                        <th>8</th>
+                                                        <th>9</th>
+                                                        <th>OUT</th>
+                                                        <th>10</th>
+                                                        <th>11</th>
+                                                        <th>12</th>
+                                                        <th>13</th>
+                                                        <th>14</th>
+                                                        <th>15</th>
+                                                        <th class="active">16</th>
+                                                        <th>17</th>
+                                                        <th>18</th>
+                                                        <th>IN</th>
+                                                        <th>TTL</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="parTb">
+                                                        <td class="alignLeft">PAR</td>
+                                                        <td>4</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td>35</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td class="active">4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td class="inTb">35</td>
+                                                        <td class="ttlTb">71</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="alignLeft">R2</td>
+                                                        <td>4</td>
+                                                        <td>5</td>
+                                                        <td class="icon ic-eagle-or-better socreIc">4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td class="icon ic-bogey">4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td>35</td>
+                                                        <td>4</td>
+                                                        <td class="icon ic-double-bogey">4</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td class="icon ic-birdie">4</td>
+                                                        <td class="active">4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td class="inTb">35</td>
+                                                        <td class="ttlTb">71</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="alignLeft">STATUS</td>
+                                                        <td>4</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td></td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                        <td>5</td>
+                                                        <td>4</td>
+                                                        <td class="active">4</td>
+                                                        <td>3</td>
+                                                        <td>4</td>
+                                                        <td class="inTb"></td>
+                                                        <td class="ttlTb">-12</td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td colspan="22">
+                                                            <ul>
+                                                                <li>
+                                                                    <i class="ic-eagle-or-better"></i>
+                                                                    <span>Eagle -</span>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="ic-birdie"></i>
+                                                                    <span>Birdie</span>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="ic-bogey"></i>
+                                                                    <span>Bogey</span>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="ic-double-bogey"></i>
+                                                                    <span>D.Bogey +</span>
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="favorites">
+                            <i class="ic-btn-minus-gray"></i>
+                        </td>
+                        <td>
+                            <span>2</span>
+                        </td>
+                        <td>
+                            <div class="flag">
+                                <i class="KOR"></i>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="alignLeft">
+                                <span>박지민</span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="eBox sumBox">-15</span>
+                        </td>
+                        <td><span class="eTxt today2R">E</span></td>
+                        <td><span>F</span></td>
+                        <td><span>67</span></td>
+                        <td><span>63</span></td>
+                        <td><span>-</span></td>
+                        <td><span>-</span></td>
+                        <td class="total"><span>130</span></td>
+                    </tr>
+                    <tr>
+                        <td class="favorites">
+                            <i class="ic-btn-minus-gray"></i>
+                        </td>
+                        <td>
+                            <span>T3</span>
+                        </td>
+                        <td>
+                            <div class="flag">
+                                <i class="KOR"></i>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="alignLeft">
+                                <span>박지민</span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="blueBox sumBox">+1</span>
+                        </td>
+                        <td><span class="blueTxt">+1</span></td>
+                        <td><span>F</span></td>
+                        <td><span>67</span></td>
+                        <td><span>63</span></td>
+                        <td><span>-</span></td>
+                        <td><span>-</span></td>
+                        <td class="total"><span>130</span></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+
+    
+</body>
+</html>

@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/sub.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/icon.css" rel="stylesheet">
+    <link href="../css/header.css" rel="stylesheet">
+    <link href="../css/footer.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    <title>SNS</title>
+    <script>
+
+        /* header */
+        function tglAllMenu(){
+            $('body').toggleClass('dimm');
+            if($('#header').hasClass('open')){
+                $('#header').removeClass('open')
+                $('body').removeClass('fix');
+                $('#wing').removeClass('inHeader');
+                $('.menu_all').removeClass('close');
+                $('.logo').removeClass('wht');
+                if($('#fullpage').length > 0 && $(window).width()>1024){
+                    $.fn.fullpage.setAllowScrolling(true);
+                    $.fn.fullpage.setKeyboardScrolling(true);
+                }
+            }else {
+                $('#header').addClass('open')
+                $('body').addClass('fix');
+                $('#wing').addClass('inHeader');
+                $('.logo').addClass('wht');
+                $('.btn_menu').addClass('close');
+
+                if($('#fullpage').length > 0 && $(window).width()>1024){
+                    $.fn.fullpage.setAllowScrolling(false);
+                    $.fn.fullpage.setKeyboardScrolling(false);
+                }
+            }
+            
+        }
+    
+        $(document).ready(function() {
+
+
+            function numberWithCommas(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+            
+            function animateNum(agency, cntNum){
+                $({ val : 0 }).animate({ val : cntNum }, {
+                duration: 1000,
+                step: function() {
+                    var num = numberWithCommas(Math.floor(this.val));
+                    $("#" + agency + "SpeTotal").text(num);
+                },
+                complete: function() {
+                    var num = numberWithCommas(Math.floor(this.val));
+                    $("#" + agency + "SpeTotal").text(num);
+                }
+                });
+            }
+            
+            let agencySpe = {
+                'A01' : 5117271,
+                'A02' : 154654654,
+                'A03' : 23213123,
+                'A04' : 0,
+                'A05' : 5121,
+            }
+            
+            for(let agency in agencySpe){
+                animateNum(agency, agencySpe[agency]);
+            }
+            $('.bannerAreaCont').slick({
+                slidesToShow: 8,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 2000,
+                responsive: [{
+                    breakpoint: 1080,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 6
+                    }
+                },
+                {
+                    breakpoint: 780,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 4,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 2,
+                    }
+                }
+            ]
+            });
+            $('.LeagueRankWrap').slick({
+                slidesToShow: "auto",
+                slidesToScroll: 1,
+                infinite: true,
+                responsive: [{
+                    breakpoint: 1080,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 780,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 380,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
+            ]
+            });
+            // $(window).on('resize', function() {
+            //     $('.LeagueRankWrap').slick('resize');
+            // });
+            
+      });
+
+    </script>
+</head>
+
+<body>
+    <div class="conain">
+        <div class="wrap">
+            <header class="header subHeader" id="header">
+                <div class="headWrap">
+                    <div class="topSubMenu">
+                        <ul>
+                            <li>
+                                <a href="#">한국프로스포츠협회</a>
+                            </li>
+                            <li>
+                                <a href="#">사이트맵</a>
+                            </li>
+                            <li>
+                                <a href="#">개선의견</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="topMenu">
+                        <h1 class="logo">
+                            <a href="#"></a>
+                        </h1>
+                        <div id="menu">
+                            <ul class="lst">
+                                <li class="dl" id="gnb1">
+                                    <a href="#">관중 현황</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">전체 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">일자별 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">구단별 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">시·도별 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">역대 관중 현황</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">일정/결과</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">금주의 일정</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">전체 일정・결과</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">리그 순위</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dl active" id="gnb1">
+                                    <a href="#">통계/현황</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">e-나라지표</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">SNS</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">경기장</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">종사자</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">스폰서</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">역대우승팀</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">테마통계</a>
+                                        </li>
+                                    </ul>   
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">자료실</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">PROSVIEW</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">스포츠 윤리 교육</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">관람객 성향 조사</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">기타 자료</a>
+                                        </li>
+                                    </ul>    
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">단체/구단</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">프로 단체 정보</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">프로 구단 정보</a>
+                                        </li>
+                                    </ul> 
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rightMenu">
+                            <button type="button" class="btn_menu close" onclick="tglAllMenu();">
+                                <span class="line"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="subPg">
+                <div class="subNavWRap">
+                    <div class="subNav">
+                        <ul>
+                            <li class="dl_link">
+                                <a href="#">e-나라지표</a>
+                            </li>
+                            <li class="dl_link active">
+                                <a href="#">SNS</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">경기장</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">종사자</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">스폰서</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">역대우승팀</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">테마통계</a>
+                            </li>
+                        </ul>
+                    </div>    
+                </div>
+                <div class="section01">
+                    <div class="slcBtnBox">
+                        <div class="subTopSlt slcMobile">
+                            <select>
+                                <option>2024년</option>
+                                <option>2023년</option>
+                            </select>
+                        </div>
+                        <div class="topSltWRap">
+                            <ul class="topSlt">
+                                <li><a href="#">KBO</a></li>
+                                <li>
+                                    <a href="#">K리그</a>
+                                </li>
+                                <li><a href="#">KBL</a></li>
+                                <li><a href="#">WKBL</a></li>
+                                <li>
+                                    <a href="#">KOVO</a>
+                                </li>
+                                <li><a href="#">KPGA</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="subCont">
+                        <div class="chart snsChart">
+                            <div class="chartBox">
+                                <img src="../images/sub/snsChart.png">
+                            </div>
+                        </div>
+                        <div class="subTb totalTb ">                            
+                            <div class="grapTb">
+                                <div class="newTbl_basicWrap tableScrollx ">
+                                    <table class="newTbl_basic">
+                                        <colgroup></colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th rowspan="2"></th>
+                                                <th rowspan="2">날짜</th>
+                                                <th colspan="2"> 
+                                                    페이스북
+                                                    <a target="_blank" href="https://www.facebook.com/KLEAGUEofficial">
+                                                        <img src="../images/sns_facebook.png" width="33px;" style="padding-left: 5px; width: 20px !important; vertical-align: middle;">
+                                                    </a>
+                                                </th>
+                                                <th colspan="2">
+                                                    인스타그램
+                                                    <a target="_blank" href="https://www.instagram.com/kleague/">
+                                                        <img src="../images/sns_insta.png" width="33px;" style="padding-left: 5px; width: 20px !important; vertical-align: middle;">
+                                                    </a>
+                                                </th>
+                                                <th colspan="2">
+                                                    유튜브
+                                                    <a target="_blank" href="https://www.youtube.com/user/withkleague">
+                                                        <img src="../images/sns_youtube.png" width="33px;" style="padding-left: 5px; width: 20px !important; vertical-align: middle;">
+                                                    </a>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>팔로워</th>
+                                                <th>좋아요 수</th>
+                                                <th>팔로워</th>
+                                                <th>게시물 수</th>
+                                                <th>구독자 수</th>
+                                                <th>조회 수</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>2023.12.26</td>
+                                                <td>100,000</td>
+                                                <td>130,000</td>
+                                                <td>205,000</td>
+                                                <td>7,810</td>
+                                                <td>294,000</td>
+                                                <td>385,727,972</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>2023.11.26</td>
+                                                <td>100,918</td>
+                                                <td>127,289</td>
+                                                <td>205,105</td>
+                                                <td>7,786</td>
+                                                <td>288,000</td>
+                                                <td>382,548,366</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>2023.10.26</td>
+                                                <td>100,862</td>
+                                                <td>127,458</td>
+                                                <td>205,093</td>
+                                                <td>7,775</td>
+                                                <td>291,000</td>
+                                                <td>375,679,630</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>2023.09.26</td>
+                                                <td>100,918</td>
+                                                <td>127,253</td>
+                                                <td>205,063</td>
+                                                <td>7,802</td>
+                                                <td>289,000</td>
+                                                <td>369,454,507</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>2023.08.26</td>
+                                                <td>100,918</td>
+                                                <td>127,558</td>
+                                                <td>205,032</td>
+                                                <td>7,786</td>
+                                                <td>286,000</td>
+                                                <td>359,584,831</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>2023.07.26</td>
+                                                <td>100,910</td>
+                                                <td>127,321</td>
+                                                <td>205,001</td>
+                                                <td>7,780</td>
+                                                <td>278,000</td>
+                                                <td>343,194,393</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>2023.06.26</td>
+                                                <td>100,911</td>
+                                                <td>127,182</td>
+                                                <td>159,000</td>
+                                                <td>7,743</td>
+                                                <td>271,000</td>
+                                                <td>327,856,366</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>2023.05.26</td>
+                                                <td>100,914</td>
+                                                <td>127,458</td>
+                                                <td>205,000</td>
+                                                <td>7,760</td>
+                                                <td>265,000</td>
+                                                <td>309,962,358</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>2023.04.26</td>
+                                                <td>100,918</td>
+                                                <td>127,253</td>
+                                                <td>203,000</td>
+                                                <td>6,898</td>
+                                                <td>259,000</td>
+                                                <td>288,551,783</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>2023.03.26</td>
+                                                <td>100,919</td>
+                                                <td>127,244</td>
+                                                <td>159,000</td>
+                                                <td>6,895</td>
+                                                <td>252,000</td>
+                                                <td>272,591,609</td>
+                                            </tr>
+                                            <tr>
+                                                <td>11</td>
+                                                <td>2023.02.26</td>
+                                                <td>100,737</td>
+                                                <td>126,395</td>
+                                                <td>158,000</td>
+                                                <td>6,843</td>
+                                                <td>244,000</td>
+                                                <td>260,968,310</td>
+                                            </tr>
+                                            <tr>
+                                                <td>12</td>
+                                                <td>2023.01.26</td>
+                                                <td>100,611</td>
+                                                <td>126,261</td>
+                                                <td>157,000</td>
+                                                <td>6,824</td>
+                                                <td>242,000</td>
+                                                <td>255,062,672</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- bannerArea -->
+            <div class="bannerArea">
+                <div class="bannerAreaWrap">
+                    <div class="bannerAreaCont">
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner00.png">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner01.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner02.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner03.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner04.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner05.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner06.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#">
+                                <img src="../images/main/footBanner07.gif">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- footer -->
+            <footer class="footer">
+                <div class="footerTop">
+                    <div class="ftInner">
+                        <ul class="left">
+                            <li>
+                                <a href="#">개인정보처리방침</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="#">사이트맵</a>
+                            </li>
+                        </ul>
+                        <ul class="site">
+                            <li class="dataBtn">
+                                <button type="button" class="navRight">데이터 활용 신청</button>
+                            </li>
+                            <li>
+                                <a>관련사이트</a>
+                                <ul class="relatedSite">
+                                    <li>
+                                        <a href="http://data.kleague.com" target="_blank">K LEAGUE 데이터포털</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://datalab.wkbl.or.kr" target="_blank">WKBL 데이터랩</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://data.klpga.co.kr/" target="_blank">KLPGA 데이터센터</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://k-rankings.klpga.co.kr/" target="_blank">KLPGA K-Rankings</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footerBot">
+                    <div class="ftCont">
+                        <div class="footerLogo">
+                            <h1>
+                                <img src="../images/main/logo_footer.png">
+                            </h1>
+                        </div>
+                        <div class="footInfo">
+                            <ul>
+                                <li>
+                                    서울특별시 중구 통일로 2길 16 AIA타워 5층 TEL 02&#41;6190-5900 FAX 02&#41;6190-5901
+                                </li>
+                                <li>
+                                    Copyright&copy;2019 사단법인 한국프로스포츠협회. All right reserved
+                                </li>
+                                <li>이 사업은 문화체육관광부와 국민체육진흥공단의 재정후원을 받고 있습니다.</li>
+                                <li class="chrome">이 웹사이트는 Chrome 브라우저에 최적화되어있습니다.</li>
+                            </ul>
+                        </div>
+                        <div class="footersponse">
+                            <p>
+                                <img src="../images/main/logo_footer2.png">
+                            </p>
+                            <p>
+                                <img src="../images/main/logo_footer3.png">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+      
+    <!-- 차트js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"></script> -->
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['K LEAGUE', 'KBO', 'KBL', 'WKBL', 'KOVO'],
+            datasets: [{
+                label: '',
+                data: [37000, 57000, 45000, 30000, 20000],
+                backgroundColor: [
+                    '#e20d18',
+                    '#00215a',
+                    '#ff9c00',
+                    '#ea5ba0',
+                    '#009df3'
+                ]
+            }]
+        },
+        options: {
+            maxBarThickness: 22,
+            indexAxis: 'y',
+            scales: {
+            x: {
+                max: 60000,
+                beginAtZero: true,
+                ticks:{
+                    stepSize:10000
+                }
+            }
+            },
+            plugins: {
+            legend: {
+                display: false
+                }
+            }
+        }
+        });
+
+    </script>
+</body>
+
+</html>

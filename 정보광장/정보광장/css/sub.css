@@ -1,0 +1,185 @@
+/* common */
+.pc{ display:block; }
+.mobile{ display:none; }
+.lose, .tie{ color:#000; font-weight:600 }
+.win{ color:#da0000; font-weight:600; }
+.vs{ font-size:14px; }
+
+/* 서브 홈 */
+.subNavWRap{ position:absolute; top:135px; left:0; width:100%; background:#f5f5f5; height:45px; }
+.subNavWRap .subNav { width:1440px; margin:0 auto; }
+.subNavWRap .subNav ul{ display:flex; height:45px; }
+.subNavWRap ul li{ padding:12px 30px;  }
+.subNavWRap ul li:first-child{ padding:12px;  }
+.subNavWRap ul li:nth-child(-n+3){ border-left:1px solid #cacaca; }
+
+
+.subNavWRap ul .home{ width:47px; }
+.subNavWRap ul .home .homeIcon{ position:relative; }
+.subNavWRap ul .home .homeIcon:after{ content:''; position:absolute; width:20px; height:20px; background:url(../images/sub/home.png)no-repeat; background-size:contain; top:5px; }
+.subNavWRap ul li:nth-child(2){ background:#ececec; }
+.subNavWRap ul li:nth-child(n+3):hover, .subNavWRap ul li.active{ border-bottom:2px solid #86654b }
+.subNavWRap ul li:hover a, .subNavWRap ul li.active a{ color:#86654b; font-weight:600 }
+
+.subPg{ padding:180px 0 0; }
+.subPg .section01{ width:1440px; margin:51px auto; }
+.subPg .section01 .title{ border-bottom:1px solid #000; padding-bottom:20px; }
+.subPg .section01 .title h2{ font-size:36px; text-align:center; }
+.subPg .section01 .title .search select{ height:45px; padding:13px 21px 13px 10px; border:1px solid #cacaca; color:#666; font-size:16px; }
+.subPg .section01 .title .search select + select{ margin-left:10px; }
+
+@media(max-width:1080px){
+
+    .pc{ display:none; }
+    .mobile{ display:block; }
+    .next{ background:url(../images/next.png)no-repeat; width:20px; height:20px; background-size:contain; }
+    .prev{ background:url(../images/prev.png)no-repeat; width:20px; height:20px; background-size:contain; }
+    button{ background:transparent; border:none; }
+    
+    .subPg .section01{ width:100%; }
+    .subNavWRap{ top:90px; }
+    .subPg{ padding-top:135px; }
+    .subPg .section01{ margin:20px 0; }
+    .subPg .section01 .title{ border-bottom:0; padding-bottom:0; }
+}
+@media(max-width:780px){
+
+    .vs{ font-size:12px; }    
+    .subNavWRap{ top:80px; }
+    .subPg{ padding-top:125px; }
+    .subPg .section01 .title h2{ font-size:25px; }
+
+}
+
+.subCont{ padding:40px 0; }
+
+/* 금주의 일정 */
+.section01{ width:1440px; margin:50px auto; }
+.section01 h2 a{ position:absolute; top:12px; right:0; width:30px; height:30px; background:url(../images/pluse.png)no-repeat; }
+.schedulWrap{ display:flex; }
+.schWeek{ width:100%; position:relative; z-index:3  }
+
+.schWeek:after{ content:''; position:absolute; width:100%; height:61px; background:#0f1957; top:0; left:0; border-radius:100px; }
+
+.schedule{ display:flex; justify-content:space-between; gap:10px; width:92%; margin:auto; }
+.schedule > div{ width:35%; padding:20px 15px; z-index:1; }
+.weekdays{ border-radius:100px; }
+.weekdays div p{ font-size:21px; font-weight:500; line-height:1;  text-align:center; }
+.weekdays div p span{ color:#fff; }
+.weekdays .sat p span{ color:#ff4400; }
+.weekdays div p .subWeekday{ font-size:18px }
+
+
+.days{ height:335px; }
+.days .dayBox { border-bottom:1px solid #cacaca; cursor: pointer; }
+.days .dayBox li{ line-height:1.5; padding:10px 0; }
+.days .dayBox li p{ padding-left:29px; background-position:left center; color:#666 }
+.days .dayBox:hover, .days .dayBox.active{ background:#f5f5f5; border-bottom:1px solid #80674b; }
+
+/* subTb 공통 */
+.subTb{ margin-top:40px; }
+.subTb table{ border-collapse:collapse; width:100%; }
+.subTb table th, .subTb table td{ padding:15px 20px; }
+.subTb table th{ border:1px solid #000; border-left:0; border-right:0; }
+.subTb table td{ border-bottom:1px solid #cacaca; text-align:center; color:#666 }
+.subTb table tbody tr:last-child td{ border-bottom:1px solid #000; }
+
+/* 금주의 일정 테이블 */
+.schWeekTb .total{ text-align:right; margin:20px 0 15px; }
+.schWeekTb .total span{ color:#666 }
+.schWeekTb .total i{ color:#80674b; }
+.schWeekTb table .playerClub{ color:#333; font-weight:600 }
+.schWeekTb table .player{ display:flex; justify-content:center; align-items:center; gap:40px; }
+.schWeekTb table .player .vs{ font-size:15px; color:#000; font-weight:600; }
+
+
+@media(max-width:1080px){
+    .subCont{ padding:20px 0; }
+    .playerTab{ width:100%; padding:0 10px; margin-top:20px; overflow-x: auto; }
+    .playerTab ul{ display:flex; gap:10px; }
+    .playerTab ul li{ padding:5px 15px; border:1px solid #ececec; border-radius:50px; color:#666 }
+    .playerTab ul li.active{ border-color:#0f1957; color:#0f1957; font-weight:600 }
+     
+    .schTop{ display:flex; align-items:center; justify-content:center; margin-bottom:20px; padding:0 15px; }
+    .schTop .schTitle{ display:flex; align-items:center; justify-content:center; gap:15px; }
+    .schTop .schDate{ position:absolute; right:15px;; top:3px; display:flex; }
+    .schTop .schDate span{ position:absolute; right:0; top:0; bottom:0; }
+    .schTop .schDate .icon_cal{ background:url(../images/calender.png)no-repeat; width:25px; height:25px; background-size:contain; right:20px; margin-right: 3px; }
+    .schTop .schDate .icon_Down{ background:url(../images/icon_down.png)no-repeat center; width:20px; height:20px; background-size:contain; top:3px }
+
+    .schWeek:after{ display:none; }
+    .schedule{ width:100%; gap:0; justify-content:center; }
+
+    .weekdays{ border-radius:0; border-top:1px solid #ececec; border-bottom:10px solid #ececec; }
+    .weekdays div p span{ color:#666; display:block; font-size:16px; }
+    .weekdays div p .subWeekday{ color:#333; font-size:20px; font-weight:400; margin-top:8px; }
+    .weekdays .today.active{ border-bottom:3px solid #0f1957 }
+    .weekdays .today.active p span{ color:#0f1957; font-weight:700; }
+
+    .days{ display:none; }
+
+    .schWeekMobile{ padding:0 15px; padding-top:20px; }
+    .shcList{ border:1px solid #cacaca; border-radius:10px; margin-bottom:15px; }
+    .shcList .schDate{ display:flex; justify-content:space-between; padding:15px; border-bottom:1px solid #cacaca; background:#f5f5f5; border-radius:10px 10px 0 0 }
+    .shcList .schDate p span{ color:#333 }
+    .shcList .schDate p span + span{ padding-left:10px; }
+    .shcList .schDate .wedth_icon{ width:20px; }
+    .shcList .schDate .wedth_icon img{ width:100%; }
+    .shcList .schBox{display:flex; }
+    .shcList .schBox .tbLeft{ width:180px; border-right:1px solid #cacaca; display:flex; align-items:center; justify-content: center; flex-direction:column; padding:15px; }
+    .shcList .schBox .tbLeft p{ font-weight:600; font-size:18px; }
+    .shcList .schBox .tbLeft .peopleNum img{ width:15px; vertical-align:middle; }
+    .shcList .schBox .tbLeft .peopleNum span{ font-size:14px; color:#666; font-weight:500; }
+    .shcList .schBox .tbRight{ width:calc(100% - 160px); }
+    .shcList .schBox .tbRight > div{ padding:15px; }
+    .shcList .schBox .tbRight .schPlayTop{ border-bottom:1px solid #cacaca }
+    .shcList .schBox .tbRight .schPlayBtm { display:flex; align-items:center; justify-content:center; }
+    .shcList .schBox .tbRight .schPlayBtm p{ display:flex; justify-content:center; width:100%; }
+    .shcList .schBox .tbRight .schPlayBtm .scoreTxt{ width:150px; justify-content:space-between; align-items:center; gap:0 }
+    .shcList .schBox .tbRight .schPlayBtm .score{ width:30px; text-align:center; }
+    
+
+}
+
+@media(max-width:780px){
+    .playerTab ul{ width:calc(100% + 280px); }
+
+    .subNavWRap ul li:nth-child(-n+2){ display:none; }
+
+    /* 금주의 일정 */
+    .schTop .schTitle h2{ font-size:20px; }
+    .schedule > div{ padding:10px; }
+
+    .weekdays div p span{ font-size:14px; }
+    .shcList .schDate{ padding:10px; }
+    .shcList .schBox .tbLeft, .shcList .schBox .tbRight > div{ padding:10px 8px; }
+    .shcList .schBox .tbLeft{ width:110px; }
+    .shcList .schBox .tbLeft p{ font-size:15px; }
+    .shcList .schBox .tbRight{ width:calc(100% - 110px) }
+    .shcList .schBox .tbRight .schPlayBtm p{ font-size:14px; }
+    .shcList .schBox .tbRight .schPlayBtm .score{ width:15px; }
+    .shcList .schBox .tbRight .schPlayBtm .scoreTxt{ gap:0; width:150px; }
+
+
+
+}
+@media(max-width:380px){
+    .playerTab ul{ width:calc(100% + 280px); }
+    
+    /* 금주의 일정 */
+    .weekdays div p .subWeekday{ font-size:18px; }
+    .playerTab{ margin-top:20px; }
+    .playerTab ul li{ font-size:14px; }
+    .schTop{ margin-bottom:15px; }
+    .schTop .schDate .icon_cal{ width:20px; }
+    .schTop .schDate .icon_Down{ width:15px; top:0; }
+    .schWeekMobile{ padding-top:15px; }
+    .shcList .schDate{ padding:5px 10px; }
+    .shcList .schBox .tbRight .schPlayTop, .shcList .schBox .tbRight .schPlayBtm, .shcList .schBox .tbLeft{ padding:10px 4px; }
+    .shcList .schBox .tbLeft{ width:80px; }
+    .shcList .schDate .wedth_icon{ width:17px; }
+    .shcList .schBox .tbLeft p{ font-size:14px; line-height:1.2 }
+    .shcList .schBox .tbRight{ width:calc(100% - 80px) }
+    .shcList .schBox .tbRight .schPlayBtm .scoreTxt{ width:80px; }
+    .shcList .schBox .tbRight p{ font-size:14px; }
+}

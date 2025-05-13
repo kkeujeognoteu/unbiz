@@ -1,0 +1,89 @@
+espresomedia
+서울대에서 딥러닝 기반 초해상도 알고리즘 기술 이전 받음
+기존 저화질 콘텐츠를 4k 수준으로 복원함
+
+
+unbiz
+네트워크 트래픽 절감
+네트워크 인프라가 열악한 지역에서도 고화질 영상을 재생하는 효과
+블록체인 기반의 서비스에 적용 가능
+
+
+
+콘텐츠 전송 네트워크 기술(CDN)
+
+swinir과 edsr/mdsr비교
+
+1. Espresomedia
+
+주요 내용:
+
+•목적: Espresomedia의 사업 계획을 소개하고, 회사의 비전과 목표를 명시.
+•비즈니스 모델: 디지털 미디어와 콘텐츠 제작을 중심으로 한 다양한 수익 모델 제시.
+•시장 분석: 디지털 미디어 시장의 성장 가능성과 현재의 시장 동향 분석.
+•재무 계획: 예상 매출, 비용 구조, 이익 등을 포함한 상세한 재무 계획 제공.
+•마케팅 전략: 목표 고객층, 마케팅 채널, 홍보 전략 등을 포함한 마케팅 계획.
+•위험 관리: 사업 진행 시 예상되는 위험 요소와 그에 대한 대응 전략.
+
+
+특징
+
+•디지털 미디어 중심: 콘텐츠 제작 및 배포를 통한 수익 창출 모델.
+•상세한 재무 계획: 비용 구조와 예상 매출을 상세히 설명.
+•시장 분석: 현재의 시장 동향과 성장 가능성을 다루며, 경쟁 분석 포함.
+•위험 관리: 사업 진행 시 발생할 수 있는 위험 요소와 대응 전략을 포함.
+
+2. 광주특구 BM 보고서
+
+주요 내용
+
+•목적: 광주특구 내의 전략기술 특화 및 유망기술 발굴을 위한 사업 보고.
+•비즈니스 모델: 광주특구에서 추진하는 다양한 기술 및 사업화 전략 제시.
+•시장 및 기술 동향: 5G와 실감 콘텐츠, 인공지능(AI) 기술 등 최신 기술 동향 분석.
+•지원 프로그램: 광주특구 내 기업을 위한 다양한 지원 프로그램과 그 내용.
+•성장 전략: 기술 사업화 성공을 위한 구체적인 성장 전략과 실행 계획.
+
+
+특징
+•지역 특화: 광주특구 내의 기업과 기술 중심으로 보고서 구성.
+•최신 기술 동향: 5G, AI 등 첨단 기술에 대한 상세한 분석 포함.
+•지원 프로그램: 지역 기업들을 위한 다양한 지원 프로그램 및 혜택 설명.
+•실행 계획: 구체적인 기술 사업화 전략과 실행 계획 제공.
+
+
+비교 및 차이점
+
+1. 사업 범위
+•spresomedia 사업계획서: 디지털 미디어 및 콘텐츠 제작에 중점을 둔 전국적인 사업 계획.
+•광주특구 BM 보고서: 광주특구 내의 지역 특화 사업과 기술 발굴 및 지원에 중점.
+
+2. 주요 대상
+•Espresomedia: 일반 소비자 및 디지털 콘텐츠 소비자를 주요 대상으로 함.
+•광주특구: 광주특구 내의 중소기업과 기술 개발 기업을 주요 대상으로 함.
+
+3. 기술 및 시장 분석
+•Espresomedia: 디지털 미디어 시장 동향과 경쟁 분석 중심.
+•광주특구: 5G, AI 등 최신 기술 동향과 그에 따른 시장 분석 중심.
+
+4. 지원 및 전략
+•Espresomedia: 자체적인 재무 계획과 마케팅 전략 중심.
+•광주특구: 정부 및 지역 지원 프로그램을 통한 기술 사업화 및 성장 전략 중심.
+
+이렇게 두 보고서는 각각의 목적과 대상, 분석 내용이 다르며, Espresomedia는 디지털 미디어 콘텐츠 사업을, 광주특구 BM 보고서는 지역 내 기술 사업화와 성장을 위한 지원과 전략을 다루고 있습니다.
+
+
+cnn의 문제점
+image restoration이란, low-quality image-> high-quality image를 reconstruct하는 문제를 말한다.
+ex) noise가 있는 image로부터 noise가 제거된 clean image를 얻는 denoising task와 low-resolution image로부터 high-resolution image를 만들어내는 super-resolution 등이 있다.
+
+image restoration분야에서는 오랜 기간 동안 CNN(convolutional neural network)이 dominant한 method로써 지금 사용되는데 단점이 있다.
+1.patch 단위로 attention을 하기 때문에 border pixels가 neighbouring pixels에 대한 정보를 이용하지 못한다.
+2. patch단위로 restoration이기 때문에 restored image에 border artifacts가 생길 수 있다. 이는 patch를 overlapping 시킴으로써 어느 정도 해결이 가능하지만 추가적인 computation이 생기게 된다.
+
+이러한 문제들은 patch 내에서만 attention을 한다는 것이 큰 원인이다.
+ex)(stand alone self attention) Vit처럼 patch 간 attention을 할 수 있다면 어느 정도 해결이 될 것이다.
+하지만 Vit의 경우 연산량과 model size가 너무 크기 때문에, 논문에서는 local attention mechanism을 사용하여 large size image도 처리할 수 있는 swin transformer를 기반으로 architecture를 구성한다.
+
+
+swinir_edsr 있는 사진
+swinir이 superresolution, denoising, compression 3가지 task에서 이전 methods보다 적은 parameters를 가지면서 sota(state-of-the-art의 성능을 달성

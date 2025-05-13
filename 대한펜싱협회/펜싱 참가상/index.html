@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script type="text/javascript" src="./json.js"></script>
+    <title>Document</title></head>
+<body>
+    <div class="paperWrap" id="paperWrapTop">
+        <div id="paper" class="paper">
+            <div class="content">
+                <h1>대회참가확인서</h1>
+                <div class="paperCont">
+                    <h2>제 <span>2023 - 114</span>호</h2>
+                    <ul>
+                        <li>
+                            <p>
+                                <span class="paperTitle">종 목</span>
+                                <span class="letspac"> 펜 싱</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span class="paperTitle">성 명</span>
+                                <span class=""> 조 종 현</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span class="paperTitle">생 년 월 일</span>
+                                <span class=""> 1998.10.16</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span class="paperTitle">주 소</span>
+                                <span class="">제주특별자치도 서귀포시 대정읍 글로벌에듀로390 남영에듀크래스</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span class="paperTitle">소 속</span>
+                                <span class=""> ---</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span class="paperTitle">용 도</span>
+                                <span class=""> 제 출 용</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span class="paperTitle">제 출 처</span>
+                                <span class=""> 체육지도자연수원</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span class="paperTitle">부 수</span>
+                                <span class=""> 1 부</span>
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="paperTable">
+                        <table>
+                            <colgroup>
+                                <col width="235pt">
+                                <col width="120pt">
+                                <col width="200pt">
+                                <col width="54pt">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <p>대회명</p>
+                                    </th>
+                                    <th>
+                                        <p>기간</p>
+                                    </th>
+                                    <th>
+                                        <p>장소</p>
+                                    </th>
+                                    <th>
+                                        <p>비고</p>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="gameTbody">
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="paperFoot">
+                        <p class="">위와 같이 대회에 참가함을 확인함.</p>
+                        <p class="">
+                            <span>2024년</span>
+                            <span>11월</span>
+                            <span>4일</span>
+                        </p>
+                        <h1 class="foot"><span>(사)</span></span>대한펜싱협회장</h1>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <script>
+        let page = {
+            page1 : [],
+            page2 : [],
+            page3 : [],
+            page4 : [],
+            page5 : [],
+            page6 : [],
+        }
+        
+        let rows = getData(5);
+        console.log(rows);
+
+        let rowCnt = rows.length;
+
+        // 첫페이지에 최대 10개까지 데이터 값을 넣는다
+        for(let i = 0; i < 10; i++ ){
+            if(rows[i] != undefined){
+                page.page1.push(rows[i]);
+            } else {
+                break;
+            }
+        }
+
+        let over2PageCnt = Math.ceil((rowCnt - 10)/20);
+
+        for(let j = 0; j < over2PageCnt; j++ ){
+            let strNo = (j * 20 )+10;
+            let endNo = strNo + 19;
+            for(let i = strNo; i <= endNo; i++ ){
+                if(rows[i] != undefined){
+                    page['page' + (j + 2 )].push(rows[i]);
+                } else {
+                    break;
+                }
+            }
+        }
+
+        let gameTbody = document.getElementById('gameTbody');
+        let page1TbodyHtml = '';
+
+        for(let i = 0; i < page.page1.length; i++ ){
+            let e = page.page1[i];
+            page1TbodyHtml += '<tr>';
+            page1TbodyHtml += '    <td> <p>'+e.nm+'</p> </td>';
+            page1TbodyHtml += '    <td> <p>'+e.day+'</p> </td>';
+            page1TbodyHtml += '    <td> <p>'+e.place+'</p> </td>';
+            page1TbodyHtml += '    <td> <p>'+e.etc+'</p> </td>';
+            page1TbodyHtml += '</tr>';
+        }
+        
+        gameTbody.innerHTML = page1TbodyHtml;
+
+        for(let a = 2; a <= 6; a++ ){
+            //let pageInfo = page.page2;
+
+           
+            let pageInfo = page['page' + a];
+            console.log(a, pageInfo)
+            if(pageInfo.length == 0){
+            //
+            } else {
+                //작업필요 
+                let paperWrapTopEl = document.getElementById("paperWrapTop");
+                pageHtml = '';
+                pageHtml += ' <div id="paper" class="paper">                       ';
+                pageHtml += '         <div class="content">                        ';
+                pageHtml += '             <div class="paperCont">                  ';
+                pageHtml += '                 <div class="paperTable">             ';
+                pageHtml += '                     <table>                          ';
+                pageHtml += '                         <colgroup>                   ';
+                pageHtml += '                             <col width="235pt">      ';
+                pageHtml += '                             <col width="120pt">      ';
+                pageHtml += '                             <col width="200pt">      ';
+                pageHtml += '                             <col width="54pt">       ';
+                pageHtml += '                         </colgroup>                  ';
+                pageHtml += '                         <tbody id="gameTbody'+a+'">  ';
+                pageHtml += '                         </tbody>                     ';
+                pageHtml += '                     </table>                         ';
+                pageHtml += '                 </div>                               ';
+                pageHtml += '                                                      ';
+                pageHtml += '             </div>                                   ';
+                pageHtml += '         </div>                                       ';
+                pageHtml += '     </div>                                           ';
+        
+                paperWrapTopEl.innerHTML += pageHtml;
+                
+                
+                let gameTobody2 = document.getElementById('gameTbody'+a);
+                let page2TbodyHtml = '';
+        
+                for(let i = 0; i < pageInfo.length; i++ ){
+                    let e = pageInfo[i];
+                    page2TbodyHtml += '<tr>';
+                    page2TbodyHtml += '    <td> <p>'+e.nm+'</p> </td>';
+                    page2TbodyHtml += '    <td> <p>'+e.day+'</p> </td>';
+                    page2TbodyHtml += '    <td> <p>'+e.place+'</p> </td>';
+                    page2TbodyHtml += '    <td> <p>'+e.etc+'</p> </td>';
+                    page2TbodyHtml += '</tr>';
+                }
+                
+                gameTobody2.innerHTML = page2TbodyHtml;
+            }
+    
+        }
+
+       
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+//<![CDATA[
+
+//셀렉트박스 링크
+function openWindow(http) {
+	window.open(http, "");
+}
+function selectLinks(form) {
+	var http
+	for (i = 0; i < form.links.length; i++) {
+		if (form.links.options[i].selected == true) {
+			http = form.links.options[i].value
+		}
+	}
+	openWindow(http)
+}
+function selectedLinks(obj) {
+	openWindow($(obj).val());
+}
+
+
+(function ($) {
+   $.fn.topmenu = function (options) {
+      var opts = $.extend(options);
+      var topmenu = $(this);
+      var topmenuList = topmenu.find('>ul>li');
+      var submenu = topmenu.find('.submenu');
+      var submenuList = submenu.find('>ul>li');
+
+      function showMenu() {
+         t = $(this).parent('li');
+         if (!t.hasClass('on')) {
+            topmenuList.removeClass('on');
+            t.addClass('on');
+            submenu.hide();
+            t.find('.submenu').show().css('left', 0).animate({
+               left: 0,
+               opacity: 1
+            }, 200)
+         }
+      }
+      function hideMenu() {
+         topmenuList.removeClass('on');
+         submenu.hide();
+         onMenu()
+      }
+      function onMenu() {
+         if (opts.d1) {
+            t = topmenuList.eq(opts.d1 - 1);
+            t.addClass('on');
+            t.find('.submenu').show().css('left', 0).animate({
+               left: 30,
+               opacity: 1
+            }, 200);
+            if (opts.d2) {
+               t.find('.submenu>ul>li').eq(opts.d2 - 1).find('a').addClass('on')
+            }
+         }
+      }
+      return this.each(function () {
+         onMenu();
+         topmenuList.find('>a').mouseover(showMenu).focus(showMenu);
+         topmenu.mouseleave(hideMenu)
+      })
+   }
+});    
+//]]>
+
+

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/sub.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/icon.css" rel="stylesheet">
+    <link href="../css/font.css" rel="stylesheet">
+    <link href="../css/header.css" rel="stylesheet">
+    <link href="../css/footer.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <title>데이터 활용 신청</title>
+    <script>
+
+        /* header */
+        function tglAllMenu(){
+            $('body').toggleClass('dimm');
+            if($('#header').hasClass('open')){
+                $('#header').removeClass('open')
+                $('body').removeClass('fix');
+                $('#wing').removeClass('inHeader');
+                $('.menu_all').removeClass('close');
+                $('.logo').removeClass('wht');
+                if($('#fullpage').length > 0 && $(window).width()>1024){
+                    $.fn.fullpage.setAllowScrolling(true);
+                    $.fn.fullpage.setKeyboardScrolling(true);
+                }
+            }else {
+                $('#header').addClass('open')
+                $('body').addClass('fix');
+                $('#wing').addClass('inHeader');
+                $('.logo').addClass('wht');
+                $('.btn_menu').addClass('close');
+
+                if($('#fullpage').length > 0 && $(window).width()>1024){
+                    $.fn.fullpage.setAllowScrolling(false);
+                    $.fn.fullpage.setKeyboardScrolling(false);
+                }
+            }
+            
+        }
+    
+        $(document).ready(function() {
+            function numberWithCommas(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+            
+            function animateNum(agency, cntNum){
+                $({ val : 0 }).animate({ val : cntNum }, {
+                duration: 1000,
+                step: function() {
+                    var num = numberWithCommas(Math.floor(this.val));
+                    $("#" + agency + "SpeTotal").text(num);
+                },
+                complete: function() {
+                    var num = numberWithCommas(Math.floor(this.val));
+                    $("#" + agency + "SpeTotal").text(num);
+                }
+                });
+            }
+            
+            let agencySpe = {
+                'A01' : 5117271,
+                'A02' : 154654654,
+                'A03' : 23213123,
+                'A04' : 0,
+                'A05' : 5121,
+            }
+            
+            for(let agency in agencySpe){
+                animateNum(agency, agencySpe[agency]);
+            }
+            $('.bannerAreaCont').slick({
+                slidesToShow: 8,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 2000,
+                responsive: [{
+                    breakpoint: 1080,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 6
+                    }
+                },
+                {
+                    breakpoint: 780,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 4,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 2,
+                    }
+                }
+            ]
+            });
+
+            let length = window.innerWidth;
+            let wTxt = 0;
+
+            if(length < 450){
+                wTxt = 450;                
+            } else  if(length < 500){
+                wTxt = 500;
+            } else  if(length < 550){
+                wTxt = 550;
+            } else  if(length < 600){
+                wTxt = 600;
+            } 
+
+            
+
+            for(let el in document.getElementsByClassName('topSlt')){
+                    el.className = 'topSlt ' + 'w' + wTxt ;
+                }
+
+      });
+
+    </script>
+</head>
+
+<body>
+    <div class="conain">
+        <div class="wrap">
+            <header class="header subHeader" id="header">
+                <div class="headWrap">
+                    <div class="topSubMenu">
+                        <ul>
+                            <li>
+                                <a href="#">한국프로스포츠협회</a>
+                            </li>
+                            <li>
+                                <a href="#">사이트맵</a>
+                            </li>
+                            <li>
+                                <a href="#">개선의견</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="topMenu">
+                        <h1 class="logo">
+                            <a href="#"></a>
+                        </h1>
+                        <div id="menu">
+                            <ul class="lst">
+                                <li class="dl" id="gnb1">
+                                    <a href="#">관중 현황</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="./contents/sub02.html">전체 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">일자별 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="./contents/sub05.html">구단별 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">시·도별 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">역대 관중 현황</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">일정/결과</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="./contents/sub01.html">일정 및 결과</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="./contents/sub03.html">리그 순위</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">통계/현황</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">e-나라지표</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">SNS</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">경기장</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">종사자</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">스폰서</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">역대우승팀</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">테마통계</a>
+                                        </li>
+                                    </ul>   
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">자료실</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="./contents/sub07.html">PROSVIEW</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">스포츠 윤리 교육</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="./contents/sub06.html">관람객 성향 조사</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="./contents/sub08.html">기타 자료</a>
+                                        </li>
+                                    </ul>    
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">단체/구단</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">프로 단체 정보</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">프로 구단 정보</a>
+                                        </li>
+                                    </ul> 
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rightMenu">
+                            <button type="button" class="btn_menu close" onclick="tglAllMenu();">
+                                <span class="line"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="subPg">
+                <div class="section01">
+                    <div class="subCont">
+                        <div class="dataApplication">
+                            <h2>데이터 활용 신청</h2>
+                            <div class="datAplWrap">
+                                <img src="../images/img01.png">
+                                <div class="dataAplTxt">
+                                    <p class="">관람객 성향 조사, 관중 통계 등 민간/학계에서 <strong>데이터 활용 활성화를 위한 신청 접수 안내 페이지</strong>입니다.</p>
+                                </div>
+                                <div class="agreeWrap">
+                                    <div class="agreeList">
+                                        <h3>개인정보 수집・이용에 대한 동의</h3>
+                                        <div class="agreeBox">
+                                            <p>한국 프로스포츠협회는 관람객 성향 조사 데이터 전송을 위해 아래와 같은 최소한의 필수 정보와 선택정보를 수집합니다.</p>
+                                            <p>01. 수집・이용 목적 : 관람객 성향 조사 데이터 신청 및 확인</p>
+                                            <p>02. 개인정보 수집 항목 :</p>
+                                            <p>▪︎ 필수 항목 : 성명, 휴대폰 번호, 이메일</p>
+                                            <p>03. 개인정보 보유 및 이용 기간 : 서비스 제공 완료 시점까지 보유하며, 최장 3년 보관 후 파기합니다.</p>
+                                            <p>04. 자동 수집 정보 : 인터넷 서비스 이용 과정에서 아래 개인정보 항목이 자동으로 생성되어 수집될 수 있습니다.</p>
+                                            <p>▪︎ IP 주소, 쿠키, MAC 주소, 서비스 이용 기록, 방문 기록, 불량 이용 기록 등</p>
+                                            <p>05. 동의 거부 시 불이익에 관한 사항 : 관람객 성향 조사 데이터 신청 이용이 제한됩니다.</p>
+                                        </div>
+                                        <div class="agreeCheck">
+                                            <input id="check1" type="checkbox">
+                                            <label class="checkbox-label" for="check1">위 이용약관에 동의합니다.</label>
+                                        </div>
+                                    </div>
+                                    <div class="agreeList">
+                                        <h3>개인정보 제3자 제공 동의</h3>
+                                        <div class="agreeBox">
+                                            <p>01. 개인 정보를 제공받는 자 : 한국프로스포츠협회</p>
+                                            <p>02. 개인 정보를 제공받는 자의 개인정보 이용 목적 : 데이터 전송 및 확인</p>
+                                            <p>03. 제공하는 개인정보의 항목 : 성명, 휴대전화 번호, 이메일</p>
+                                            <p>04. 개인정보를 제공받는 자의 개인정보 보유 및 이용 기간 : 이용 목적 달성 시 만료 시 파기</p>
+                                            <p>03. 개인정보 보유 및 이용 기간 : 서비스 제공 완료 시점까지 보유하며, 최장 3년 보관 후 파기합니다.</p>
+                                            <p>04. 자동 수집 정보 : 인터넷 서비스 이용 과정에서 아래 개인정보 항목이 자동으로 생성되어 수집될 수 있습니다.</p>
+                                            <p>05. 개인정보 수집・이용에 대한 동의 거부 시 불이익에 관한 사항</p>
+                                            <p> &emsp; - 신청인은 개인정보 제3자 제공에 대한 동의를 거부할 권리가 있으나, 이 경우 암표 신고에 제한을 받을 수 있습니다.</p>
+                                        </div>
+                                        <div class="agreeCheck">
+                                            <input id="check2" type="checkbox">
+                                            <label class="checkbox-label" for="check2">위 이용약관에 동의합니다.</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contactTb pc">
+                                    <table>
+                                        <colgroup>
+                                            <col width="15%">
+                                            <col width="35%">
+                                            <col width="15%">
+                                            <col width="35%">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th><p>성명</p></th>
+                                                <td><p><input></p></td>
+                                                <th><p>소속</p></th>
+                                                <td><p><input></p></td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>연락처</p></th>
+                                                <td>
+                                                    <p class="telInp commonInp">
+                                                        <span><input type="text"></span>
+                                                        <span>-</span>
+                                                        <span><input type="text"></span>
+                                                        <span>-</span>
+                                                        <span><input type="text"></span>
+                                                    </p>
+                                                </td>
+                                                <th><p>이메일</p></th>
+                                                <td>
+                                                    <p class="emailInp commonInp">
+                                                        <span><input type="text"></span>
+                                                        <span>&#64;</span>
+                                                        <span><input type="text"></span>
+                                                        <span>
+                                                            <select>
+                                                                <option>직접입력</option>
+                                                            </select>
+                                                        </span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>활용목적</p></th>
+                                                <td colspan="3"><textarea rows="10"></textarea></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="contactTb mobile">
+                                    <table>
+                                        <colgroup>
+                                            <col width="20%">
+                                            <col width="55%">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th><p>성명</p></th>
+                                                <td><p><input></p></td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>소속</p></th>
+                                                <td><p><input></p></td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>연락처</p></th>
+                                                <td>
+                                                    <p class="telInp commonInp">
+                                                        <span><input type="text"></span>
+                                                        <span>-</span>
+                                                        <span><input type="text"></span>
+                                                        <span>-</span>
+                                                        <span><input type="text"></span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>이메일</p></th>
+                                                <td>
+                                                    <p class="emailInp commonInp">
+                                                        <span><input type="text"></span>
+                                                        <span>&#64;</span>
+                                                        <span><input type="text"></span>
+                                                        <span>
+                                                            <select>
+                                                                <option>직접입력</option>
+                                                            </select>
+                                                        </span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>활용목적</p></th>
+                                                <td colspan="3"><textarea rows="10"></textarea></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="agreeBtn btnBox">
+                                    <button class="whiteBtn">메인으로</button>
+                                    <button class="brownBtn">접수</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bannerArea">
+                <div class="bannerAreaWrap">
+                    <div class="bannerAreaCont">
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner00.png">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner01.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner02.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner03.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner04.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner05.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner06.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#">
+                                <img src="../images/main/footBanner07.gif">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="footerTop">
+                    <div class="ftInner">
+                        <ul class="left">
+                            <li>
+                                <a href="#">개인정보처리방침</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="#">사이트맵</a>
+                            </li>
+                        </ul>
+                        <ul class="site">
+                            <li class="dataBtn">
+                                <button type="button" class="navRight">데이터 활용 신청</button>
+                            </li>
+                            <li>
+                                <a>관련사이트</a>
+                                <ul class="relatedSite">
+                                    <li>
+                                        <a href="http://data.kleague.com" target="_blank">K LEAGUE 데이터포털</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://datalab.wkbl.or.kr" target="_blank">WKBL 데이터랩</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://data.klpga.co.kr/" target="_blank">KLPGA 데이터센터</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://k-rankings.klpga.co.kr/" target="_blank">KLPGA K-Rankings</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footerBot">
+                    <div class="ftCont">
+                        <div class="footerLogo">
+                            <h1>
+                                <img src="../images/main/logo_footer.png">
+                            </h1>
+                        </div>
+                        <div class="footInfo">
+                            <ul>
+                                <li>
+                                    서울특별시 중구 통일로 2길 16 AIA타워 5층 TEL 02&#41;6190-5900 FAX 02&#41;6190-5901
+                                </li>
+                                <li>
+                                    Copyright&copy;2019 사단법인 한국프로스포츠협회. All right reserved
+                                </li>
+                                <li>이 사업은 문화체육관광부와 국민체육진흥공단의 재정후원을 받고 있습니다.</li>
+                                <li class="chrome">이 웹사이트는 Chrome 브라우저에 최적화되어있습니다.</li>
+                            </ul>
+                        </div>
+                        <div class="footersponse">
+                            <p>
+                                <img src="../images/main/logo_footer2.png">
+                            </p>
+                            <p>
+                                <img src="../images/main/logo_footer3.png">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

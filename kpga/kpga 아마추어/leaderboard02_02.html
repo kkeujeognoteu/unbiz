@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/style.css" rel="stylesheet" />
+    <title>홀별성적</title>
+</head>
+
+<body>
+    <div class="contain">
+        <div class="header">
+            <div class="headerCont">
+                <h1 class="logo">
+                    <img src="./images/logo.png">
+                </h1>
+                <!--<div class="hamb_nav">
+                    <input id="check" type="checkbox">
+                    <label for="check">
+                        <div class="menu_hamb">
+                            <span class="hamburguer"></span>
+                        </div>
+                    </label>
+                    <ul class="ul_mb1">
+                        <li>
+                            <a href="">정보</a>
+                        </li>
+                        <li>
+                            <a href="">리더보드</a>
+                        </li>
+                    </ul>
+                </div>-->
+            </div>
+        </div>
+        <div class="section">
+            <div class="wrap">
+                <div class="playerInfoWrap">
+                    <div class="playerInfo">
+                        <div class="infoLeft">
+                            <p><img src="./images/gameLogo.svg"></p>
+                        </div>
+                        <div class="infoRight">
+                            <!--<h2>주니어 투어</h2>-->
+                            <p>한화 파이낸스 컵 2024</p>
+                            <ul>
+                                <li>제이드팰리스 GC(서(West), 동(East) 코스)</li>
+                                <li>2024. 08. 27(화)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabMenu">
+                    <ul>
+                        <li>정보</li>
+                        <li>리더보드</li>
+                        <!--<li>홀별진행</li>
+                        <li>조별보기</li>-->
+                        <li class="active">홀별성적</li>
+                        <li>출발시간표</li>
+                    </ul>
+                </div>
+                <div class="container">
+                    <div class="playerTb comon_leader">
+                        <h2>All Player</h2>
+                        <div class="holeScore pc">
+                            <table>
+                                <colgroup>
+                                    <col width="4%"> <!-- 순위 -->
+                                    <col width="4%"> <!-- 팀 -->
+                                    <col width="16%"> <!-- 선수명 -->
+                                    <col width="3%"> <!-- 1 -->
+                                    <col width="3%"> <!-- 2 -->
+                                    <col width="3%"> <!-- 3 -->
+                                    <col width="3%"> <!-- 4 -->
+                                    <col width="3%"> <!-- 5 -->
+                                    <col width="3%"> <!-- 6 -->
+                                    <col width="3%"> <!-- 7 -->
+                                    <col width="3%"> <!-- 8 -->
+                                    <col width="3%"> <!-- 9 -->
+                                    <col width="3%"> <!-- 10 -->
+                                    <col width="3%"> <!-- 11 -->
+                                    <col width="3%"> <!-- 12 -->
+                                    <col width="3%"> <!-- 13 -->
+                                    <col width="3%"> <!-- 14 -->
+                                    <col width="3%"> <!-- 15 -->
+                                    <col width="3%"> <!-- 16 -->
+                                    <col width="3%"> <!-- 17 -->
+                                    <col width="3%"> <!-- 18 -->
+                                    <col width="5%"> <!-- 합계 -->
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">순위</th>
+                                        <th rowspan="2">팀</th>
+                                        <th rowspan="2" class="alignLeft">선수명</th>
+                                        <th>1</th>
+                                        <th>2</th>
+                                        <th>3</th>
+                                        <th>4</th>
+                                        <th>5</th>
+                                        <th>6</th>
+                                        <th>7</th>
+                                        <th>8</th>
+                                        <th>9</th>
+                                        <th>10</th>
+                                        <th>11</th>
+                                        <th>12</th>
+                                        <th>13</th>
+                                        <th>14</th>
+                                        <th>15</th>
+                                        <th>16</th>
+                                        <th>17</th>
+                                        <th>18</th>
+                                        <th rowspan="2">합계</th>
+                                    </tr>
+                                    <tr>
+                                        <th>5</th>
+                                        <th>4</th>
+                                        <th>4</th>
+                                        <th>5</th>
+                                        <th>3</th>
+                                        <th>4</th>
+                                        <th>3</th>
+                                        <th>4</th>
+                                        <th>4</th>
+                                        <th>4</th>
+                                        <th>4</th>
+                                        <th>5</th>
+                                        <th>4</th>
+                                        <th>4</th>
+                                        <th>4</th>
+                                        <th>3</th>
+                                        <th>4</th>
+                                        <th>5</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <p class="playTeamLogo">
+                                                <img src="./images/neo.svg">
+                                            </p>
+                                        </td>
+                                        <td class="alignLeft">최원우/A</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>277</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <p class="playTeamLogo">
+                                                <img src="./images/classic.svg">
+                                            </p>
+                                        </td>
+                                        <td class="alignLeft">최원우/A</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>277</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <p class="playTeamLogo">
+                                                <img src="./images/classic.svg">
+                                            </p>
+                                        </td>
+                                        <td class="alignLeft">최원우/A</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>277</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <p class="playTeamLogo">
+                                                <img src="./images/classic.svg">
+                                            </p>
+                                        </td>
+                                        <td class="alignLeft">최원우/A</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>277</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <p class="playTeamLogo">
+                                                <img src="./images/classic.svg">
+                                            </p>
+                                        </td>
+                                        <td class="alignLeft">최원우/A</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>277</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <p class="playTeamLogo">
+                                                <img src="./images/classic.svg">
+                                            </p>
+                                        </td>
+                                        <td class="alignLeft">최원우/A</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>277</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <p class="playTeamLogo">
+                                                <img src="./images/neo.svg">
+                                            </p>
+                                        </td>
+                                        <td class="alignLeft">최원우/A</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>277</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <p class="playTeamLogo">
+                                                <img src="./images/neo.svg">
+                                            </p>
+                                        </td>
+                                        <td class="alignLeft">최원우/A</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>277</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <p class="playTeamLogo">
+                                                <img src="./images/classic.svg">
+                                            </p>
+                                        </td>
+                                        <td class="alignLeft">최원우/A</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>277</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <p class="playTeamLogo">
+                                                <img src="./images/neo.svg">
+                                            </p>
+                                        </td>
+                                        <td class="alignLeft">최원우/A</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>277</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <p class="playTeamLogo">
+                                                <img src="./images/neo.svg">
+                                            </p>
+                                        </td>
+                                        <td class="alignLeft">최원우/A</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>277</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <p class="playTeamLogo">
+                                                <img src="./images/neo.svg">
+                                            </p>
+                                        </td>
+                                        <td class="alignLeft">최원우/A</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>277</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="scoreMobile holeScore  mobile">
+                            <div class="scoreTb">
+                                <div class="scoreLeft">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <p>순위</p>
+                                                </th>
+                                                <th>
+                                                    <p>팀</p>
+                                                </th>
+                                                <th>
+                                                    <p>선수명</p>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <p>1</p>
+                                                </td>
+                                                <td>
+                                                    <p class="playTeamLogo"><img src="./images/classic.svg"></p>
+                                                </td>
+                                                <td class="alignLeft">
+                                                    <p>최원우/A</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>1</p>
+                                                </td>
+                                                <td>
+                                                    <p class="playTeamLogo"><img src="./images/classic.svg"></p>
+                                                </td>
+                                                <td class="alignLeft">
+                                                    <p>최원우/A</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>1</p>
+                                                </td>
+                                                <td>
+                                                    <p class="playTeamLogo"><img src="./images/classic.svg"></p>
+                                                </td>
+                                                <td class="alignLeft">
+                                                    <p>최원우/A</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>1</p>
+                                                </td>
+                                                <td>
+                                                    <p class="playTeamLogo"><img src="./images/classic.svg"></p>
+                                                </td>
+                                                <td class="alignLeft">
+                                                    <p>최원우/A</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>1</p>
+                                                </td>
+                                                <td>
+                                                    <p class="playTeamLogo"><img src="./images/classic.svg"></p>
+                                                </td>
+                                                <td class="alignLeft">
+                                                    <p>최원우/A</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>1</p>
+                                                </td>
+                                                <td>
+                                                    <p class="playTeamLogo"><img src="./images/classic.svg"></p>
+                                                </td>
+                                                <td class="alignLeft">
+                                                    <p>최원우/A</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="scoreRight">
+                                    <div>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th><p>1</p></th>
+                                                    <th><p>2</p></th>
+                                                    <th><p>3</p></th>
+                                                    <th><p>4</p></th>
+                                                    <th><p>5</p></th>
+                                                    <th><p>6</p></th>
+                                                    <th><p>7</p></th>
+                                                    <th><p>8</p></th>
+                                                    <th><p>9</p></th>
+                                                    <th><p>10</p></th>
+                                                    <th><p>11</p></th>
+                                                    <th><p>12</p></th>
+                                                    <th><p>13</p></th>
+                                                    <th><p>14</p></th>
+                                                    <th><p>15</p></th>
+                                                    <th><p>16</p></th>
+                                                    <th><p>17</p></th>
+                                                    <th><p>18</p></th>
+                                                    <th rowspan="2"><p>합계</p></th>
+                                                </tr>
+                                                <tr>
+                                                    <th>5</th>
+                                                    <th>4</th>
+                                                    <th>4</th>
+                                                    <th>5</th>
+                                                    <th>3</th>
+                                                    <th>4</th>
+                                                    <th>3</th>
+                                                    <th>4</th>
+                                                    <th>4</th>
+                                                    <th>4</th>
+                                                    <th>4</th>
+                                                    <th>5</th>
+                                                    <th>4</th>
+                                                    <th>4</th>
+                                                    <th>4</th>
+                                                    <th>3</th>
+                                                    <th>4</th>
+                                                    <th>5</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>5</td>
+                                                    <td>4</td>
+                                                    <td>5</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>3</td>
+                                                    <td>3</td>
+                                                    <td>5</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>277</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>5</td>
+                                                    <td>4</td>
+                                                    <td>5</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>3</td>
+                                                    <td>3</td>
+                                                    <td>5</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>277</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>5</td>
+                                                    <td>4</td>
+                                                    <td>5</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>3</td>
+                                                    <td>3</td>
+                                                    <td>5</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>277</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>5</td>
+                                                    <td>4</td>
+                                                    <td>5</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>3</td>
+                                                    <td>3</td>
+                                                    <td>5</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>277</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>5</td>
+                                                    <td>4</td>
+                                                    <td>5</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>3</td>
+                                                    <td>3</td>
+                                                    <td>5</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>277</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>5</td>
+                                                    <td>4</td>
+                                                    <td>5</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>3</td>
+                                                    <td>3</td>
+                                                    <td>5</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>4</td>
+                                                    <td>3</td>
+                                                    <td>277</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footerWRap">
+                <h1>
+                    <img src="./images/logo.png">
+                </h1>
+                <p>Copyright &copy; 2024 유엔비즈, Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

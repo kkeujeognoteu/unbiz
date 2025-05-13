@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    
+    <link href="../css/fonts.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/sub.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/header.css" rel="stylesheet">
+    <link href="../css/footer.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>복싱</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+    </style>
+    <script>
+        /* 상단바 */
+        function tglAllMenu(){
+            $('.btn_menu').toggleClass('dimm');
+            if($('.menuBar').hasClass('active')){
+                $('.menuBar').removeClass('active')
+            }else {
+                $('.menuBar').addClass('active');
+                $('.btn_menu').addClass('active');
+            }
+
+           
+        }
+        
+    </script>
+</head>
+<body>
+    <div class="contain">
+        <header id="header" class="header" >
+            <div class="topHead">
+                <h1 class="logo">
+                    <a href="#" href="#"></a>
+                </h1>
+                <div class="headTit">
+                    <p><span class="blue">국제화</span>를 통한 국위선양!!</p>
+                    <p><span class="blue">국민 스포츠</span>로서의 복싱!!</p>
+                </div>
+                <div class="topPlay">
+                    <p class="boxing">복싱가족&#126;</p>
+                    <ul>
+                        <li>
+                            <p class="playTxt">오늘</p>
+                            <p class="playNm">308명</p>
+                        </li>
+                        <li>
+                            <p class="playTxt">월간</p>
+                            <p class="playNm">308명</p>
+                        </li>
+                        <li>
+                            <p class="playTxt">연간</p>
+                            <p class="playNm">308명</p>
+                        </li>
+                        <li>
+                            <p class="playTxt">전체</p>
+                            <p class="playNm">308명</p>
+                        </li>
+                        <li>
+                            <p class="playTxt">경기인등록인 수</p>
+                            <p class="playNm">308명</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="loginWrap">
+                    <ul>
+                        <li class="login">
+                            <a href="#" href="">로그인</a>
+                        </li>
+                        <li class="logout">
+                            <a href="#" href="">회원가입</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menuBar" id="lnb">
+                <div class="topMenu">
+                    <div id="menu">
+                        <ul class="lst">
+                            <li class="dl" id="gnb1">
+                                <a href="#">협회소개</a>
+                                
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">종목소개</a>
+                                
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">선수소개</a>
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">대회정보</a>
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">공인체육관</a>
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">복싱단증</a>
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">커뮤니티</a>
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">자료실</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rightMenu">
+                        <!-- <button type="button" class="navRight pc">데이터 활용 신청</button> -->
+                        <button type="button" class="btn_menu close" onclick="tglAllMenu();">
+                            <span class="line"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="allMenu">
+                    <div class="allMenuWrap">
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="./contents/sub02.html">환영사</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">연혁</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="./contents/sub05.html">임원소개</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">역대 회장</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">시도협회</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">상임심판</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">비젼</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">찾아오시는길</a>
+                            </li>
+                        </ul>
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="./contents/sub01.html">유래</a>
+                            </li>
+                        </ul>
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="#">국가대표 명단</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">역대 메달리스트</a>
+                            </li>
+                        </ul>
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="./contents/sub07.html">행사일정</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">경기결과</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="./contents/sub06.html">대회정보</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="./contents/sub08.html">경기동영상</a>
+                            </li>
+                        </ul>    
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="#">공인체육관이란?</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">공인체육관 신청</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">공인체육관 확인</a>
+                            </li>
+                        </ul>
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="#">복싱단증</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">단증심사공고 및 신청</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">단증재발급 신청</a>
+                            </li>
+                        </ul> 
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="#">공지사항</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">주택특별공급</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">묻고답하기</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">경영공시</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">경조사</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">채용공고</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">포토갤러리</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">선수고충처리센터</a>
+                            </li>
+                        </ul> 
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="#">정관</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">경기규칙</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">각종규정</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="subMenuWrap">
+                <div class="subMenu">
+                    <ul>
+                        <li class="home">
+                            <i></i>
+                        </li>
+                        <li class="subD1">
+                            <a href="#">커뮤니티 <i class="sltIcon"></i></a>
+                            <ul class="subD2">
+                                <li>
+                                    <a href="#">협회소개</a>
+                                </li>
+                                <li>
+                                    <a href="#">종목소개</a>
+                                </li>
+                                <li>
+                                    <a href="#">선수소개</a>
+                                </li>
+                                <li>
+                                    <a href="#">대회정보</a>
+                                </li>
+                                <li>
+                                    <a href="#">공인체육관</a>
+                                </li>
+                                <li>
+                                    <a href="#">복싱단증</a>
+                                </li>
+                                <li>
+                                    <a href="#">자료실</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="subD1">
+                            <a href="#">공지사항 <i class="sltIcon"></i></a>
+                            <ul class="subD2">
+                                <li>
+                                    <a href="#">공지사항</a>
+                                </li>
+                                <li>
+                                    <a href="#">주택특별공급</a>
+                                </li>
+                                <li>
+                                    <a href="#">묻고답하기</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div id="section">
+            <!-- 컨텐츠 -->
+            <div class="subPg">
+                <div class="subCont notice">
+                    <h2 class="titleIco">포토갤러리</h2>
+                    <p class="smallTit">대한복싱협회의  주요 소식을 알려드립니다.</p>
+                    <div class="noticeWrap">
+                        <div class="noticViewTb">
+                            <table>
+                                <colgroup>
+                                    <col width="10%">
+                                    <col width="20%">
+                                    <col width="10%">
+                                    <col width="20%">
+                                    <col width="10%">
+                                    <col width="20%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th colspan="6" class="tbView_Title">
+                                            <p>리스트 뷰 상세페이지 제목</p>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>주제내용</th>
+                                        <td colspan="5">
+                                            <p class="file">(대한복싱협회 최찬웅 회장님과 복싱 사랑 영화배우 마동석님)</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>작성자</th>
+                                        <td class="text-center">관리자</td>
+                                        <th>작성일</th>
+                                        <td class="text-center">2024/10/07</td>
+                                        <th>키워드</th>
+                                        <td class="text-center"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <div class="viewCont galleryViewCont">
+                                                <ul class="galleryView">
+                                                    <li>
+                                                        <a href="#">
+                                                            <img src="../images/thumb01.jpg">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img src="../images/thumb01.jpg">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img src="../images/thumb01.jpg">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img src="../images/thumb01.jpg">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img src="../images/thumb01.jpg">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img src="../images/thumb01.jpg">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img src="../images/thumb01.jpg">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img src="../images/thumb01.jpg">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img src="../images/thumb01.jpg">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img src="../images/thumb01.jpg">
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="btnList">
+                                <button class="skyblueBtn btn">목록</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+            <div class="footer">
+                <div class="footLogo">
+                    <img src="./images/footLogo.png" alt="footlogo">
+                </div>
+                <div class="footInfo">
+                    <p><a href="#">사단법인 대한복싱협회</a> / 사업자등록번호 : 230-82-00209 / 대표자 : 최찬웅</p>
+                    <p>(05540) 서울특별시 송파구 올림픽로 424 올림픽회관 신관 208 / Tel. (02) 420-4251~3 / Fax. (02) 420-4250 / Mail. boxing@sports.or.kr</p>
+                    <p class="copy">COPYRIGHT &copy;2024 Korea Boxing Association.ALL RIGHTS RESERVED.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

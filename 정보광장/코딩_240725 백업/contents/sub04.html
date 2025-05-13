@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/sub.css" rel="stylesheet">
+    <link href="../css/icon.css" rel="stylesheet">
+    <link href="../css/header.css" rel="stylesheet">
+    <link href="../css/footer.css" rel="stylesheet">
+    <link href="../css/font.css" rel="stylesheet">
+    
+    <!-- slick -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+
+    <title>정보광장 금주의 일정</title>
+    
+    <script>
+
+        /* header */
+        function tglAllMenu(){
+            $('body').toggleClass('dimm');
+            if($('#header').hasClass('open')){
+                $('#header').removeClass('open')
+                $('body').removeClass('fix');
+                $('#wing').removeClass('inHeader');
+                $('.menu_all').removeClass('close');
+                $('.logo').removeClass('wht');
+                if($('#fullpage').length > 0 && $(window).width()>1024){
+                    $.fn.fullpage.setAllowScrolling(true);
+                    $.fn.fullpage.setKeyboardScrolling(true);
+                }
+            }else {
+                $('#header').addClass('open')
+                $('body').addClass('fix');
+                $('#wing').addClass('inHeader');
+                $('.logo').addClass('wht');
+                $('.btn_menu').addClass('close');
+
+                if($('#fullpage').length > 0 && $(window).width()>1024){
+                    $.fn.fullpage.setAllowScrolling(false);
+                    $.fn.fullpage.setKeyboardScrolling(false);
+                }
+            }
+            
+        }
+
+        function showMenu(e){
+            if(e == 'onmouseover'){               
+                $('#header').addClass('open')
+                $('body').addClass('fix');
+                $('#wing').addClass('inHeader');
+                $('.logo').addClass('wht');
+                $('.btn_menu').addClass('close');
+            } else {
+                $('#header').removeClass('open')
+                $('body').removeClass('fix');
+                $('#wing').removeClass('inHeader');
+                $('.menu_all').removeClass('close');
+                $('.logo').removeClass('wht');
+            }
+        }
+
+
+
+
+    
+        $(document).ready(function() {
+
+
+            function numberWithCommas(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+            
+            function animateNum(agency, cntNum){
+                $({ val : 0 }).animate({ val : cntNum }, {
+                duration: 1000,
+                step: function() {
+                    var num = numberWithCommas(Math.floor(this.val));
+                    $("#" + agency + "SpeTotal").text(num);
+                },
+                complete: function() {
+                    var num = numberWithCommas(Math.floor(this.val));
+                    $("#" + agency + "SpeTotal").text(num);
+                }
+                });
+            }
+            
+            let agencySpe = {
+                'A01' : 5117271,
+                'A02' : 154654654,
+                'A03' : 23213123,
+                'A04' : 0,
+                'A05' : 5121,
+            }
+            
+            for(let agency in agencySpe){
+                animateNum(agency, agencySpe[agency]);
+            }
+            $('.bannerAreaCont').slick({
+                slidesToShow: 8,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 2000,
+                responsive: [{
+                    breakpoint: 1080,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 6
+                    }
+                },
+                {
+                    breakpoint: 780,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 4,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 2,
+                    }
+                }
+            ]
+            });
+      });
+
+    </script>
+</head>
+
+<body>
+    <div class="conain">
+        <div class="wrap">
+            <header class="header subHeader" id="header">
+                <div class="headWrap">
+                    <div class="topSubMenu">
+                        <ul>
+                            <li>
+                                <a href="#">한국프로스포츠협회</a>
+                            </li>
+                            <li>
+                                <a href="#">사이트맵</a>
+                            </li>
+                            <li>
+                                <a href="#">개선의견</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="topMenu">
+                        <h1 class="logo">
+                            <a href="#"></a>
+                        </h1>
+                        <div id="menu"  onmouseover="showMenu('onmouseover')" onmouseout="showMenu('onmouseout')">
+                            
+                            <ul class="lst">
+                                <li class="dl" id="gnb1">
+                                    <a href="#">일정/결과</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">금주의 일정</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">전체 일정・결과</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">리그 순위</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dl active" id="gnb1">
+                                    <a href="#">통계/현황</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">e-나라지표</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">SNS</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">경기장</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">종사자</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">스폰서</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">역대우승팀</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">테마통계</a>
+                                        </li>
+                                    </ul>   
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">자료실</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">PROSVIEW</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">스포츠 윤리 교육</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">관람객 성향 조사</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">기타 자료</a>
+                                        </li>
+                                    </ul>    
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">단체/구단</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">프로 단체 정보</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">프로 구단 정보</a>
+                                        </li>
+                                    </ul> 
+                                </li>
+                            </ul>
+                            <div class="mobile mobileDataBtn">
+                                <button type="button" class="navRight">데이터 활용 신청</button>
+                            </div>
+                        </div>
+                        <div class="rightMenu">
+                            <button type="button" class="navRight pc">데이터 활용 신청</button>
+                            <button type="button" class="btn_menu close" onclick="tglAllMenu();">
+                                <span class="line"></span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </header>
+            <div class="subNavWRap">
+                <div class="subNav">
+                    <ul>
+                        <li class="home"><i class="homeIcon"></i></li>
+                        <li class="depth1">통계/현황</li>
+                        <li class="active"><a href="/schedule/m04/main">관중</a></li>
+                        <li><a href="/schedule/m04/main">e-나라지표</a></li>
+                        <li><a href="/schedule/m04/main">SNS</a></li>
+                        <li><a href="/schedule/m04/main">관중</a></li>
+                        <li><a href="/schedule/m04/main">e-나라지표</a></li>
+                        <li><a href="/schedule/m04/main">SNS</a></li>
+                        <li><a href="/schedule/m04/main">경기장</a></li>
+                        <li><a href="/schedule/m04/main">종사자</a></li>
+                        <li><a href="/schedule/m04/main">스폰서</a></li>
+                        <li><a href="/schedule/m04/main">역대우승팀</a></li>
+                        <li><a href="/schedule/m04/main">테마통계</a></li>
+                    </ul>
+                </div>
+                <div class="depth3">
+                    <ul>
+                        <li class="active">
+                            <a href="#">전체관중</a>
+                        </li>
+                        <li>
+                            <a href="#">일자별 관중</a>
+                        </li>
+                        <li>
+                            <a href="#">구단별 관중</a>
+                        </li>
+                        <li>
+                            <a href="#">시도별관중</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subPg">
+                <div class="section01 clubCrowd">
+                    <div class="title" style="padding-top:20px;">
+                        <h2>구단별 관중</h2>
+                    </div>
+                    
+                    <div class="crowd_SubTab">
+                        <ul>
+                            <li class="active">K LEAGUE</li>
+                            <li>KBO</li>
+                            <li>KBL</li>
+                            <li>WKBL</li>
+                            <li>KOVO</li>
+                        </ul>
+                    </div>
+                    <div class="subCont">
+                        <div class="subTitle subCom">
+                            <h3>그래프</h3>
+                            <div class="titleSlt">
+                                <span>구단 선택</span>
+                                <select>
+                                    <option>전체</option>
+                                </select>
+                                <button class="bg_brown">검색</button>
+                            </div>
+                            <div class="ac_btn">
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="graph_btn_area">
+                            <div class="left">
+                                <a class="btn_gr" title="라인형"><i class="xi-chart-line"></i></a>
+                                <a class="btn_gr" title="막대형(세로)"><i class="xi-chart-bar"></i></a>
+                                <a class="btn_gr" title="라인형"><i class="xi-chart-bar02"></i></a>
+                                <a class="btn_gr" title="라인형">
+                                    <i class="xi-renew"> 초기화</i>
+                                </a>
+                                <a class="btn_gr" title="라인형">
+                                    <i class="xi-list-number">레이블 보기</i> 
+                                </a>
+                            </div>
+                            <div class="right">
+                                <p>&#8251; 2024년 6월 30일 현재</p>
+                            </div>
+                        </div>
+                        <div class="chart">
+                            <div class="chartBox">
+                                <h2>프로스포츠 전체 관중 추이</h2>
+                                <canvas id="myChart" style="height:20vh; width:50vw"></canvas>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- bannerArea -->
+            <div class="bannerArea">
+                <div class="bannerAreaWrap">
+                    <div class="bannerAreaCont">
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner00.png">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner01.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner02.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner03.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner04.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner05.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner06.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#">
+                                <img src="../images/main/footBanner07.gif">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- footer -->
+            <footer class="footer">
+                <div class="footerTop">
+                    <div class="ftInner">
+                        <ul class="left">
+                            <li>
+                                <a href="#">개인정보처리방침</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="#">사이트맵</a>
+                            </li>
+                        </ul>
+                        <ul class="site">
+                            <li>
+                                <a>관련사이트</a>
+                                <ul class="relatedSite">
+                                    <li>
+                                        <a href="http://data.kleague.com" target="_blank">K LEAGUE 데이터포털</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://datalab.wkbl.or.kr" target="_blank">WKBL 데이터랩</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://data.klpga.co.kr/" target="_blank">KLPGA 데이터센터</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://k-rankings.klpga.co.kr/" target="_blank">KLPGA K-Rankings</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footerBot">
+                    <div class="ftCont">
+                        <div class="footerLogo">
+                            <h1>
+                                <img src="../images/main/logo_footer.png">
+                            </h1>
+                        </div>
+                        <div class="footInfo">
+                            <ul>
+                                <li>
+                                    서울특별시 중구 통일로 2길 16 AIA타워 5층 TEL 02&#41;6190-5900 FAX 02&#41;6190-5901
+                                </li>
+                                <li>
+                                    Copyright&copy;2019 사단법인 한국프로스포츠협회. All right reserved
+                                </li>
+                                <li>이 사업은 문화체육관광부와 국민체육진흥공단의 재정후원을 받고 있습니다.</li>
+                                <li class="chrome">이 웹사이트는 Chrome 브라우저에 최적화되어있습니다.</li>
+                            </ul>
+                        </div>
+                        <div class="footersponse">
+                            <p>
+                                <img src="../images/main/logo_footer2.png">
+                            </p>
+                            <p>
+                                <img src="../images/main/logo_footer3.png">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    
+    <!-- 차트js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"></script> -->
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['포항 스틸러스', 'FC 서울', '강원 FC', '광주 FC', '김천상무', '대구 FC', '수원 FC', '인천 UTD', '전북 현대', '제주 UTD'],
+            datasets: [{
+                label: '',
+                data: [2000, 4000, 6000, 8000, 2000, 6000, 10000, 120000, 9000, 7000],
+                backgroundColor: [
+                    '#e20d18',
+                    '#e20d18',
+                    '#e20d18',
+                    '#e20d18',
+                    '#e20d18',
+                    '#e20d18',
+                    '#e20d18',
+                    '#e20d18',
+                    '#e20d18',
+                    '#e20d18',
+                ]
+            }]
+        },
+        options: {
+            maxBarThickness: 22,
+            indexAxis: 'y',
+            scales: {
+                x: {
+                    max: 12000,
+                    beginAtZero: true,
+                    ticks:{
+                        stepSize:2000
+                    },
+                    grid: {
+                        color: '#f5f5f5',
+                    },
+                },
+                y: {
+                    grid: {
+                        color: 'transparent',
+                    },
+                }
+            },
+            plugins: {
+            legend: {
+                display: false
+                }
+            }
+        }
+        });
+
+    </script>
+</body>
+
+</html>

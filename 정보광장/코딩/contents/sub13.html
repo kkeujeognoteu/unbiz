@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/sub.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/icon.css" rel="stylesheet">
+    <link href="../css/font.css" rel="stylesheet">
+    <link href="../css/header.css" rel="stylesheet">
+    <link href="../css/footer.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <title>시·도별 관중</title>
+    <script>
+
+        /* header */
+        function tglAllMenu(){
+            $('body').toggleClass('dimm');
+            if($('#header').hasClass('open')){
+                $('#header').removeClass('open')
+                $('body').removeClass('fix');
+                $('#wing').removeClass('inHeader');
+                $('.menu_all').removeClass('close');
+                $('.logo').removeClass('wht');
+                if($('#fullpage').length > 0 && $(window).width()>1024){
+                    $.fn.fullpage.setAllowScrolling(true);
+                    $.fn.fullpage.setKeyboardScrolling(true);
+                }
+            }else {
+                $('#header').addClass('open')
+                $('body').addClass('fix');
+                $('#wing').addClass('inHeader');
+                $('.logo').addClass('wht');
+                $('.btn_menu').addClass('close');
+
+                if($('#fullpage').length > 0 && $(window).width()>1024){
+                    $.fn.fullpage.setAllowScrolling(false);
+                    $.fn.fullpage.setKeyboardScrolling(false);
+                }
+            }
+            
+        }
+    
+        $(document).ready(function() {
+            function numberWithCommas(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+            
+            function animateNum(agency, cntNum){
+                $({ val : 0 }).animate({ val : cntNum }, {
+                duration: 1000,
+                step: function() {
+                    var num = numberWithCommas(Math.floor(this.val));
+                    $("#" + agency + "SpeTotal").text(num);
+                },
+                complete: function() {
+                    var num = numberWithCommas(Math.floor(this.val));
+                    $("#" + agency + "SpeTotal").text(num);
+                }
+                });
+            }
+            
+            let agencySpe = {
+                'A01' : 5117271,
+                'A02' : 154654654,
+                'A03' : 23213123,
+                'A04' : 0,
+                'A05' : 5121,
+            }
+            
+            for(let agency in agencySpe){
+                animateNum(agency, agencySpe[agency]);
+            }
+            $('.bannerAreaCont').slick({
+                slidesToShow: 8,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 2000,
+                responsive: [{
+                    breakpoint: 1080,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 6
+                    }
+                },
+                {
+                    breakpoint: 780,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 4,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 2,
+                    }
+                }
+            ]
+            });
+
+            let length = window.innerWidth;
+            let wTxt = 0;
+
+            if(length < 450){
+                wTxt = 450;                
+            } else  if(length < 500){
+                wTxt = 500;
+            } else  if(length < 550){
+                wTxt = 550;
+            } else  if(length < 600){
+                wTxt = 600;
+            } 
+
+            
+
+            for(let el in document.getElementsByClassName('topSlt')){
+                    el.className = 'topSlt ' + 'w' + wTxt ;
+                }
+
+      });
+
+    </script>
+</head>
+
+<body>
+    <div class="conain">
+        <div class="wrap">
+            <header class="header subHeader" id="header">
+                <div class="headWrap">
+                    <div class="topSubMenu">
+                        <ul>
+                            <li>
+                                <a href="#">한국프로스포츠협회</a>
+                            </li>
+                            <li>
+                                <a href="#">사이트맵</a>
+                            </li>
+                            <li>
+                                <a href="#">개선의견</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="topMenu">
+                        <h1 class="logo">
+                            <a href="#"></a>
+                        </h1>
+                        <div id="menu">
+                            <ul class="lst">
+                                <li class="dl" id="gnb1">
+                                    <a href="#">관중 현황</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="./contents/sub02.html">전체 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">일자별 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="./contents/sub05.html">구단별 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">시·도별 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">역대 관중 현황</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">일정/결과</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="./contents/sub01.html">일정 및 결과</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="./contents/sub03.html">리그 순위</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">통계/현황</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">e-나라지표</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">SNS</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">경기장</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">종사자</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">스폰서</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">역대우승팀</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">테마통계</a>
+                                        </li>
+                                    </ul>   
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">자료실</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="./contents/sub07.html">PROSVIEW</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">스포츠 윤리 교육</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="./contents/sub06.html">관람객 성향 조사</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="./contents/sub08.html">기타 자료</a>
+                                        </li>
+                                    </ul>    
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">단체/구단</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">프로 단체 정보</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">프로 구단 정보</a>
+                                        </li>
+                                    </ul> 
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rightMenu">
+                            <button type="button" class="btn_menu close" onclick="tglAllMenu();">
+                                <span class="line"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="subPg">
+                <div class="subNavWRap">
+                    <div class="subNav">
+                        <ul>
+                            <li><a href="#">전체 관중</a></li>
+                            <li><a href="#">일자별 관중</a></li>
+                            <li><a href="#">구단별 관중</a></li>
+                            <li class="active"><a href="#">시·도별 관중</a></li>
+                            <li><a href="#">역대 관중 현황</a></li>
+                        </ul>
+                        <div class="subTopSlt downBtn">
+                            <button>다운로드<i class="down_Ic"></i></button>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="section01">
+                    <div class="subCont">
+                        <div class="pc">
+                            <div class="subTitle subCom">
+                                <h3>지도</h3>
+                                <div class="titleSlt">
+                                    <span class="">2024년 시·도별 관중 현황</span>
+                                    <span>시·도를 클릭하시면 아래의 통계표에서 확인할 수 있습니다.</span>
+                                </div>
+                                <div class="ac_btn">
+                                    <a>
+                                        <span></span>
+                                        <span></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="subMap">
+                                <div class="visualRight">
+                                    <div class="mapImg">
+                                        <img src="../images/main/map.svg">
+                                        <div class="mapRion">
+                                            <div class="map01 mapRionTxt">
+                                                <button>
+                                                    <span>경기</span>
+                                                    <span>1,058,088</span>
+                                                </button>
+                                            </div>
+                                            <div class="map02 mapRionTxt">
+                                                <button>
+                                                    <span>인천</span>
+                                                    <span>1,058,088</span>
+                                                </button>
+                                            </div>
+                                            <div class="map03 mapRionTxt">
+                                                <button>
+                                                    <span>서울</span>
+                                                    <span>1,058,088</span>
+                                                </button>
+                                            </div>
+                                            <div class="map04 mapRionTxt">
+                                                <button>
+                                                    <span>강원</span>
+                                                    <span>1,058,088</span>
+                                                </button>
+                                            </div>
+                                            <div class="map05 mapRionTxt">
+                                                <button>
+                                                    <span>충남</span>
+                                                    <span>1,058,088</span>
+                                                </button>
+                                            </div>
+                                            <div class="map06 mapRionTxt">
+                                                <button>
+                                                    <span>대전</span>
+                                                    <span>1,058,088</span>
+                                                </button>
+                                            </div>
+                                            <div class="map07 mapRionTxt">
+                                                <button>
+                                                    <span>충북</span>
+                                                    <span>1,058,088</span>
+                                                </button>
+                                            </div>
+                                            <div class="map08 mapRionTxt">
+                                                <button>
+                                                    <span>대구</span>
+                                                    <span>1,058,088</span>
+                                                </button>
+                                            </div>
+                                            <div class="map09 mapRionTxt">
+                                                <button>
+                                                    <span>경북</span>
+                                                    <span>1,058,088</span>
+                                                </button>
+                                            </div>
+                                            <div class="map10 mapRionTxt">
+                                                <button>
+                                                    <span>전북</span>
+                                                    <span>1,058,088</span>
+                                                </button>
+                                            </div>
+                                            <div class="map11 mapRionTxt">
+                                                <button>
+                                                    <span>광주</span>
+                                                    <span>1,058,088</span>
+                                                </button>
+                                            </div>
+                                            <div class="map12 mapRionTxt">
+                                                <button>
+                                                    <span>경남</span>
+                                                    <span>1,058,088</span>
+                                                </button>
+                                            </div>
+                                            <div class="map13 mapRionTxt">
+                                                <button>
+                                                    <span>울산</span>
+                                                    <span>1,058,088</span>
+                                                </button>
+                                            </div>
+                                            <div class="map14 mapRionTxt">
+                                                <button>
+                                                    <span>부산</span>
+                                                    <span>1,058,088</span>
+                                                </button>
+                                            </div>
+                                            <div class="map15 mapRionTxt">
+                                                <button>
+                                                    <span>전남</span>
+                                                    <span>1,058,088</span>
+                                                </button>
+                                            </div>
+                                            <div class="map16 mapRionTxt">
+                                                <button>
+                                                    <span>제주</span>
+                                                    <span>1,058,088</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="subTitle subCom cityNum">
+                            <h3>통계표</h3>
+                            <div class="titleSlt">
+                                <select>
+                                    <option>2015</option>
+                                </select>
+                                <select>
+                                    <option>05월</option>
+                                </select>
+                                <button class="bg_brown">검색</button>
+                            </div>
+                            <div class="ac_btn">
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cityNumTb">
+                            <!-- pc -->
+                            <div class="subTb schWeekTb pc">
+                                <div class="tbTop">
+                                    <div class="tbLeft">
+                                        <select>
+                                            <option>15개씩</option>
+                                            <option>50개씩</option>
+                                            <option>100개씩</option>
+                                        </select>
+                                    </div>
+                                    <div class="total">
+                                        <p>Total <strong>120</strong></p>
+        
+                                    </div>
+                                </div>
+                                <table>
+                                    <colgroup hidden>
+                                        <col width="3%"> <!-- 날짜 -->
+                                        <col width="3%"> <!-- 시간 -->
+                                        <col width="5%"> <!-- 단체/구단 -->
+                                        <col width="8%"> <!-- 경기 -->
+                                        <col width="5%"> <!-- 장소 -->
+                                        <col width="3%"> <!-- 결과 -->
+                                        <col width="2%"> <!-- 날씨 -->
+                                        <col width="3%"> <!-- 관중수 -->
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <div class="filt_th">
+                                                    <p>날짜</p>
+                                                    <p class="filterWRap">
+                                                        <span><img src="../images/sub/filter_Up.svg"></span>
+                                                        <span><img src="../images/sub/filter_down.svg"></span>
+                                                    </p>
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="filt_th">
+                                                    <p>시간</p>
+                                                    <p class="filterWRap filt_Up">
+                                                        <span><img src="../images/sub/filter_down_on.svg"></span>
+                                                    </p>
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="filt_th">
+                                                    <p>단체</p>
+                                                    <p class="filterWRap filt_Up">
+                                                        <span><img src="../images/sub/filter_Up_on.svg"></span>
+                                                    </p>
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="filt_th">
+                                                    <p>경기</p>
+                                                    <p class="filterWRap">
+                                                        <span><img src="../images/sub/filter_Up.svg"></span>
+                                                        <span><img src="../images/sub/filter_down.svg"></span>
+                                                    </p>
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="filt_th">
+                                                    <p>장소</p>
+                                                    <p class="filterWRap">
+                                                        <span><img src="../images/sub/filter_Up.svg"></span>
+                                                        <span><img src="../images/sub/filter_down.svg"></span>
+                                                    </p>
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="filt_th">
+                                                    <p>결과</p>
+                                                    <p class="filterWRap">
+                                                        <span><img src="../images/sub/filter_Up.svg"></span>
+                                                        <span><img src="../images/sub/filter_down.svg"></span>
+                                                    </p>
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="filt_th">
+                                                    <p>날씨</p>
+                                                    <p class="filterWRap">
+                                                        <span><img src="../images/sub/filter_Up.svg"></span>
+                                                        <span><img src="../images/sub/filter_down.svg"></span>
+                                                    </p>
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="filt_th">
+                                                    <p>관중수</p>
+                                                    <p class="filterWRap">
+                                                        <span><img src="../images/sub/filter_Up.svg"></span>
+                                                        <span><img src="../images/sub/filter_down.svg"></span>
+                                                    </p>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <p>2024/05/29</p>
+                                            </td>
+                                            <td>
+                                                <p>18:30</p>
+                                            </td>
+                                            <td>
+                                                <p class="playerClub">
+                                                    KBO
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p class="player">
+                                                    <span>KIA</span>
+                                                    <span class="vs">VS</span>
+                                                    <span>NC</span>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p>창원</p>
+                                            </td>
+                                            <td>
+                                                <p class="result">
+                                                    <span class="win">6</span>
+                                                    <span>:</span>
+                                                    <span class="lose">3</span>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p>비</p>
+                                            </td>
+                                            <td>
+                                                <p>7,764</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>2024/05/29</p>
+                                            </td>
+                                            <td>
+                                                <p>18:30</p>
+                                            </td>
+                                            <td>
+                                                <p class="playerClub">
+                                                    KBO
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p class="player">
+                                                    <span>KIA</span>
+                                                    <span class="vs">VS</span>
+                                                    <span>NC</span>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p>창원</p>
+                                            </td>
+                                            <td>
+                                                <p class="result">
+                                                    <span class="lose">3</span>
+                                                    <span>:</span>
+                                                    <span class="win">6</span>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p>비</p>
+                                            </td>
+                                            <td>
+                                                <p>7,764</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>2024/05/29</p>
+                                            </td>
+                                            <td>
+                                                <p>18:30</p>
+                                            </td>
+                                            <td>
+                                                <p class="playerClub">
+                                                    KBO
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p class="player">
+                                                    <span>KIA</span>
+                                                    <span class="vs">VS</span>
+                                                    <span>NC</span>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p>창원</p>
+                                            </td>
+                                            <td>
+                                                <p class="result">
+                                                    <span class="tie">0</span>
+                                                    <span>:</span>
+                                                    <span class="tie">0</span>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p>비</p>
+                                            </td>
+                                            <td>
+                                                <p>23,817</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>2024/05/29</p>
+                                            </td>
+                                            <td>
+                                                <p>18:30</p>
+                                            </td>
+                                            <td>
+                                                <p class="playerClub">
+                                                    K LEAGUE 1
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p class="player">
+                                                    <span>수원 FC</span>
+                                                    <span class="vs">VS</span>
+                                                    <span>대구</span>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p>대전 월드컵</p>
+                                            </td>
+                                            <td>
+                                                <p class="result">
+                                                    <span>경기전</span>v
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p>비</p>
+                                            </td>
+                                            <td>
+                                                <p>7,764</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="8">
+                                                <div class="daysTotalTb">
+                                                    <div class="left">
+                                                        <table>
+                                                            <colgroup>
+                                                                <col width="25%">
+                                                                <col width="15%">
+                                                                <col width="15%">
+                                                                <col width="15%">
+                                                                <col width="15%">
+                                                                <col width="15%">
+                                                            </colgroup>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th></th>
+                                                                    <th>K LEAGUE</th>
+                                                                    <th>KBO</th>
+                                                                    <th>KBL</th>
+                                                                    <th>WKBL</th>
+                                                                    <th>KOVO</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td><p>누적 단체 관중수</p></td>
+                                                                    <td><p class="white">7,505</p></td>
+                                                                    <td><p class="white">0</p></td>
+                                                                    <td><p class="white">3,323</p></td>
+                                                                    <td><p class="white">2,214</p></td>
+                                                                    <td><p class="white">112,240</p></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><p>누적 단체 경기수</p></td>
+                                                                    <td><p class="white">7,505</p></td>
+                                                                    <td><p class="white">0</p></td>
+                                                                    <td><p class="white">3,323</p></td>
+                                                                    <td><p class="white">2,214</p></td>
+                                                                    <td><p class="white">112,240</p></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="right">
+                                                        <table>
+                                                            <colgroup>
+                                                                <col width="40%">
+                                                                <col width="30%">
+                                                                <col width="30%">
+                                                            </colgroup>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th></th>
+                                                                    <th>합계</th>
+                                                                    <th>평균</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td><p>전종목</p></td>
+                                                                    <td><p class="white">13,462</p></td>
+                                                                    <td><p class="white">1,233</p></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><p>전종목</p></td>
+                                                                    <td><p class="white">13,462</p></td>
+                                                                    <td><p class="white">1,233</p></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+        
+                            </div>
+                            <!-- mobile -->
+                            <div class="schWeekMobile mobile">
+                                <div class="shcList active">
+                                    <div class="schDate">
+                                        <p class="clubName">K리그1</p>
+                                        <p class="playDate">
+                                            <span>2024.07.17</span>
+                                            <span>14:00</span>
+                                        </p>
+                                        <p class="wedth_icon">
+                                            <img src="../images/ic_weather_01.png">
+                                        </p>
+                                    </div>
+                                    <div class="schBox">
+                                        <div class="schPlaytop">
+                                            <p>
+                                                <span>강원</span>
+                                            </p>
+                                            <p class="scoreTxt">
+                                                <span class="score win">6</span>
+                                                <span class="vs">VS</span>
+                                                <span class="score lose">3</span>
+                                            </p>
+                                            <p>
+                                                <span>전북</span>
+                                            </p>
+                                        </div>
+                                        <div class="schPlayBtm">
+                                            <p>춘천 송암</p>
+                                            <p class="schPlayNm">2,460명</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shcList">
+                                    <div class="schDate">
+                                        <p class="clubName">K리그1</p>
+                                        <p class="playDate">
+                                            <span>2024.07.17</span>
+                                            <span>14:00</span>
+                                        </p>
+                                        <p class="wedth_icon">
+                                            <img src="../images/ic_weather_01.png">
+                                        </p>
+                                    </div>
+                                    <div class="schBox">
+                                        <div class="schPlaytop">
+                                            <p>
+                                                <span>강원</span>
+                                            </p>
+                                            <p class="scoreTxt">
+                                                <span class="score win">6</span>
+                                                <span class="vs">VS</span>
+                                                <span class="score lose">3</span>
+                                            </p>
+                                            <p>
+                                                <span>전북</span>
+                                            </p>
+                                        </div>
+                                        <div class="schPlayBtm">
+                                            <p>춘천 송암</p>
+                                            <p class="schPlayNm">2,460명</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shcList">
+                                    <div class="schDate">
+                                        <p class="clubName">K리그1</p>
+                                        <p class="playDate">
+                                            <span>2024.07.17</span>
+                                            <span>14:00</span>
+                                        </p>
+                                        <p class="wedth_icon">
+                                            <img src="../images/ic_weather_01.png">
+                                        </p>
+                                    </div>
+                                    <div class="schBox">
+                                        <div class="schPlaytop">
+                                            <p>
+                                                <span>강원</span>
+                                            </p>
+                                            <p class="scoreTxt">
+                                                <span class="score win">6</span>
+                                                <span class="vs">VS</span>
+                                                <span class="score lose">3</span>
+                                            </p>
+                                            <p>
+                                                <span>전북</span>
+                                            </p>
+                                        </div>
+                                        <div class="schPlayBtm">
+                                            <p>춘천 송암</p>
+                                            <p class="schPlayNm">2,460명</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 만족도 조사 -->
+                <div class="section02">
+                    <div class="wrap_rating">
+                        <div class="rating_top">
+                            <p class="icon_rating">
+                                <img src="../images/sub/rating_icon01.svg">
+                            </p>
+                            <div class="ratingTt">
+                                <h3>만족도 평가</h3>
+                                <p>이 페이지에서 제공하는 정보에 얼마나 만족하십니까?</p>
+                            </div>
+                        </div>
+                        <div class="rating_middle">
+                            <ul>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="check1" checked>
+                                        <span class="radioImg"><img src="../images/sub/rating_icon02.svg"></span>
+                                        <span>매우만족</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="check1" checked>
+                                        <span class="radioImg"><img src="../images/sub/rating_icon03.svg"></span>
+                                        <span>만족</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="check1" checked>
+                                        <span class="radioImg"><img src="../images/sub/rating_icon04.svg"></span>
+                                        <span>보통</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="check1" checked>
+                                        <span class="radioImg"><img src="../images/sub/rating_icon05.svg"></span>
+                                        <span>불만족</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="check1" checked>
+                                        <span class="radioImg"><img src="../images/sub/rating_icon06.svg"></span>
+                                        <span>매우불만족</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="inp_survey">
+                            <input type="text" placeholder="현재 페이지의 만족도를 평가해 주세요. 의견을 수렴하여 빠른 시일 내에 반영하겠습니다.">
+                            <button>평가하기</button>
+                        </div>
+                        <div class="inp_infor">
+                            <h3>평가자 정보</h3>
+                            <div class="inp_inforWrap">
+                                <p>
+                                    <span>이름</span>
+                                    <input type="text">
+                                </p>
+                                <p>
+                                    <span>비밀번호</span>
+                                    <input type="password">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bannerArea">
+                <div class="bannerAreaWrap">
+                    <div class="bannerAreaCont">
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner00.png">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner01.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner02.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner03.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner04.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner05.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner06.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#">
+                                <img src="../images/main/footBanner07.gif">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="footerTop">
+                    <div class="ftInner">
+                        <ul class="left">
+                            <li>
+                                <a href="#">개인정보처리방침</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="#">사이트맵</a>
+                            </li>
+                        </ul>
+                        <ul class="site">
+                            <li class="dataBtn">
+                                <button type="button" class="navRight">데이터 활용 신청</button>
+                            </li>
+                            <li>
+                                <a>관련사이트</a>
+                                <ul class="relatedSite">
+                                    <li>
+                                        <a href="http://data.kleague.com" target="_blank">K LEAGUE 데이터포털</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://datalab.wkbl.or.kr" target="_blank">WKBL 데이터랩</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://data.klpga.co.kr/" target="_blank">KLPGA 데이터센터</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://k-rankings.klpga.co.kr/" target="_blank">KLPGA K-Rankings</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footerBot">
+                    <div class="ftCont">
+                        <div class="footerLogo">
+                            <h1>
+                                <img src="../images/main/logo_footer.png">
+                            </h1>
+                        </div>
+                        <div class="footInfo">
+                            <ul>
+                                <li>
+                                    서울특별시 중구 통일로 2길 16 AIA타워 5층 TEL 02&#41;6190-5900 FAX 02&#41;6190-5901
+                                </li>
+                                <li>
+                                    Copyright&copy;2019 사단법인 한국프로스포츠협회. All right reserved
+                                </li>
+                                <li>이 사업은 문화체육관광부와 국민체육진흥공단의 재정후원을 받고 있습니다.</li>
+                                <li class="chrome">이 웹사이트는 Chrome 브라우저에 최적화되어있습니다.</li>
+                            </ul>
+                        </div>
+                        <div class="footersponse">
+                            <p>
+                                <img src="../images/main/logo_footer2.png">
+                            </p>
+                            <p>
+                                <img src="../images/main/logo_footer3.png">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

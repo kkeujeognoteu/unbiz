@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        html, body{ width:100%; height:100%; overflow-x:hidden; background:#fff; font-family:"Noto Sans KR", 'Pretendard', sans-serif; font-size:16px; }
+        html, body, div, span, p, ul, li, a, h1, h2, h3, h4, h5, h6, i, select, button, strong, input, ol, table, th, td, dl, dt, dd{margin:0;padding:0;box-sizing:border-box;letter-spacing:-.7px;font-style:normal;font-family: "Noto Sans KR", 'Pretendard', sans-serif;}
+        ul, li, ol { list-style:none; }
+        a{ text-decoration:none; color:#333; display:block; }
+        
+        .wrap{ position:relative; }
+        .wfix{ margin:0 auto; }
+        .headWrap{ width:1440px; margin:0 auto; }
+        .headWrap .topMenu .logo{ width:200px; height:40px; }
+
+        .subHeader{ background:#0f1957 }
+
+        .topSubMenu { margin-bottom:15px; }
+        .topSubMenu ul{ display:flex; justify-content:flex-end; }
+        .topSubMenu ul li { position:relative; padding-right:30px; }
+        .topSubMenu ul li:after{ content:''; position:absolute; width:4px; height:4px; background:#fff; border-radius:100%; right:12px; top:10px; }
+        .topSubMenu ul li:last-child:after{ display:none; }
+        .topSubMenu ul li a{ color:#fff; font-size:14px; }
+
+        .headWrap .navRight{ background:#86654b; color:#fff; border-radius:100px; padding:12px 30px; border:none; margin-right:40px; font-size: 16px; }
+        .headWrap .navRight ul li{ position:relative; padding-right:32px; }
+        .headWrap .navRight ul li:after{ content:''; position:absolute; width:4px; height:4px; border-radius:100%; background:#fff; right:16px; top:50%; transform:translateY(-50%) }
+        .headWrap .navRight ul li:last-child{ padding-right:0; }
+        .headWrap .navRight ul li:last-child:after{ display:none; }
+
+        /* header */
+        #header{ padding:20px 0; }
+        #header.open .topSubMenu ul li a{ color:#999; }
+        #header.open .topSubMenu ul li:after{ background:#999; }
+        #header .topMenu{ position:relative; display:flex; justify-content:space-between; }
+        #header .topMenu .logo{ background:url(../logo.png)no-repeat; }
+        #header .topMenu .logo a{ display:block; width:100%; height:100%; }
+
+        #header #menu .lst{ display:flex; padding:0; margin:0; }
+        #header #menu .lst > li{ position:relative; display:flex; flex-direction:column; width:170px; }
+        #header #menu .lst > li:hover > a, #header #menu .lst > li.active > a{ color:#86654b; transition:.3s }
+        #header #menu .lst > li > a{ position:relative; padding:0 10px; font-size:20px; line-height:60px; padding-bottom:0; font-weight:500;color:#fff; }
+        #header #menu .lst .subNav{ display:none; position:absolute; background:#f9f9f9; text-align:center; z-index:99; top:60px; left:0; border:1px solid #ddd; border-top:none; }
+        #header #menu .lst .subNav:before{ content:''; position:absolute; top:0; left:0; width:100%; height:3px; background:#86654b; }
+        #header #menu .lst .subNav li{ position:relative; display:flex; flex-direction: column; font-size:18px; color:#fff; transition:all .2s; line-height:50px; width:170px; }
+        #header #menu .lst .subNav li:hover a{ color:#86654b; background:#ececec }
+        #header .rightMenu{ display:flex; align-items:center;}
+        #header .rightMenu .btn_login.login{display:block;width:50px;height:50px;background-image:url('/images/main/icon_login.png');background-position:center;background-repeat:no-repeat;}
+        #header .rightMenu .btn_login.logout{display:block;width:50px;height:50px;background-image:url('/images/main/icon_logout.png');background-position:center;background-repeat:no-repeat;}
+        #header .rightMenu .btn_mypage{display:block;width:50px;height:50px;background-image:url('/images/main/mypage.png');background-position:center;background-repeat:no-repeat;}
+
+        #header .rightMenu .btn_menu{  position:relative; background:transparent; border:none;  cursor:pointer; }
+        #header .rightMenu .btn_menu .line{ position:absolute; background:#fff; margin:0; width:30px; height:3px; top:50%; left:0; margin-top:-1px; }
+        #header .rightMenu .btn_menu .line{ display: none; }
+        #header .rightMenu .btn_menu:before{ content:''; position:absolute; width:30px; top:12px; left:10px; bottom:12px; border-top:3px solid #fff; border-bottom:3px solid #fff; }
+        #header .rightMenu .btn_menu:after{ content:''; position:absolute; width:25px; height:3px; top:50%; left:15px; margin-top:-1px; background:#fff; }
+        #header .rightMenu [class^=btn]{width:50px; height:50px; text-align:center; line-height:50px;}
+
+        .stopImg{ width:350px; margin:auto; }
+        .stopImg img{ width:100%; }
+
+        .closeWrap {
+            width: 660px;
+            margin: 40px auto 0;
+        }
+
+        .closeHead { margin-top: 110px; }
+
+        .closeHead h1 {
+            line-height: 1.3;
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: -.8px;
+            color: #222;
+            text-align:center;
+        }
+
+        .font20{ font-size:20px; }
+        .font30{ font-size:30px; }
+        .closeHead p {
+            text-align:center;
+            font-weight:600
+        }
+        .closeHead p + p{ margin-top:20px; }
+
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header lvl="" id="header" class="header subHeader">
+            <div class="headWrap">
+                <div class="topSubMenu">
+                    <ul>
+                        <li><a href="http://www.prosports.or.kr/" target="_blank">한국프로스포츠협회 홈</a></li>
+                        <li><a href="/page/etc/sitemap">사이트맵</a></li>
+                        <li><a href="/page/etc/opinion">개선의견</a></li>
+                    </ul>
+                </div>
+                <div class="topMenu">
+                    <h1 class="logo"><a href="/page/main"></a></h1>
+                    <div id="menu">
+                        <ul class="lst">
+                            <li id="gnb0" class="dl"><a href="#">관중 현황</a>
+                                <ul class="subNav">
+                                    <li class="dl_link"><a href="/page/spectator/all">전체 관중</a></li>
+                                    <li class="dl_link"><a href="/page/spectator/date">일자별 관중</a></li>
+                                    <li class="dl_link"><a href="/page/spectator/club">구단별 관중</a></li>
+                                    <li class="dl_link"><a href="/page/spectator/region">시·도별 관중</a></li>
+                                    <li class="dl_link"><a href="/page/spectator/history">역대 관중 현황</a></li>
+                                </ul>
+                            </li>
+                            <li id="gnb1" class="dl"><a href="#">일정/결과</a>
+                                <ul class="subNav">
+                                    <li class="dl_link"><a href="/page/schedule/schedule">일정 및 결과</a></li>
+                                    <li class="dl_link"><a href="/page/schedule/rank">리그 순위</a></li>
+                                </ul>
+                            </li>
+                            <li id="gnb2" class="dl"><a href="#">통계/현황</a>
+                                <ul class="subNav">
+                                    <li class="dl_link"><a href="/page/statistic/nara">e-나라지표</a></li>
+                                    <li class="dl_link"><a href="/page/statistic/sns">SNS</a></li>
+                                    <li class="dl_link"><a href="/page/statistic/stadium">경기장</a></li>
+                                </ul>
+                            </li>
+                            <li id="gnb3" class="dl"><a href="#">자료실</a>
+                                <ul class="subNav">
+                                    <li class="dl_link"><a href="/page/board/prosview">PROSVIEW</a></li>
+                                    <li class="dl_link"><a href="/page/board/ethic">스포츠 윤리 교육</a></li>
+                                    <li class="dl_link"><a href="/page/board/tendency">관람객 성향 조사</a></li>
+                                    <li class="dl_link"><a href="/page/board/etc">기타 자료</a></li>
+                                </ul>
+                            </li>
+                            <li id="gnb4" class="dl"><a href="#">단체/구단</a>
+                                <ul class="subNav">
+                                    <li class="dl_link"><a href="/page/group/agency">프로 단체 정보</a></li>
+                                    <li class="dl_link"><a href="/page/group/club">프로 구단 정보</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rightMenu"><button type="button" id="hamburgerBtn" class="btn_menu close"><span
+                                class="line"></span></button></div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="closeWrap">
+        <div class="closeHead">
+            <p class="font30">서비스 중단</p>
+            <p class="stopImg"><img src="serviceStop.jpg"></p>
+            <p class="font30">프로스포츠 관련 정보는 각 프로스포츠 단체 웹사이트에서 확인하시기 바랍니다.</p>
+        </div>
+    </div>
+</body>
+
+</html>

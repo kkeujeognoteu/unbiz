@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/sub.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/icon.css" rel="stylesheet">
+    <link href="../css/header.css" rel="stylesheet">
+    <link href="../css/footer.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+
+    <title>e나라 지표</title>    
+    <script>
+
+        /* header */
+        function tglAllMenu(){
+            $('body').toggleClass('dimm');
+            if($('#header').hasClass('open')){
+                $('#header').removeClass('open')
+                $('body').removeClass('fix');
+                $('#wing').removeClass('inHeader');
+                $('.menu_all').removeClass('close');
+                $('.logo').removeClass('wht');
+                if($('#fullpage').length > 0 && $(window).width()>1024){
+                    $.fn.fullpage.setAllowScrolling(true);
+                    $.fn.fullpage.setKeyboardScrolling(true);
+                }
+            }else {
+                $('#header').addClass('open')
+                $('body').addClass('fix');
+                $('#wing').addClass('inHeader');
+                $('.logo').addClass('wht');
+                $('.btn_menu').addClass('close');
+
+                if($('#fullpage').length > 0 && $(window).width()>1024){
+                    $.fn.fullpage.setAllowScrolling(false);
+                    $.fn.fullpage.setKeyboardScrolling(false);
+                }
+            }
+            
+        }
+    
+        $(document).ready(function() {
+
+
+            function numberWithCommas(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+            
+            function animateNum(agency, cntNum){
+                $({ val : 0 }).animate({ val : cntNum }, {
+                duration: 1000,
+                step: function() {
+                    var num = numberWithCommas(Math.floor(this.val));
+                    $("#" + agency + "SpeTotal").text(num);
+                },
+                complete: function() {
+                    var num = numberWithCommas(Math.floor(this.val));
+                    $("#" + agency + "SpeTotal").text(num);
+                }
+                });
+            }
+            
+            let agencySpe = {
+                'A01' : 5117271,
+                'A02' : 154654654,
+                'A03' : 23213123,
+                'A04' : 0,
+                'A05' : 5121,
+            }
+            
+            for(let agency in agencySpe){
+                animateNum(agency, agencySpe[agency]);
+            }
+            $('.bannerAreaCont').slick({
+                slidesToShow: 8,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 2000,
+                responsive: [{
+                    breakpoint: 1080,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 6
+                    }
+                },
+                {
+                    breakpoint: 780,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 4,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 2,
+                    }
+                }
+            ]
+            
+            });
+            $('#popup01').on('shown.bs.modal', function () {
+                $('#myInput').trigger('focus')
+            })
+
+            // const ctx = document.getElementById('myChart');
+
+            // new Chart(ctx, {
+            //     type: 'bar',
+            //     data: {
+            //     labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            //     datasets: [{
+            //         label: '# of Votes',
+            //         data: [12, 19, 3, 5, 2, 3],
+            //         borderWidth: 1
+            //     }]
+            //     },
+            //     options: {
+            //     scales: {
+            //         y: {
+            //         beginAtZero: true
+            //         }
+            //     }
+            //     }
+            // });
+      });
+
+    </script>
+</head>
+
+<body>
+    <div class="conain">
+        <div class="wrap">
+            <header class="header subHeader" id="header">
+                <div class="headWrap">
+                    <div class="topSubMenu">
+                        <ul>
+                            <li>
+                                <a href="#">한국프로스포츠협회</a>
+                            </li>
+                            <li>
+                                <a href="#">사이트맵</a>
+                            </li>
+                            <li>
+                                <a href="#">개선의견</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="topMenu">
+                        <h1 class="logo">
+                            <a href="#"></a>
+                        </h1>
+                        <div id="menu" class="subpgNav">
+                            <ul class="lst">
+                                <li class="dl active" id="gnb1">
+                                    <a href="#">관중 현황</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">전체 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">일자별 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">구단별 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">시·도별 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">역대 관중 현황</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">일정/결과</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">금주의 일정</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">전체 일정・결과</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">리그 순위</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">통계/현황</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">e-나라지표</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">SNS</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">경기장</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">종사자</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">스폰서</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">역대우승팀</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">테마통계</a>
+                                        </li>
+                                    </ul>   
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">자료실</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">PROSVIEW</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">스포츠 윤리 교육</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">관람객 성향 조사</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">기타 자료</a>
+                                        </li>
+                                    </ul>    
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">단체/구단</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">프로 단체 정보</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">프로 구단 정보</a>
+                                        </li>
+                                    </ul> 
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rightMenu">
+                            <button type="button" class="navRight pc">데이터 활용 신청</button>
+                            <button type="button" class="btn_menu close" onclick="tglAllMenu();">
+                                <span class="line"></span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </header>
+            <div class="subPg">
+                <div class="subNavWRap">
+                    <div class="subNav">
+                        <ul>
+                            <li class="dl_link active">
+                                <a href="#">e-나라지표</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">SNS</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">경기장</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">종사자</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">스폰서</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">역대우승팀</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">테마통계</a>
+                            </li>
+                        </ul>
+                        <div class="subTopSlt downBtn">
+                            <button>다운로드<i class="down_Ic"></i></button>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="section01">
+                    <div class="subCont">
+                        <div class="mt50">
+                            <div class="subTitle subCom">
+                                <h3>그래프</h3>
+                                <div class="titleSlt">
+                                    <select>
+                                        <option>주요 프로스포츠 관중 추이</option>
+                                    </select>
+                                    <span>기간 선택</span>
+                                    <select>
+                                        <option>2015</option>
+                                    </select>
+                                    <span>~</span>
+                                    <select>
+                                        <option>2024</option>
+                                    </select>
+                                    <button class="bg_brown">조회</button>
+                                </div>
+                                <div class="ac_btn">
+                                    <a>
+                                        <span></span>
+                                        <span></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="graph_btn_area">
+                                <div class="left">
+                                    <a class="btn_gr" title="라인형"><i class="xi-chart-line"></i></a>
+                                    <a class="btn_gr" title="막대형(세로)"><i class="xi-chart-bar"></i></a>
+                                    <a class="btn_gr" title="라인형"><i class="xi-chart-bar02"></i></a>
+                                    <a class="btn_gr" title="라인형">
+                                        <i class="xi-renew"> 초기화</i>
+                                    </a>
+                                    <a class="btn_gr" title="라인형">
+                                        <i class="xi-list-number">레이블 보기</i> 
+                                    </a>
+                                </div>
+                                <div class="right">
+                                    <p> <strong>&#8251;경기 관중 현황</strong> (기간:20150101~20240702 )</p>
+                                </div>
+                            </div>
+                            <div class="chart">
+                                <div class="chartBox">
+                                    <h2>프로스포츠 전체 관중 추이</h2>
+                                    <!-- 그래프 수정 꺽세(라인)로 해야함 -->
+                                    <canvas id="myChart" style="height:20vh; width:50vw"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt50">
+                            <!-- 통계표 -->
+                            <div class="subTitle subCom">
+                                <h3>통계표</h3>
+                                <div class="titleSlt">
+                                    <select>
+                                        <option>주요 프로스포츠 관중 추이</option>
+                                    </select>
+                                    <span>기간 선택</span>
+                                    <select>
+                                        <option>2015</option>
+                                    </select>
+                                    <span>~</span>
+                                    <select>
+                                        <option>2024</option>
+                                    </select>
+                                    <button class="bg_brown" type="button" data-toggle="modal" data-target="#popup01">조회</button>
+                                    <button class="bg_gray">행렬전환</button>
+                                </div>
+                                <div class="ac_btn">
+                                    <a>
+                                        <span></span>
+                                        <span></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- pc -->
+                            <div class="subTb totalTb">
+                                <div class="graph_btn_area">
+                                    <div class="left">
+                                        <a class="btn_gr" title="라인형">통계펴 다운로드</a>
+                                        <a class="btn_gr" title="막대형(세로)">조회설정</a>
+                                        <a class="btn_gr" title="라인형">증감비교</a>
+                                        <a class="btn_gr" title="라인형">전체 증감비교
+                                        </a>
+                                        <a class="btn_gr" title="라인형">초기화 
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="total">
+                                    <h3>프로스포츠 전체 관중 추이</h3>
+                                    <p>(단위 명)</p>
+                                </div>
+                                <div class="grapTb">
+                                    <table>
+                                        <colgroup>
+                                            <col width="8%"> <!-- 날짜 -->
+                                            <col width="10%"> <!-- 시간 -->
+                                            <col width="10%"> <!-- 단체/구단 -->
+                                            <col width="10%"> <!-- 경기 -->
+                                            <col width="10%"> <!-- 장소 -->
+                                            <col width="10%"> <!-- 결과 -->
+                                            <col width="10%"> <!-- 날씨 -->
+                                            <col width="10%"> <!-- 관중수 -->
+                                            <col width="10%"> <!-- 관중수 -->
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>2015</th>
+                                                <th>2016</th>
+                                                <th>2017</th>
+                                                <th>2018</th>
+                                                <th>2019</th>
+                                                <th>2020</th>
+                                                <th>2021</th>
+                                                <th>2022</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="td_bg">
+                                                    <p>KBO</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td class="td_bg">
+                                                    <p>K리그</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td class="td_bg">
+                                                    <p>KBL</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td class="td_bg">
+                                                    <p>WKBL</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="td_bg">
+                                                    <p>KOVO</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td>
+                                                    <p>합계</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                                <td>
+                                                    <p>7,622,495</p>
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+    
+                            </div>
+                        </div>
+                        <div class="mt50">
+                             <!-- 관련용어 -->
+                             <div class="subTitle subCom">
+                                <h3>관련용어</h3>
+                                <div class="ac_btn">
+                                    <a>
+                                        <span></span>
+                                        <span></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="infoEdit">
+                                <ul>
+                                    <li>경기 수 : 정규시즌, 포스트시즌(챔피언결정전), 올스타전 포함</li>
+                                    <li>경기당 평균 관중 : 전체 관중 수/총 경기 수</li>
+                                    <li>좌석 점유율 : 경기당 평균 관중 수/수용규모</li>
+                                    <li>수용규모 : 각 구장 매진인원 총계 / 구장수</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt50">
+                             <!-- 지표정보 -->
+                             <div class="subTitle subCom">
+                                <h3>지표정보</h3>
+                                <div class="ac_btn">
+                                    <a>
+                                        <span></span>
+                                        <span></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="infoEdit">
+                                <ul>
+                                    <li>담당 부서 및 연락처 :   문화체육관광부, 스포츠산업과, 044-203-3150</li>
+                                    <li>최근 갱신일 :   2023-07-13(입력예정일 : 2024-02-01)</li>
+                                    <li>자료 출처 :   프로스포츠 경기단체 자체 통계자료 * (사)한국야구위원회, 한국프로축구연맹, (사)한국농구연맹, (사)한국여자농구연맹, (사)한국배구연맹</li>
+                                    <li>공표 주기 :   1년</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 만족도 조사 -->
+                <div class="section02">
+                    <div class="wrap_rating">
+                        <div class="rating_top">
+                            <p class="icon_rating">
+                                <img src="../images/sub/rating_icon01.svg">
+                            </p>
+                            <div class="ratingTt">
+                                <h3>만족도 평가</h3>
+                                <p>이 페이지에서 제공하는 정보에 얼마나 만족하십니까?</p>
+                            </div>
+                        </div>
+                        <div class="rating_middle">
+                            <ul>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="check1" checked>
+                                        <span class="radioImg"><img src="../images/sub/rating_icon02.svg"></span>
+                                        <span>매우만족</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="check1" checked>
+                                        <span class="radioImg"><img src="../images/sub/rating_icon03.svg"></span>
+                                        <span>만족</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="check1" checked>
+                                        <span class="radioImg"><img src="../images/sub/rating_icon04.svg"></span>
+                                        <span>보통</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="check1" checked>
+                                        <span class="radioImg"><img src="../images/sub/rating_icon05.svg"></span>
+                                        <span>불만족</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="check1" checked>
+                                        <span class="radioImg"><img src="../images/sub/rating_icon06.svg"></span>
+                                        <span>매우불만족</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="inp_survey">
+                            <input type="text" placeholder="현재 페이지의 만족도를 평가해 주세요. 의견을 수렴하여 빠른 시일 내에 반영하겠습니다.">
+                            <button>평가하기</button>
+                        </div>
+                        <div class="inp_infor">
+                            <h3>평가자 정보</h3>
+                            <div class="inp_inforWrap">
+                                <p>
+                                    <span>이름</span>
+                                    <input type="text">
+                                </p>
+                                <p>
+                                    <span>비밀번호</span>
+                                    <input type="password">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- popup01 -->
+            <div class="popupWrap">
+                <!-- 조회설정 -->                
+                <div class="popup01">
+                    <!-- Modal -->
+                    <div class="modalCover"></div>
+                    <div class="modal01">
+                        <div class="modalCont">
+                            <div class="modalHeader">
+                                <p class="tit">조회설정</p> <span class="modalClose btn_close">×</span>
+                            </div>
+                            <div class="modalBody">
+                                <div class="schEdit">
+                                    <div class="schLeft">
+                                        <div class="schHead">
+                                            <input type="checkbox" id="check02">
+                                            <label class="checkbox-label" for="check02">항목</label>
+                                        </div>
+                                        <div class="schBody">
+                                            <div class="itemsList">
+                                                <input type="checkbox">
+                                                <label>프로스포츠 관중</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="schRight">
+                                        <div class="schHead">
+                                            <input type="checkbox" id="check01">
+                                            <label class="checkbox-label" for="check01">항목</label>
+                                        </div>
+                                        <div class="schBody">
+                                            <div class="itemsList">
+                                                <input type="checkbox">
+                                                <label>K LEAGUE</label>
+                                            </div>
+                                            <div class="itemsList">
+                                                <input type="checkbox">
+                                                <label>KOBO</label>
+                                            </div>
+                                            <div class="itemsList">
+                                                <input type="checkbox">
+                                                <label>KBL</label>
+                                            </div>
+                                            <div class="itemsList">
+                                                <input type="checkbox">
+                                                <label>WKBL</label>
+                                            </div>
+                                            <div class="itemsList">
+                                                <input type="checkbox">
+                                                <label>KOVO</label>
+                                            </div>
+                                            <div class="itemsList">
+                                                <input type="checkbox">
+                                                <label>합계</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modalFooter">
+                                <button type="button" class="btn btn_close">적용</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 행렬전환 -->
+                <div class="popup02">
+                    <!-- Modal -->
+                    <div class="modalCover"></div>
+                    <div class="modal01">
+                        <div class="modalCont">
+                            <div class="modalHeader">
+                                <p class="tit">행렬전환</p> <span class="modalClose btn_close">×</span>
+                            </div>
+                            <div class="modalBody">
+                                <div class="schEdit processEdit">
+                                    <div class="schLeft">
+                                        <div class="schHead">
+                                            <h3><img src="../images/popup/img01.png">표측</h3>
+                                        </div>
+                                        <div class="schBody">
+                                            <div class="itemsList">
+                                               <button>항목</button>
+                                            </div>
+                                            <div class="itemsList">
+                                               <button>종목별</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="schRight">
+                                        <div class="schHead">
+                                            <h3><img src="../images/popup/img02.png">표두</h3>
+                                        </div>
+                                        <div class="schBody">
+                                            <div class="itemsList">
+                                                <button>주기</button>
+                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modalFooter">
+                                <button type="button" class="btn btn_close">적용</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- bannerArea -->
+            <div class="bannerArea">
+                <div class="bannerAreaWrap">
+                    <div class="bannerAreaCont">
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner00.png">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner01.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner02.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner03.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner04.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner05.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner06.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#">
+                                <img src="../images/main/footBanner07.gif">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- footer -->
+            <footer class="footer">
+                <div class="footerTop">
+                    <div class="ftInner">
+                        <ul class="left">
+                            <li>
+                                <a href="#">개인정보처리방침</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="#">사이트맵</a>
+                            </li>
+                        </ul>
+                        <ul class="site">
+                            <li>
+                                <a>관련사이트</a>
+                                <ul class="relatedSite">
+                                    <li>
+                                        <a href="http://data.kleague.com" target="_blank">K LEAGUE 데이터포털</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://datalab.wkbl.or.kr" target="_blank">WKBL 데이터랩</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://data.klpga.co.kr/" target="_blank">KLPGA 데이터센터</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://k-rankings.klpga.co.kr/" target="_blank">KLPGA K-Rankings</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footerBot">
+                    <div class="ftCont">
+                        <div class="footerLogo">
+                            <h1>
+                                <img src="../images/main/logo_footer.png">
+                            </h1>
+                        </div>
+                        <div class="footInfo">
+                            <ul>
+                                <li>
+                                    서울특별시 중구 통일로 2길 16 AIA타워 5층 TEL 02&#41;6190-5900 FAX 02&#41;6190-5901
+                                </li>
+                                <li>
+                                    Copyright&copy;2019 사단법인 한국프로스포츠협회. All right reserved
+                                </li>
+                                <li>이 사업은 문화체육관광부와 국민체육진흥공단의 재정후원을 받고 있습니다.</li>
+                                <li class="chrome">이 웹사이트는 Chrome 브라우저에 최적화되어있습니다.</li>
+                            </ul>
+                        </div>
+                        <div class="footersponse">
+                            <p>
+                                <img src="../images/main/logo_footer2.png">
+                            </p>
+                            <p>
+                                <img src="../images/main/logo_footer3.png">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    
+    <!-- 차트js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"></script> -->
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['K LEAGUE', 'KBO', 'KBL', 'WKBL', 'KOVO'],
+            datasets: [{
+                label: '',
+                data: [37000, 57000, 45000, 30000, 20000],
+                backgroundColor: [
+                    '#e20d18',
+                    '#00215a',
+                    '#ff9c00',
+                    '#ea5ba0',
+                    '#009df3'
+                ]
+            }]
+        },
+        options: {
+            maxBarThickness: 22,
+            indexAxis: 'y',
+            scales: {
+            x: {
+                max: 60000,
+                beginAtZero: true,
+                ticks:{
+                    stepSize:10000
+                }
+            }
+            },
+            plugins: {
+            legend: {
+                display: false
+                }
+            }
+        }
+        });
+
+    </script>
+</body>
+
+</html>

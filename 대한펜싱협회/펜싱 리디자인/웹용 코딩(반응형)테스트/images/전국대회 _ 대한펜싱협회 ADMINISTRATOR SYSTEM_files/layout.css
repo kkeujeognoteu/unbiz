@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+.wrapper {display:block; position:relative;}
+
+/* header */
+#header {display:block; position:fixed; left:0; top:0; width:100%; font-size:14px; z-index:20;}
+#header .header_wrap {position:relative; min-height:70px; background-color:#2c323d; text-align:center;}
+.header_wrap .tit {display:inline-block; position:relative; margin:0 30px; padding-top:12px; font-size:1.067em; color:#fff; line-height:1.300em; vertical-align:middle; white-space:normal; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; text-overflow:ellipsis; overflow:hidden;}
+.header_wrap .txt {display:block; position:relative; font-size:0.733em; color:#b6bcc7; line-height:1.200em;}
+.asideMenu {display:block; position:absolute; left:17px; top:25px; width:23px; height:18px; background:url('../../images/common/btn_menu.png') no-repeat 50% 50%; background-size:23px 18px; z-index:9999;}
+.asideMenu span {display:block; position:relative; text-indent:-9999px;}
+.backMove {display:block; position:absolute; top:25px; width:23px; height:18px; right:17px; background:url('../../images/common/btn_backMove.png') no-repeat 50% 50%; background-size:23px 18px; z-index:9999;}
+.backMove span {display:block; position:relative; text-indent:-9999px;}
+
+
+/* gnb */
+#header #gnb {display:block; position:fixed; left:-100%; top:0; width:100%; height:100%; overflow-y:auto; text-align:left; transition:all 0.3s ease-in-out;}
+#header #gnb.gnb_active {left:0;}
+#header #gnb .overlay {display:none; position:fixed; left:-100%; top:0; width:100%; height:100%; overflow-y:auto; background-color:#000; opacity:0.5; text-align:left; transition:all 0.3s ease-in-out; z-index:9998;}
+#header #gnb .overlay.gnb_active {display:block; left:0;}
+
+#header #gnb .gnb_wrap {display:block; position:relative; width:60%; height:100%; overflow-y:auto; background-color:#fff;  z-index:9999;}
+#header #gnb .logo_wrap {display:block; position:relative; width:100%; border-bottom:5px solid #b5151c; text-align:center;}
+#header #gnb .logo_wrap .logo {display:inline-block; margin:17px 0; width:70px; height:16px;}
+#header #gnb .logo_wrap .logo img {width:100%;}
+
+#header #gnb .gnb_list {display:block; position:relative; width:100%;}
+#header #gnb .gnb_list .depth1 {display:block; position:relative; border-bottom:1px solid #80848b;}
+#header #gnb .gnb_list .depth1 .node1 {display:block; position:relative; padding:23px 17px; font-size:0.933em; font-weight:700; color:#333; line-height:1.300em; background:url('../../images/common/btn_open01.png') 95% 50% no-repeat; background-size:12px 8px;}
+#header #gnb .gnb_list .depth1.on .node1 {background:url('../../images/common/btn_close01.png') 95% 50% no-repeat; background-size:12px 8px; color:#384f79;}
+
+#header #gnb .gnb_list .depth2 {display:none; position:relative; border-top:1px solid #e9eaeb;}
+#header #gnb .gnb_list .depth2 > .item .node2 {display:block; position:relative; padding:17px; font-size:0.800em; color:#666; line-height:1.000em; background:url('../../images/common/btn_open02.png') 95% 50% no-repeat; background-size:12px 12px}
+#header #gnb .gnb_list .depth2 > .item.on .node2 {background:url('../../images/common/btn_close02.png') 95% 50% no-repeat; background-size:12px 12px;}
+
+#header #gnb .gnb_list .depth3 {display:none; position:relative;}
+#header #gnb .gnb_list .depth3 > .item .node3 {display:inline-block; position:relative; margin:10px 17px; padding:6px 0 6px 8px; font-size:0.733em; color:#666; line-height:1.100em;}
+#header #gnb .gnb_list .depth3 .node3:after {content:''; display:block; position:absolute; left: 0; top:11px; width:4px; height:1px; background-color:#666;}
+#header #gnb .gnb_list .depth3 .node3.on {border-bottom:1px solid #b3b3b3;}
+
+#header #gnb .gnb_close {display:block; position:absolute; top:12px; left:63%; width:16px; height:16px; z-index:99999;}
+#header #gnb .gnb_close span {display:block; position:relative; text-indent:-9999px;}
+#header #gnb .gnb_close:after{ content:''; display:block; position:absolute; top:0; right:0; width:16px; height:16px; background:url('../../images/common/btn_gnbclose.png') no-repeat left top; background-size:16px 16px;}
+
+
+/* footer */
+#footer {display:block; position:fixed; left:0; bottom:0; width:100%; min-height:55px; border-top:5px solid #b5151c; background-color:#fff; text-align:center;}
+#footer .logo {display:inline-block; padding:16px 0; width:70px; height:16px;}
+#footer .logo img {width:100%;}

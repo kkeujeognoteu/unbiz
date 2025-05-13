@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    
+    <link href="../css/fonts.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/sub.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/header.css" rel="stylesheet">
+    <link href="../css/footer.css" rel="stylesheet">
+
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/ungveloper/web-fonts/GmarketSans/font-face.css" />
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/ungveloper/web-fonts/GmarketSans/font-family.css" />
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <title>복싱</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+    </style>
+    <script>
+        /* 상단바 */
+        function tglAllMenu(){
+            $('.btn_menu').toggleClass('dimm');
+            if($('.menuBar').hasClass('active')){
+                $('.menuBar').removeClass('active')
+            }else {
+                $('.menuBar').addClass('active');
+                $('.btn_menu').addClass('active');
+            }  
+        }
+    </script>
+</head>
+<body>
+    <div class="contain">
+        <header id="header" class="header" >
+            <div class="topHead">
+                <h1 class="logo">
+                    <a href="#" href="#"></a>
+                </h1>
+                <div class="headTit">
+                    <p><span class="blue">국제화</span>를 통한 국위선양!!</p>
+                    <p><span class="blue">국민 스포츠</span>로서의 복싱!!</p>
+                </div>
+                <div class="topPlay">
+                    <p class="boxing">복싱가족&#126;</p>
+                    <ul>
+                        <li>
+                            <p class="playTxt">오늘</p>
+                            <p class="playNm">308명</p>
+                        </li>
+                        <li>
+                            <p class="playTxt">월간</p>
+                            <p class="playNm">308명</p>
+                        </li>
+                        <li>
+                            <p class="playTxt">연간</p>
+                            <p class="playNm">308명</p>
+                        </li>
+                        <li>
+                            <p class="playTxt">전체</p>
+                            <p class="playNm">308명</p>
+                        </li>
+                        <li>
+                            <p class="playTxt">경기인등록인 수</p>
+                            <p class="playNm">308명</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="loginWrap">
+                    <ul>
+                        <li class="login">
+                            <a href="#" href="">로그인</a>
+                        </li>
+                        <li class="logout">
+                            <a href="#" href="">회원가입</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menuBar" id="lnb">
+                <div class="topMenu">
+                    <div id="menu">
+                        <ul class="lst">
+                            <li class="dl" id="gnb1">
+                                <a href="#">협회소개</a>
+                                
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">종목소개</a>
+                                
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">선수소개</a>
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">대회정보</a>
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">공인체육관</a>
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">복싱단증</a>
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">커뮤니티</a>
+                            </li>
+                            <li class="dl" id="gnb1">
+                                <a href="#">자료실</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rightMenu">
+                        <!-- <button type="button" class="navRight pc">데이터 활용 신청</button> -->
+                        <button type="button" class="btn_menu close" onclick="tglAllMenu();">
+                            <span class="line"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="allMenu">
+                    <div class="allMenuWrap">
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="./contents/sub02.html">환영사</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">연혁</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">임원소개</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">역대 회장</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">시도협회</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">상임심판</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">비젼</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">찾아오시는길</a>
+                            </li>
+                        </ul>
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="./contents/sub01.html">유래</a>
+                            </li>
+                        </ul>
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="#">국가대표 명단</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">역대 메달리스트</a>
+                            </li>
+                        </ul>
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="./contents/sub07.html">행사일정</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">경기결과</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="./contents/sub06.html">대회정보</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="./contents/sub08.html">경기동영상</a>
+                            </li>
+                        </ul>    
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="#">공인체육관이란?</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">공인체육관 신청</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">공인체육관 확인</a>
+                            </li>
+                        </ul>
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="#">복싱단증</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">단증심사공고 및 신청</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">단증재발급 신청</a>
+                            </li>
+                        </ul> 
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="#">공지사항</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">주택특별공급</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">묻고답하기</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">경영공시</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">경조사</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">채용공고</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">포토갤러리</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">선수고충처리센터</a>
+                            </li>
+                        </ul> 
+                        <ul class="subNav">
+                            <li class="dl_link">
+                                <a href="#">정관</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">경기규칙</a>
+                            </li>
+                            <li class="dl_link">
+                                <a href="#">각종규정</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="subMenuWrap">
+                <div class="subMenu">
+                    <ul>
+                        <li class="home">
+                            <i></i>
+                        </li>
+                        <li class="subD1">
+                            <a href="#">협회소개 <i class="sltIcon"></i></a>
+                            <ul class="subD2">
+                                <li>
+                                    <a href="#">협회소개</a>
+                                </li>
+                                <li>
+                                    <a href="#">종목소개</a>
+                                </li>
+                                <li>
+                                    <a href="#">선수소개</a>
+                                </li>
+                                <li>
+                                    <a href="#">대회정보</a>
+                                </li>
+                                <li>
+                                    <a href="#">공인체육관</a>
+                                </li>
+                                <li>
+                                    <a href="#">복싱단증</a>
+                                </li>
+                                <li>
+                                    <a href="#">자료실</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="subD1">
+                            <a href="#">증명서 발급 신청 <i class="sltIcon"></i></a>
+                            <ul class="subD2">
+                                <li class="dl_link">
+                                    <a href="./contents/sub02.html">환영사</a>
+                                </li>
+                                <li class="dl_link">
+                                    <a href="#">연혁</a>
+                                </li>
+                                <li class="dl_link">
+                                    <a href="./contents/sub05.html">임원소개</a>
+                                </li>
+                                <li class="dl_link">
+                                    <a href="#">역대 회장</a>
+                                </li>
+                                <li class="dl_link">
+                                    <a href="#">시도협회</a>
+                                </li>
+                                <li class="dl_link">
+                                    <a href="#">상임심판</a>
+                                </li>
+                                <li class="dl_link">
+                                    <a href="#">비젼</a>
+                                </li>
+                                <li class="dl_link">
+                                    <a href="#">찾아오시는길</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div id="section">
+            <!-- 컨텐츠 -->
+            <div class="subPg">
+                <div class="subCont">
+                    <h2 class="titleIco">증명서 발급 신청</h2>
+                    <p class="smallTit">각종 증명서 종류 및 수수료에 대한 안내입니다.</p>
+                    <div class="certificateWrap">
+                        <div class="certCont">
+                            <div class="certTb">
+                                <table>
+                                    <colgroup>
+                                        <col width="40%">
+                                        <col width="20%">
+                                        <col width="20%">
+                                        <col width="20%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>증명서 종류</th>
+                                            <th>발생비용</th>
+                                            <th>신청하기</th>
+                                            <th>신청현황</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <p>
+                                                    <strong>선수등록확인서</strong>
+                                                </p>
+                                            </td>
+                                            <td rowspan="5" class="border-R">
+                                                <p>직접출력</p>
+                                                <p>3,000원</p>
+                                            </td>
+                                            <td>
+                                                <button type="button" onclick="location.href='#'" class="skyblueBtn btn">신청하기</button>
+                                            </td>
+                                            <td>
+                                                <button type="button" onclick="location.href='#'" class="blueBtn btn">확인하기</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>
+                                                    <strong>지도자등록확인서</strong>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <button type="button" onclick="location.href='#'" class="skyblueBtn btn">신청하기</button>
+                                            </td>
+                                            <td>
+                                                <button type="button" onclick="location.href='#'" class="blueBtn btn">확인하기</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>
+                                                    <strong>팀등록확인서</strong>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <button type="button" onclick="location.href='#'" class="skyblueBtn btn">신청하기</button>
+                                            </td>
+                                            <td>
+                                                <button type="button" onclick="location.href='#'" class="blueBtn btn">확인하기</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>
+                                                    <strong>선수실적증명서</strong>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <button type="button" onclick="location.href='#'" class="skyblueBtn btn">신청하기</button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="blueBtn btn">확인하기</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>
+                                                    <strong>지도자실적증명서</strong>
+                                                    (2022년 이후 최초 등록한 지도자<br> 혹은 지도실적 10건 이하)
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <button type="button" onclick="location.href='#'" class="skyblueBtn btn">신청하기</button>
+                                            </td>
+                                            <td>
+                                                <button type="button" onclick="location.href='#'" class="blueBtn btn">확인하기</button>
+                                            </td>
+                                        </tr>
+                                        <tr class="grayTd">
+                                            <td>
+                                                <p><strong>지도자실적증명서</strong>(그 외 지도실적 10건 이상)</p>
+                                            </td>
+                                            <td rowspan="3" class="border-R">
+                                                <p>팩스 3,000원</p>
+                                                <p>우편 7,000원</p>
+                                                <p>추가 1매당 3,000원 추가</p>
+                                            </td>
+                                            <td>
+                                                <button type="button" onclick="location.href='#'" class="skyblueBtn btn">신청하기</button>
+                                            </td>
+                                            <td>
+                                                <button type="button" onclick="location.href='#'" class="blueBtn btn">확인하기</button>
+                                            </td>
+                                        </tr>
+                                        <tr class="grayTd">
+                                            <td>
+                                                <p><strong>지도자등록확인서</strong></p>
+                                            </td>
+                                            <td>
+                                                <button type="button" onclick="location.href='#'" class="skyblueBtn btn">신청하기</button>
+                                            </td>
+                                            <td>
+                                                <button type="button" onclick="location.href='#'" class="blueBtn btn">확인하기</button>
+                                            </td>
+                                        </tr>
+                                        <tr class="grayTd">
+                                            <td>
+                                                <p><strong>팀등록확인서</strong></p>
+                                            </td>
+                                            <td>
+                                                <button type="button" onclick="location.href='#'" class="skyblueBtn btn">신청하기</button>
+                                            </td>
+                                            <td>
+                                                <button type="button" onclick="location.href='#'" class="blueBtn btn">확인하기</button>
+                                            </td>
+                                        </tr>
+                                        <tr class="blueTd">
+                                            <td>
+                                                <p>
+                                                    <strong>지도자실적증명서</strong>
+                                                    (그 외 지도실적 10건 이상)
+                                                </p>
+                                            </td>
+                                            <td class="border-R">
+                                                <p>팩스 10,000원</p>
+                                                <p>우편 14,000원</p>
+                                                <p>추가 1매당 10,000원 추가</p>
+                                            </td>
+                                            <td>
+                                                <button type="button" onclick="location.href='#'" class="skyblueBtn btn">신청하기</button>
+                                            </td>
+                                            <td>
+                                                <button type="button" onclick="location.href='#'" class="blueBtn btn">확인하기</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <ul class="">
+                                    <li>※ 모든 증명서 발급신청은 로그인 후 가능합니다.</li>
+                                    <li>※ 기재사항을 빠짐없이 작성하여 주시기 바랍니다.</li>
+                                    <li>※ 연락처는 연락 가능한 번호로 정확하게 기입하여 주십시오</li>
+                                    <li>※ 수령방법란에 정확히 수령하실 항목을 체크하셔야 올바른 진행이 이루어집니다.</li>
+                                    <li>※ 증명서 신청 후 2일 이내 결제하시기 바랍니다. 2일 후 결제하지 않은 증명서신청은 자동삭제됩니다.</li>
+                                </ul>
+                            </div>
+                            <div class="charge border_top_blue">
+                                <div class="title">
+                                    <p>수수료</p>
+                                </div>
+                                <ul class="chargeWrap">
+                                    <li>
+                                        <p class="chgTitle">단체등록</p>
+                                        <div class="chargeTxt">
+                                            <p><strong>신규등록</strong> : 100,000 원</p>
+                                            <p><strong>재등록</strong> : 50,000 원</p>
+                                            <p><strong>입금계좌번호</strong> : <span>하나은행</span> 224-910084-51404</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p class="chgTitle">선수등록</p>
+                                        <div class="chargeTxt">
+                                            <p><strong>선수등록 수수료</strong> : 1인당 100,000원</p>
+                                            <p><strong>입금계좌번호</strong> : <span>하나은행</span> 224-890022-25304</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p class="chgTitle">지도자등록</p>
+                                        <div class="chargeTxt">
+                                            <p><strong>지도자등록 수수료</strong> :  1인당 100,000원</p>
+                                            <p><strong>입금계좌번호</strong> : <span>하나은행</span> 224-910075-34304</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p class="chgTitle">선수관리 담당자등록</p>
+                                        <div class="chargeTxt">
+                                            <p><strong>심판등록 수수료</strong> : 1인당 100,000원</p>
+                                            <p><strong>입금계좌번호</strong> : <span>하나은행</span> 224-910071-94404</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p class="chgTitle">공인 체육관</p>
+                                        <div class="chargeTxt">
+                                            <p><strong>등록 수수료</strong> : 100,000 원</p>
+                                            <p><strong>재등록</strong> : 50,000 원</p>
+                                            <p><strong>입금계좌번호</strong> : <span>하나은행</span> 224-890027-35104</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p class="chgTitle">지도자등록</p>
+                                        <div class="chargeTxt">
+                                            <p><strong>지도자등록 수수료</strong> : 1인당 100,000원</p>
+                                            <p><strong>입금계좌번호</strong> : <span>하나은행</span> 224-910075-34304</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p class="chgTitle">각종 증명서</p>
+                                        <div class="chargeTxt">
+                                            <p><strong>발급수수료</strong> : 1부당 - 2,000원</p>
+                                            <p><strong>상장재발급</strong> : 1부당 - 3,000원</p>
+                                            <p><strong>입금계좌번호</strong> : <span>하나은행</span> 224-890019-32504</p>
+                                            <p><strong>우편물배송(등기)</strong> : (등기) - 3,000원</p>
+                                            <p class="right">(소포) - 5,000원 [별도추가]</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+            <div class="footer">
+                <div class="footLogo">
+                    <img src="../images/footLogo.png" alt="footlogo">
+                </div>
+                <div class="footInfo">
+                    <p><a href="#">사단법인 대한복싱협회</a> / 사업자등록번호 : 230-82-00209 / 대표자 : 최찬웅</p>
+                    <p>(05540) 서울특별시 송파구 올림픽로 424 올림픽회관 신관 208 / Tel. (02) 420-4251~3 / Fax. (02) 420-4250 / Mail. boxing@sports.or.kr</p>
+                    <p class="copy">COPYRIGHT &copy;2024 Korea Boxing Association.ALL RIGHTS RESERVED.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

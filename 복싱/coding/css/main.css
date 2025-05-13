@@ -1,0 +1,146 @@
+#section{ position:relative; }
+
+/* aside common */
+.floatMenu{ position:absolute; top:590px; z-index:1; width:160px; display:flex; flex-direction:column; align-items:center; padding-top:73px; }
+.floatMenu:after{ content:''; position:absolute; top:0; background-repeat:no-repeat; }
+.floatMenu .floatAsideBox{ display:flex; flex-direction: column; align-items:center; gap:15px; width:100%; border-radius:10px; padding:55px 20px 27px; }
+
+/* aside left */
+.mainaAsideL { left:55px; right:auto; }
+.mainaAsideL:after{ width:105px; height:123px; background-image:url(../images/main/character06.png); }
+.mainaAsideL .asideSpons{  background:#005AAA; }
+
+/* aside right */
+.mainaAsideR{ right:55px; left:auto; }
+.mainaAsideR:after{ width:75px; height:115px; background-image:url(../images/main/character07.png) }
+.mainaAsideR .asideSns{ border:2px solid #005AAA; background:#fff; }
+
+/* visual */
+.visualWrap{ position:relative;  background:#F5F5F5; height:450px; }
+.visualWrap .visual{ width:1440px; margin:auto; display:flex; }
+.visualWrap .visual .visualLeft { position:relative; width:70%; }
+.visualWrap .visual .visualLeft:after { content:''; position:absolute; width:100px; height:100%; background:url(../images/main/bannerShadow.png)no-repeat; top:0; left:0; }
+.visualWrap .visual .visualLeft .visualSlide{ width:100%; height:450px; }
+.visualWrap .visual .visualLeft img{ width:100%; height:100%; object-fit: cover; }
+.visualWrap .visual .visualRight{ width:30%; max-width:460px; height:450px; background:#072153; padding:58px 30px; text-align:center; }
+.visualWrap .visual .visualRight .visualTxt, .visualWrap .visual .visualRight .visualTxt strong{ color:#fff; }
+.visualWrap .visual .visualRight .visualTxt{ font-size:18px; line-height:1.5; margin-top:30px; }
+.visualWrap .visual .visualRight .visualTxt strong{ font-size:32px; font-weight:600 }
+
+.topQick{ position:absolute; bottom:-50px; left:400px; background:#D6E7F5; border:2px solid #fff; border-radius:20px; padding:20px 61px; }
+.topQick:after{ content:''; position:absolute; width:143px; height:204px; right:-80px; bottom:0; background:url(../images/main/character02.png)no-repeat; background-size:contain }
+.topQick ul{ display:flex; gap:20px; }
+.topQick ul li a{ display:flex; align-items:center; gap:6px; font-weight:600 }
+
+
+/* 복싱협회 */
+.mainWrap{ position:relative; margin:30px 0; }
+.mainCont{ width:1440px; margin:auto; padding:100px 0 20px; }
+.mainCont h2{ position:relative; text-align:center; font-size:28px; font-weight:600; padding-top:11px; }
+.mainCont h2:after{ content:''; position:absolute; width:120px; height:6px; background:#D6E7F5; top:0; left:50%; transform:translateX(-50%); }
+.mainCont h2:before{ content:''; position:absolute; width:58px; height:50px; background:url(../images/main/character03.png)no-repeat; background-size:contain; top:-45px; left:50%; transform:translateX(-50%); z-index:1; }
+.mainCom{ margin-top:40px; }
+
+.news .newsCont{ display:flex; gap:40px; }
+.news .newsCont .newsLight{ width:80%; }
+/* common */
+.comTab{ display:flex; align-items:center; justify-content:space-between; padding-bottom:17px; border-bottom:2px solid #000; margin-bottom:2px; }
+.comTab ul{ display:flex; gap:10px; }
+.comTab ul li{ border:1px solid #cacaca; background:#fff; padding:10px 20px; }
+.comTab ul li.active{ background:#072153; border:1px solid #072153; color:#fff; }
+.comTab a{ display:flex; align-items:center; gap:18px; font-weight:500 }
+.newTb{ border-bottom:1px solid #000; padding:2px 0; }
+
+
+.news .newsCont .newsLight .newTb .newLst{ padding:15px 0; }
+.news .newsCont .newsLight .newTb .newLst:after{ content:''; display:block; clear:both; }
+.news .newsCont .newsLight .newTb .newLst + .newLst{ border-top:1px solid #cacaca; }
+.news .newsCont .newsLight .newTb .newLst p{ float:left; text-align:center; }
+.news .newsCont .newsLight .newTb .newLst .td1{ width:10%; font-weight:600 }
+.news .newsCont .newsLight .newTb .newLst .td2{ width:80%; text-align:left; font-size:18px; }
+.news .newsCont .newsLight .newTb .newLst .td3{ width:10%; color:#666 }
+
+.news .newsCont .newsRight{ position:relative; width:20%; }
+.news .newsCont .newsRight > img{ width:100%; height:100%; }
+.news .newsCont .newsRight button{ position:absolute; left:30px; bottom:55px; padding:15px 45px; background:#32BA00; color:#fff; border:0; border-radius:50px; }
+.news .newsCont .newsRight button i{ display:inline-block; vertical-align:middle; width:24px; height:21px; background:url(../images/main/icon07.png)no-repeat; margin-right:5px; }
+
+.schadule{ padding:100px 0 20px; }
+.schBox{ margin-top:30px; display:flex; gap:40px; }
+.schBox .schLst{ width:100%; }
+.schBox .schLst .title{ padding:17px 0; background:#072153; color:#fff; text-align:center; border-radius:20px 20px 0 0; }
+.schBox .schLst .schContBox{ border:1px solid #cacaca; background:#fff; padding:22px 35px; border-radius:0 0 20px 20px; }
+.schBox .schLst .schContBox h3{ font-size:20px; font-weight:500; color:#000; height:48px; }
+.schBox .schLst .schContBox .schDays{ margin-top:30px; }
+.schBox .schLst .schContBox .schDays p{ margin:5px 0; font-size:15px; }
+.schBox .schLst .schContBox .schDays p strong{ font-weight:600; color:#072153; padding-right:5px; }
+.schBox .schLst .schContBox .schDays p span{ color:#666 }
+.schBox .schLst .schContBox .schMore{ margin-top:30px; }
+.schBox .schLst .schContBox .schMore a{ display:block; width:100px; background:#fff; border:1px solid #000; padding:10px 20px; margin:auto; }
+
+/* 시도협회 */
+.border_top_blue{ position:relative; margin:100px 0 50px; }
+.border_top_blue:after{ content:''; position:absolute; width:100%; height:4px; top:0; left:0; background:#072153 }
+.border_top_blue  .title{ display:flex; justify-content: center; }
+.border_top_blue .title p{ padding:15px 40px; color:#fff; background:#072153; border-radius:0 0 20px 20px; font-size:28px; font-weight:600 }
+.provincial:before{ content:''; position:absolute; width:148px; height:148px; right:10px; bottom:20px; background:url(../images/main/character04.png)no-repeat; z-index:1 }
+.provincial .porvinWrap{ position:absolute; top:0; left:0; width:100%; height:100%; padding:0 40px; }
+.provincial .porvinWrap .title{ display:flex; justify-content: center; }
+.provincial .porvinWrap .porvinBox{ display:flex; justify-content:center; background:rgba(1,15,40,.4); margin:20px 0; padding:22px 0; }
+.provincial .porvinWrap .porvinBox .provLst{ display:flex; flex-direction:column; align-items:center; padding:12px 40px; }
+.provincial .porvinWrap .porvinBox .provLst + .provLst{ border-left:1px dashed #fff; }
+.provincial .porvinWrap .porvinBox .provLst p, .provincial .porvinWrap .porvinBox .provLst a{ color:#fff; padding:5px 0; }
+.provincial .porvinWrap .porvinBox .provLst p{ font-size:20px; font-weight:600 }
+.provincial .porvinWrap .porvinBox .provLst a{ border:1px solid #fff; padding:10px 20px; margin-top:25px; }
+.provincialNotice{ display:flex; margin-top:5px; padding:20px 35px; background:rgba(1,15,40,.4); border:1px solid #D6E7F5; border-radius:50px; }
+.provincialNotice p, .provincialNotice span, .provincialNotice strong, .provincialNotice a{ color:#fff; }
+.provincialNotice .provNoticeTitle{ color:#D6E7F5; font-weight:600; font-size:18px; }
+.provincialNotice ul { margin-left:40px; width:63%; margin-right:5px; }
+.provincialNotice ul li{ display:flex; align-items:center; }
+.provincialNotice ul li p strong{ padding:0 15px; font-weight:600 }
+.provincialNotice ul li .provNotiveDate{ margin-left:auto; }
+.provincialNotice a { display:flex; align-items:center; gap:5px; margin-left:110px; }
+.provincialNotice a i{ display:inline-block; background:url(../images/pluseWhite.png)no-repeat; width:18px; height:18px; background-size:cover; }
+
+/* 복싱협회 */
+.gallery{ padding:100px 0 20px; }
+.gallery .galleryWRap{ margin-top:78px; display:flex; flex-wrap:wrap; gap:40px; justify-content:space-between }
+.gallery .galleryWRap li{ width:22%; }
+.gallery .galleryWRap li a{ display:block; }
+.gallery .galleryWRap li a .glThmb{ width:100%; height:220px; border:4px solid #D6E7F5 }
+.gallery .galleryWRap li a .glThmb img{ width:100%; height:100%; object-fit: cover; }
+.gallery .galleryWRap li a .glTxt{ height:78px; padding:15px; border:1px solid #CACACA; border-top:0; }
+.gallery .galleryWRap li a .glTxt p{ text-align:center; line-height:1.5 }
+.lstCss{ margin-top:-40px; }
+
+/* 수수료 */
+.charge{ border-bottom:1px solid #072153; }
+.chargeWrap{ position:relative; display:flex; flex-wrap:wrap; margin-top:67px; padding-left:24px; }
+.chargeWrap:after{ content:''; position:absolute; bottom:32px; right:34px; background:url(../images/main/character05.png)no-repeat; width:262px; height:193px; }
+.chargeWrap li{ position:relative; width:311px; display:flex; margin:0 40px 64px 0; vertical-align:top; }
+.chargeWrap li .chgTitle{ position:absolute; top:-20px; left:0; background:#98CBE5; width:167px; line-height:40px; border-radius:0 40px 40px 0; padding-left:15px; color:#072153; font-weight:600 }
+.chargeWrap li .chargeTxt{ width:100%; border:1px solid #cacaca; padding:25px 12px; border-radius:0 40px 0 0; }
+.chargeWrap li .chargeTxt p{ position:relative; padding-left:15px; line-height:1.3; color:#666; font-size:14px; }
+.chargeWrap li .chargeTxt p:after{ content:''; position:absolute; width:5px; height:5px; border-radius:100%; background:#072153; top:10px; left:0; }
+.chargeWrap li .chargeTxt p strong{ color:#072153; font-weight:500; font-size:14px; }
+.chargeWrap li .chargeTxt p span{ font-weight:600; color:#666; font-size:14px; }
+.chargeWrap li .chargeTxt p.right{ text-align:right; }
+.chargeWrap li .chargeTxt p.right:after{ display:none; }
+.chargeWrap li:nth-child(n+5):nth-child(-n+6){ align-items:flex-start; height:116px; }
+.chargeWrap li:nth-child(n+5):nth-child(-n+6) div{ height:100%; }
+
+/* 스폰서 */
+.sponWrap{ margin-top:96px; }
+.sponWrap .sponCom p{ font-size:20px; font-weight:500 }
+.sponWrap .sponCom ul{ margin-top:27px; display:flex; flex-wrap:wrap; gap:12px; }
+.sponWrap .sponCom ul li{ border:1px solid #cacaca; }
+.sponWrap .sponCom ul li a{ display:block; }
+.sponWrap .sponCom ul li a img{ width:100%; height:100%; }
+.sponsor{ margin-top:37px; }
+
+/* 유래 */
+.originCont{ position:relative; padding-bottom:235px; }
+.originCont:after{ content:''; position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:180px; height:180px; background-size:cover; background:url(../images/main/character04.png)no-repeat; }
+.originCont:before{ content:''; position:absolute; bottom:0; left:0; width:100%; height:113px; background:#D6E7F5; }
+.originCont img{ margin-top:25px; }
+.originCont p{ line-height:2; text-align:center; margin-top:50px; font-size:18px; }

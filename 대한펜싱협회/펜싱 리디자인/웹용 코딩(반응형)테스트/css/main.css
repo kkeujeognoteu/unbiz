@@ -1,0 +1,340 @@
+.mainSection{ padding-top:10.3rem; }
+/* section - 비주얼 */
+.visual{ position:relative; width:100%; }
+.visual img{ width:100%; }
+.visual .visualTxt{ position:absolute; top:50%; left:50%; transform:translate(-50%, -50%) }
+.visual .visualTxt p, .visual .visualTxt p strong{ color:#fff; }
+.visual .visualTxt p{ text-align:right; font-size:1.5rem; font-weight:200; padding:0.2rem 0; }
+.visual .visualTxt p strong{ font-weight:600; font-size:2rem; }
+.visual .visualTxt p strong span{ font-weight:200; font-size:1.5rem; font-style:italic; color:#fff; }
+
+/* visualCard */
+.bannerCard{ position:relative; max-width:1360px; margin:-70px auto 0; z-index:11; }
+.bannerCard .banCardWrap{ display:flex; background:#f5f5f5; border-radius:2rem; width:100%; padding:0 2rem; box-shadow:0 0 0.6rem rgba(0,0,0,.3) }
+.bannerCard div .cardIconImg{ height:4rem; width:4rem; margin:auto; text-align:center; background-size:contain; background-repeat:no-repeat; }
+.bannerCard div p{ margin-top:1rem; text-align:center; font-size:1rem; }
+.bannerCard .visCardLeft{ background:#ea002c; padding:1.5rem 1rem; width:10rem; }
+.bannerCard .visCardLeft p{ color:#fff }
+.bannerCard .visCardRight{ width:calc(100% - 10rem); padding:1.5rem 0 1.5rem 1rem; }
+.bannerCard .visCardRight ul{ display:flex; gap:1rem; }
+.bannerCard .visCardRight ul li{ width:30%; }
+.bannerCard .visCardLeft .cardIconImg{ background-image:url(../images/icon01.png); }
+.bannerCard .visCardRight ul li:nth-child(1) .cardIconImg{ background-image:url(../images/icon02.png); }
+.bannerCard .visCardRight ul li:nth-child(2) .cardIconImg{ background-image:url(../images/icon03.png); }
+.bannerCard .visCardRight ul li:nth-child(3) .cardIconImg{ background-image:url(../images/icon04.png); }
+.bannerCard .visCardRight ul li:nth-child(4) .cardIconImg{ background-image:url(../images/icon05.png); }
+.bannerCard .visCardRight ul li:nth-child(5) .cardIconImg{ background-image:url(../images/icon06.png); }
+.bannerCard .visCardRight ul li:nth-child(6) .cardIconImg{ background-image:url(../images/icon07.png); }
+
+
+/* 공통 */
+.mainComCont{ margin-top:1rem; }
+.mainComMg{ margin: 4.5rem auto 0; }
+.mainComMg h2 { width:100%; font-size:1.6rem; font-weight:600; color:#000 }
+.mainComMg h2 a{ float:right; margin-right:0; margin-top:0.7rem; font-size:0.88rem;  }
+.mainComMg h2:after{ content:''; display:block; clear:both; }
+.mainComMg h2 span{ color:#ea002c; font-size:1.6rem; font-weight:600; }
+.mainComMg h2 .pluseIcon{ width:1.5rem; }
+.mainComMg h2 .pluseIcon img{ width:100%; }
+.mainCom{ padding: 1.2rem; }
+.mainCom .moreBtn{ width:1.35rem; margin-top:0.2rem; }
+.mainCom .moreBtn img{ width:100%; }
+.mainComCent h2{ max-width:1440px; margin:auto; text-align:center; }
+.mainComCent h2 span{ float:none; }
+
+.smallTit{ font-size:1rem; text-align:center; margin-top:0.8rem; }
+.smallTit strong{ font-weight:600; }
+
+/* 공지사항 */
+.mainNot{ display:flex; max-width:1440px; gap:1rem; }
+.mainNot > div{ width:50%; }
+.mainNotice { padding-bottom:0; }
+.mainNotice .noticeCont{ border-top:0.2rem solid #000; }
+.mainNotice .noticeCont .noticeLst{ display:flex; justify-content: space-between; align-items:center; padding:0.88rem 0.5rem; border-bottom:1px solid #d7d7d7 }
+.mainNotice .noticeCont .noticeLst h3, .mainNotice .noticeCont .noticeLst p{ padding-left:1rem; }
+.mainNotice .noticeCont .noticeLst h3{ position:relative; font-size:1rem; font-weight:500 }
+.mainNotice .noticeCont .noticeLst h3:after{ content:''; position:absolute; left:0; top:0.6rem; width:0.35rem; height:0.35rem; background:#ea002c; }
+.mainNotice .noticeCont .noticeLst .data{ font-size:0.88rem; color:#777; }
+
+/* news */
+.mainNews{ position:relative; background:#f5f5f5; border-radius:1rem; }
+.mainNews h2 span{ position:relative; }
+.mainNews h2 span:after{ content:''; position:absolute; top:-1.3rem; left:0; width:100%; height:0.6rem; background:#ea002c }
+.newsWrap{ display:flex; gap:1rem; }
+.newsWrap .newsLst{ width:32.33%; border-radius:1rem; background:#fff; box-shadow:0 0.2rem 0.2rem rgba(0,0,0,.3) }
+.newsWrap .newsLst img{ width:100%; }
+.newsWrap .newsLst > p{ width:100%; padding:0.5rem 1rem; background:#777; border-radius:1rem 1rem 0 0; color:#fff; font-size:0.88rem; }
+.newsWrap .newsLst .newsCont{ padding:1rem; }
+.newsWrap .newsLst .newsCont p{ height:4rem; margin-bottom:1rem; }
+
+
+/* 일정 결과 */
+.schedulBox { height: 21rem; max-width: 1440px; margin: 1.3rem auto; padding-top:1rem; overflow: hidden; }
+.schedulBox .schLst{ border:0.1rem solid #ea002c; border-radius:1rem; }
+.schedulBox .slick-list { overflow:unset }
+.schedulBox .schLst:hover{ margin-top:-1rem; margin-bottom:1rem; box-shadow:0 0.5rem 0.5rem rgba(0,0,0,.3); transition:.3s; }
+.schedulBox .schLst { margin:0 1rem; }
+.schedulBox .schLst .schTop{ background:#ea002c; padding:1.5rem 1.2rem; border-radius:1rem 1rem 0 0; }
+.schedulBox .schLst .schTop p{ color:#fff; font-family:'Gmarket sans', sans-serif; }
+.schedulBox .schLst .schTop p.schTopTxt{ font-size:0.8rem; }
+.schedulBox .schLst .schTop p.schTopData{ font-size:1.2rem; font-weight:600 }
+.schedulBox .schLst .schCont{ position:relative; padding:1.5rem 1.2rem; }
+.schedulBox .schLst .schCont h3{ font-weight: 600; font-size: 1.3rem; color: #000; height: 5rem; overflow: hidden; text-overflow: ellipsis; word-break: break-word; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+.schedulBox .schLst .schCont .schDataBox{ border-top:0.1rem solid #d7d7d7; padding-top:1rem; margin-top:1rem; }
+.schedulBox .schLst .schCont .schDataBox{ display:flex; }
+.schedulBox .schLst .schCont .schDataBox .schDt{ width:12rem; }
+.schedulBox .schLst .schCont .schDataBox .schBtn{ position:absolute; width:4.5rem; height:4.5rem; right:1.5rem; bottom:0.56rem; border-radius:100%; display:flex; align-items:center; justify-content: center; border:0.2rem solid #fff; box-shadow:0 0.1rem 0.2rem rgba(0,0,0,0.3); background:#333 }
+.schedulBox .schLst .schCont .schDataBox .schBtn p{ color:#fff }
+.schedulBox .schLst .schCont .schDataBox .schBtn.acceping{ background:#ea002c }
+.schedulBox .schLst .schCont .schDataBox .schBtn.acceping p{ color:#fff; }
+.schPrev{ position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:1440px;  z-index:99; }
+/* 일정결과 next, prev 버튼 */
+.schedulBox .slick-prev, .schedulBox .slick-next, .schedulBox .slick-prev:hover, .schedulBox .slick-prev:focus, .schedulBox .slick-next:hover, .schedulBox .slick-next:focus{ position:absolute; width:2.5rem; height:2.5rem; background:#fff url(../images/next.png)no-repeat; border:1px solid #ea002c; background-size:contain; text-indent:-9999px; border-radius:100%; z-index:99 }
+.schedulBox .slick-prev{ left:1rem; transform:rotate(-180deg); }
+.schedulBox .slick-next{ right:1rem; }
+
+
+
+/* 하이라이트, 포토 갤러리 공통 */
+.bannerNot h2{ font-size:1.8rem; font-weight:600; color:#000; }
+.bannerNot h2 span{ color:#ea002c; padding-right:0.2rem; }
+.bannerNot p{ width:100%; padding:1rem 0; text-overflow:ellipsis; white-space: nowrap; overflow:hidden; }
+
+/* bannerNot */
+.bannerNot{ position:relative; max-width:1440px; margin: auto; padding-top:9.5rem; background:url(../images/banner.png)no-repeat top; background-size:contain; }
+.bnNotWrap{ display:flex; gap:2rem; justify-content:space-between; }
+.bnNotWrap > div{ width:37%; }
+
+/* bannerNot highlights */
+.higCont .higThumb{ position:relative; width:100%; height:0; padding-top:calc(1000/100 * 1.6rem); }
+.higCont .higThumb iframe, .higCont .higThumb img{ position:absolute; top:0; left:0; width:100%; height:100%; }
+.higCont .higThumb img{ object-fit: cover; }
+
+/* bannerNot - sponser */
+.sponser{ position:relative; width:20rem !important; background:#fff; box-shadow:0.2rem 0 0.5rem rgba(0,0,0,.3); margin-top:-3rem; border-radius:0 0 2rem 2rem; padding:10rem 1.2rem 0.5rem; }
+.sponser .sponserTit{ color:#fff; background:url(../images/sponTitle.png)no-repeat center; background-size:contain; position:absolute; width:14rem; height:8.5rem; top:-2.4rem; left:3rem; z-index:11; }
+.sponser .sponserTit span{ position:absolute; left:1rem; bottom:2.2rem; color:#fff; font-size:2.4rem; font-weight:300 }
+.sponser .sponserTit span i{ font-weight:600 }
+.sponSwiper{ height:100%; }
+.sponser .sponCont{ height:100%; }
+.sponser .sponLst{ height:5.5rem; text-align:center; }
+.sponser .sponLst img{ width:100%; height:100%; object-fit:contain; }
+
+.sponser .slick-slider{ position:inherit }
+.sponser .slick-dots{ position:absolute; bottom:1rem; left:0; width:100%; }
+.sponser .slick-dots li{ width:5rem; height:0.2rem; background:#d7d7d7; margin:0 0.2rem; }
+.sponser .slick-dots li.slick-active{ background:#ea002c }
+.sponser .slick-dots li button:before{ display:none; }
+
+/* infoServ */
+.infoServ{ max-width:1440px; margin:auto; background:url(../images/mainBan02.png)no-repeat; background-size:cover; padding:2rem 4rem 1.5rem; border-radius:1rem; }
+.infoServ h2{ color:#fff; font-size:1.8rem; font-weight:600; text-align:center; }
+.infoServ > p{ text-align:center; color:#fff; margin-top:0.8rem; font-size:1.2rem; }
+.infoServ .infoServCont{ display:flex; gap:1rem; margin-top:1.5rem; flex-wrap:wrap; justify-content:space-between; }
+.infoServ .infoServCont .infoServLst{ width:49%; background:#fff; padding:1.5rem 1rem; border-radius:0.5rem; }
+.infoServ .infoServCont .infoServLst p{ position:relative; font-weight:600; padding-left:1rem; font-size:1.3rem; }
+.infoServ .infoServCont .infoServLst p:after{ content:''; position:absolute; width:0.5rem; height:0.5rem; background:#ea002c; left:0; top:0.7rem; }
+.infoServ .infoServCont .infoServLst p span{ padding-left:0.5rem; color:#666 }
+
+/* fencers */
+.fenIc{ vertical-align:middle; padding-left:1rem; }
+.fencers{ position:relative; padding-bottom:2rem; max-width:1440px;  margin:auto; background:url(../images/fencBan.png)no-repeat bottom; background-size:contain }
+.fencers h2{ color:#000; font-weight:600; font-size:1.8rem; text-align:center; }
+.fencersTab{ margin:auto; display:flex; flex-direction:column; align-items: center; margin:1.5rem 0; }
+.fencersTab > ul{ border:1px solid #d7d7d7; width:15rem; display:flex; border-radius:5rem; justify-content:space-between; }
+.fencersTab > ul > li{ padding:0.8rem 1.3rem; background:#fff; font-weight:600; border-radius:5rem; box-sizing: border-box; cursor:pointer; }
+.fencersTab > ul > li:hover, .fencersTab > ul > li.active{ background:#ea002c; color:#fff; transition: .3s; }
+.fenTabCont{ display:none;}
+.fenTabCont.active{ display:block; }
+.fencCont{ margin-top:3rem; width:100%; display:flex; gap:1rem; justify-content: center; }
+.fencCom{ position:relative; display:flex; gap:1.5rem; background:#fff; padding:2rem 5rem; border-radius:1rem; border:0.2rem solid #d7d7d7; box-shadow:0 0 0.4rem rgba(0,0,0,.3); }
+.fencCom:after{ content:''; position:absolute; width:0.5rem; height:100%; background:#ea002c; left:0; top:0; border-radius:1rem 0 0 1rem; }
+.fencCom .fenImg{ position:relative; width:8rem; height:8rem; border-radius:1rem; border:0.15rem solid #ea002c; }
+.fencCom .fenImg:after{ content:''; position:absolute; top:-1.5rem; left:50%; transform:translateX(-50%); width:2rem; height:1.5rem; background:url(../images/fenWin.png)no-repeat; background-size:contain; }
+.fencCom .fenImg img{ width:100%; height:100%; object-fit:cover; border-radius:1rem; }
+.fencCom .fencInfo p{ color:#ea002c; font-weight:500; font-size:0.88rem; }
+.fencCom .fencInfo h3{ position:relative; color:#000; font-size:1.6rem; font-weight:600; margin-top:0.4rem; z-index:9 }
+.fencCom .fencInfo h3:after{ content:''; position:absolute; width:100%; height:1rem; background:#f5f5f5; left:0; bottom:0; z-index:-1 }
+.fencCom .fencInfo ul { margin-top:1rem; }
+.fencCom .fencInfo ul li{ margin:0.4rem 0; line-height:1.5 }
+.fencCom .fencInfo ul li .fencDl{ width:8.5rem; display:inline-block; }
+
+
+/* 국가대표 소개 */
+.fencWrap{ position:relative; max-width:1440px; margin: 2rem auto 0; }
+.fencPlayer .slick-list{ display:flex; align-items:center; padding:1rem; height:28rem; }
+.fencPlayer .slick-track{ display:flex; align-items:center; }
+.fencPlayer .fenLst{ box-shadow:0 0 0.5rem rgba(0,0,0,.3); margin:0.5rem; border-radius:1rem; padding:1rem; display:flex !important; flex-direction:column; align-items:center; }
+.fencPlayer .fenLst .fenProf{ width:5rem; height:5rem; border-radius:100%; margin:1.5rem 0; overflow:hidden; }
+.fencPlayer .fenLst .fenProf img{ width:100%; height:100%; }
+.fencPlayer .fenLst.slick-center{ width:23rem !important; height:26rem; text-align:center; background:url(../images/fenBg.png)no-repeat; background-size:cover; padding:0 1rem 1rem; }
+.fencPlayer .fenLst.slick-center .fenTit{ padding:1rem 1.5rem; background:#000; border-radius:0 0 1rem 1rem; }
+.fencPlayer .fenLst.slick-center .fenTit p{ color:#ffe8ab; font-size:0.8rem; margin-bottom:0.3rem; background:transparent; padding:0; }
+.fencPlayer .fenLst.slick-slide.slick-center .fenTit h3{ font-size:1.5rem; color:#fff; font-weight:600; }
+.fencPlayer .fenLst.slick-slide.slick-center .fenProf{ width:8rem; height:8rem; }
+.fencPlayer .fenLst.slick-slide.slick-center .fenUl ul{ text-align:left; }
+.fencPlayer .fenLst.slick-slide.slick-center .fenUl ul li { padding:0.4rem 0; }
+.fencPlayer .fenLst.slick-slide.slick-center .fenUl ul li span{ color:#fff; }
+.fencPlayer .fenLst.slick-slide.slick-center .fenUl ul li span.fencDl{ width:8rem; display:inline-block; }
+.fencPlayer .fenLst.slick-slide.slick-center .fenCent{ display:block; }
+.fencPlayer .fenLst.slick-slide.slick-center .fenRow{ display:none; }
+.fencPlayer .fenLst.slick-slide .fenCent{ display:none; }
+.fencPlayer .fenLst .fenRow{ display:block; }
+.fencPlayer .fenLst .fenTit > p{ padding:0.5rem 1rem; background:#f5f5f5; text-align:center; border-radius:2rem; font-size:0.8rem; }
+.fencPlayer .fenLst .fenTit > h3{ text-align:center; font-size:1.5rem; font-weight:600 }
+
+/* 국가대표 소개 슬릭 버튼 */
+.fencPlayer .slick-dots{ width:90%; display:flex !important; }
+.fencPlayer .slick-dots li{ width:100%; text-indent:-9999px; background:#d7d7d7; height:0.2rem; }
+.fencPlayer .slick-dots li.slick-active{ background:#ea002c }
+.fencPlayer .slick-dots li button{ width:100%; }
+.fencPlayer .slick-arrow{ position:absolute; bottom:-2.5rem; left:auto; top:auto; right:0; width:2rem; height:2rem; text-indent:-9999px; background-color:transparent; border-radius:100%; border:0.12rem solid #777;background:url(../images/next_dash.png) no-repeat; background-size:contain; }
+.fencPlayer .slick-prev.slick-arrow { right:5rem; bottom:-2.4rem; transform:rotate(-180deg) }
+.fencPlayer .slick-next.slick-arrow { bottom:-3.3rem; }
+
+/* 슬릭 일시정지 */
+.fencWrap .playBtn{ position:absolute; right:2.5rem; bottom:-2.4rem; width:2rem; height:2rem; display:flex; align-items:center; justify-content: center; }
+.fencWrap .playBtn .btn_pause{ background:url(../images/play.png)no-repeat; text-indent:-9999px; width:1rem; height:1rem; outline: none; border:none; background-size:contain; }
+.fencWrap .playBtn .btn_pause.on{ background: url(../images/play-button.png)no-repeat; background-size:contain }
+
+.slick-dots li button:before { display:none; }
+
+/* 증명서 바로가기 */
+.bottomBaner{ background:url(../images/mainBotBan.png)no-repeat top center; width:100%; height:11rem; background-size:cover; padding:1rem; display:flex; flex-direction: column; align-items:center; justify-content: center; gap:1rem; }
+.bottomBaner p, .bottomBaner p a { text-align:center; color:#fff; }
+.bottomBaner a { font-size:1.8rem; font-weight:600 }
+
+.pc{ display:block; }
+.mobile{ display:none; }
+
+@media(max-width:1080px){
+
+}
+
+@media(max-width:780px){
+    .pc{ display:none; }
+    .mobile{ display:block; }
+
+    /* visual */
+    .visual{ height:25rem; }
+    .visual img{ height:100%; object-fit: cover; object-position: -31rem; }
+    .visual .visualTxt{ top:5rem; left:2rem; transform:none }
+    .visual .visualTxt p strong{ font-size:1.5rem; }
+    .visual .visualTxt p strong span{ font-size:1.5rem; }
+
+    /* 대회참가신청 */
+    .bannerCard{ padding:0 1.2rem; }
+    .bannerCard .banCardWrap{ border-radius:1rem; padding:0 1rem; }
+    .bannerCard .visCardLeft{ width:6rem; }
+    .bannerCard .visCardRight{ width:calc(100% - 6rem) }
+    .bannerCard .visCardRight ul{ flex-wrap:wrap; }
+    .bannerCard div p{ font-size:0.88rem; }
+    
+    /* 공통 */
+    .mainComMg{ margin-top:2.5rem; padding:0 1.2rem; }
+    .mainComMg h2{ font-size:1.5rem; }
+    .mainComMg h2 .pluseIcon{ margin-top:0; }
+
+    .mainComCont{ margin-top:0.8rem; }
+    .mainCom{ padding:0; }
+
+    
+    /* 공지사항, news */
+    .mainNot{ flex-direction:column; }
+    .mainNot > div{ width:100%; }
+
+    .mainNews{ padding:1rem; }
+    .newsWrap .newsLst{ width:50%; }
+
+    /* 일정 결과 */
+    .schWrap{ padding:0; }
+    .schWrap h2{ width:100%; padding:0 1.2rem; }
+    .schPrev{ width:100%; }
+    .schPrev div { width:2.5rem; height:2.5rem; border:0.15rem solid #ea002c }
+
+    /* 다양한 정보 서비스 */
+    .infoServ{ padding:2rem 1rem 1.5rem; }
+    .infoServ > p{ font-size:1rem; }
+    .infoServ .infoServCont .infoServLst{ width:100%; }
+    .infoServ .infoServCont .infoServLst{ padding:1rem; }
+    .infoServ .infoServCont .infoServLst p{ font-size:1.2rem; }
+    .infoServ .infoServCont .infoServLst p:after{ top:0.6rem; }
+
+    /* 스폰서 */
+    .bannerNot{ background:url(../images/banner_M.png)no-repeat; background-size:contain; padding-top:8.5rem; }
+    .bnNotWrap{ flex-direction: column; gap:1rem; }
+    .bnNotWrap > div{ width:100%; }
+
+    .sponser{ width:17rem !important; height:15rem; margin:-5rem auto 2rem; padding:6rem 1.2rem 1rem }
+    .sponser .sponserTit{ width:11rem; height:5.5rem; background-size:contain; top:-1.3rem; }
+    .sponser .sponserTit span{ font-size:1.8rem; bottom:1rem; }
+    .sponser .sponSwiper{ margin-top:0; }
+    .sponser .sponLst{ height:3.8rem; }
+
+    /* top ranked fencers */
+    .fenWrap{ padding:0; }
+    .fencersTab{ margin-bottom:0; }
+    .fencers{ background:none; }
+    .fencCont{ flex-direction: column; background:#f5f5f5; background-image:none; padding:2rem 1.2rem; margin-top:0; }
+    .fencCom{ padding:2rem; }
+
+    /* 증명서 바로가기 */
+    .bottomBaner{ height:8rem; gap:0.5rem; }
+    .bottomBaner a{ font-size:1.5rem; }
+
+    /* 국가대표 소개 */
+    .fencWrap{ width:100%; }
+    .playerInfo{ padding:0; }
+    .playerInfo h2, .playerInfo h2{ padding:0 1.2rem; }
+    .fencPlayer .fenLst .fenProf{ margin:0.5rem 0; }
+    .fencPlayer .fenLst.slick-center{ width:15.5rem !important; height:21rem; }
+    .fencPlayer .fenLst.slick-center .fenProf{ width:6rem; height:6rem; }
+    .fencPlayer .fenLst.slick-center .fenTit{ padding:0.5rem 1rem; }
+    .fencPlayer .fenLst.slick-center .fenTit p{ font-size:0.7rem; }
+    .fencPlayer .fenLst.slick-center .fenTit h3{ font-size:1.2rem; }
+    .fencPlayer .fenLst.slick-center .fenUl ul li{ padding:0.1rem 0; }
+    .fencPlayer .fenLst.slick-center .fenUl ul li span{ font-size:0.88rem; }
+    .fencPlayer .fenLst.slick-center .fenUl ul li span.fencDl{ width:6.8rem; }
+    .fencPlayer .fenLst.slick-center .fenUl ul li span + span{ display:inline-block; width:calc(100% - 7.5rem); }
+    .fencPlayer .slick-dots{ position:absolute; left:1.2rem; width:75%; bottom:0.3rem; }
+    .fencPlayer .slick-next.slick-arrow{ position:absolute; right:1.2rem; bottom:-1.5rem; }
+    .fencPlayer .slick-prev.slick-arrow{ right:6rem; bottom:-0.6rem; }
+    .fencWrap .playBtn{ bottom:-0.6rem; right:3.4rem; }
+}
+
+@media(max-width:380px){
+
+    /* visual */
+    .visual{ height:23rem; }
+    .visual img{ object-position: -38rem; }
+    .visual .visualTxt p{ font-size:1rem; }
+    .visual .visualTxt p strong{ font-size:1.2rem }
+
+
+    /* 일정 결과 */
+    .schedulBox .schLst{ margin:0 0.5rem; }
+
+    /* fencers */
+    .fencCom{ height:18.5rem; }
+    .fencCom .fenImg{ width:6rem; height:6rem; }
+    .fencCom .fencInfo{ width:calc(100% - 6rem) }
+    .fencCom .fencInfo p{ margin-top:1rem; }
+    .fencCom .fencInfo ul{ position:absolute; margin-top:1rem; left:2rem; top:8rem }
+    .fencCom .fencInfo ul li .fencDl{ width:7rem; }
+    .fencCom .fencInfo ul li span{ font-size:0.88rem; }
+
+    /* 국가대표 소개 */
+    .fencWrap .playBtn{ right:3rem; }
+    .fencPlayer .slick-list{ height:22rem; }
+    .fencPlayer .fenLst.slick-center{ width:16.5rem !important; }
+    .fencPlayer .fenLst.slick-center .fenCent{ margin-top:1rem; }
+    .fencPlayer .slick-prev.slick-arrow{ right:5.5rem; }
+    .fencPlayer .slick-dots{ width:55%; bottom:0.4rem; }
+    .fencPlayer .slick-dotted.slick-slider{ padding-bottom:1.5rem; margin-bottom:0; }
+    .slick-dotted.slick-slider{ margin-bottom:0; padding-bottom:1.5rem; }
+    
+
+    /* 바로가기 */
+    .bottomBaner p a{ font-size:1.3rem }
+    .bottomBaner p{ font-size:1rem; }
+}

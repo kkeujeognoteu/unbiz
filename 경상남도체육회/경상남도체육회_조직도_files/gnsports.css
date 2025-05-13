@@ -1,0 +1,292 @@
+/*寃쎌긽�궓�룄泥댁쑁�쉶*/
+.gnsports_box {float:left; width: 760px; position: relative; margin:0; }
+.gnsports_box  p {background: url("/img/gnsports/bullet.gif") no-repeat  left; font-size:18px;font-weight:600; padding-left:15px;line-height:100%;display:inline-block; }
+
+.gnsports_box02 p {background: url("/img/gnsports/map_pin_icon.svg") no-repeat  left; font-size:18px;font-weight:600; padding-left:20px;line-height:100%;display:inline-block; }
+.gnsports_box30 {float:left; width: 760px; position: relative; margin: 40px 0 10px 0px;}
+.gnsports_box30 p {background: url("/img/gnsports/bullet.gif") no-repeat  left; font-size:18px;font-weight:600; padding-left:15px;line-height:100%;display:inline-block; }
+.gnsports_box h4 { color: #333; border-bottom: 0px solid #c3c3c3; font-size: 20px; position: relative; font-weight:600}
+.gnsports_box h9 { color: #333; border-bottom: 0px solid #c3c3c3; font-size: 13px; position: relative; font-weight:600;width: 760px; }
+.gnsports_box12 {float:left; width: 736px; position: relative; padding:12px 0px 0px 15px;background:#edf2f8; }
+
+.gns_content_box div.gnsports_box{float:left;width:760px;position:relative;margin-top:50px;}
+.gns_content_box div.gnsports_box.mg_cancel, .gns_content_box div.gnsports_box02.mg_cancel{margin-top:0;}
+.gns_content_box div.gnsports_box ul{margin-top:15px;}
+.gns_content_box div.gnsports_box>ul>li{position:relative;}
+.gns_content_box div.gnsports_box>ul>li:before{content:'';width:10px;height:10px;border:1px solid #444;;display:inline-block;vertical-align:middle;margin-bottom:3px;margin-right:5px;}
+.gns_content_box div.gnsports_box ul li ul{margin-top:5px;padding-left:5px;}
+.gns_content_box div.gnsports_box ul li ul li{position:relative;}
+.gns_content_box div.gnsports_box ul li ul li:before{content:'';width:5px;height:1px;background:#444;display:inline-block;vertical-align:middle;margin-bottom:3px;margin-right:5px;}
+.gns_content_box div.gnsports_box02{float:left;width:760px;position:relative;margin-top:50px;}
+.gns_content_box div.gnsports_box02 table{width: 100% ;margin-top:15px;}
+.gns_content_box div.gnsports_box02 table th, .gns_content_box div.gnsports_box02 table td{border:1px solid #ccc; padding:10px;text-align:center;}
+.gns_content_box div.gnsports_box02 table th{background:#444;color:#fff;font-weight:bold;}
+.gns_content_box div.gnsports_box02 table tr.table_final td{background:#ededed;font-weight:bold;}
+
+.gnsports_box20 {float:left; width: 760px; position: relative; height:20px;}
+
+.gnsports_icon01 {background: url("/img/gnsports/gnsports01.png") no-repeat top left;}
+.gnsports_great {position:relative; float:left; line-height: 160%; margin: 10px 0 20px 285px;font-size:15px; line-height:140%; }
+.gnsports_great_photo {position:absolute; float:left; line-height: 160%; margin: 0px 0 0px 0px; }
+.gnsports_great h4 { font-size: 22px; position: relative;  font-weight:600;color: #a05714;line-height:140%;}
+
+.gnsports_great_b{position:relative; height:584px; margin:26px 0 0 0px; font-size:15px; line-height:140%;font-weight: normal;    font-family:'NanumBarunGothic','�굹�닎諛붾Ⅸ怨좊뵓','留묒�怨좊뵓','Malgun Gothic','�룍��','sans-serif','Myriad Pro','Apple SD Gothic Neo';}
+
+.gnsports_org {position:relative; float:left;margin: 0px 0 30px 150px;border-bottom: 1px dotted #707784;width:605pxheight: 135px;}
+
+.gnsports_orgImage {border: 1px solid #999999; width:104px; height:124px;}
+.gnsports_org h4 { color: #333; border-bottom: 0px solid #707784; font-size: 18px; position: relative; font-weight:600}
+
+
+/*tab怨듭��궗�빆*/
+border: 1px solid #fff;
+.tab_container  .more{float: right;position:absolute;border-bottom: 1px solid #eee;border-right: 1px solid #eee;top: 1px;
+right: -1px}
+.tab_container  .more a{float: right;width: 14px;height: 16px;display: inline-block;background: url(/img/main/more.png) no-repeat 15px 15px;padding: 14px 14px;background-color: #fafafa;border-left: none;
+border-top: none;border-right: 1px solid #eee}
+.tab_container  .more a span{visibility:hidden;position:absolute;z-index:-1}
+
+ul.tabs {margin:0;padding:0;float:left;height:44px;font-family:"dotum";font-size:14px;}
+/*#container_2 .more{float: right;position: relative;border-bottom: 1px solid #eee;border-right: 1px solid #eee;}
+#container_2 .more a{float: right;width: 14px;height: 16px;display: inline-block;background: url(/img/main/more.png) no-repeat 15px 15px;padding: 14px 14px;background-color: #fafafa;border-left: none;
+border-top: none;border-right: 1px solid #eee}
+#container_2 .more a span{visibility:hidden;position:absolute;z-index:-1}*/
+ul.tabs li {float:left;text-align:center;cursor:pointer;width:185px;height:44px;line-height:44px;border:1px solid #d8d8d8;font-weight:bold;overflow:hidden;position:relative;font-size:13px;margin-right: 2px;}
+ul.tabs li.active {background-color: #a9a9a9;border-bottom:1px solid #FFF;width:185px;color:#333333;}
+.tab_container {border-top:none;clear:both;float:left;width:476px;background:#FFF;padding:0 15px 0px 15px;border-right:1px solid #e4e4e4;height:105px;
+overflow:hidden}
+.tab_content { padding:10px 5px 0 5px;;font-size:12px;display: none;height:90px}
+.tab_container .tab_content ul {width:100%; margin:0px; padding:0px;height:90px;overflow: hidden}
+.tab_container .tab_content ul li {list-style:none;height:18px;background:url(/img/main/bullet.gif) no-repeat 5px 50%;padding-left: 10px}
+.tab_container .tab_content ul li.ico_new{background:url(/img/main/new.png) no-repeat 1px 50%;}
+
+ #container_2 { width:508px;margin: 0 auto;height:44px;float: left}
+.tab_notice li dl dt a img{width:11px;height:11px}
+.tab_notice li dl dt {float:left;display:inline-block;padding:3px 0 0 7px;width:296px;height:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;-o-text-overflow: ellipsis;color:#b0b0b0}
+.tab_notice li dl dt a{color:#e7e7cd}
+.tab_notice li dl dd {float: right;display:inline;color:#b0b0b0;font-size:11px !important;padding:3px 0 0 5px}
+.tab_notice ul li.ico_new{background:url(/img/main/new.png) no-repeat 1px 50%}
+ul.tabs li.old {
+    background-color: #eee;}
+
+.tap_table {height: 44px;margin-bottom:10px}
+
+ul.tabs li a{color:#6b6b6b}
+ul.tabs li.active a{color:#fff}
+
+
+/* 愿��젴洹쒖젙 �꺆 */
+.gnsports_menu{position:relative;z-index:0;margin:0 0 0px 0}
+.ognsports_menu ul{min-height:72px;}
+.gnsports_menu ul:after{display:block;clear:both;content:''}
+.gnsports_menu ul li{display:inline;float:left;margin:0 14px 12px -2px;padding:15px 0 0 0px; background:#ffffff; width:170px; height:120px; border:1px solid #e4e4e4; }
+.gnsports_menu ul li.select_on{background:#4d4d4d;color:#fff; }
+.gnsports_menu span span{padding:85px 0 0 0; text-align:center; display: inline-block; width: 170px; line-height:120%}
+.gnsports_menu span a{font-weight: 600; letter-spacing: -0.05em; vertical-align:middle; }
+.gnsports_menu span a.b{font-weight: 600; letter-spacing: -0.05em; vertical-align:middle; color: #ffffff;}
+.gnsports_menu span.btn_01 a.on{background:url("/img/gnsports/icon_01.png") no-repeat 45px -72px; display: inline-block; width:170px; height: 130px; color: #ffffff;}
+.gnsports_menu span.btn_01 {background: url("/img/gnsports/icon_01.png") no-repeat 45px 0; display: inline-block; width:170px; height: 130px; }
+
+.gnsports_menu span.btn_02 a.on{background:url("/img/gnsports/icon_02.png") no-repeat 45px -72px; display: inline-block; width:170px; height: 130px; color: #ffffff; }
+.gnsports_menu span.btn_02 {background: url("/img/gnsports/icon_02.png") no-repeat 45px 0; display: inline-block;width:170px; height: 130px;  }
+
+.gnsports_menu span.btn_03 a.on{background:url("/img/gnsports/icon_03.png") no-repeat 45px -72px; display: inline-block; width:170px; height: 130px; color: #ffffff; }
+.gnsports_menu span.btn_03 {background: url("/img/gnsports/icon_03.png") no-repeat 45px 0; display: inline-block; width:170px; height: 130px;  }
+
+.gnsports_menu span.btn_04 a.on{background:url("/img/gnsports/icon_04.png") no-repeat 45px -72px; display: inline-block; width:170px; height: 130px; color: #ffffff; }
+.gnsports_menu span.btn_04 {background: url("/img/gnsports/icon_04.png") no-repeat 45px 0; display: inline-block; width:170px; height: 130px;  }
+
+.gnsports_menu span.btn_05 a.on{background:url("/img/gnsports/icon_05.png") no-repeat 45px -72px; display: inline-block; width:170px; height: 130px; color: #333; }
+.gnsports_menu span.btn_05 {background: url("/img/gnsports/icon_05.png") no-repeat 45px 0; display: inline-block; width:170px; height: 130px;  }
+
+.gnsports_menu span.btn_06 a.on{background:url("/img/gnsports/icon_06.png") no-repeat 45px -72px; display: inline-block; width:170px; height: 130px; color: #333; }
+.gnsports_menu span.btn_06 {background: url("/img/gnsports/icon_06.png") no-repeat 45px 0; display: inline-block; width:170px; height: 130px;  }
+
+.gnsports_menu span.btn_07 a.on{background:url("/img/gnsports/icon_07.png") no-repeat 45px -72px; display: inline-block; width:170px; height: 130px; color: #333; }
+.gnsports_menu span.btn_07 {background: url("/img/gnsports/icon_07.png") no-repeat 45px 0; display: inline-block; width:170px; height: 130px;  }
+
+.gnsports_menu span.btn_08 a.on{background:url("/img/gnsports/icon_08.png") no-repeat 45px -72px; display: inline-block; width:170px; height: 130px; color: #333; }
+.gnsports_menu span.btn_08 {background: url("/img/gnsports/icon_08.png") no-repeat 45px 0; display: inline-block; width:170px; height: 130px;  }
+
+/* 愿��젴洹쒖젙 踰꾪듉 */
+.gnsports_btn {position:relative; display: inline-block; float: right;margin: 0px 10px 0px 0; }
+.gnsports_title {background: url("/img/gnsports/bullet.gif") no-repeat  left; font-size:18px;font-weight:600; padding-left:15px;line-height:100%;display:inline-block; }
+
+/* ���쉶�젙蹂� 踰꾪듉 */
+.game_btn {position:relative; display: inline-block; float: left;margin: 0px 17px 17px 0; }
+.game_btnR {position:relative; display: inline-block; float: left;margin: 0px 0px 17px 0; }
+
+/* ���쉶�젙蹂� 踰꾪듉 */
+.gnsports_btn {position:relative; display: inline-block; float: right;margin: 0px 0px 10px 0; }
+
+
+/* 泥댁쑁�젙蹂� */
+.gnsports_training  {position:absolute; float:left; line-height: 160%; margin: 110px 0 0px 40px;font-size: 15px;font-weight:600; }
+.gnsports_training_box {float:left; width: 720px; position: relative; margin:0px 0;border:3px solid #c5ede6; padding: 10px 10px;height:220px; }
+/*.gnsports_training_box {float:left; width: 720px; position: relative; margin:0px 0;border:3px solid #c5ede6; padding: 10px 10px;background:url("/img/training/icon_training.png") no-repeat 75px 75px;height:150px; }*/
+.gnsports_training_box h6 {position:absolute; float:left; line-height: 160%; margin: 12px 0 0px 5px;font-size: 18px;font-weight:600;}
+.gnsports_training_map {position:relative; float:left; line-height: 160%; margin: 50px 0 20px 5px;font-size:15px; line-height:140%; width:270px;height:160px; }
+.gnsports_training_add2 {position:absolute; float:left; line-height: 160%; margin: 60px 0 20px 295px;font-size:15px; line-height:140%; }
+.gnsports_training_add2 ul li {position:relative; float:left; line-height: 160%;  line-height:140%;border-bottom: 1px dotted #707784; margin: 10px 0 0px 0px;font-size:13px;width:400px;}
+.gnsports_training_add {position:relative; float:left; line-height: 160%; margin: 10px 0 20px 250px;font-size:15px; line-height:140%; }
+.gnsports_training_add ul li {position:relative; float:left; line-height: 160%;  line-height:140%;border-bottom: 1px dotted #707784; width:440px;margin: 10px 0 0px 0px;font-size:13px;}
+.gnsports_training_boy {position:relative; float:left; line-height: 160%; margin: 10px 0 20px 320px;font-size:15px; line-height:140%; }
+.gnsports_training_text  {position:absolute; float:left; line-height: 160%; margin: 110px 0 0px 25px;font-size: 15px;font-weight:600; }
+.gnsports_training_box2 {float:left; width: 720px; position: relative; margin:0px 0;border:3px solid #c5ede6; padding: 10px 10px;background:url("/img/health/icon_training2.png") no-repeat 75px 75px;height:150px; }
+.gnsports_training_box2 h6 {position:absolute; float:left; line-height: 160%; margin: 12px 0 0px 20px;font-size: 18px;font-weight:600;}
+
+/* 蹂몄씤�씤利� */
+.orange { color:#fa4700;}
+#all { position:relative; float:left; width:650px; }
+#info { position:relative; float:left; padding:13px; }
+body{margin:0px;}
+.content { position:relative; float:left; width:619px; left:13px; padding-top:20px; }
+.content .box { position:relative; float:left; width:619px; }
+.content .box ul { list-style:none; margin:0; padding:0;}
+.content .box li { margin:0; padding:0; }
+.content .box .box_text {float:left; background:url("/img/join/new_join_box_midd.gif") repeat-y; padding:15px; width:619px; }
+.content .box .box_text ul { margin:0; padding:0;}
+.content .box .box_text li { margin:0; padding:0;}
+.content .box .box_title { color:#0e4d86; font-weight:bold; }
+.content .box .btn { position:relative; float:left; top:-40px; text-align:right; width:600px; }
+.content .box .btn2 { position:absolute; top:120px; left:450px; z-index:100; }
+.content .box .btn3 { position:absolute; right:20px; top:140px;}
+.content .box .btn4 { position:absolute; right:20px; top:120px;}
+.content .box_top {float:left; background:url("/img/join/new_join_box_top.gif") no-repeat; width:619px; height:12px; font-size:0px; }
+.content .box_bottom {float:left; background:url("/img/join/new_join_box_bott.gif") no-repeat; width:619px; height:12px; font-size:0px; }
+
+
+/*�젙蹂댁븣由쇰갑*/
+.gnsports_infoRight {position:relative; float:left; line-height: 160%; margin: 0px 0 20px 395px;font-size:15px; line-height:140%; }
+.gnsports_infoLeft {position:absolute; float:left; line-height: 160%; margin: 0px 0 20px 0px; }
+.gnsports_info {float:left; width: 760px; position: relative; border-bottom: 1px dotted #707784;width:760px;height:47px;}
+.gnsports_infoRight ul li {background: url("/img/info/i_dot.gif") no-repeat  left; font-size:13px;font-weight:0; padding-left:15px;margin-top:20px;line-height:100%;display:inline-block; }
+.gnsports_infoLeft ul li {background: url("/img/info/i_dot.gif") no-repeat  left; font-size:13px;font-weight:0; padding-left:15px;margin-top:20px;line-height:100%;display:inline-block; }
+span.title_co {
+    background-color: #efb30e;
+    padding: 1px 6px;
+    display: block;
+    text-align: center;
+    margin-bottom: 4px;
+    color: #fff;}
+
+/*�뒪�룷痢좎퐫由ъ븘�냼�떇吏�*/
+.sports_news {position:relative; display:inline-block;  width:740px; margin:20px 0 0 10px; }
+.sports_news .news_list { float:left; width: 115px; height:205px; padding: 9px;  margin: 0 9px 0 0; .margin: 0 7px 0 0; border:1px solid #ddd;}
+.sports_news .news_list:last-child {margin-right: 0 !important; }
+.sports_news .news_list li.news_photo { width: 115px; height:135px; background:url("/img/common/img_wait.gif") no-repeat; margin-bottom:7px; }
+.sports_news .news_list li.news_photo img{ width: 115px; height:135px; border:1px solid #ddd; /*border-radius:10px;*/}
+.sports_news .news_list li.news_name {font-size:12px; font-weight:600; text-align:center; line-height:170%; color:#000;}
+.sports_news .news_list li.news_btn { text-align:center;}
+.sports_news_btn01 {cursor:pointer; color:#fff; font-size:11px; background:#d93639; line-height:120%; padding:2px 5px; font-weight:600; margin-right:10px; text-align:center;}
+.sports_news_btn02 {cursor:pointer; color:#fff; font-size:11px; background:#8fc241; line-height:120%; padding:2px 5px; font-weight:600; text-align:center;}
+
+.info_text {margin:10px 0 20px 25px; width:95%; text-align:justify; line-height:160%; }
+
+
+
+/*�룷�넗由ъ뒪�듃*/
+.sports_photo {position:relative; display:inline-block;  width:740px; margin:20px 0 0 10px; }
+.sports_photo .photo_list { float:left; width: 210px; height:220px; padding: 9px;margin: 0 16px 20px 0;border: 1px solid #c1c1c1;}
+.sports_photo .photo_list:last-child {margin-right: 0 !important; }
+.sports_photo .photo_list li.photo_photo { width: 210px; height:135px; background:url("/img/common/img_wait.gif") no-repeat; margin-bottom:7px; }
+.sports_photo .photo_list li.photo_photo img{ width: 210px; height:135px; border:1px solid #ddd; /*border-radius:10px;*/}
+.sports_photo .photo_list li.photo_name {font-size:13px; font-weight:600; text-align:left; line-height:170%; color:#000;}
+.sports_photo .photo_list li.photo_name a{color:#0a3aa7;overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    float: left;display: inline-block;width: 200px;}
+.sports_photo .photo_list li.photo_btn { text-align:center;}
+.sports_photo_btn01 {cursor:pointer; color:#fff; font-size:11px; background:#d93639; line-height:120%; padding:2px 5px; font-weight:600; margin-right:10px; text-align:center;}
+.sports_photo_btn02 {cursor:pointer; color:#fff; font-size:11px; background:#8fc241; line-height:120%; padding:2px 5px; font-weight:600; text-align:center;}
+li.photo_btn01 { position: relative;display: block;font-weight: 500;}
+li.photo_btn02 { position: relative;display: block;font-weight: 500;}
+li.photo_btn03 { position: relative;display: block;font-weight: 500;}
+
+/*臾산퀬�떟�븯湲곗씤利�*/
+.team-wrappere.col-md-6.col-sm-6 {width: 45%;float: left;display: inline-block; height: 200px;border: 1px solid #c1c1c1;padding: 10px 5px 20px;text-align: center;margin: 0 13px 20px;}
+.btnC.pdt25 {padding:7px 5px;width:100px;margin:10px auto;background-color:#337ab7;}
+p.mem_txt1 {margin-top:10px;}
+.btnC.pdt25 a {color: #fff;font-weight:600;}
+button.btn.btn-warning.btn-sm_2 {background-color:#f9971f;border:1px solid #eee;padding:7px;color:#fff}
+tr.reply h4 {margin-bottom: 10px;}
+span.rep {margin-left: 20px;}
+tr.reply {background-color: #f3f3f3; border: 1px solid #d7d7d7;}
+td.srtong {font-weight: bold;}
+
+/*�뙎湲�*/
+/* tr.comment {background-color:#fffdf8;}
+tr.comment th {border-right:1px dotted #d0d0d0; background-color:#f7f7f7;padding-left:20px !important;}
+tr.comment th p.re {color:#e93616;}	 */
+
+.comment1 {width:100%;display:inline-block;}
+.comment_list {border-top: 3px solid #a7a7a7;}
+.comment1 h3 {font-size: 17px;font-weight: 500;padding-bottom:5px;}
+.comment_list ul li {border-bottom: 1px solid #dcdcdc;padding:10px 10px;background: #f7f7f7;}
+span.u_cbox_nick {font-size: 13px;color: #4665ca;font-weight: 600;}
+span.u_cbox_dat {padding-left: 20px;color:#888888;font-size:12px;}		
+.u_cbox_text_wrap {min-height: 30px;margin:10px 0;}	
+span.u_cbox_contents{line-height: 22px;}
+textarea.u_cbox_text {width:80%;}	
+label.u_cbox_guide {position: relative;display:block}
+.u_cbox_inbox{margin-top:30px;margin-bottom:30px;}	
+.save {display:inline-block;margin-left:10px;}
+.save button {width:100px;height:50px;font-weight:600;}
+.mody {background-color:#969696;border:1px solid #848484;line-height:19px;padding:1px 6px;border-radius:3px;}	
+.mody a{color:#fff;text-decoration:none;}
+.delete a{color:#fff;text-decoration:none;}	
+.delete {background-color:#e61420; border:1px solid #e61420;line-height: 19px;padding:1px 6px;border-radius:3px;}	  
+
+/*媛쒖씤�젙蹂댁닔吏묐룞�쓽*/
+.agree_area {
+    margin: 20px 15px;}
+.text_area {
+    margin: 0 auto;
+    padding: 10px 15px;}	
+.text_area h5 {
+    padding: 7px 7px 7px;
+    font-size: 14px;
+    color: #1172c6;background: url(../img/common/bullet_h5.gif) no-repeat 0 50%;}
+.gree h5{ padding: 7px 7px 7px;
+    font-size: 14px;
+    color: #1172c6;background: url(../img/common/bullet_h5.gif) no-repeat 0 50%;}			
+.textarea {
+    height: 160px;border: 1px solid #abadb3;margin-bottom: 10px;}
+.agree_area .textarea textarea {
+    width: 100%;
+    height: 160px;
+    border: 0 none;
+    padding: 5px 0;
+    color: #666;
+    line-height: 130%;
+    background: #f8f8f8;font-size: 12px;}	
+    
+/*媛쒖씤�젙蹂댁쿂由щ갑移�*/
+.use_title{width:745px; height:33px; color:black; font-size:16px; font-weight:600; background:#f1f1f1; border-bottom:1px solid #e1e1e1; padding:0px 0 0 15px; line-height:210%;}
+.use_text{font-size:13px; margin:20px 0; padding:0 0 0 15px; line-height:170%; text-align:justify;}
+/*臾산퀬�떟�븯湲�*/
+.board_area.comflim {
+    margin: 10px 13%;
+    background-color: #eee;
+    padding: 10px;}
+.pop span.title {
+    text-align: center;
+    position: relative;
+    display: block;
+    color: #50525a;
+    font-weight: 600;}	
+.board_btn_area span {
+    display: block;
+    padding-top: 10px;
+    color: #d82f7d;
+    font-weight: 500;}	
+/*�엫吏곸썝�쁽�솴*/
+.tlte_sm {
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1364b5;margin-top: -20px;}	
+.tlte_sm span {
+    font-size: 20px;
+    color: #a90303;}	

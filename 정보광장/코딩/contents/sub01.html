@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/sub.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/icon.css" rel="stylesheet">
+    <link href="../css/font.css" rel="stylesheet">
+    <link href="../css/header.css" rel="stylesheet">
+    <link href="../css/footer.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <title>정보광장 금주의 일정</title>
+    <script>
+
+        /* header */
+        function tglAllMenu(){
+            $('body').toggleClass('dimm');
+            if($('#header').hasClass('open')){
+                $('#header').removeClass('open')
+                $('body').removeClass('fix');
+                $('#wing').removeClass('inHeader');
+                $('.menu_all').removeClass('close');
+                $('.logo').removeClass('wht');
+                if($('#fullpage').length > 0 && $(window).width()>1024){
+                    $.fn.fullpage.setAllowScrolling(true);
+                    $.fn.fullpage.setKeyboardScrolling(true);
+                }
+            }else {
+                $('#header').addClass('open')
+                $('body').addClass('fix');
+                $('#wing').addClass('inHeader');
+                $('.logo').addClass('wht');
+                $('.btn_menu').addClass('close');
+
+                if($('#fullpage').length > 0 && $(window).width()>1024){
+                    $.fn.fullpage.setAllowScrolling(false);
+                    $.fn.fullpage.setKeyboardScrolling(false);
+                }
+            }
+            
+        }
+    
+        $(document).ready(function() {
+            function numberWithCommas(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+            
+            function animateNum(agency, cntNum){
+                $({ val : 0 }).animate({ val : cntNum }, {
+                duration: 1000,
+                step: function() {
+                    var num = numberWithCommas(Math.floor(this.val));
+                    $("#" + agency + "SpeTotal").text(num);
+                },
+                complete: function() {
+                    var num = numberWithCommas(Math.floor(this.val));
+                    $("#" + agency + "SpeTotal").text(num);
+                }
+                });
+            }
+            
+            let agencySpe = {
+                'A01' : 5117271,
+                'A02' : 154654654,
+                'A03' : 23213123,
+                'A04' : 0,
+                'A05' : 5121,
+            }
+            
+            for(let agency in agencySpe){
+                animateNum(agency, agencySpe[agency]);
+            }
+            $('.bannerAreaCont').slick({
+                slidesToShow: 8,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 2000,
+                responsive: [{
+                    breakpoint: 1080,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 6
+                    }
+                },
+                {
+                    breakpoint: 780,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 4,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0',
+                        slidesToShow: 2,
+                    }
+                }
+            ]
+            });
+
+            let length = window.innerWidth;
+            let wTxt = 0;
+
+            if(length < 450){
+                wTxt = 450;                
+            } else  if(length < 500){
+                wTxt = 500;
+            } else  if(length < 550){
+                wTxt = 550;
+            } else  if(length < 600){
+                wTxt = 600;
+            } 
+
+            
+
+            for(let el in document.getElementsByClassName('topSlt')){
+                    el.className = 'topSlt ' + 'w' + wTxt ;
+                }
+
+      });
+
+    </script>
+</head>
+
+<body>
+    <div class="conain">
+        <div class="wrap">
+            <header class="header subHeader" id="header">
+                <div class="headWrap">
+                    <div class="topSubMenu">
+                        <ul>
+                            <li>
+                                <a href="#">한국프로스포츠협회</a>
+                            </li>
+                            <li>
+                                <a href="#">사이트맵</a>
+                            </li>
+                            <li>
+                                <a href="#">개선의견</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="topMenu">
+                        <h1 class="logo">
+                            <a href="#"></a>
+                        </h1>
+                        <div id="menu">
+                            <ul class="lst">
+                                <li class="dl" id="gnb1">
+                                    <a href="#">관중 현황</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="./contents/sub02.html">전체 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">일자별 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="./contents/sub05.html">구단별 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">시·도별 관중</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">역대 관중 현황</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">일정/결과</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="./contents/sub01.html">일정 및 결과</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="./contents/sub03.html">리그 순위</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">통계/현황</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">e-나라지표</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">SNS</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">경기장</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">종사자</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">스폰서</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">역대우승팀</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">테마통계</a>
+                                        </li>
+                                    </ul>   
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">자료실</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="./contents/sub07.html">PROSVIEW</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">스포츠 윤리 교육</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="./contents/sub06.html">관람객 성향 조사</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="./contents/sub08.html">기타 자료</a>
+                                        </li>
+                                    </ul>    
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">단체/구단</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">프로 단체 정보</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">프로 구단 정보</a>
+                                        </li>
+                                    </ul> 
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rightMenu">
+                            <button type="button" class="btn_menu close" onclick="tglAllMenu();">
+                                <span class="line"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="subPg">
+                <div class="subNavWRap">
+                    <div class="subNav">
+                        <ul>
+                            <li class="active"><a href="#">일정 및 결과</a></li>                             
+                            <li><a href="#">리그 순위</a></li>                                
+                        </ul>
+                        <div class="subTopSlt slcPc">
+                            <select>
+                                <option>2024년</option>
+                                <option>2023년</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="section01">
+                    <div class="slcBtnBox">
+                        <div class="subTopSlt slcMobile">
+                            <select>
+                                <option>2024년</option>
+                                <option>2023년</option>
+                            </select>
+                        </div>
+                        <div class="topSltWRap">
+                            <ul class="topSlt">
+                                <li><a href=#>전체</a></li>
+                                <li><a href=#>KBO</a></li>
+                                <li>
+                                    <a href=#>K리그</a>
+                                </li>
+                                <li><a href=#>KBL</a></li>
+                                <li><a href=#>WKBL</a></li>
+                                <li>
+                                    <a href=#>KOVO</a>
+                                </li>
+                                <li><a href=#>KPGA</a></li>
+                            </ul>
+                            <ul class="topSltSub Kleague_lst">
+                                <li><a href="#">K리그1</a></li>
+                                <li><a href="#">K리그2</a></li>
+                            </ul>
+                        </div>
+                        <div class="topSltWRap">
+                            <ul class="topSlt">
+                                <li><a href=#>1월</a></li>
+                                <li><a href=#>2월</a></li>
+                                <li><a href=#>3월</a></li>
+                                <li><a href=#>4월</a></li>
+                                <li><a href=#>5월</a></li>
+                                <li><a href=#>6월</a></li>
+                                <li><a href=#>7월</a></li>
+                                <li><a href=#>8월</a></li>
+                                <li><a href=#>9월</a></li>
+                                <li><a href=#>10월</a></li>
+                                <li><a href=#>11월</a></li>
+                                <li><a href=#>12월</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="subCont">
+                        <!-- pc -->
+                        <div class="subTb schWeekTb pc">
+                            <div class="tbTop">
+                                <div class="tbLeft">
+                                    <select>
+                                        <option>15개씩</option>
+                                        <option>50개씩</option>
+                                        <option>100개씩</option>
+                                    </select>
+                                </div>
+                                <div class="total">
+                                    <p>Total <strong>120</strong></p>
+    
+                                </div>
+                            </div>
+                            <table>
+                                <colgroup>
+                                    <col width="3%"> <!-- 날짜 -->
+                                    <col width="3%"> <!-- 시간 -->
+                                    <col width="5%"> <!-- 단체/구단 -->
+                                    <col width="8%"> <!-- 경기 -->
+                                    <col width="5%"> <!-- 장소 -->
+                                    <col width="3%"> <!-- 결과 -->
+                                    <col width="2%"> <!-- 날씨 -->
+                                    <col width="3%"> <!-- 관중수 -->
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <div class="filt_th">
+                                                <p>날짜</p>
+                                                <p class="filterWRap">
+                                                    <span><img src="../images/sub/filter_Up.svg"></span>
+                                                    <span><img src="../images/sub/filter_down.svg"></span>
+                                                </p>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="filt_th">
+                                                <p>시간</p>
+                                                <p class="filterWRap filt_Up">
+                                                    <span><img src="../images/sub/filter_down_on.svg"></span>
+                                                </p>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="filt_th">
+                                                <p>단체</p>
+                                                <p class="filterWRap filt_Up">
+                                                    <span><img src="../images/sub/filter_Up_on.svg"></span>
+                                                </p>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="filt_th">
+                                                <p>경기</p>
+                                                <p class="filterWRap">
+                                                    <span><img src="../images/sub/filter_Up.svg"></span>
+                                                    <span><img src="../images/sub/filter_down.svg"></span>
+                                                </p>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="filt_th">
+                                                <p>장소</p>
+                                                <p class="filterWRap">
+                                                    <span><img src="../images/sub/filter_Up.svg"></span>
+                                                    <span><img src="../images/sub/filter_down.svg"></span>
+                                                </p>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="filt_th">
+                                                <p>결과</p>
+                                                <p class="filterWRap">
+                                                    <span><img src="../images/sub/filter_Up.svg"></span>
+                                                    <span><img src="../images/sub/filter_down.svg"></span>
+                                                </p>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="filt_th">
+                                                <p>날씨</p>
+                                                <p class="filterWRap">
+                                                    <span><img src="../images/sub/filter_Up.svg"></span>
+                                                    <span><img src="../images/sub/filter_down.svg"></span>
+                                                </p>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="filt_th">
+                                                <p>관중수</p>
+                                                <p class="filterWRap">
+                                                    <span><img src="../images/sub/filter_Up.svg"></span>
+                                                    <span><img src="../images/sub/filter_down.svg"></span>
+                                                </p>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <p>2024/05/29</p>
+                                        </td>
+                                        <td>
+                                            <p>18:30</p>
+                                        </td>
+                                        <td>
+                                            <p class="playerClub">
+                                                KBO
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p class="player">
+                                                <span>KIA</span>
+                                                <span class="vs">VS</span>
+                                                <span>NC</span>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <P>창원</P>
+                                        </td>
+                                        <td>
+                                            <P class="result">
+                                                <span class="win">6</span>
+                                                <span>&#58;</span>
+                                                <span class="lose">3</span>
+                                            </P>
+                                        </td>
+                                        <td>
+                                            <p>비</p>
+                                        </td>
+                                        <td>
+                                            <p>7,764</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>2024/05/29</p>
+                                        </td>
+                                        <td>
+                                            <p>18:30</p>
+                                        </td>
+                                        <td>
+                                            <p class="playerClub">
+                                                KBO
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p class="player">
+                                                <span>KIA</span>
+                                                <span class="vs">VS</span>
+                                                <span>NC</span>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <P>창원</P>
+                                        </td>
+                                        <td>
+                                            <P class="result">
+                                                <span class="lose">3</span>
+                                                <span>&#58;</span>
+                                                <span class="win">6</span>
+                                            </P>
+                                        </td>
+                                        <td>
+                                            <p>비</p>
+                                        </td>
+                                        <td>
+                                            <p>7,764</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>2024/05/29</p>
+                                        </td>
+                                        <td>
+                                            <p>18:30</p>
+                                        </td>
+                                        <td>
+                                            <p class="playerClub">
+                                                KBO
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p class="player">
+                                                <span>KIA</span>
+                                                <span class="vs">VS</span>
+                                                <span>NC</span>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <P>창원</P>
+                                        </td>
+                                        <td>
+                                            <P class="result">
+                                                <span class="tie">0</span>
+                                                <span>&#58;</span>
+                                                <span class="tie">0</span>
+                                            </P>
+                                        </td>
+                                        <td>
+                                            <p>비</p>
+                                        </td>
+                                        <td>
+                                            <p>23,817</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>2024/05/29</p>
+                                        </td>
+                                        <td>
+                                            <p>18:30</p>
+                                        </td>
+                                        <td>
+                                            <p class="playerClub">
+                                                K LEAGUE 1
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p class="player">
+                                                <span>수원 FC</span>
+                                                <span class="vs">VS</span>
+                                                <span>대구</span>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <P>대전 월드컵</P>
+                                        </td>
+                                        <td>
+                                            <P class="result">
+                                                <span>경기전</span>v
+                                            </P>
+                                        </td>
+                                        <td>
+                                            <p>비</p>
+                                        </td>
+                                        <td>
+                                            <p>7,764</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+    
+                        </div>
+                        <!-- mobile -->
+                        <div class="schWeekMobile mobile">
+                            <div class="shcList active">
+                                <div class="schDate">
+                                    <p class="clubName">K리그1</p>
+                                    <p class="playDate">
+                                        <span>2024.07.17</span>
+                                        <span>14:00</span>
+                                    </p>
+                                    <p class="wedth_icon">
+                                        <img src="../images/ic_weather_01.png" />
+                                    </p>
+                                </div>
+                                <div class="schBox">
+                                    <div class="schPlaytop">
+                                        <p>
+                                            <span>강원</span>
+                                        </p>
+                                        <p class="scoreTxt">
+                                            <span class="score win">6</span>
+                                            <span class="vs">VS</span>
+                                            <span class="score lose">3</span>
+                                        </p>
+                                        <p>
+                                            <span>전북</span>
+                                        </p>
+                                    </div>
+                                    <div class="schPlayBtm">
+                                        <p>춘천 송암</p>
+                                        <p class="schPlayNm">2,460명</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shcList">
+                                <div class="schDate">
+                                    <p class="clubName">K리그1</p>
+                                    <p class="playDate">
+                                        <span>2024.07.17</span>
+                                        <span>14:00</span>
+                                    </p>
+                                    <p class="wedth_icon">
+                                        <img src="../images/ic_weather_01.png" />
+                                    </p>
+                                </div>
+                                <div class="schBox">
+                                    <div class="schPlaytop">
+                                        <p>
+                                            <span>강원</span>
+                                        </p>
+                                        <p class="scoreTxt">
+                                            <span class="score win">6</span>
+                                            <span class="vs">VS</span>
+                                            <span class="score lose">3</span>
+                                        </p>
+                                        <p>
+                                            <span>전북</span>
+                                        </p>
+                                    </div>
+                                    <div class="schPlayBtm">
+                                        <p>춘천 송암</p>
+                                        <p class="schPlayNm">2,460명</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shcList">
+                                <div class="schDate">
+                                    <p class="clubName">K리그1</p>
+                                    <p class="playDate">
+                                        <span>2024.07.17</span>
+                                        <span>14:00</span>
+                                    </p>
+                                    <p class="wedth_icon">
+                                        <img src="../images/ic_weather_01.png" />
+                                    </p>
+                                </div>
+                                <div class="schBox">
+                                    <div class="schPlaytop">
+                                        <p>
+                                            <span>강원</span>
+                                        </p>
+                                        <p class="scoreTxt">
+                                            <span class="score win">6</span>
+                                            <span class="vs">VS</span>
+                                            <span class="score lose">3</span>
+                                        </p>
+                                        <p>
+                                            <span>전북</span>
+                                        </p>
+                                    </div>
+                                    <div class="schPlayBtm">
+                                        <p>춘천 송암</p>
+                                        <p class="schPlayNm">2,460명</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bannerArea">
+                <div class="bannerAreaWrap">
+                    <div class="bannerAreaCont">
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner00.png">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner01.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner02.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner03.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner04.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner05.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#" target="_blank">
+                                <img src="../images/main/footBanner06.gif">
+                            </a>
+                        </div>
+                        <div class="bannerAreaLsit">
+                            <a href="#">
+                                <img src="../images/main/footBanner07.gif">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="footerTop">
+                    <div class="ftInner">
+                        <ul class="left">
+                            <li>
+                                <a href="#">개인정보처리방침</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="#">사이트맵</a>
+                            </li>
+                        </ul>
+                        <ul class="site">
+                            <li class="dataBtn">
+                                <button type="button" class="navRight">데이터 활용 신청</button>
+                            </li>
+                            <li>
+                                <a>관련사이트</a>
+                                <ul class="relatedSite">
+                                    <li>
+                                        <a href="http://data.kleague.com" target="_blank">K LEAGUE 데이터포털</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://datalab.wkbl.or.kr" target="_blank">WKBL 데이터랩</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://data.klpga.co.kr/" target="_blank">KLPGA 데이터센터</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://k-rankings.klpga.co.kr/" target="_blank">KLPGA K-Rankings</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footerBot">
+                    <div class="ftCont">
+                        <div class="footerLogo">
+                            <h1>
+                                <img src="../images/main/logo_footer.png">
+                            </h1>
+                        </div>
+                        <div class="footInfo">
+                            <ul>
+                                <li>
+                                    서울특별시 중구 통일로 2길 16 AIA타워 5층 TEL 02&#41;6190-5900 FAX 02&#41;6190-5901
+                                </li>
+                                <li>
+                                    Copyright&copy;2019 사단법인 한국프로스포츠협회. All right reserved
+                                </li>
+                                <li>이 사업은 문화체육관광부와 국민체육진흥공단의 재정후원을 받고 있습니다.</li>
+                                <li class="chrome">이 웹사이트는 Chrome 브라우저에 최적화되어있습니다.</li>
+                            </ul>
+                        </div>
+                        <div class="footersponse">
+                            <p>
+                                <img src="../images/main/logo_footer2.png">
+                            </p>
+                            <p>
+                                <img src="../images/main/logo_footer3.png">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

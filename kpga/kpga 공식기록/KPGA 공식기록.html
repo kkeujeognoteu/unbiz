@@ -1,0 +1,648 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0044)http://175.117.50.24:18303/gos/data/trackimg -->
+<html style="height: auto;">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>KPGA 공식기록</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="http://175.117.50.24:18303/resources/gos/images/favicon.ico">
+	<link rel="stylesheet" href="./KPGA 공식기록_files/all.min.css">
+	<link rel="stylesheet" href="./KPGA 공식기록_files/OverlayScrollbars.min.css">
+	<link rel="stylesheet" href="./KPGA 공식기록_files/adminlte.min.css">
+	<link rel="stylesheet" href="./KPGA 공식기록_files/style.css">
+	<script type="text/javascript" src="./KPGA 공식기록_files/jquery-1.12.4.min.js.다운로드"></script>
+	<script type="text/javascript" src="./KPGA 공식기록_files/adminlte.min.js.다운로드"></script>
+	<script type="text/javascript" src="./KPGA 공식기록_files/common.js.다운로드"></script>
+	<script type="text/javascript" src="./KPGA 공식기록_files/vue.js.다운로드"></script>
+	<script type="text/javascript" src="./KPGA 공식기록_files/pagingDesign.js.다운로드"></script>
+	<script type="text/javascript" src="./KPGA 공식기록_files/moment.min.js.다운로드"></script>
+	<style>
+		/*vue 로딩 전 {{}} 삭제 */
+		[v-clock] {
+			display: none;
+		}
+	</style>
+	<script type="text/javascript" src="./KPGA 공식기록_files/maps.js.다운로드"></script>
+	<link rel="stylesheet" href="./KPGA 공식기록_files/bootstrap.min.css">
+	<link rel="stylesheet" href="./KPGA 공식기록_files/common.css">
+	<link rel="stylesheet" href="./KPGA 공식기록_files/slick.css">
+	<link rel="stylesheet" href="./KPGA 공식기록_files/main.css">
+	<link rel="stylesheet" href="./KPGA 공식기록_files/sub.css">
+	<link rel="stylesheet" href="./KPGA 공식기록_files/xeicon.min.css">
+	<style>
+		.overH {
+			display: flex;
+			gap: 20px;
+		}
+		
+		.mapTableWrap{ width:calc(100% - 210px); display:inline-block; }
+		.mapTable{ display:block; width:100%; }
+		.mapTable table{ border-collapse:collapse; display:inline-block; width:68%; }
+		.mapTable td, .mapTable th{ border-top:1px solid #959595; padding:8px 5px; }
+		.mapTable tr:last-child td, .mapTable tr:last-child th{ border-bottom:1px solid #959595; }
+		.mapTable th{ background:#f8f8f8; text-align:center; vertical-align:middle; }
+		.mapTable td input, .mapTable td select{ width:100%; height:38px; padding:0 10px; border:1px solid #dbdbdb; border-radius:0; }
+		.mapTable td textarea{ border:1px solid #dbdbdb }
+		.mapTable td button{ height:38px; width:60px; }
+		.mapTable td button + button{ margin-left:10px; }
+		.mapTable td button.holeAll{ background:#f8f8f8; transition:.3s }
+		.mapTable td button.holeAll:hover{ background:#959595; color:#fff; }
+		.mapTable td button.holeTop{ background:#6986cb; color:#fff; transition:.3s }
+		.mapTable td button.holeTop:hover{ background:#2e4e9c; color:#fff; }
+		.mapTable td button.holeBottom{ background:#343a40; color:#fff; transition:.3s }
+		.mapTable td button.holeBottom:hover{ background:#959595; color:#fff; }
+
+		.mapKeboardSetting{ margin-left:auto; padding-left:30px; border-left:1px solid #f3f3f3; display:inline-block; vertical-align:top; margin-left:30px; }
+		.mapKeboardSetting li{ margin:10px 0; }
+		.mapTable .btnWrap{ position:relative; width:100%; height:145px; margin-top:30px; float:none; text-align:right; border-bottom:5px solid #333; overflow:hidden;  }
+		.mapTable .btnWrap button{ position:absolute; background:url(./img/13-06-21-906_512.webp)no-repeat !important; width:130px; height:60%; background-size:cover !important; left:0; bottom:0; }
+		.mapTable .btnWrap:hover .btnMoving{
+			animation:loading 3s infinite;
+		}
+		@keyframes loading{
+			0%{ 
+				left:0px; bottom:0;
+			}
+			20%{
+				transform: rotate(0); bottom:0;
+			}
+			25%{
+				left:85%; bottom:0; transform: rotate(-90deg);
+			}
+			35%{
+				bottom:50px; transform: rotate(-90deg);
+			}
+			50%{
+				left:85%; bottom:50px; transform: rotate(-180deg);
+			}
+			75%{
+				left:0px; bottom:50px; transform: rotate(-180deg);
+			}
+			85%{
+				left:0px; bottom:50px; transform: rotate(-270deg);
+			}
+			95%{
+				transform: rotate(-270deg); bottom:0;
+			}
+			100%{
+				left:0px; bottom:0px; transform: rotate(-360deg);
+			}
+		}
+	</style>
+
+</head>
+
+<body class="sidebar-mini layout-fixed" style="height: auto;">
+	<div class="wrapper">
+
+
+
+		<div class="wrapper">
+			<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+				<ul class="navbar-nav">
+					<li class="nav-item d-none d-sm-inline-block">
+						<span id="pickGameNm">테_KPGA 파운더스컵 with 한맥CC</span>
+					</li>
+				</ul>
+				<ul class="navbar-nav ml-auto userLog">
+					<li class="nav-item userOut"><a href="http://211.216.48.143:17005/leaderboard/group/202411000005M/2"
+							target="_blank">리더보드</a></li>
+					<li class="nav-item userOut"><a href="http://175.117.50.24:18303/user/leaderboard/mobile"
+							target="_blank">모바일</a></li>
+					<li class="nav-item userOut"><a
+							href="http://175.117.50.24:18303/move/cnt?game_id=202411000005M&amp;round_no=2"
+							target="_blank">사랑의버디</a></li>
+					<li class="nav-item userOut"><a
+							href="http://175.117.50.24:18303/move?game_id=202411000005M&amp;round_no=2"
+							target="_blank">홀진행상황</a></li>
+				</ul>
+			</nav>
+
+			<aside class="main-sidebar sidebar-dark-primary elevation-4">
+				<a href="http://175.117.50.24:18303/adm/game" class="brand-link"> KPGA공식기록 </a>
+				<div class="sidebar">
+					<nav class="mt-2">
+						<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+							data-accordion="false">
+							<li id="m0" class="nav-item has-treeview">
+								<a href="http://175.117.50.24:18303/gos/data/trackimg##" class="nav-link">
+									<p>방송 관련<i class="right fas fa-angle-left"></i></p>
+								</a>
+								<ul class="nav nav-treeview">
+									<li class="nav-item"> <a href="http://175.117.50.24:18303/gos/live/hold"
+											class="nav-link">
+											<p>스코어 고정</p>
+										</a> </li>
+									<li class="nav-item"> <a href="http://175.117.50.24:18303/gos/live/holeins"
+											class="nav-link">
+											<p>스코어 입력</p>
+										</a> </li>
+									<li class="nav-item"> <a href="http://175.117.50.24:18303/gos/live/map"
+											class="nav-link">
+											<p>좌표 관리</p>
+										</a> </li>
+									<li class="nav-item"> <a href="http://175.117.50.24:18303/gos/live/distance"
+											class="nav-link">
+											<p>비거리 확인</p>
+										</a> </li>
+								</ul>
+							</li>
+
+							<li id="m0" class="nav-item has-treeview">
+								<a href="http://175.117.50.24:18303/gos/data/trackimg##" class="nav-link">
+									<p>대회준비<i class="right fas fa-angle-left"></i></p>
+								</a>
+								<ul class="nav nav-treeview">
+									<li class="nav-item"> <a href="http://175.117.50.24:18303/gos/data/group"
+											class="nav-link">
+											<p>조편성 관리</p>
+										</a> </li>
+									<li class="nav-item"> <a href="http://175.117.50.24:18303/gos/data/marker"
+											class="nav-link">
+											<p>조마커 관리</p>
+										</a> </li>
+									<li class="nav-item"> <a href="http://175.117.50.24:18303/gos/data/crr"
+											class="nav-link">
+											<p>드라이브 홀 관리</p>
+										</a> </li>
+									<li class="nav-item"> <a href="http://175.117.50.24:18303/gos/data/holecup"
+											class="nav-link">
+											<p>홀컵 관리</p>
+										</a> </li>
+									<li class="nav-item"> <a href="http://175.117.50.24:18303/gos/data/trackimg"
+											class="nav-link">
+											<p> 기록수집앱지도 </p>
+										</a> </li>
+								</ul>
+							</li>
+							<li id="m0" class="nav-item has-treeview">
+								<a href="http://175.117.50.24:18303/gos/data/trackimg##" class="nav-link">
+									<p>이력<i class="right fas fa-angle-left"></i></p>
+								</a>
+								<ul class="nav nav-treeview">
+									<li class="nav-item"> <a href="http://175.117.50.24:18303/gos/score/history"
+											class="nav-link">
+											<p>스코어이력관리</p>
+										</a> </li>
+									<li class="nav-item"> <a href="http://175.117.50.24:18303/gos/score/hole"
+											class="nav-link">
+											<p>홀좌표</p>
+										</a> </li>
+								</ul>
+							</li>
+							<li id="m0" class="nav-item has-treeview">
+								<a href="http://175.117.50.24:18303/gos/data/trackimg##" class="nav-link">
+									<p>매치<i class="right fas fa-angle-left"></i></p>
+								</a>
+								<ul class="nav nav-treeview">
+									<li class="nav-item"> <a href="http://175.117.50.24:18303/gos/mc/hold"
+											class="nav-link">
+											<p>스코어 고정</p>
+										</a> </li>
+									<li class="nav-item"> <a href="http://175.117.50.24:18303/gos/mc/map"
+											class="nav-link">
+											<p>좌표</p>
+										</a> </li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</aside>
+
+
+			<div class="content-wrapper" style="min-height: 823px;">
+				<section class="content-header">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-12">
+								<div class="card">
+									<div id="app">
+										<div class="mainTitArea">
+											<div>
+												<h1 class="mainTit">
+													이미지 수정<span>위치기반기록수정 할 수 있습니다.</span></h1>
+											</div>
+										</div>
+										<div class="overH">
+											<div class="mapBox">
+												<div id="map" tabindex="0"
+													style="width: 770px; height: 500px; position: relative; overflow: hidden; background: rgb(17, 18, 19);">
+													<div
+														style="position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; overflow: visible; width: 100%; height: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); z-index: 0; cursor: url(&quot;http://static.naver.net/maps/mantle/1x/openhand.cur&quot;), default;">
+														<div
+															style="position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; overflow: visible; width: 100%; height: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); z-index: 0;">
+															<div
+																style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 1;">
+																<div
+																	style="overflow: visible; width: 100%; height: 0px; position: absolute; display: none; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 0; user-select: none;">
+																</div>
+																<div
+																	style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 1; user-select: none;">
+																	<div
+																		style="position: absolute; top: 0px; left: 0px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; display: block; width: 0px; height: 0px; overflow: visible; box-sizing: content-box !important;">
+																		<div draggable="false" unselectable="on"
+																			style="position: absolute; top: 370px; left: 259px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+																			<img draggable="false" unselectable="on"
+																				alt="" crossorigin="anonymous"
+																				width="256" height="256"
+																				src="./KPGA 공식기록_files/25586.png"
+																				style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+																		</div>
+																		<div draggable="false" unselectable="on"
+																			style="position: absolute; top: 114px; left: 259px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+																			<img draggable="false" unselectable="on"
+																				alt="" crossorigin="anonymous"
+																				width="256" height="256"
+																				src="./KPGA 공식기록_files/25585.png"
+																				style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+																		</div>
+																		<div draggable="false" unselectable="on"
+																			style="position: absolute; top: 626px; left: 259px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+																			<img draggable="false" unselectable="on"
+																				alt="" crossorigin="anonymous"
+																				width="256" height="256"
+																				src="./KPGA 공식기록_files/25587.png"
+																				style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+																		</div>
+																		<div draggable="false" unselectable="on"
+																			style="position: absolute; top: -142px; left: 259px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+																			<img draggable="false" unselectable="on"
+																				alt="" crossorigin="anonymous"
+																				width="256" height="256"
+																				src="./KPGA 공식기록_files/25584.png"
+																				style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+																		</div>
+																		<div draggable="false" unselectable="on"
+																			style="position: absolute; top: -142px; left: 515px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+																			<img draggable="false" unselectable="on"
+																				alt="" crossorigin="anonymous"
+																				width="256" height="256"
+																				src="./KPGA 공식기록_files/25584(1).png"
+																				style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+																		</div>
+																		<div draggable="false" unselectable="on"
+																			style="position: absolute; top: 626px; left: 3px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+																			<img draggable="false" unselectable="on"
+																				alt="" crossorigin="anonymous"
+																				width="256" height="256"
+																				src="./KPGA 공식기록_files/25587(1).png"
+																				style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+																		</div>
+																		<div draggable="false" unselectable="on"
+																			style="position: absolute; top: 114px; left: 515px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+																			<img draggable="false" unselectable="on"
+																				alt="" crossorigin="anonymous"
+																				width="256" height="256"
+																				src="./KPGA 공식기록_files/25585(1).png"
+																				style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+																		</div>
+																		<div draggable="false" unselectable="on"
+																			style="position: absolute; top: 370px; left: 3px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+																			<img draggable="false" unselectable="on"
+																				alt="" crossorigin="anonymous"
+																				width="256" height="256"
+																				src="./KPGA 공식기록_files/25586(1).png"
+																				style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+																		</div>
+																		<div draggable="false" unselectable="on"
+																			style="position: absolute; top: 370px; left: 515px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+																			<img draggable="false" unselectable="on"
+																				alt="" crossorigin="anonymous"
+																				width="256" height="256"
+																				src="./KPGA 공식기록_files/25586(2).png"
+																				style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+																		</div>
+																		<div draggable="false" unselectable="on"
+																			style="position: absolute; top: 114px; left: 3px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+																			<img draggable="false" unselectable="on"
+																				alt="" crossorigin="anonymous"
+																				width="256" height="256"
+																				src="./KPGA 공식기록_files/25585(2).png"
+																				style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+																		</div>
+																		<div draggable="false" unselectable="on"
+																			style="position: absolute; top: 626px; left: 515px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+																			<img draggable="false" unselectable="on"
+																				alt="" crossorigin="anonymous"
+																				width="256" height="256"
+																				src="./KPGA 공식기록_files/25587(2).png"
+																				style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+																		</div>
+																		<div draggable="false" unselectable="on"
+																			style="position: absolute; top: -142px; left: 3px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+																			<img draggable="false" unselectable="on"
+																				alt="" crossorigin="anonymous"
+																				width="256" height="256"
+																				src="./KPGA 공식기록_files/25584(2).png"
+																				style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+																		</div>
+																		<div draggable="false" unselectable="on"
+																			style="position: absolute; top: -142px; left: 771px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+																			<img draggable="false" unselectable="on"
+																				alt="" crossorigin="anonymous"
+																				width="256" height="256"
+																				src="./KPGA 공식기록_files/25584(3).png"
+																				style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+																		</div>
+																		<div draggable="false" unselectable="on"
+																			style="position: absolute; top: 626px; left: -253px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+																			<img draggable="false" unselectable="on"
+																				alt="" crossorigin="anonymous"
+																				width="256" height="256"
+																				src="./KPGA 공식기록_files/25587(3).png"
+																				style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+																		</div>
+																		<div draggable="false" unselectable="on"
+																			style="position: absolute; top: 114px; left: 771px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+																			<img draggable="false" unselectable="on"
+																				alt="" crossorigin="anonymous"
+																				width="256" height="256"
+																				src="./KPGA 공식기록_files/25585(3).png"
+																				style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+																		</div>
+																		<div draggable="false" unselectable="on"
+																			style="position: absolute; top: 370px; left: -253px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+																			<img draggable="false" unselectable="on"
+																				alt="" crossorigin="anonymous"
+																				width="256" height="256"
+																				src="./KPGA 공식기록_files/25586(3).png"
+																				style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+																		</div>
+																		<div draggable="false" unselectable="on"
+																			style="position: absolute; top: 370px; left: 771px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+																			<img draggable="false" unselectable="on"
+																				alt="" crossorigin="anonymous"
+																				width="256" height="256"
+																				src="./KPGA 공식기록_files/25586(4).png"
+																				style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+																		</div>
+																		<div draggable="false" unselectable="on"
+																			style="position: absolute; top: 114px; left: -253px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+																			<img draggable="false" unselectable="on"
+																				alt="" crossorigin="anonymous"
+																				width="256" height="256"
+																				src="./KPGA 공식기록_files/25585(4).png"
+																				style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+																		</div>
+																		<div draggable="false" unselectable="on"
+																			style="position: absolute; top: 626px; left: 771px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+																			<img draggable="false" unselectable="on"
+																				alt="" crossorigin="anonymous"
+																				width="256" height="256"
+																				src="./KPGA 공식기록_files/25587(4).png"
+																				style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+																		</div>
+																		<div draggable="false" unselectable="on"
+																			style="position: absolute; top: -142px; left: -253px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+																			<img draggable="false" unselectable="on"
+																				alt="" crossorigin="anonymous"
+																				width="256" height="256"
+																				src="./KPGA 공식기록_files/25584(4).png"
+																				style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+																		</div>
+																	</div>
+																</div>
+																<div
+																	style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 100;">
+																	<div
+																		style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 101;">
+																		<div
+																			style="position: absolute; overflow: hidden; z-index: 10; opacity: 0.8; left: 262px; top: 153px; width: 168px; height: 182px;">
+																			<img src="./KPGA 공식기록_files/h1.png" alt=""
+																				style="position: absolute; left: 0px; top: 0px; border: 0px; padding: 0px; margin: 0px; user-select: none; width: 168px; height: 182px;">
+																		</div>
+																	</div>
+																	<div
+																		style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 103;">
+																		<div title=""
+																			style="position: absolute; overflow: visible; box-sizing: content-box !important; cursor: inherit; left: 283px; top: 316px;">
+																			<div
+																				style="position: absolute; left: -6px; top: -20px; cursor: pointer;">
+																				<img style=" width: 30px;"
+																					src="./KPGA 공식기록_files/pin_start.png">
+																			</div>
+																		</div>
+																		<div title=""
+																			style="position: absolute; overflow: visible; box-sizing: content-box !important; cursor: inherit; left: 403px; top: 170px;">
+																			<div
+																				style="position: absolute; left: -9px; top: -23px; cursor: pointer;">
+																				<img style=" width: 30px;"
+																					src="./KPGA 공식기록_files/pin_end.png">
+																			</div>
+																		</div>
+																	</div>
+																	<div
+																		style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 106;">
+																	</div>
+																</div>
+															</div>
+															<div
+																style="position: absolute; display: none; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; overflow: visible; width: 100%; height: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); background-color: rgb(255, 255, 255); z-index: 10000; opacity: 0.5;">
+															</div>
+														</div>
+													</div>
+													<div
+														style="position: absolute; z-index: 100; margin: 0px; padding: 0px; pointer-events: none; bottom: 0px; right: 0px;">
+														<div
+															style="border: 0px none; margin: -3px 0px 0px; padding: 0px; pointer-events: none; float: right; height: 20px;">
+															<div
+																style="position: relative; width: 52px; height: 14px; margin: 0px 12px 6px 2px; overflow: hidden; pointer-events: auto;">
+																<span
+																	style="display: block; margin: 0px; padding: 0px 4px; text-align: center; font-size: 10px; line-height: 11px; font-family: Helvetica, AppleSDGothicNeo-Light, nanumgothic, NanumGothic, 나눔고딕, Dotum, 돋움, sans-serif; font-weight: 700; color: rgb(255, 255, 255); text-shadow: rgba(48, 48, 51, 0.8) -1px 0px, rgba(48, 48, 51, 0.8) 0px 1px, rgba(48, 48, 51, 0.8) 1px 0px, rgba(48, 48, 51, 0.8) 0px -1px;">100m</span><img
+																	src="./KPGA 공식기록_files/new-scale-dark-b.png"
+																	width="46" height="3" alt=""
+																	style="position: absolute; left: 3px; bottom: 0px; z-index: 2; display: block; width: 46px; height: 3px; overflow: hidden; margin: 0px; padding: 0px; border: 0px none; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important;"><img
+																	src="./KPGA 공식기록_files/new-scale-dark-l.png"
+																	width="3" height="8" alt=""
+																	style="position:absolute;left:0;bottom:0;z-index:2;display:block;width:3px;height:8px;overflow:hidden;margin:0;padding:0;border:0 none;max-width:none !important;max-height:none !important;min-width:0 !important;min-height:0 !important;"><img
+																	src="./KPGA 공식기록_files/new-scale-dark-r.png"
+																	width="3" height="8" alt=""
+																	style="position:absolute;right:0;bottom:0;z-index:2;display:block;width:3px;height:8px;overflow:hidden;margin:0;padding:0;border:0 none;max-width:none !important;max-height:none !important;min-width:0 !important;min-height:0 !important;">
+															</div>
+														</div>
+														<div
+															style="border: 0px none; margin: 0px; padding: 0px; pointer-events: none; float: right;">
+															<a href="https://ssl.pstatic.net/static/maps/mantle/notice/legal.html"
+																target="_blank"
+																style="display: block; width: 45px; height: 10px; overflow: hidden; margin: 0px 5px 7px 12px; pointer-events: auto;"><img
+																	src="./KPGA 공식기록_files/naver-logo-dark-new.png"
+																	width="45" height="10" alt="NAVER"
+																	style="display:block;width:45px;height:10px;overflow:hidden;border:0 none;margin:0;padding:0;max-width:none !important;max-height:none !important;min-width:0 !important;min-height:0 !important;"></a>
+														</div>
+													</div>
+													<div
+														style="position: absolute; z-index: 100; margin: 0px; padding: 0px; pointer-events: none; bottom: 0px; left: 0px;">
+														<div
+															style="border: 0px none; margin: 0px; padding: 0px; pointer-events: none; float: left; height: 19px;">
+															<div class="map_copyright"
+																style="margin: 0px; padding: 0px 0px 2px 10px; height: 19px; line-height: 19px; color: rgb(255, 255, 255); font-family: Helvetica, AppleSDGothicNeo-Light, nanumgothic, NanumGothic, 나눔고딕, Dotum, 돋움, sans-serif; font-size: 11px; clear: both; white-space: nowrap; pointer-events: none;">
+																<div style="float: left;"><span
+																		style="white-space: pre; color: rgb(255, 255, 255);">©
+																		NAVER Corp.</span></div><a
+																	href="http://175.117.50.24:18303/gos/data/trackimg#"
+																	style="font-family: Helvetica, AppleSDGothicNeo-Light, nanumgothic, NanumGothic, 나눔고딕, Dotum, 돋움, sans-serif; font-size: 11px; line-height: 19px; margin: 0px 0px 0px 5px; padding: 0px; color: rgb(255, 255, 255); float: left; pointer-events: auto; text-decoration: underline; display: none;">더보기</a>
+																<div style="float: left;"><a target="_blank"
+																		href="http://www.openstreetmap.org/copyright"
+																		style="pointer-events: auto; white-space: pre; display: none; color: rgb(255, 255, 255);">
+																		/OpenStreetMap</a><span
+																		style="white-space: pre; color: rgb(255, 255, 255);">
+																		/SPOT</span><span
+																		style="white-space: pre; display: none; color: rgb(255, 255, 255);">
+																		/인천광역시</span><span
+																		style="white-space: pre; color: rgb(255, 255, 255);">
+																		/국토지리정보원</span></div>
+															</div>
+														</div>
+													</div>
+													<div
+														style="border: 1px solid rgb(41, 41, 48); background: rgb(255, 255, 255); padding: 15px; color: rgb(51, 51, 51); position: absolute; font-size: 11px; line-height: 1.5; clear: both; display: none; max-width: 350px !important; max-height: 300px !important;">
+														<h5
+															style="font-size: 12px; margin-top: 0px; margin-bottom: 10px;">
+															지도 데이터</h5><a
+															href="http://175.117.50.24:18303/gos/data/trackimg#"
+															style="position: absolute; top: 8px; right: 8px; width: 14px; height: 14px; font-size: 14px; line-height: 14px; display: block; overflow: hidden; color: rgb(68, 68, 68); text-decoration: none; font-weight: bold; text-align: center;">x</a>
+														<div><span
+																style="white-space: pre; color: rgb(68, 68, 68); float: left;">©
+																NAVER Corp.</span><a target="_blank"
+																href="http://www.openstreetmap.org/copyright"
+																style="pointer-events: auto; white-space: pre; color: rgb(68, 68, 68); float: left; display: none;">
+																/OpenStreetMap</a><span
+																style="white-space: pre; color: rgb(68, 68, 68); float: left;">
+																/SPOT</span><span
+																style="white-space: pre; color: rgb(68, 68, 68); float: left; display: none;">
+																/인천광역시</span><span
+																style="white-space: pre; color: rgb(68, 68, 68); float: left;">
+																/국토지리정보원</span></div>
+													</div>
+												</div>
+											</div>
+											<div class="tableWrap02 mapTable">
+												<table class="mapTableWrap">
+													<colgroup>
+														<col width="10%">
+														<col width="20%">
+														<col width="10%">
+														<col width="20%">
+													</colgroup>
+													<tbody>
+														<tr>
+															<th>홀선택</th>
+															<td>
+																<select>
+																	<option value="1">1H</option>
+																	<option value="2">2H</option>
+																	<option value="3">3H</option>
+																	<option value="4">4H</option>
+																	<option value="5">5H</option>
+																	<option value="6">6H</option>
+																	<option value="7">7H</option>
+																	<option value="8">8H</option>
+																	<option value="9">9H</option>
+																	<option value="10">10H</option>
+																	<option value="11">11H</option>
+																	<option value="12">12H</option>
+																	<option value="13">13H</option>
+																	<option value="14">14H</option>
+																	<option value="15">15H</option>
+																	<option value="16">16H</option>
+																	<option value="17">17H</option>
+																	<option value="18">18H</option>
+																</select>
+															</td>
+															<th>사용여부</th>
+															<td>
+																<select>
+																	<option value="Y">사용</option>
+																	<option value="N">미사용</option>
+																</select>
+															</td>
+														</tr>
+														<tr>
+															<th>선택</th>
+															<td colspan="3">
+																<button type="button" class="Y holeAll">전체</button>
+																<button type="button" class="holeTop">상단</button> 
+																<button type="button" class="holeBottom">하단</button>
+															</td>
+														</tr>
+														<tr>
+															<th>민감도</th>
+															<td colspan="3">
+																<input type="text">
+															</td>
+														</tr>
+														<tr>
+															<th>투명도</th>
+															<td colspan="3">
+																<input type="text">
+															</td>
+														</tr>
+														<tr>
+															<th>단축키</th>
+															<td colspan="3">
+																<textarea cols="10" rows="5"></textarea>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<div class="mapKeboardSetting">
+													<ul>
+														<li>1 : 전체</li>
+														<li>2 : 상단</li>
+														<li>3 : 하단</li>
+														<li>q : 투명도 +</li>
+														<li>e : 투명도 -</li>
+														<li>(스페이스바) : 다시 그리기</li>
+														<li>w : 위로 이동</li>
+														<li>a : 왼쪽 이동</li>
+														<li>s : 아래 이동</li>
+														<li>d : 오른쪽 이동</li>
+														<li>z : 줌인</li>
+														<li>c : 줌아웃</li>
+													</ul>
+													<!-- 1 : 전체
+													2 : 상단
+													3 : 하단
+													q : 투명도 +
+													e : 투명도 -
+													(스페이스바) : 다시 그리기
+													w : 위로 이동
+													a : 왼쪽 이동
+													s : 아래 이동
+													d : 오른쪽 이동
+													z : 줌인
+													c : 줌아웃 -->
+												</div>
+												<div class="btnWrap">
+													<button type="button" id="btnChange" class="btn btnChange btnMoving"></button>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<footer class="main-footer">
+				<strong>Copyright UNBIZ All rights reserved.</strong>
+			</footer>
+
+			<aside class="control-sidebar control-sidebar-dark"></aside>
+
+		</div>
+
+
+	</div>
+</body>
+
+</html>

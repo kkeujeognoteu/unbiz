@@ -1,0 +1,16 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBC.INI\wkblsyb]
+"Driver"="C:\\PROGRAM FILES\\SYBASE\\SQL ANYWHERE 7\\WIN32\\dbodbc7.dll"
+"UID"=""
+"PWD"=""
+"Description"="WKBL"
+"EngineName"=""
+"AutoStop"="Yes"
+"Integrated"="No"
+"Debug"="No"
+"DisableMultiRowFetch"="No"
+"CommLinks"="TCPIP{},NetBIOS{},SharedMemory"
+
+[HKEY_LOCAL_MACHINE\Software\ODBC\ODBC.INI\ODBC Data Sources]
+"wkblsyb"="Adaptive Server Anywhere 7.0"

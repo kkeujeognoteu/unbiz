@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .newOrganization { width:1200px; margin:0 auto; }
+        .newOrganization .chart01{ display:table; position:relative; padding:50px 0; margin:0 auto; }
+        .newOrganization .chart01 > div{ position:relative; width:288px; height:58px; display:block; margin:0 auto; }
+        .newOrganization .chart01 .newGreen{ background:#06493d; color:#fff; border:1px solid #06493d; margin-top:30px; text-align:center; }
+        .newOrganization .chart01 .newGreen:after{ content:''; position:absolute; width:2px; height:50px; bottom:-51px; left:50%; transform:translate(-50%, 0); background:#D8D8D8; }
+        .newOrganization .chart01 .newGreen p{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); margin:0; font-size:.875rem; }
+        .newOrganization .chart02{ position:relative; display:flex; justify-content:space-between; width:100%; margin:0 auto; padding-top:50px; }
+        .newOrganization .chart02:before{ content:""; position:absolute; width:80%; height:2px; background:#D8D8D8; top:0; left:50%; transform:translate(-50%, 0); }
+        .newOrganization .chart02 .chartList{ position:relative; width:20%; display:inline-block; }
+        .newOrganization .chart02 .chartList:after{ content:''; position:absolute; width:2px; height:50px; top:-50px; left:50%; transform:translate(-50%, 0); background:#D8D8D8; }
+        .newOrganization .chart02 .chartList .hangTo{ background:#f5f5f5; border:1px solid #e4e6e9; text-align:center; font-size:.875rem }
+        .newOrganization .chart02 .chartList .newWhite{ margin-top:.625rem; background:#fff; border:1px solid #e4e6e9; padding:10px 20px; }
+        .newOrganization .chart02 .chartList .newWhite ul{ margin:0; padding:0; }
+        .newOrganization .chart02 .chartList .newWhite li{ position:relative; list-style:none; padding-left:13px; }
+        .newOrganization .chart02 .chartList .newWhite li:after{ content:''; position:absolute; width:0.25rem; height:0.25rem; background:#333; border-radius:100%; left:0; top:8px; }
+        .newOrganization .chart02 .chartList .newWhite p{ font-size:.75rem; }
+        .newOrganization .chart02 .chartList .newWhite > p{ text-align:center; }
+        .newOrganization .chart02 .chartList .newWhite:nth-child(2){ min-height:17rem }
+        .newOrganization .chart02 .chartList .newWhite:nth-child(3){ min-height:10rem }
+        .newOrganization .chart02 .chartList .newWhite:nth-child(5){ min-height:13rem }
+
+        @media(max-width:768px){
+            .newOrganization{ width:100%; }
+            .newOrganization .chart01 { padding:0.75rem 0; }
+            .newOrganization .chart01 .newGreen{ margin-top:0.75rem; height:2.25rem; }
+            .newOrganization .chart01 .newGreen p{ font-size:.75rem; }
+            .newOrganization .chart01 .newGreen:after{ bottom:-1rem; height:0.875rem; }
+            .newOrganization .chart02{ flex-wrap:wrap; padding-top:.75rem; gap:.675rem; }
+            .newOrganization .chart02:before{ width:52%; }
+            .newOrganization .chart02 .chartList { width:48%; }
+            .newOrganization .chart02 .chartList:after{ top:-0.7rem; height:0.775rem; }
+            .newOrganization .chart02 .chartList .newnewWhite{ margin-top:0.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="newOrganization">
+        <div class="chart01">
+            <div class="newGreen">
+                <p>회장/대표이사<br>(김원섭)</p>
+            </div>
+            <div class="newGreen">
+                <p>전무이사/COO<br>(이우진)</p>
+            </div>
+            <div class="newGreen">
+                <p>사무국</p>
+            </div>
+        </div>
+        <div class="chart02">
+            <div class="chartList">
+                <div class="hangTo">
+                    <p>회원/교육팀</p>
+                </div>
+                <div class="newWhite">
+                    <ul>
+                        <li>
+                            <p>회비, 경조, 연금, 장학</p>
+                        </li>
+                        <li>
+                            <p>회원선발전</p>
+                        </li>
+                        <li>
+                            <p>회원입문교육</p>
+                        </li>
+                        <li>
+                            <p>경력개발교육</p>
+                        </li>
+                        <li>
+                            <p>포럼, 세미나, 컨퍼런스</p>
+                        </li>
+                        <li>
+                            <p>KPGA 아카데미</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="newWhite">
+                    <ul>
+                        <li>
+                            <p>기술교육위원회</p>
+                        </li>
+                        <li>
+                            <p>교육관련 포럼, 세미나</p>
+                        </li>
+                        <li>
+                            <p>교육파트너사</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="newWhite">
+                    <p>팀장 : 이신행 부장</p>
+                </div>
+                <div class="newWhite">
+                    <p>김성철 부장</p>
+                    <p>성광수 부장</p>
+                    <p>오영석 부장</p>
+                </div>
+                <div class="newWhite">
+                    <p>총원 : 4명</p>
+                </div>
+            </div>
+            <div class="chartList">
+                <div class="hangTo">
+                    <p>경영관리팀</p>
+                </div>
+                <div class="newWhite">
+                    <ul>
+                        <li>
+                            <p>제규정</p>
+                        </li>
+                        <li>
+                            <p>IT</p>
+                        </li>
+                        <li>
+                            <p>인사, 노무, 법무, 총무</p>
+                        </li>
+                        <li>
+                            <p>건물관리</p>
+                        </li>
+                        <li>
+                            <p>주최단체지원사업</p>
+                        </li>
+                        <li>
+                            <p>사업계획 수립 및 관리</p>
+                        </li>
+                        <li>
+                            <p>결산, 세무</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="newWhite">
+                    <ul>
+                        <li>
+                            <p>총회, 이사회</p>
+                        </li>
+                        <li>
+                            <p>업무감사, 회계감사</p>
+                        </li>
+                        <li>
+                            <p>윤리위원회</p>
+                        </li>
+                        <li>
+                            <p>문체부, 유관단체</p>
+                        </li>
+                        <li>
+                            <p>관청(세무서, 구청 등)</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="newWhite">
+                    <p>팀장 : 전상덕 부장</p>
+                </div>
+                <div class="newWhite">
+                    <p>오진숙 부장</p>
+                    <p>안현규 차장</p>
+                    <p>이거성 대리</p>
+                    <p>이윤성 사원</p>
+                    <p>손정규 사원</p>
+                </div>
+                <div class="newWhite">
+                    <p>총원 : 6명</p>
+                </div>
+            </div>
+            <div class="chartList">
+                <div class="hangTo">
+                    <p>운영팀</p>
+                </div>
+                <div class="newWhite">
+                    <ul>
+                        <li>
+                            <p>1부, 2부 기획 운영</p>
+                        </li>
+                        <li>
+                            <p>시니어투어 기획 운영</p>
+                        </li>
+                        <li>
+                            <p>QT기획 운영</p>
+                        </li>
+                        <li>
+                            <p>해외업무</p>
+                        </li>
+                        <li>
+                            <p>골프장 섭외</p>
+                        </li>
+                        <li>
+                            <p>투어운영 소모품</p>
+                        </li>
+                        <li>
+                            <p>경기위원/투어프로세미나</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="newWhite">
+                    <ul>
+                        <li>
+                            <p>투어이사회</p>
+                        </li>
+                        <li>
+                            <p>경기위원회, 상벌위원회</p>
+                        </li>
+                        <li>
+                            <p>한국도핑방지위원회</p>
+                        </li>
+                        <li>
+                            <p>선수회, 시니어선수회</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="newWhite">
+                    <p>팀장 : 손진석 부장</p>
+                </div>
+                <div class="newWhite">
+                    <p>노태호 과장</p>
+                    <p>김형준 과장</p>
+                    <p>이승환 과장</p>
+                    <p>장선욱 과장</p>
+                    <p>장성민 과장</p>
+                    <p>조해룡 사원</p>
+                    <p>전진아 사원</p>
+                </div>
+                <div class="newWhite">
+                    <p>총원 : 8명</p>
+                </div>
+            </div>
+            <div class="chartList">
+                <div class="hangTo">
+                    <p>홍보마케팅팀</p>
+                </div>
+                <div class="newWhite">
+                    <ul>
+                        <li>
+                            <p>대회 및 스폰서 유치</p>
+                        </li>
+                        <li>
+                            <p>코리안투어 대회 분석</p>
+                        </li>
+                        <li>
+                            <p>라이선스 마케팅</p>
+                        </li>
+                        <li>
+                            <p>머천다이징</p>
+                        </li>
+                        <li>
+                            <p>대회현장 이벤트</p>
+                        </li>
+                        <li>
+                            <p>C/I, B/I</p>
+                        </li>
+                        <li>
+                            <p>홍보, 선수관리</p>
+                        </li>
+                        <li>
+                            <p>SNS 및 콘텐츠 제작</p>
+                        </li>
+                        <li>
+                            <p>대상시상식</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="newWhite">
+                    <ul>
+                        <li>
+                            <p>투어스폰서사</p>
+                        </li>
+                        <li>
+                            <p>마케팅스폰서사</p>
+                        </li>
+                        <li>
+                            <p>방송사, 언론사</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="newWhite">
+                    <p>팀장 : 임창희 부장</p>
+                </div>
+                <div class="newWhite">
+                    <p>허준 과장</p>
+                    <p>한동희 대리</p>
+                    <p>최여경 사원</p>
+                    <p>이유림 사원</p>
+                    <p>김지수 사원</p>
+                </div>
+                <div class="newWhite">
+                    <p>총원 : 6명</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

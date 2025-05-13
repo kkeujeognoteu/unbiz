@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/header.css" rel="stylesheet">
+    <link href="./css/footer.css" rel="stylesheet">
+    <link href="./css/common.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/font.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>드웰시티개발 회사소개</title>
+    <script>
+
+        /* header */
+        function tglAllMenu(){
+            $('body').toggleClass('dimm');
+            if($('#header').hasClass('open')){
+                $('#header').removeClass('open')
+                $('body').removeClass('fix');
+                $('#wing').removeClass('inHeader');
+                $('.menu_all').removeClass('close');
+                $('.logo').removeClass('wht');
+                if($('#fullpage').length > 0 && $(window).width()>1024){
+                    $.fn.fullpage.setAllowScrolling(true);
+                    $.fn.fullpage.setKeyboardScrolling(true);
+                }
+            }else {
+                $('#header').addClass('open')
+                $('body').addClass('fix');
+                $('#wing').addClass('inHeader');
+                $('.logo').addClass('wht');
+                $('.btn_menu').addClass('close');
+
+                if($('#fullpage').length > 0 && $(window).width()>1024){
+                    $.fn.fullpage.setAllowScrolling(false);
+                    $.fn.fullpage.setKeyboardScrolling(false);
+                }
+            }
+            
+        }
+
+        $(document).ready(function() {
+            let menu = document.getElementById('menu');
+            menu.addEventListener('mouseover', (event) => {
+                tglAllMenu()
+            });
+
+            menu.addEventListener('mouseout', (event) => {
+                tglAllMenu()
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="conain">
+        <div class="wrap">
+            <header class="header subHeader" id="header">
+                <div class="headWrap">
+                    <div class="topMenu">
+                        <h1 class="logo">
+                            <a href="#"></a>
+                        </h1>
+                        <div id="menu">
+                            <ul class="lst">
+                                <li class="dl active" id="gnb1">
+                                    <a href="#">COMPANY</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">About us</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">CEO 인사말</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">History</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">조직도</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">사업파트너</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">THE WELL CITY</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">드웰시티란?</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">드웰시티 조성목표</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">BRAND CONTCEPT</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dl" id="gnb1">
+                                    <a href="#">BUSINESS</a>
+                                    <ul class="subNav">
+                                        <li class="dl_link">
+                                            <a href="#">도시개발</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">해외자본(펀드)조달</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">관광상품개발</a>
+                                        </li>
+                                        <li class="dl_link">
+                                            <a href="#">글로벌 커뮤너티</a>
+                                        </li>
+                                    </ul>   
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rightMenu">
+                            <button type="button" class="btn_menu close" onclick="tglAllMenu();">
+                                <span class="line"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="subPg">
+                <div class="topBnr wellCity">
+                    <p class=" banImg"></p>
+                    <!--<img src="./images/topBanner01.png">-->
+                    <div class="topAraTxt">
+                        <div class="topTxt">
+                            <h2>Our Company</h2>
+                            <p>21세기 웰빙(well being) 문화를 선도하는 관광자원 개발 및 관광투자 관련 마케팅 전문 회사입니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="subTab">
+                    <ul>
+                        <li class="active">
+                            <a href="#">About us</a>
+                        </li>
+                        <li>
+                            <a href="#">CEO 인사말</a>
+                        </li>
+                        <li>
+                            <a href="#">History</a>
+                        </li>
+                        <li>
+                            <a href="#">조직도</a>
+                        </li>
+                        <li>
+                            <a href="#">사업 파트너</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="subPgCont">
+                    <img src="./images/page01.png">
+                </div>
+            </div>
+
+            <!-- footer -->
+            <footer id="footer">
+                <div class="footer">
+                    <div class="ftCont">
+                        <div class="footerLogo">
+                            <h1>
+                                <img src="./images/footLogo.svg">
+                            </h1>
+                        </div>
+                        <div class="footInfo">
+                            <ul>
+                                <li>
+                                    <p>(Busan)  603, No.60, Centum Central Road,  Haundae, Busan, Korea</p>
+                                </li>
+                                <li class="telNm">
+                                    <p>TEL : 051. 554.8896</p>
+                                    <p>FAX : 051. 554.8898</p>
+                                </li>
+                                <li>
+                                    <p>(Seoul) Room 115, No.126, Ohgum Road, Songpa gu, Seoul, KOREA</p>
+                                </li>
+                                <li class="telNm">
+                                    <p>TEL : 02.2202.9138</p>
+                                    <p>FAX : 02. 2203.9137</p>
+                                </li>
+                                <li>
+                                    <p>Copyright&copy; 2024 THE WELL CITY DEVELOPMENT CO.,LTD All rights reseved.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footSns">
+                            <a href="#" class="blog">
+                                <img src="./images/blog.svg">
+                            </a>
+                            <a href="#" class="facebook">
+                                <img src="./images/facebook.svg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

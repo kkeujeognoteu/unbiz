@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script type="text/javascript" src="C:\Users\UNBIZ\Downloads\증명서 출력 _ 대한펜싱협회_files/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="C:\Users\UNBIZ\Downloads\증명서 출력 _ 대한펜싱협회_files/moment.min.js"></script>
+    <title>Document</title></head>
+<body>
+<div class="paperWrap" id="pageTop">
+   <div id="paper" class="paper">
+      <div class="content" >
+         <h1>대회참가확인서</h1>
+         <div class="paperCont" id="paperCont1">
+         </div>
+      </div>
+   </div>
+</div>
+
+<script type="text/javascript">
+   const print = {
+      data :{
+         base: {
+            
+         },
+         liData :[
+            {nm : '종 목', val : ['펜싱']},
+            {nm : '성 명', val : ['attesName']},
+            {nm : '생 년 월 일', val : ['birthDay']},
+            {nm : '주 소', val : ['addr1', 'addr2']},
+            {nm : '소 속', val : ['teamNm']},
+            {nm : '용 도', val : ['purpose']},
+            {nm : '제 출 처', val : ['proposition']},
+         ],
+         list: 
+            []
+        },
+      getDate : function() {/*
+         $.ajax({
+            url:  "/attestation/ajax/print",
+            type: "POST",
+            dataType: "json",
+            data: { attesCd: '${tfAttestation.attesCd }' },
+            async: false,
+            success: function (resp) {
+               print.data.base = resp.tfAttestation;
+               print.data.list = resp.eventList;
+            },
+            error: function (resp, status, err) { console.error("system error"); }
+         });*/
+      },
+      init : function() {
+         print.getDate();
+         htmlEl.init();
+      },
+   }
+
+   const htmlEl = {
+      init : function() {
+         htmlEl.page1();
+         let totalCnt = print.data.list.length;
+         if(totalCnt > 5){
+            let over2PageCnt = Math.ceil((totalCnt - 10)/20);
+            over2PageCnt = over2PageCnt == 0 ? 1 : over2PageCnt;
+            for(let no = 0; no < over2PageCnt; no++ ){
+               let str = (no * 20)+10;
+               let end = str + 20;
+               console.log('init' , no, str, end ,totalCnt )
+               if(totalCnt < str  ){
+                  htmlEl.pageN(no, false, true);
+               } else if(totalCnt<= end - 5){
+                  htmlEl.pageN(no, true, true);
+               } else if( totalCnt <= end){
+                  htmlEl.pageN(no, true, false);
+                  htmlEl.pageN(no+1, false, true);
+               } else {
+                  htmlEl.pageN(no, true, false);
+               }
+            }
+         }
+      },
+      page1 : function() {
+         let el = '';
+         el += htmlEl.h2();
+         el += htmlEl.ul();
+         el += htmlEl.paperTable(-1);
+         if(print.data.list.length <= 5){
+            el += htmlEl.foot();
+         }
+         $('#paperCont1').html(el);
+      },
+      pageN : function(no, isTabel, isFoot) {
+         let el = htmlEl.page(no, isTabel, isFoot)
+         $('#pageTop').append(el);
+      },
+      page : function (no, isTabel, isFoot) {
+         let el = '';
+         el += '<div id="paper" class="paper">';
+         el += '   <div class="content">';
+         el += htmlEl.paperCont(no, isTabel, isFoot);
+         el += '   </div>';
+         el += '</div>';
+         return el;
+      },
+      paperCont : function (no, isTabel, isFoot) {
+         let el = '';
+         el += '<div class="paperCont" id="pageInner'+no+'">';
+         el += isTabel ? htmlEl.paperTable(no) : '';
+         el += isFoot ? htmlEl.foot() : '';
+         el += '</div>';
+         return el;
+      },
+      paperTable : function (no) {
+         let el = '';
+         el += '   <div class="paperTable">';
+         el += '      <table>';
+         el += '         <colgroup>';
+         el += '            <col width="235pt">';
+         el += '            <col width="120pt">';
+         el += '            <col width="200pt">';
+         el += '            <col width="54pt">';
+         el += '         </colgroup>';
+         if(no == -1){
+            el += '      <thead>';
+            el += '         <tr> ';
+            el += '            <th> <p>대회명</p> </th>';
+            el += '            <th> <p>기간</p> </th>';
+            el += '            <th> <p>장소</p> </th>';
+            el += '            <th> <p>비고</p> </th>';
+            el += '         </tr>';
+            el += '      </thead>';
+         }
+         el += '         <tbody id="tbody'+no+'"></tbody>';
+         el += htmlEl.tbody(no);
+         el += '      </table>';
+         el += '</div>';
+         return el;
+      },
+      tbody : function (no) {
+         let el = '';
+         let str = no == -1 ? 0 : (no * 20 )+10 ;
+         let end = no == -1 ? 10 : str + 20;
+         for(let i=str; i < end; i++ ){
+            let info = print.data.list[i];
+            if(!info) break;
+            el += '<tr>';
+            el += htmlEl.td(i+'.'+info.gameNm);
+            el += htmlEl.td(info.startDt + '-' + info.endDt);
+            el += htmlEl.td('장소');
+            el += htmlEl.td('비고');
+            el += '</tr>';
+         }
+         return el;
+      },
+      td : function ( t1 ) {
+         return '<td> <p>'+t1+'</p> </td>';
+      },
+      h2 : function () {
+         return '<h2> 제 <span>2023 - 114</span>호 </h2>';
+      },
+      ul : function () {
+         let el = '';
+         el += '<ul>';
+         print.data.liData.forEach(function(e) {
+   
+            el += htmlEl.li(t1, t2);
+         });
+         el += '</ul>';
+         return el;
+      },
+      li : function(t1, t2) {
+         return '<li> <p> <span class="paperTitle">'+t1+'</span> <span class="letspac"> '+t2+'</span> </p> </li>';
+      },
+      foot : function() {
+         let date = moment(print.data.base.applyDate);
+         let el = '';
+         el += '<div class="paperFoot">';
+         el += '   <p class="">위와 같이 대회에 참가함을 확인함.</p>';
+         el += '   <p class=""> <span>'+date.format('Y')+'년</span> <span>'+date.format('M')+'월</span> <span>'+date.format('D')+'일</span> </p>';
+         el += '   <h1 class="foot"> <span>(사)</span>대한펜싱협회장 </h1>';
+         el += '</div>';
+         return el;
+      }
+   }
+
+   print.init();
+
+</script>
+
+</body>
+</html>

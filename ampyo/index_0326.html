@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>암표신고 관리자</title>
+    <link rel="stylesheet" href="css/style_0326.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="headeer">
+            <div class="header_wrap">
+                <div>
+                    <h1 class="logo">
+                        <img src="images/logo.png">
+                        <span>암표 신고 관리자</span>
+                    </h1>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li class="active">
+                            <a href="index.html">
+                                <i class=""></i>
+                                암표거래 모니터링
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html">
+                                <i></i>
+                                암표신고 관리
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html">
+                                구버전으로 가기
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="logout">
+                    <a>
+                        <img src="images/logout.png">
+                        로그아웃
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- content -->
+        <div class="contents">
+            <div class="monitoring">
+                <div class="common_title">
+                    <h2 class="title">암표신고 관리</h2>
+                    <ul class="sub_nav">
+                        <li><img src="/resources/adm/images/home.png"></li>
+                        <li><a href="#"> Home </a></li>
+                        <li>/</li>
+                        <li class="acitve"><a href="#"> 암표신고 관리 </a></li>
+                    </ul>
+                </div>
+                <div class="filter_wrap">
+                    <div class="filter_title">
+                        <p> 검색필터 <img src="/resources/adm/images/filter_search.png"></p>
+                    </div>
+                    <div class="filter_cont">
+                        <div class="filter_table">
+                            <div class="tb_row">
+                                <div class="th">
+                                    <h3>신고제목</h3>
+                                </div>
+                                <div class="td">
+                                    <div class="t1 inp01"><input type="text"></div>
+                                </div>
+                                <div class="th">
+                                    <h3>성명</h3>
+                                </div>
+                                <div class="td">
+                                    <div class="t1 inp01"><input type="text"> <label>&nbsp;&nbsp;&nbsp;</label></div>
+                                </div>
+                                <div class="th">
+                                    <h3>전화번호</h3>
+                                </div>
+                                <div class="td">
+                                    <div class="t1 inp01"><input type="text"> <label>&nbsp;&nbsp;&nbsp;</label></div>
+                                </div>
+                                <div class="th">
+                                    <h3>이메일</h3>
+                                </div>
+                                <div class="td">
+                                    <div class="t1 inp01"><input type="text"> <label>&nbsp;&nbsp;&nbsp;</label></div>
+                                </div>
+                            </div>
+                            <div class="tb_row">
+                                <div class="th">
+                                    <h3>작성일</h3>
+                                </div>
+                                <div class="td">
+                                    <div class="t1 collectionDate">
+                                        <div class="collectionDate_cont"><input type="text" id="collectionDate"
+                                                readonly="readonly" class="inp1"> <label
+                                                class="collectionDate_icon"><img
+                                                    src="/resources/adm/images/date.png"></label></div>
+                                    </div>
+                                </div>
+                                <div class="th">
+                                    <h3>좌석 위치</h3>
+                                </div>
+                                <div class="td">
+                                    <div class="t1 seating inpWidth">
+                                        <div><input type="text"></div>
+                                        <div class="seating_chk"><input type="checkbox" id="seatYn" value="Y"> <label
+                                                for="seatYn"></label></div>
+                                    </div>
+                                </div>
+                                <div class="th">
+                                    <h3>판매자 아이디</h3>
+                                </div>
+                                <div class="td">
+                                    <div class="t1 inp02 inpWidth"><input type="text"></div>
+                                </div>
+                            </div>
+                            <div class="tb_row">
+                                <div class="th">
+                                    <h3>경기일정</h3>
+                                </div>
+                                <div class="td">
+                                    <div class="t1 collectionDate">
+                                        <div class="collectionDate_cont"><input type="text" id="gameDate"
+                                                readonly="readonly" class="inp1"> <label
+                                                class="collectionDate_icon"><img
+                                                    src="/resources/adm/images/date.png"></label></div>
+                                    </div>
+                                </div>
+                                <div class="th">
+                                    <h3>대상종목</h3>
+                                </div>
+                                <div class="td">
+                                    <div class="t1 searchSports inpWidth"><select>
+                                            <option value="">선택</option>
+                                            <option value="A01">K리그</option>
+                                            <option value="A02">KBO</option>
+                                            <option value="A03">KBL</option>
+                                            <option value="A04">WKBL</option>
+                                            <option value="A05">KOVO</option>
+                                            <option value="A06">KPGA</option>
+                                            <option value="A07">KLPGA</option>
+                                        </select></div>
+                                </div>
+                                <div class="th">
+                                    <h3>홈팀</h3>
+                                </div>
+                                <div class="td">
+                                    <div class="t1 searchSports inpWidth"><select>
+                                            <option value="">선택</option>
+                                            <!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                                        </select></div>
+                                </div>
+                                <div class="th">
+                                    <h3>원정팀</h3>
+                                </div>
+                                <div class="td">
+                                    <div class="t1 searchSports inpWidth"><select>
+                                            <option value="">선택</option>
+                                        </select></div>
+                                </div>
+                            </div>
+                            <div class="tb_row">
+                                <div class="th">
+                                    <h3>판매사이트</h3>
+                                </div>
+                                <div class="td">
+                                    <div class="t1 site"><select>
+                                            <option value="">선택</option>
+                                            <option value="당근마켓">당근마켓</option>
+                                            <option value="티켓베이">티켓베이</option>
+                                            <option value="번개장터">번개장터</option>
+                                            <option value="트위터">트위터</option>
+                                            <option value="중고나라">중고나라</option>
+                                            <option value="기타">기타</option>
+                                        </select> <input type="text"></div>
+                                </div>
+                                <div class="th">
+                                    <h3>판매가</h3>
+                                </div>
+                                <div class="td">
+                                    <div class="t1 inp01"><input type="number"> <label>원</label></div>
+                                </div>
+                                <div class="th">
+                                    <h3>티켓정가</h3>
+                                </div>
+                                <div class="td">
+                                    <div class="t1 inp01"><input type="number"> <label>원</label></div>
+                                </div>
+                                <div class="th">
+                                    <h3>매수</h3>
+                                </div>
+                                <div class="td">
+                                    <div class="t1 inp01"><input type="number"> <label>개</label></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter_button"><button type="button" class="btn black_btn">검색어 초기화</button> <button
+                                type="button" class="btn blue_btn">검색</button></div>
+                    </div>
+                </div>
+                <div class="monitoring_board">
+                    <div class="boardBtn">
+                        <div class="left">
+                            <div class="total">총 : <span>8 </span>개</div> <select>
+                                <option value="10">10개</option>
+                                <option value="50">50개</option>
+                                <option value="100">100개</option>
+                                <option value="200">200개</option>
+                            </select> <!----> <button class="btn down03 down"><img
+                                    src="/resources/adm/images/exelAll.png"> 전체
+                            </button>
+                        </div>
+                    </div>
+                    <div class="monitoringTable_Wrap">
+                        <table class="monitoringTable">
+                            <colgroup>
+                                <col width="2%">
+                                <col width="3%">
+                                <col width="%">
+                                <col width="5%">
+                                <col width="8%">
+                                <col width="8%">
+                                <col width="8%">
+                                <col width="5%">
+                                <col width="8%">
+                                <col width="10%">
+                                <col width="4%">
+                                <col width="4%">
+                                <col width="3%">
+                                <col width="7%">
+                                <col width="7%">
+                                <col width="3%">
+                                <col width="5%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th></th>
+                                    <th>No.</th>
+                                    <th>신고제목</th>
+                                    <th>성명</th>
+                                    <th>전화번호</th>
+                                    <th>이메일</th>
+                                    <th>작성일</th>
+                                    <th>판매사이트</th>
+                                    <th>URL</th>
+                                    <th>경기</th>
+                                    <th>티켓 정가</th>
+                                    <th>판매가</th>
+                                    <th>매수</th>
+                                    <th>판매자 아이디</th>
+                                    <th colspan="2">좌석위치 여부</th>
+                                    <th>파일</th>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="seq" value="10"></td>
+                                    <td class="hand">8</td>
+                                    <td class="hand">ㅇㄴㅁㄹㄹㅇㄴㅁ</td>
+                                    <td class="hand">김긱미</td>
+                                    <td class="hand">154-8856-4564</td>
+                                    <td class="hand">2154646@nate.com</td>
+                                    <td class="hand">2024-03-20 16:44:23</td>
+                                    <td class="hand">중고나라</td>
+                                    <td class="hand">https://web.joongna.com/</td>
+                                    <td class="hand">
+                                        04-04 21:04
+                                        KOVO <br>
+                                        IBK기업은행 알토스
+                                        VS
+                                        인천 대한항공 점보스
+                                    </td>
+                                    <td class="hand">123</td>
+                                    <td class="hand">88,446</td>
+                                    <td class="hand">2</td>
+                                    <td class="hand">ㅁㄴㄹㅇㄴㅁ</td>
+                                    <td class="hand"> </td>
+                                    <td class="hand"><!----></td>
+                                    <td><a href="/resources/upload/re_report/20240320/9206e8de-e34e-4c56-8bea-b61ae2b22cb2.png"
+                                            download="free-icon-homepage-1822873.png">파일다운</a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="seq" value="9"></td>
+                                    <td class="hand">7</td>
+                                    <td class="hand">ㄹㅇㄴㅁ</td>
+                                    <td class="hand">ㅇㄹㅇㄴㅁ</td>
+                                    <td class="hand">456-456-4564</td>
+                                    <td class="hand">313256@yahoo.com</td>
+                                    <td class="hand">2024-03-20 16:43:20</td>
+                                    <td class="hand">중고나라</td>
+                                    <td class="hand">https://m.bunjang.co.kr/produc</td>
+                                    <td class="hand">
+                                        03-26 16:03
+                                        KBL <br>
+                                        울산 현대모비스 피버스
+                                        VS
+                                        원주 DB 프로미
+                                    </td>
+                                    <td class="hand">5,000</td>
+                                    <td class="hand">NaN</td>
+                                    <td class="hand">1,321</td>
+                                    <td class="hand">231</td>
+                                    <td class="hand"> 2156 </td>
+                                    <td class="hand"><!----></td>
+                                    <td><a href="/resources/upload/re_report/20240320/711e0612-c731-48d0-8a78-253a9fcde851.png"
+                                            download="free-icon-broken-shield-3375160.png">파일다운</a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="seq" value="8"></td>
+                                    <td class="hand">6</td>
+                                    <td class="hand">ㄹㅇㄴㅁ</td>
+                                    <td class="hand">ㄹㅇㄴㅁㄹㅇㄴ</td>
+                                    <td class="hand">123-1561-4565</td>
+                                    <td class="hand">23302@hanmail.net</td>
+                                    <td class="hand">2024-03-20 16:41:45</td>
+                                    <td class="hand">당근마켓</td>
+                                    <td class="hand">https://www.daangn.com/article</td>
+                                    <td class="hand">
+                                        03-22 20:03
+                                        KBO <br>
+                                        NC다이노스
+                                        VS
+                                        KT위즈
+                                    </td>
+                                    <td class="hand">1,234</td>
+                                    <td class="hand">123,456</td>
+                                    <td class="hand">3</td>
+                                    <td class="hand">ㅇㄹㄻ</td>
+                                    <td class="hand"> 123 </td>
+                                    <td class="hand"><img alt="" src="/resources/adm/images/icon_checkbox.png"></td>
+                                    <td><a href="/resources/upload/re_report/20240320/29a9e96b-8572-4b4e-8ab5-77c8c7f65020.png"
+                                            download="free-icon-ad-block-8943235.png">파일다운</a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="seq" value="7"></td>
+                                    <td class="hand">5</td>
+                                    <td class="hand">신고</td>
+                                    <td class="hand">신신신</td>
+                                    <td class="hand">010-2064-5216</td>
+                                    <td class="hand">afdsfdsa@naver.com</td>
+                                    <td class="hand">2024-03-20 16:25:05</td>
+                                    <td class="hand">티켓베이</td>
+                                    <td class="hand"></td>
+                                    <td class="hand">
+                                        03-23 14:03
+                                        KBO <br>
+                                        KIA타이거즈
+                                        VS
+                                        키움히어로즈
+                                    </td>
+                                    <td class="hand">14,000</td>
+                                    <td class="hand">60,000</td>
+                                    <td class="hand">2</td>
+                                    <td class="hand">뜌릭</td>
+                                    <td class="hand"> 53번 </td>
+                                    <td class="hand"><img alt="" src="/resources/adm/images/icon_checkbox.png"></td>
+                                    <td><a href="/resources/upload/re_report/20240320/a2f94905-6556-42c1-874c-954a466d838c.png"
+                                            download="IMG_9848.png">파일다운</a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="seq" value="6"></td>
+                                    <td class="hand">4</td>
+                                    <td class="hand">신고합니다</td>
+                                    <td class="hand">vcfad</td>
+                                    <td class="hand">010-4879-8789</td>
+                                    <td class="hand">dfsfds@google.com</td>
+                                    <td class="hand">2024-03-14 17:54:21</td>
+                                    <td class="hand">티켓베이</td>
+                                    <td class="hand">https://www.ticketbay.co.kr/we</td>
+                                    <td class="hand">
+                                        03-22 21:03
+                                        KBO <br>
+                                        올스타전B
+                                        VS
+                                        올스타전A
+                                    </td>
+                                    <td class="hand">13,245</td>
+                                    <td class="hand">156,456</td>
+                                    <td class="hand">3</td>
+                                    <td class="hand">fdasfafds</td>
+                                    <td class="hand"> </td>
+                                    <td class="hand"><!----></td>
+                                    <td>
+                                        <a href="/resources/upload/re_report/20240314/60d0fa87-a1cd-486c-88c4-6059a4019481.png" download="20240314_기아타이거즈_K8+121블록+20열+1번,2번.png">파일다운</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="seq" value="5"></td>
+                                    <td class="hand">3</td>
+                                    <td class="hand">프로농구 </td>
+                                    <td class="hand">신신신</td>
+                                    <td class="hand">010-8789-8989</td>
+                                    <td class="hand">kdsfdsa@naver.com</td>
+                                    <td class="hand">2024-03-14 17:46:26</td>
+                                    <td class="hand">트위터</td>
+                                    <td class="hand"> https://x.com/Yangpa4180/stat</td>
+                                    <td class="hand">
+                                        03-17 16:03
+                                        K리그 <br>
+                                        대구FC
+                                        VS
+                                        수원FC
+                                    </td>
+                                    <td class="hand">50,000</td>
+                                    <td class="hand">100,000</td>
+                                    <td class="hand">2</td>
+                                    <td class="hand">@Yangpa4180</td>
+                                    <td class="hand"> E열 24번 </td>
+                                    <td class="hand"><img alt="" src="/resources/adm/images/icon_checkbox.png"></td>
+                                    <td>
+                                        <a href="/resources/upload/re_report/20240314/407cff26-ed25-4298-8f4c-d4f433d6828e.png" download="20240314_+울산_W78910.png">파일다운</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="seq" value="4"></td>
+                                    <td class="hand">2</td>
+                                    <td class="hand">암표암표</td>
+                                    <td class="hand">뚜식</td>
+                                    <td class="hand">010-0525-0525</td>
+                                    <td class="hand">FDFDSA@naver.com</td>
+                                    <td class="hand">2024-03-07 17:14:24</td>
+                                    <td class="hand">트위터</td>
+                                    <td class="hand">https://twitter.com/FCBarcelon</td>
+                                    <td class="hand">
+                                        03-23 20:03
+                                        K리그 <br>
+                                        울산 HD FC
+                                        VS
+                                        안산 그리너스FC
+                                    </td>
+                                    <td class="hand">12,345</td>
+                                    <td class="hand">123,456</td>
+                                    <td class="hand">1</td>
+                                    <td class="hand">apfhdapfhd</td>
+                                    <td class="hand"> N열 123 </td>
+                                    <td class="hand"><img alt="" src="/resources/adm/images/icon_checkbox.png"></td>
+                                    <td>
+                                        <a href="/resources/upload/re_report/20240307/075760cb-e12c-47c1-bd30-2a779237bafa.png" download="free-icon-checked-5461184.png">파일다운</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="seq" value="3"></td>
+                                    <td class="hand">1</td>
+                                    <td class="hand">암</td>
+                                    <td class="hand">신경서</td>
+                                    <td class="hand">010-2066-6155</td>
+                                    <td class="hand">ksshin616@gmail.com</td>
+                                    <td class="hand">2024-03-07 13:52:15</td>
+                                    <td class="hand">트위터</td>
+                                    <td class="hand">fdsafd</td>
+                                    <td class="hand">
+                                        03-15 01:03
+                                        KBL <br>
+                                        서울 SK 나이츠
+                                        VS
+                                        울산 현대모비스 피버스
+                                    </td>
+                                    <td class="hand">21,212</td>
+                                    <td class="hand">545,644</td>
+                                    <td class="hand">2</td>
+                                    <td class="hand">dafdca</td>
+                                    <td class="hand"> fdsafdsa </td>
+                                    <td class="hand">
+                                        <img alt="" src="/resources/adm/images/icon_checkbox.png">
+                                    </td>
+                                    <td>
+                                        <a href="/resources/upload/re_report/20240307/1d965779-fe70-4580-9c6f-82a405808013.png" download="Microsoft-Teams-Symbol.png">파일다운</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="paging">
+                        <ul><!---->
+                            <li class="active">
+                                <p>1</p>
+                            </li> <!----> <!---->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- popup -->
+        <!--
+        <div class="popup02 modal" id="popup">
+            <div class="popupWrap">
+                <div class="popupCont">
+                    <h3>엑셀 목록 다운로드</h3>
+                    <div class="popupCont_list">
+                        <ul>
+                            <li>
+                                <div>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <span>수집일</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <span>판매사이트</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <span>URL</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <span>경기일정</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <span>대상종목</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <span>홈팀</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <span>원정팀</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <span>티켓정가</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <span>티켓 판매가</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <span>판매매수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <span>판매자 아이디</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <span>좌석위치</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="infoChk">
+                            <input type="checkbox">
+                            <label>
+                                <span>개인정보 숨기기</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="popupDown">
+                        <button type="button" class="btn black_btn">취소</button>
+                        <button type="button" class="btn blue_btn">다운로드</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,506 @@
+
+body, html{ width:100%; font-size:16px; padding:0; margin:0; font-family:'Roboto'; background:#fff; box-sizing:border-box; color:#333; }
+body{ overflow-x:hidden; }
+div, span, p, li, ul, h1, h2, h3, h4, h5, h6, button, a{ margin:0; padding:0; font-weight:400; box-sizing: border-box; line-height:1.2 }
+li, a{ list-style:none; text-decoration:none; }
+button{ border:none; background:transparent }
+table{ border-collapse:collapse; width:100%; }
+table td, table th{ font-weight:400 }
+label{ display:inline-block; }
+
+.alignLeft{ text-align:left !important; }
+
+/* header */
+.header{ display:flex; position:relative; width:100%; height:100px; padding:20px 60px; border-bottom:1px solid #ABABAB; }
+.header:after{ content:''; display:block; clear:both; }
+.header .headerCont{ display:flex; align-items:center; width:1032px; margin:0 auto; }
+.header .logo{ width:200px; display:flex; }
+.header .logo img{ width:100%; }
+
+/* 햄버거 버튼 */
+.hamb_nav{ float:right; }
+.hamb_nav:after{ content:''; display:block; clear:both; }
+.hamb_nav input{ display:none; }
+.hamb_nav .menu_hamb{ width:auto; height:80px; position:absolute; transition:.5s ease-in-out; top:0; right:0; cursor:pointer; }
+.hamb_nav input:checked ~ label .menu_hamb{ width:100%; height:5px; position:fixed; }
+.hamburguer{ display:block; width:40px; height:5px; border-radius:2px; background:#000; position:absolute; right:436px; top:45px; transition:.5s ease-in-out; }
+.hamburguer:after, .hamburguer:before{ width:100%; height:5px; content:''; background:#000; position:absolute; transition:.5s ease-in-out; }
+.hamburguer:before{ top:-10px; }
+.hamburguer:after{ bottom:-10px; }
+.hamb_nav input:checked ~ label .hamburguer{ transform:rotate(45deg); }
+.hamb_nav input:checked ~ label .hamburguer:after{ transform:rotate(90deg); bottom:0; }
+.hamb_nav input:checked ~ label .hamburguer:before{ opacity:0; }
+.hamb_nav input:checked ~ .ul_mb1{ opacity:1; }
+.ul_mb1{ position:absolute; list-style:none; font-size:20px; opacity:0; transition:.25s .1s ease-in-out; z-index:1; right:480px; top:15px; }
+.ul_mb1 li{ margin:20px auto; display:inline-block; padding:0 20px; }
+.ul_mb1 a{ color:#000; text-transform:uppercase; text-decoration:none; margin:10px auto; }
+
+
+@media(max-width:1080px){
+    .header{ padding:0 15px; }
+    .header .headerCont{ width:100%; }
+    .header .logo{ width:150px }
+
+    /* 햄버거 버튼 */
+    .hamburguer{ right:15px; }
+    
+    .ul_mb1{ right:40px; }
+}
+@media(max-width:780px){
+    .header{ height:80px; }
+    .hamburguer{ top:35px; }
+}
+@media(max-width:480px){
+    .header .logo{ width:120px; }
+    .hamburguer{ width:25px; height:4px; }
+    .hamburguer:after, .hamburguer:before{ height:4px; }
+    .hamburguer:before{ top:-8px; }
+    .hamburguer:after{ bottom:-8px; }
+
+    .ul_mb1 li{ font-size:16px; padding:0 8px; }
+}
+
+
+/* section */
+.section{ padding:50px 0; }
+.section .wrap{ width:1032px; margin:0 auto; }
+.container{ padding-top:20px; }
+.playerInfoWrap{ width:100%; }
+.playerInfo{ display:flex; align-items:center; gap:20px; }
+.playerInfo .infoLeft p{ display:flex; align-items:center; justify-content: center;width:132px; height:132px; line-height:1.2; border-radius:100%; border:1px solid #f5f5f5; /*font-size:20px; padding:15px; font-weight:800; text-align:center; */word-break:keep-all; }
+.playerInfo .infoLeft p img{ width:100%; height:100%; object-fit: cover; border-radius:100%; }
+
+.infoRight{ width:100%; }
+.infoRight h2{ font-size:14px; background:#A0DAED; color:#fff; border-radius:30px; padding:5px 8px; display:inline-block; }
+.infoRight p{ font-size:30px; font-weight:700; margin:8px 0; }
+.infoRight ul{ display:block; margin-top:15px; }
+.infoRight ul li{ position:relative; display:inline-block; color:#858585; }
+.infoRight ul li + li{ padding-left:10px; margin-left:10px; }
+.infoRight ul li:nth-child(2):after{ content:''; position:absolute; top:5px; left:0; width:1px; height:10px; background:#D4D4D4 }
+
+
+/* 탭 */
+.tabMenu{ margin-top:50px; }
+.tabMenu ul{ display:flex; align-items:center; justify-content:space-between; width:100%; height:50px; }
+.tabMenu ul li{ display:flex; justify-content: center; align-items:center; height:100%; width:100%; font-size:18px; text-align:center; border-bottom:1px solid #A3A3A3; color:#858585; cursor:pointer; }
+.tabMenu ul li.active{ border:1px solid #A3A3A3; border-bottom:1px solid #fff; background:#fff; border-radius:10px 10px 0 0; color:#333; font-weight:700 }
+
+
+
+/* 우승자 */
+.winner{ margin-top:20px; }
+.winner .winnerBox{ display:flex; align-items:center; justify-content:space-between; margin-top: 20px; padding:32px 33px; box-shadow:2px 0 10px rgba(0,0,0,.2); border-radius:20px; }
+.winner .winnerBox .winnerName{ display:flex; align-items:center; gap:10px; }
+.winner .winnerBox .winnerName .teamLogo{ width:50px; height:50px; border-radius:100%; border:1px solid #e5e5e5 }
+.winner .winnerBox .winnerName img{ width:100%; height:100%; border-radius:100%; }
+.winner .winnerBox .winnerName p{ font-size:20px; font-weight:700 }
+.winnerScore{ display:block; }
+.winnerScore > div{ display:inline-block; padding:0 40px; }
+.winnerScore > div span{ display:block; width:100%; }
+.winnerScore > div span + span{ padding-top:5px; }
+.winnerScore > div .txt{ color:#686868 }
+.winnerScore > div .score{ font-size:20px; font-weight:600 }
+.winner .winnerBox .winnerName p i{ width:15px; height:15px; background:url(../images/Star_off.svg)no-repeat center; background-size:cover; display:inline-block; margin-left:5px; }
+.winner .winnerBox .winnerName p i.on{ width:15px; height:15px; background:url(../images/Star_on.svg)no-repeat center; background-size:cover; display:inline-block; }
+
+
+/* 홀별성적 공통 */
+.playTeamLogo{ width:30px; height:30px; border-radius:100%; margin:auto; }
+.playTeamLogo img{ width:100%; height:100%; border-radius:100%; }
+
+.comon_leader { margin-top:40px; }
+.comon_leader + .comon_leader{ margin-top:40px; }
+.comon_leader h2{ font-size:21px; font-weight:600 }
+
+/* 리더보드 */
+.leaderboard{ margin-top:20px; }
+.leaderboard td{ border-bottom:1px solid #d1d1d1; }
+.leaderboard th, .leaderboard td{ padding:10px 5px; font-size:15px; }
+.leaderboard th:first-child{ border-left:none; }
+.leaderboard .alignLeft p, .leaderboard .alignLeft p{ width:100%; }
+
+.leaderboard table{ width:100%; }
+.leaderboard > table > thead > tr, .leaderboard > table > tbody > tr { display:flex; }
+.leaderboard > table > thead > tr > th, .leaderboard > table > tbody > tr > td {display:flex; justify-content:center; align-items:center; }
+.leaderboard > table > thead > tr > th:nth-child(1), .leaderboard > table > tbody > tr > td:nth-child(1){ width:7% }
+.leaderboard > table > thead > tr > th:nth-child(2), .leaderboard > table > tbody > tr > td:nth-child(2){ width:8%; }
+.leaderboard > table > thead > tr > th:nth-child(3), .leaderboard > table > tbody > tr > td:nth-child(3){ width:48%; justify-content:flex-start; }
+.leaderboard > table > thead > tr > th:nth-child(4), .leaderboard > table > tbody > tr > td:nth-child(4){ width:7% }
+.leaderboard > table > thead > tr > th:nth-child(5), .leaderboard > table > tbody > tr > td:nth-child(5){ width:7% }
+.leaderboard > table > thead > tr > th:nth-child(6), .leaderboard > table > tbody > tr > td:nth-child(6){ width:7% }
+.leaderboard > table > thead > tr > th:nth-child(7), .leaderboard > table > tbody > tr > td:nth-child(7){ width:7% }
+.leaderboard > table > thead > tr > th:nth-child(8), .leaderboard > table > tbody > tr > td:nth-child(8){ width:7% }
+.leaderboard > table > thead > tr > th:nth-child(9), .leaderboard > table > tbody > tr > td:nth-child(9){ width:7% }
+.leaderboard > table > thead > tr > th:nth-child(10), .leaderboard > table > tbody > tr > td:nth-child(10){ width:7% }
+
+
+/* subLeaderBoard */
+.subTB > td{ padding:0 !important; }
+.subTB > td:nth-child(1) {flex:0 1 100%;}
+.subLeaderBoard{ background:#f8f8f8; width:100%; }
+.subLeaderBoard > div{ display:flex; padding: 20px; }
+.subLeaderBoard .subLeaderBox th{ border-top:2px solid #000; }
+.subLeaderBoard .subLeaderBox th, .subLeaderBoard .subLeaderBox td{ border-bottom:1px solid #d1d1d1; color:#757575; }
+
+.subLeaderBox th:nth-child(1), .subLeaderBox td:nth-child(1){ width:11.7% }
+.subLeaderBox th:nth-child(2), .subLeaderBox td:nth-child(2){ width:8.5% }
+.subLeaderBox th:nth-child(3), .subLeaderBox td:nth-child(3){ width:8.5% }
+.subLeaderBox th:nth-child(4), .subLeaderBox td:nth-child(4){ width:8.5% }
+.subLeaderBox th:nth-child(5), .subLeaderBox td:nth-child(5){ width:8.5% }
+.subLeaderBox th:nth-child(6), .subLeaderBox td:nth-child(6){ width:8.5% }
+.subLeaderBox th:nth-child(7), .subLeaderBox td:nth-child(7){ width:8.5% }
+.subLeaderBox th:nth-child(8), .subLeaderBox td:nth-child(8){ width:8.5% }
+.subLeaderBox th:nth-child(9), .subLeaderBox td:nth-child(9){ width:8.5% }
+.subLeaderBox th:nth-child(10), .subLeaderBox td:nth-child(10){ width:8.5% }
+.subLeaderBox th:nth-child(11), .subLeaderBox td:nth-child(11){ width:11.5% }
+
+.subBox_Right th:first-child, .subBox_Right td:first-child{ display:none; }
+.subBox_Left th:last-child, .subBox_Left td:last-child{ display:none; }
+
+/* 리더보드 - classic */
+.classic > thead > tr > th{ background:#F27321; color:#fff; border-bottom:2px solid #c54e01; }
+.subLeaderBoard td{ text-align:center; }
+
+/* 리더보드 - neo */
+.neo > thead > tr > th{ background:#004224; color:#fff; border-bottom:2px solid #002916; }
+
+/* 리더보드 - allPlayer */
+.allPlayer table th p, .allPlayer table td p{ font-size:14px; }
+.allPlayer th{ border-bottom:2px solid #000; }
+.allPlayer table th p{ color:#B7B7B7 }
+
+
+@media(max-width:1080px){
+    /* 공통 */
+    .comon_leader h2{ font-size:20px; font-weight:600 }
+
+    .leaderboard table{ width:100%; }
+    .leaderboard > table > thead > tr, .leaderboard > table > tbody > tr {display:flex; }
+    .leaderboard > table > thead > tr > th, .leaderboard > table > tbody > tr > td {display:flex; justify-content:center;}
+    .subTB > td:nth-child(1) {flex:0 1 100%;}
+
+    .leaderboard > table > thead > tr > th:nth-child(1), .leaderboard > table > tbody > tr > td:nth-child(1){ width:10% }
+    .leaderboard > table > thead > tr > th:nth-child(2), .leaderboard > table > tbody > tr > td:nth-child(2){ width:8% }
+    .leaderboard > table > thead > tr > th:nth-child(3), .leaderboard > table > tbody > tr > td:nth-child(3){ width:55% }
+    .leaderboard > table > thead > tr > th:nth-child(4), .leaderboard > table > tbody > tr > td:nth-child(4){ display:none;}
+    .leaderboard > table > thead > tr > th:nth-child(5), .leaderboard > table > tbody > tr > td:nth-child(5){ display:none; }
+    .leaderboard > table > thead > tr > th:nth-child(6), .leaderboard > table > tbody > tr > td:nth-child(6){ display:none; }
+    .leaderboard > table > thead > tr > th:nth-child(7), .leaderboard > table > tbody > tr > td:nth-child(7){ display:none; }
+    .leaderboard > table > thead > tr > th:nth-child(8), .leaderboard > table > tbody > tr > td:nth-child(8){ width:10% }
+    .leaderboard > table > thead > tr > th:nth-child(9), .leaderboard > table > tbody > tr > td:nth-child(9){ width:10% }
+    .leaderboard > table > thead > tr > th:nth-child(10), .leaderboard > table > tbody > tr > td:nth-child(10){ width:10% }
+
+
+    .subLeaderBox th:nth-child(1), .subLeaderBox td:nth-child(1){ width:11.7% }
+    .subLeaderBox th:nth-child(2), .subLeaderBox td:nth-child(2){ width:8.5% }
+    .subLeaderBox th:nth-child(3), .subLeaderBox td:nth-child(3){ width:8.5% }
+    .subLeaderBox th:nth-child(4), .subLeaderBox td:nth-child(4){ width:8.5% }
+    .subLeaderBox th:nth-child(5), .subLeaderBox td:nth-child(5){ width:8.5% }
+    .subLeaderBox th:nth-child(6), .subLeaderBox td:nth-child(6){ width:8.5% }
+    .subLeaderBox th:nth-child(7), .subLeaderBox td:nth-child(7){ width:8.5% }
+    .subLeaderBox th:nth-child(8), .subLeaderBox td:nth-child(8){ width:8.5% }
+    .subLeaderBox th:nth-child(9), .subLeaderBox td:nth-child(9){ width:8.5% }
+    .subLeaderBox th:nth-child(10), .subLeaderBox td:nth-child(10){ width:8.5% }
+    .subLeaderBox th:nth-child(11), .subLeaderBox td:nth-child(11){ width:11.5% }
+
+    .subBox_Right th:first-child, .subBox_Right td:first-child{ display:block; }
+    .subBox_Left th:last-child, .subBox_Left td:last-child{ display:block; }
+
+    .leaderboard th p, .leaderboard td p{ font-size:14px; }
+}
+
+@media(max-width:480px){
+    .leaderboard > table > thead > tr > th:nth-child(1), .leaderboard > table > tbody > tr > td:nth-child(1){ width:10% }
+    .leaderboard > table > thead > tr > th:nth-child(2), .leaderboard > table > tbody > tr > td:nth-child(2){ width:10% }
+    .leaderboard > table > thead > tr > th:nth-child(3), .leaderboard > table > tbody > tr > td:nth-child(3){ width:33% }
+    .leaderboard > table > thead > tr > th:nth-child(8), .leaderboard > table > tbody > tr > td:nth-child(8){ width:13% }
+    .leaderboard > table > thead > tr > th:nth-child(9), .leaderboard > table > tbody > tr > td:nth-child(9){ width:15% }
+    .leaderboard > table > thead > tr > th:nth-child(10), .leaderboard > table > tbody > tr > td:nth-child(10){ width:15% }
+
+    .subLeaderBox th:nth-child(1), .subLeaderBox td:nth-child(1){ width:24.7% }
+}
+
+/* 리더보드 - 매치 */
+.matchGroup{ margin-top:20px; }
+.matchTb .team_Player{ display:flex; padding:5px 40px; }
+.matchTb .neo_player{ justify-content:flex-end; }
+.matchTb th, .matchTb td{ padding:10px 5px; border-bottom:1px solid #d1d1d1 }
+.matchTb td{ text-align:center; }
+.matchTb .matchTeam{ display:flex; border:1px solid #d1d1d1; width:auto; }
+.matchTb .matchTeam .classic_img, .matchTb .matchTeam .neo_img{ width:70px; }
+.matchTb .matchTeam .classic_img img, .matchTb .matchTeam .neo_img img{ width:100%; height:100%; object-fit:cover; }
+.matchTb .matchTeam .classic_txt, .matchTb .matchTeam .neo_txt{ width:150px; display:flex; flex-direction: column; }
+.matchTb .matchTeam .classic_txt p, .matchTb .matchTeam .neo_txt p{ width:100%; height: 50%; display:flex; align-items:center; }
+.matchTb .matchTeam div p{ border-top:1px solid #d1d1d1 }
+.matchTb .matchTeam div p:first-child{ border-top:0; }
+
+
+.classic_group{ justify-content:flex-start; }
+.classic_group .classic_img{ border-right:1px solid #d1d1d1; }
+.classic_group .neo_img{ border-left:1px solid #d1d1d1 }
+.classic_group .classic_txt p{ padding-left:10px; }
+.matchTb .neo_group .neo_txt p{ justify-content:flex-end; padding-right:10px; }
+
+.match_resultBox{ display:flex; justify-content:center; }
+.match_result p{ width:80px; padding:5px 10px; border-radius:50px; line-height:1; font-size:15px; font-weight:600 }
+.win p{ border:1px solid red; color:red; }
+.lose p{ border:1px solid blue; color:blue; }
+.match_player p{ font-weight:600 }
+
+/* 매치플레이 드롭다운 */
+.pc{ display:block }
+.mobile{ display:none; }
+@media(max-width:1080px){
+    .pc{ display:none }
+    .mobile{ display:block; }
+}
+
+.matchDropDown{ background:#f8f8f8; }
+.matchDropDown .matchSubBox{ display:flex; padding:20px; }
+.matchDropDown .matchSubBox .matchscore_L { width:50%; }
+.matchDropDown .matchSubBox .matchscore_R { width:50%; }
+.matchDropDown .matchSubBox .matchscore_R th:nth-child(1), .matchDropDown .matchSubBox .matchscore_R td:nth-child(1){ border-left:0 }
+.matchDropDown .matchSubBox th{ background:#F27321; color:#fff; font-size:15px; }
+.matchDropDown .matchSubBox td{ background:#fff; }
+.matchDropDown .matchSubBox th, .matchDropDown .matchSubBox td{ border-right:1px solid #d1d1d1 }
+.matchDropDown .matchSubBox th:nth-child(1), .matchDropDown .matchSubBox td:nth-child(1){ border-left:1px solid #d1d1d1 }
+
+/*
+.matchSubBox > td{ padding:0 !important; }
+.matchSubBox > td:nth-child(1) {flex:0 1 100%;}
+.matchDropDown{ background:#f8f8f8; width:100%; }
+.matchDropDown > div{ display:flex; padding: 20px; }
+.matchDropDown .subScoreBox tr:nth-child(1) th{ border-top:0; }
+.matchDropDown .subScoreBox th{ color:#fff; font-size:14px }
+.matchDropDown .subScoreBox th p, .matchDropDown .subScoreBox td p{ font-size:14px }
+
+.subScoreBox .gray th, .subScoreBox td{ background:#BFBFBF; color:#000 }
+
+.matchscore_L tr:nth-child(1) th:nth-child(1){ width:auto }
+.matchscore_L tr:nth-child(1) th:nth-child(2){ width:auto }
+.matchscore_L tr:nth-child(2) th:nth-child(10){ display:none }
+.matchscore_L tr:nth-child(2) th:nth-child(11){ display:none }
+.matchscore_L tr:nth-child(2) th:nth-child(10){ display:none; }
+.matchscore_L tr:nth-child(2) th:nth-child(11){ display:none; }
+.matchscore_L .gray th:nth-child(1){ background:#fff; color:#000; width:9%; }
+.matchscore_L .gray th:nth-child(2){ width:15.5% }
+.matchscore_L .gray th:nth-child(12){ display:none; }
+.matchscore_L .gray th:nth-child(13){ display:none; }
+
+.matchscore_L .gray th:nth-child(n+3):nth-child(-n+11){ width:7.88% }
+.matchscore_R .gray th:nth-child(n+3):nth-child(-n+11){ width:7.88% }*/
+/*.matchSubBox .gray th:nth-child(3){ width:7.88%; }
+.matchSubBox .gray th:nth-child(4){ width:7.88%; }
+.matchSubBox .gray th:nth-child(5){ width:7.88%; }
+.matchSubBox .gray th:nth-child(6){ width:7.88%; }
+.matchSubBox .gray th:nth-child(7){ width:7.88%; }
+.matchSubBox .gray th:nth-child(8){ width:7.88%; }
+.matchSubBox .gray th:nth-child(9){ width:7.88%; }
+.matchSubBox .gray th:nth-child(10){ width:7.88%; }
+.matchSubBox .gray th:nth-child(11){ width:7.88% }*/
+/*
+.matchscore_R tr:nth-child(1) th:nth-child(1){ display:none; }
+.matchscore_R tr:nth-child(2) th:nth-child(10){ display:none; }
+.matchscore_R .gray th:nth-child(1){ display:none; }
+.matchscore_R .gray th:nth-child(2){ display:none; }
+.matchscore_R .gray th:nth-child(12){ display:none }
+.matchscore_R .gray th:nth-child(13){ width:9% }
+
+
+.matchscore_R .teamScore td:nth-child(12){ display:none }
+.matchscore_L .teamScore td:nth-child(12){ display:none; }
+.matchscore_L .teamScore td:nth-child(13){ display:none; }
+.matchscore_L .teamScore:nth-child(2) td:nth-child(1){ display:none; }
+.matchscore_R .teamScore td:nth-child(1){ display:none; }
+.matchscore_R .teamScore td:nth-child(2){ display:none; }
+.matchDropDown .matchSubBox table .scoreResult td{ background:#f5f5f5 }
+.scoreResult td:nth-child(2){  }
+.matchscore_L .scoreResult td:nth-child(11){ display:none; }
+.matchscore_R .scoreResult td:nth-child(12){ display:none; }
+
+*/
+
+/* 리더보드 서브 매치 공통 */
+.macthList{ display:flex; width:100%; }
+/*.macthList > div{ width:50%; }*/
+.machsubTb_West { display:flex; width:50%; }
+.machsubTb_West > div{ display:flex; flex-direction: column; background:#fff; border-left:1px solid #D6D6D6; }
+.machsubTb_West .match_L{ width:35%; }
+.machsubTb_West .matchCom > div{ border-bottom:1px solid #BFBFBF }
+.machsubTb_West .matchCom p{ display:flex; align-items:center; justify-content:center; height:40px; font-size:14px; padding:0 5px; }
+.machsubTb_West .matchCom .orange p{ background:#F27321; color:#fff;  }
+.machsubTb_West .matchCom .gray{ background:#BFBFBF; }
+.machsubTb_West .matchCom .white{ background:#fff; color:#333; width:45%; }
+.machsubTb_West .matchHole{ height:80px }
+.machsubTb_West .matchHole.orange p{ height:100%; }
+.machsubTb_West .matchPar{ display:flex; align-items:center; }
+.machsubTb_West .match_L .matchPar p:nth-child(1){ width:35%; }
+.machsubTb_West .match_L .matchPar p:nth-child(2){ width:65%; }
+.machsubTb_West .match_L .mathTeamPlayer{ display:flex; }
+.machsubTb_West .match_L .mathTeamPlayer .mathTeam{ width:35%; }
+.machsubTb_West .match_L .mathTeamPlayer .mathTeam img{ width:100%; height:100%; object-fit: cover; }
+.machsubTb_West .match_L .mathTeamPlayer .matchPlayer{ width:65%; }
+.machsubTb_West .match_L .mathTeamPlayer .matchPlayer div{ text-align:left; padding:0 5px; }
+.machsubTb_West .match_L .mathTeamPlayer .matchPlayer div + div{ border-top:1px solid #D6D6D6 }
+
+.machsubTb_West .match_R { width:65% }
+.machsubTb_East{ width:40%; }
+.machsubTb_East > div{ width:100%; }
+.machsubTb_East .match_R { width:100%; }
+.machsubTb_West .match_R .macthList{ width:500px; }
+.machsubTb_West .match_R .matchWest{ display:flex; flex-direction: column; justify-content: space-between; height:100%; }
+.machsubTb_West .match_R .matchWest .matchWest_P{ height:40% }
+.machsubTb_West .match_R .matchWest .matchWest_numb{ display:flex; height:60%; border-top:1px solid #D6D6D6 }
+.machsubTb_West .match_R .matchNumb{ display:flex; }
+.machsubTb_West .match_R .matchNumb + .matchNumb{ border-top:1px solid #D6D6D6 }
+.machsubTb_West .match_R .matchNumb p{ width:12%; border-right:1px solid #D6D6D6; }
+.machsubTb_West .match_R .matchNumb p:last-child{ border-right: 0; }
+
+
+/* 홀별성적 */
+/* 홀별성적 테이블 */
+.playerTb{ margin-top:20px; }
+.holeScore{ margin-top:20px; }
+.holeScore table tr:nth-child(2) th{ border-top:1px solid #fff; }
+.holeScore table th, .holeScore table td{ padding:5px; text-align:center; box-sizing:border-box; font-size:14px; }
+.holeScore table th{ border-left:1px solid #fff; color:#fff; background:#F27321; height:40px; }
+.holeScore table td{ border-bottom:1px solid #D1D1D1; }
+
+
+
+@media(max-width:1080px){
+    .section{ padding:40px 0; }
+    .section .wrap{ width:100%; }
+
+    /* 대회정보 */
+    .playerInfoWrap{ padding:0 15px; }
+    .playerInfo .infoLeft p{ width:100px; height:100px; font-size:20px; padding:0; }
+    .playerInfo .infoLeft p img{ width:100%; height:100%; }
+    .infoRight p{ font-size:30px; }
+    .infoRight ul{ margin-top:15px; }
+
+    /* tab */
+    .tabMenu ul li{ font-size:15px; }
+
+    /* 우승자 */
+    .playerTb{ margin-top:30px; }
+    .winner, .comon_leader{ padding:0 15px; }
+    .winner .winnerBox{ padding:20px 15px; }
+    
+    .winnerScore > div{ padding:0 30px; }
+    .winner .winnerBox .winnerName p{ font-size:20px; }
+    .winnerScore > div .score{ font-size:20px; }
+
+    .holeScore table th{ font-size:14px; }
+    .holeScore table th, .holeScore table td{ padding:10px 5px; }
+
+    /* subLeaderBoard */
+    .subLeaderBoard > div{ flex-wrap:wrap; }
+    .subLeaderBoard .subLeaderBox{ padding:20px; width:100%; }
+    .subLeaderBoard .subLeaderBox tr{ display:flex; }
+    
+}
+
+@media(max-width:780px){
+    .winner .winnerBox .winnerName .teamLogo{ width:40px; height:40px; }
+    .infoRight ul li{ display:block; }
+    .infoRight ul li + li{ padding-left:0; margin-left:0; }
+}
+@media(max-width:480px){
+    
+    .tabMenu { margin-top:30px; }
+    .tabMenu ul{ height:40px; }
+    .tabMenu ul li{ font-size:14px; }
+
+    .infoRight p{ font-size:18px; margin-bottom:5px; }
+    .infoRight h2{ font-size:12px; }
+    .playerInfo{ gap:10px; }
+    .playerInfo .infoLeft p{ width:80px; height:80px; padding:0; font-size:15px; }
+    .playerInfo .infoLeft p img{ width:100%; height:100%; }
+    .infoRight ul{ margin-top:0; }
+    .infoRight ul li{ font-size:12px; }
+    .infoRight ul li:after{ display:none }
+    
+    .infoRight ul li:nth-child(2):after{ top:2px; }
+
+    /* 우승자 */
+    .comon_leader h2{ font-size:18px; }
+    .winner, .comon_leader{ margin-top:30px; }
+    .winner .winnerBox .winnerName p{ font-size:15px; }
+    .winner .winnerBox .winnerName p i{ margin-left: 0; }
+    .winner .winnerBox .winnerName .teamLogo{ width:30px; height:30px; }
+    .winnerScore > div{ padding:0 10px; }
+    .winnerScore > div .txt{ font-size:14px; }
+    .winnerScore > div .score{ font-size:15px; }
+
+    /* 리더보드 */
+    .leaderboard th p, .leaderboard td p{ font-size:12px; }
+
+    /* subLeaderBoard */
+    .playTeamLogo{ width:25px; height:25px; }
+    .subLeaderBoard > div{ padding:20px 10px; }
+    .subLeaderBoard .subLeaderBox th, .subLeaderBoard .subLeaderBox td{ font-size:12px; }
+
+    .holeScore table th, .holeScore table td{ padding:5px; font-size:12px; }
+}
+
+
+/* footer */
+.footer{ height:100px; background:#D9D9D9; display:flex; }
+.footerWRap{ width:1032px; margin:0 auto; display:flex; align-items:center; gap:30px; }
+.footer h1{ width:150px; }
+.footer h1 img{ width:100%; }
+.footer p{ }
+
+@media(max-width:1080px){
+    .footerWRap{ width:100%; padding:0 15px; gap:10px; }
+    .footer p{ font-size:14px; }
+}
+@media(max-width:480px){
+    .footer h1{ width:100px; }
+    .footer p{ font-size:12px; }
+}
+
+/* infor */
+.infore_cont h2{ padding-bottom:10px; }
+.infore_cont .infore_txt{ padding:20px 0; display:flex; border-top:1px solid #d1d1d1 }
+.infore_cont .infore_txt div{ position:relative; width:50%; }
+.infore_cont .infore_txt div:first-child:after{ content:''; position:absolute; width:1px; height:70%; background:#d1d1d1; top:50%; right:0; transform:translateY(-50%); }
+.infore_cont .infore_txt div + div{ padding-left:30px; }
+.infore_cont .infore_txt h3{ font-size:19px; font-weight:700; }
+.infore_cont .infore_txt p{ padding-top:10px; font-size:17px; }
+.infore_cont .infore_txt ul{ margin-top:5px; }
+.infore_cont .infore_txt li{ position:relative; padding-left:15px; margin-top:5px; }
+.infore_cont .infore_txt li:after{ content:''; position:absolute; width:5px; height:1px; left:5px; top:9px; background:#333 }
+
+.infor_bordNone h2{ border-bottom:none; }
+.infore_box{ padding:40px; background:#fff; border-radius:20px; /*background:#f5f5f5*/ box-shadow:3px 0 8px rgba(0,0,0,.3); }
+.infore_box .infore_list + .infore_list{ margin-top:30px; }
+.infore_box .infore_list h3{ font-size:19px; font-weight:700; }
+.infore_box .infore_list p{ margin-top:15px; }
+.infore_box .infore_list ul{ margin-top:10px; }
+.infore_box .infore_list li{ position:relative; font-size:15px; color:#525252; padding-left:15px; }
+.infore_box .infore_list li:after{ content:''; position:absolute; width:5px; height:5px; background:#b3b2b2; left:0; top:6px; border-radius:100%; }
+
+@media(max-width:1080px){
+    
+}
+@media(max-width:780px){
+    .infore_box{ padding:30px 20px; }
+    .infore_cont .infore_txt{ padding:0; flex-direction:column }
+    .infore_cont .infore_txt div{ width:100%; padding:15px 0; border-bottom:1px solid #cfcfcf; }
+    .infore_cont .infore_txt div:first-child:after{ display:none; }
+    .infore_cont .infore_txt div + div{ padding-left:0; }
+    
+}
+@media(max-width:480px){
+    .infore_cont h2{ padding-bottom:10px; }
+    
+    
+    
+    
+    .infore_cont .infore_txt h3{ font-size:14px; }
+    .infore_cont .infore_txt p{ font-size:16px; padding-top:5px; }
+
+    
+}

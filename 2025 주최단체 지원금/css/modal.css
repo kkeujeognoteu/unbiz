@@ -1,0 +1,142 @@
+.modal01{ display:none; }
+.modal01.active{ display:block; }
+.modal-table-padding td,.modal-table-padding th {padding: 0.25rem; font-size: 0.9rem;}
+.modalCover {
+    overflow: hidden;
+    background: rgba(0,0,0,.6);
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.modal {
+    position: fixed;
+    z-index: 99009;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modalClose {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    float: right;
+    display: inline-block;
+}
+
+.modalClose:hover, .modalClose:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modalCont {
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 1440px;
+    overflow: hidden;
+    box-shadow: 2px 2px 6px rgba(0,0,0,.2)
+}
+
+.modalHeader {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+.modalHeader:after{ content:''; display:block; clear:both; }
+
+.modalHeader > .tit {
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+    color: #0f1957;
+    line-height: 28px;
+}
+.modalHeader > .tit span{ color:#666; display:block; }
+
+.modalBody {
+    box-sizing: border-box;
+    line-height: 1.4;
+    max-height: 600px;
+    margin-top: 20px;
+    padding: 0 10px
+}
+
+.modalBody .modalTblWrap {
+    margin-bottom: 20px;
+}
+
+.modalBody .modalTblWrap > p {
+    border-radius: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-align: center;
+    background: #0f1957;
+    color: #fff;
+    padding: 5px;
+}
+
+.modalBody .newTbl_basic { width: 100%; }
+.modalTable{ max-width:1378px; width:100%; margin:auto; }
+.modalTable .newTb { position:relative; height:550px; clear:both; overflow:auto; }
+
+.modalTable .newTb .newTbInner .scrollHead{ position:sticky; border:0; width:100%; top:0; z-index:99 }
+.modalTable .newTb .newTbInner .scrollHead .scrollHeadInner{ min-width:100%; box-sizing:content-box; padding-right:0; }
+.modalTable .newTb .newTbInner table{ width:1280px; box-sizing:content-box; }
+.modalTable .newTb .newTbInner table th{ background:#fff; }
+.modalTable .newTb .newTbInner table th, .modalTable .newTb .newTbInner table td{ text-align:center; padding:5px 3px; box-sizing:content-box; border:1px solid #cacaca }
+
+
+.modalTable .newTb .newTbInner table thead tr:first-child th:nth-child(1), .modalTable .newTb .newTbInner table tbody tr:first-child td:nth-child(1){ min-width:80px; }
+.modalTable .newTb .newTbInner table thead tr:first-child th:nth-child(2), .modalTable .newTb .newTbInner table tbody tr:first-child td:nth-child(2){ min-width:500px; }
+.modalTable .newTb .newTbInner table thead tr:first-child th:nth-child(3), .modalTable .newTb .newTbInner table tbody tr:first-child td:nth-child(3){ min-width:40px; }
+.modalTable .newTb .newTbInner table thead tr:first-child th:nth-child(n+4), .modalTable .newTb .newTbInner table tbody tr:first-child td:nth-child(n+4){ min-width:110px; }
+.modalTable .newTb .newTbInner table thead tr:first-child th:nth-child(n+4){ width:0 }
+
+.modalTable .newTb .newTbInner table tbody tr:first-child td{ border-top:0; }
+
+.modalTable .newTb .newTbInner .scrollBody{ position:relative; width:100%; max-height:450px; }
+.modalTable .newTb .newTbInner .scrollBody table{ width:100%; }
+.modalTable .newTb .newTbInner .scrollBody table thead{ overflow:hidden; display:none; }
+.modalTable .newTb .newTbInner .scrollBody table thead th{ font-size:0; overflow:hidden; border:0; }
+
+.modalTable .newTb .newTbInner td p{ line-height:1.4 }
+.modalTable .newTb .newTbInner td p + p{ padding-left:20px; }
+
+
+.modalFooter {
+    margin-top: 20px;
+    padding-top: 20px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+
+.scorll { overflow-x: auto }
+
+
+/* 성과평가 */
+.modal02 .modalCont{ width:500px; }
+.modal02 .modalCont .modalTblWrap{ max-height:550px; overflow-y:auto; }
+.modalTblWrap ul{ display:flex; flex-wrap:wrap; gap:10px; }
+.modalTblWrap ul li{ padding:10px 15px; background:#f5f5f5; width:31.6%; text-align:center; }
+.modalTblWrap ul li a{ font-size:16px; }
+.modalTblWrap ul li a span{ margin-left:3px; font-size:14px; color:#333; font-weight:500 }
+.modalTblWrap ul li:hover{ background:#0f1957; }
+.modalTblWrap ul li:hover a{ color:#fff; font-weight:600; }
+.modalTblWrap ul li:hover a span{ color:#fff; }
+
+/* 스크롤 */
+/*.modalTblWrap::-webkit-scrollbar{ width:5px; }
+.modalTblWrap::-webkit-scrollbar-thumb{ background-color:#ddd; border-radius:10px; }
+.modalTblWrap::-webkit-scrollbar-track{ border-radius:10px; }
+.modalTblWrap p{ line-height:2; }*/
+

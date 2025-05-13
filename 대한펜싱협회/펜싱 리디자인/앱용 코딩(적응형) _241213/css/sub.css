@@ -1,0 +1,333 @@
+.subPg { width: 100%; height: auto; }
+.subPg .subTop{ position:relative; }
+.subPg .subTop .subVisual{ height:150px; margin: 0 auto; background: url(../images/subBanner.png) no-repeat center; display:flex; align-items:center; justify-content:center; }
+.subPg .subVisual p{ font-size:1.5rem; font-weight:600; text-align:center; color:#fff; }
+.subPg .subVisual .slogan { padding-top: 40px; }
+.subPg .subVisual .fencing-img { background: url('/resources/images/fencing-img.png') no-repeat left top; width: 569px; height: 288px; position: relative; top: -128px; left: 390px; }
+.subPg .subTop .top_gnb{ position:relative; z-index:9; background:#fff; }
+.subPg .subTop .top_gnb .lnb{ display:flex; border-bottom:1px solid #d7d7d7 }
+.subPg .subTop .top_gnb .lnb .home{ background:#E38696; display:flex; align-items:center; justify-content:center; width:40px; padding:10px; }
+.subPg .subTop .top_gnb .lnb .home p{ background:url(../images/icon_home.png)no-repeat; width:20px; height:20px; background-size:contain; }
+.subPg .subTop .top_gnb .lnb li{ position:relative; background:#fff; font-size:16px; height:40px; box-sizing:border-box; }
+.subPg .subTop .top_gnb .lnb > li{ padding:10px 20px 10px 5px; }
+.subPg .subTop .top_gnb .lnb > li + li{ width:44%; border-right:1px solid #d7d7d7 }
+
+.subPg .subTop .top_gnb .lnb > li + li:after{ content:''; position:absolute; width:1rem; height:1.3rem; background:url(../images/dorp_bottom.png)no-repeat; background-size:contain; right:5px; top:0.7rem; }
+.subPg .subTop .top_gnb .lnb li a{ font-size:14px; }
+.subPg .subTop .top_gnb .lnb li .gnb_3depth{ /*display:none;*/ position:absolute; top:40px; left:0; border:1px solid #d7d7d7; width:100%; padding:0 10px; box-sizing:border-box; background:#fff; }
+.subPg .subTop .top_gnb .lnb li .gnb_3depth li{ display:block; width:100%; padding:10px 0 }
+.subPg .subTop .top_gnb .lnb li .gnb_3depth li a{ display:block; }
+.subPg .subTop .top_gnb .lnb li .gnb_3depth li:hover{ border-bottom:1px solid #d7d7d7; }
+
+/* 인사말 */
+.subCont{ padding:2rem 1rem; }
+.aboutTxt h3{ position:relative; color:#333; font-size:1.4rem; line-height:1.3; padding:0.5rem 0; font-weight:600; padding:0.5rem; }
+.aboutTxt h3:after{ content:''; position:absolute; width:100%; height:20px; background:#f5f5f5; left:0; bottom:0; z-index:-1 }
+.aboutTxt ul{ margin-top:2rem; }
+.aboutTxt ul li{ line-height:1.5 }
+.aboutTxt .aboutImg{ margin-top:3rem; text-align:center; }
+
+
+@media(max-width:380px){
+    .aboutTxt h3{ font-size:1.3rem; }
+    .aboutTxt .aboutImg{ width:15rem; margin:2rem auto; }
+    .aboutTxt .aboutImg img{ width:100%; }
+}
+
+/* 연혁 */
+.historyBox{ width:100%; margin:0 auto; padding-top:30px; }
+.historyBox .hisList{ display:flex; }
+.historyBox .hisList > div{ width:50%; padding-bottom:30px; }
+.historyBox .hisList .historyTxt h3{ color:#ea002c; font-weight:700; font-size:1.5rem; }
+.historyBox .hisList .historyTxt ul{ margin-top:1rem; }
+.historyBox .hisList .historyTxt li{ position:relative; margin-top:10px; padding-left:15px; }
+.historyBox .hisList .historyTxt li:after{ content:''; position:absolute; width:5px; height:5px; background:#000; top:7px; border-radius:100%; }
+.historyBox .hisList .historyTxt li > span{ font-weight:600; color:#000; font-size:16px; display:block; color:#000; }
+.historyBox .hisList .historyTxt li .hisCont{ margin-top:10px; }
+.historyBox .hisList .historyTxt li .hisCont p{ position:relative; font-size:15px; }
+.historyBox .hisList .historyTxt li .hisCont p:after{ content:''; width:5px; height:1px; position:absolute; top:10px; background:#666; }
+.historyBox .hisList .historyTxt li + li{ margin-top:20px; }
+.historyBox .hisList .historyTxt li p{ margin-top:5px; }
+.historyBox .hisList .hisLeft{ position:relative; padding-right:1.5rem; }
+.historyBox .hisList .hisLeft:after{ content:''; position:absolute; background:url(../images/dot.png)no-repeat; width:18px; height:18px; top:0; right:-10px; background-size:cover; z-index:1 }
+.historyBox .hisList .hisLeft li{ padding-right:20px; padding-left:0; }
+.historyBox .hisList .hisLeft li span{ padding-left:15px; }
+.historyBox .hisList .hisLeft li:after{ right:0; }
+.historyBox .hisList .hisLeft li .hisCont p{ padding-right:15px; }
+.historyBox .hisList .hisLeft li .hisCont p:after{ right:0; }
+.historyBox .hisList .hisRight{ padding-left:1.5rem; }
+.historyBox .hisList .hisRight > div > ul > li{ padding-left:20px; letter-spacing:-.7px; }
+.historyBox .hisList .hisRight li:after{ left:0; }
+.historyBox .hisList .hisRight li span{ padding-right:15px; }
+.historyBox .hisList .hisRight li .hisCont p{ padding-left:15px; }
+.historyBox .hisList .hisRight li .hisCont p:after{ left:0; }
+
+
+.historyBox .hisList .hisLeft{ border-right:1px dotted #999; }
+.historyBox .hisList .hisLeft p, .historyBox .hisList .hisLeft div{ text-align:right; }
+
+@media(max-width:480px){
+    .historyBox .hisList{ position:relative; flex-direction:column; }
+    .historyBox .hisList .historyTxt h3{ font-size:17px; }
+    .historyBox .hisList:nth-child(odd) .hisLeft{ display:none; }
+    .historyBox .hisList:nth-child(even) .hisLeft { padding-right:0; padding-left:1.5rem; }
+    .historyBox .hisList:nth-child(even) .hisRight{ display:none; padding-right:0; padding-left:1.5rem; }
+    .historyBox .hisList:nth-child(even) .hisRight{ display:none; padding-right:0; padding-left:1.5rem; }
+    .historyBox .hisList:nth-child(even) .hisLeft .hisCont p{ padding-right:0; padding-left:1rem; }
+    .historyBox .hisList:nth-child(even) .hisLeft li .hisCont p:after{ left:0; right:auto; }
+    .historyBox .hisList .hisLeft{ border-right:0; }
+    .historyBox .hisList .hisLeft:after{ display:none; }
+    .historyBox .hisList:after{ content:''; position:absolute; background:url(../images/dot.png)no-repeat; width:18px; height:18px; top:4px; left:0; background-size:cover; z-index:1 }
+    .historyBox .hisList > div{ width:100%; }
+    .historyBox .hisList .hisLeft p, .historyBox .hisList .hisLeft div{ text-align:left; }
+    .historyBox .hisList .hisLeft li:after{ right:auto; left:0; }
+    .historyBox .hisList:before{ content:''; position:absolute; width:1px; height:100%; background:#cacaca; top:10px; left:8px; }
+    .historyBox .hisList .historyTxt ul{ margin-top:0.3rem; }
+}
+
+/* 목적 및 기능 */
+.society-wrap .object-01{ border-bottom:1px solid #d7d7d7; }
+.society-wrap .object-01, .society-wrap .object-02 {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:15px;
+  padding-bottom:30px; margin-bottom:30px;
+}
+.society-wrap .object-01 .obTit, .society-wrap .object-02 .obTit{ position:relative; color:#000; padding-left:20px; font-size:18px; font-weight:600 }
+.society-wrap .object-01 .obTit:after, .society-wrap .object-02 .obTit:after{ content:''; position:absolute; top:10px; left:0; width:11px; height:8px; background:url(../images/checkTitle.png)no-repeat; background-size:cover; }
+.society-wrap .object-01 p {
+  font-size: 16px;
+  padding-bottom: 3px;
+  line-height:1.3;
+}
+.society-wrap .object-02 ul li {
+    position:relative;
+    float: left;
+    width: 50%;
+    font-size:16px;
+    line-height:1.5;
+    padding:3px 10px;
+    color:#666
+}
+
+.society-wrap .object-02 ul li:after{ content:''; position:absolute; width:3px; height:3px; background:#999; border-radius:100%; top:12px; left:0; }
+  
+/* 로그인 */
+.memCom{ background:#f5f5f5; padding:30px 20px; border-top:2px solid #777 }
+.memCom .login { background:#fff; padding:40px 20px; border-radius:10px; max-width:380px; margin:auto; }
+.memCom .login h2{ font-size:20px; margin-bottom:25px; }
+.memCom .login h2 span{ font-size:20px; }
+.memCom .login .login_side{ display:flex; justify-content:center; margin-top:10px; }
+.memCom .login .login_side a{ border:none; font-size:14px; color:#999 }
+.memCom .login .login_side .fintId{ padding-left:15px; margin-left:15px; position:relative; }
+.memCom .login .login_side .fintId:after{ content:''; position:absolute; width:1px; height:10px; background:#cacaca; left:0; top:6px; }
+
+/* 회원가입 */
+.dashBtm{ border-bottom:1px dashed #d9d8d8; padding-bottom:1rem; margin-bottom:1rem; }
+.join .join_text{ font-size:14px; color:#666; text-align:center; }
+.login_form .membBox{ background:#fff; padding:30px 20px; box-shadow:0 3px 3px rgba(0,0,0,.3); box-sizing:border-box; }
+.login_form h3, .login_form h3 span{ font-weight:600; font-size:18px; }
+.login_form p{ font-size:14px; color:#666 }
+
+/* 회원가입 폼 */
+.joinAgreeTab{ position:relative; margin-bottom:40px; padding:15px 0; }
+.joinAgreeTab:before{ content:''; position:absolute; width:15px; height:100%; background:#fff; border:8px solid #f5f5f5; border-right:0; left:0; top:0; box-sizing:border-box }
+.joinAgreeTab:after{ content:''; position:absolute; width:15px; height:100%; background:#fff; border:8px solid #f5f5f5; border-left:0; right:0; top:0; box-sizing:border-box }
+.joinAgreeTab ul{ display:flex; justify-content:space-evenly; align-items:center; padding:0 15px; gap:10px; }
+.joinAgreeTab ul li{ width:33%; }
+.joinAgreeTab ul .nextIcon{ width:20px; }
+.joinAgreeTab ul li img{ width:100%; }
+
+.joinSub{ position:relative; padding-left:20px; margin-bottom:20px; font-size:14px; color:#777 }
+.joinSub:after{ content:''; position:absolute; width:15px; height:15px; top:3px; left:0; background:url(../images/joinCheck.png)no-repeat center; background-size:contain; }
+
+
+/* 본인인증 */
+.idpw_join { display:flex; gap:10px; justify-content:flex-end; }
+.idpw_join p{ font-size:14px; width:180px; text-align:right; }
+
+/* 증명서 발급 신청 */
+.info_wrap {display:flex; flex-direction:column; align-items:center; position:relative; border-top:1px solid #EA002C; margin:auto }
+.info_wrap .img_box { position:relative; padding:15px 20px; vertical-align:middle; background:#EA002C; border-radius:0 0 30px 30px; }
+.info_wrap .img_box img{ width:40px; }
+.info_wrap .txt_box { position:relative; width:100%; margin:auto; padding:30px 45px; vertical-align:middle; margin-top:20px; text-align:center; box-sizing:border-box; }
+.info_wrap .txt_box:before{ content:''; position:absolute; width:30px; height:100%; background:#fff; border:12px solid #f5f5f5; border-right:0; top:0; left:0; }
+.info_wrap .txt_box:after{ content:''; position:absolute; width:30px; height:100%; background:#fff; border:12px solid #f5f5f5; border-left:0; top:0; right:0; }
+.info_wrap .txt_box .tit {display:block; padding-bottom:20px; font-size:22px; color:#000; font-weight:600;}
+.info_wrap .txt_box .txt {display:block; font-size:16px; color:#444; line-height:1.6; }
+.info_wrap .txt_box .txt  strong{ font-weight:600; color:#333 }
+.info_wrap .txt_box .redTxt{ color:#EA002C; margin-top:20px; }
+.info_wrap .txt_box .redTxt strong{ color:#EA002C; font-weight:600; }
+
+/* 국가대표 */
+.profileWrap{ display:flex; gap:15px; flex-wrap:wrap; }
+.profileWrap .profList{ width:47%; }
+.profileWrap .profList .thumbnall{ position:relative; width:100%; height:0; padding-top:calc(1330/1000*100%); border:1px solid #cacaca }
+.profileWrap .profList .thumbnall img{ position:absolute; top:0; left:0; width:100%; height:100%; }
+.profileWrap .profList .proTxt sup{ vertical-align:bottom; padding-right:3px; }
+.profileWrap .profList .proTxt p, .profileWrap .profList .proTxt p span{ font-weight:600; }
+.profileWrap .profList .proTxt .gend{ padding:1px 5px; font-size:12px; color:#fff; border-radius:5px; font-weight:500 }
+.profileWrap .profList .proTxt .gend_M{ background:#0088DC }
+.profileWrap .profList .proTxt .gend_W{ background:#EA1A20 }
+.profileWrap .profList .proTxt ul{ margin-top:5px; }
+.profileWrap .profList .proTxt li{ line-height:1.3 }
+.profileWrap .profList .proTxt li, .profileWrap .profList .proTxt li span{ font-size:14px; color:#777 }
+
+/* 국가대표 view */
+.profView{ display:flex; gap:20px; }
+.profView .playerImg{ width:30%; display:flex; align-items:center; justify-content:center; }
+.profView .playerImg .playerImgBox{ position:relative; width:100%; height:0; padding-top:calc(360 / 290 * 100%); border:1px solid #cacaca }
+.profView .playerImg .playerImgBox img{ position:absolute; top:0; left:0; width:100%; height:100%; object-fit: contain; }
+.profView .playerInfo{ width:70%; }
+.profView .playerInfo .playName{ display:flex; gap:5px; }
+.profView .playerInfo .playName p{ font-size:20px; font-weight:600; }
+.profView .playerInfo .playName p sup{ vertical-align:bottom; font-weight:500; font-size:14px; color:#999; }
+.profView .playerInfo .playName ul{ display:block; }
+.profView .playerInfo .playName ul li{ display:inline-block; position:relative; padding:12px 12px 0; font-size:14px; }
+.profView .playerInfo .playName ul li:after{ content:''; position:absolute; width:100%; height:100%; left:0; top:0; z-index:-1 }
+.profView .playerInfo .playName ul .gold:after{ background:url(../images/medal_Icon01.png)no-repeat; background-size:contain; }
+.profView .playerInfo .playName ul .silver:after{ background:url(../images/medal_Icon02.png)no-repeat; background-size:contain; }
+.profView .playerInfo .playName ul .dong:after{ background:url(../images/medal_Icon03.png)no-repeat; background-size:contain; }
+.playInfoBox p { position:relative; padding-left:10px; line-height:1.3; text-align:left; margin:2px 0; }
+.playInfoBox p:after{ content:''; position:absolute; width:3px; height:3px; background:#777; border-radius:100%; left:0; top:9px; }
+.playInfoBox p span{ font-size:14px; color:#777 }
+.playInfoBox p .jongmog{ position:relative; width:60px; font-weight:600; text-align:justify; display:inline-block; vertical-align:top; margin-right:5px; padding-top:4px; line-height:0.8; }
+.playInfoBox p .jongmog:after{ content:''; display:inline-block; width:100%; }
+.playInfoBox p .jongmogTxt{ margin-top:1px; vertical-align:top; }
+.playInfoBox p:first-child .jongmogTxt{ color:#EA002C; font-weight:600 }
+
+@media(max-width:380px){
+  .profView .playerImg{ width:40%; }
+  .profView .playerInfo{ width:60%; }
+  .profView .playerInfo .playName{ flex-direction:column; align-items:flex-start; }
+  .profView .playerInfo .playName ul li{ padding:10px 11px 0 }
+}
+
+/* 랭킹 */
+.rankPg h2, .rankPg h2 span{ font-weight:600; font-size:18px; }
+.rankPg h2 img{ width:1.5rem; vertical-align:middle; padding-left:5px; }
+.rankTitle{ display:flex; align-items:center; }
+.rankTitle .bildTxt p{ position:relative; font-size:20px; color:#333; padding-left:13px; }
+.rankTitle .bildTxt p:after{ content:''; position:absolute; width:5px; height:5px; background:#ea002c; border-radius:100%; left:0; top:13px }
+.rankTitle .bildTxt p strong{ font-weight:600; color:#000; }
+.rankTitle .bildSlt{ margin-left:auto; display:flex; gap:5px; }
+.rankTitle .bildSlt select{ border:1px solid #d1d1d1; padding:5px 15px }
+
+.fencers{ position:relative; margin:auto; background:url(/resources/images/new_images/fencBan.png)no-repeat bottom; background-size:contain }
+.fencers h2{ color:#000; font-weight:600; font-size:1.8rem; text-align:center; }
+.fencersTab{ margin:auto; display:flex; flex-direction:column; align-items: center; margin:1.5rem 0; }
+.fencersTab > ul{ border:1px solid #d7d7d7; width:245px; display:flex; border-radius:5rem; justify-content:space-between; }
+.fencersTab > ul > li{ width:33.3%; padding:10px 15px; background:#fff; font-weight:600; text-align:center; border-radius:50px; box-sizing: border-box; cursor:pointer; }
+.fencersTab > ul > li:hover, .fencersTab > ul > li.active{ background:#ea002c; color:#fff; transition: .3s; }
+@media(max-width:480px){
+  .rankTitle{ flex-direction: column; gap:10px; align-items:flex-start }
+  .rankTitle .rankSch{ margin-left:0; width:100%; }
+  .rankTitle .rankSch select{ width:calc(100% - 50px) }
+}
+
+/* 증명서 발급 현황 */
+.attDetailBox{ background:#f5f5f5; border-top:2px solid #777; padding:10px 0; margin-top:10px; }
+.attDetailBox ul{ display:flex; gap:8px }
+.attDetailBox ul li{ width:33%; font-size:14px; background:url(../images/sprites-approval-step.png)no-repeat; text-align:center; }
+.attDetailBox ul span{ display:block; padding-top:calc(100 / 100 * 100% ); font-size:14px; font-weight:600; word-break:keep-all }
+.attDetailBox ul .step01 span, .attDetailBox ul .step03 span{ color:#666 }
+.attDetailBox ul .step01{ background-position:-10% -21%; background-size:calc(100 / 30 * 100%); }
+.attDetailBox ul .step02{ background-position:50% -10%; background-size:calc(100 / 36 * 100%) }
+.attDetailBox ul .step03{ background-position:112% 81%; background-size:calc(100 / 32 * 100%) }
+
+/* 경기규칙 */
+.ruleCont{ display:none; }
+.ruleCont.active{ display:block; margin-top:30px; }
+.rulBox{ position:relative; width:100%; padding:0 10px 20px; margin-bottom:20px; }
+.rulBox + .rulBox{ padding-top:0; }
+.rulBox:last-child:after{ display:none; }
+.rulBox:after{ content:''; position:absolute; width:100%; height:1px; background:#cacaca; left:0; bottom:0; }
+.rulBox ul { margin-left:10px; }
+.rulBox ul li{ position:relative; padding-left:8px; font-size:14px; color:#666; line-height:1.5; }
+.rulBox ul li:after{ content:''; position:absolute; width:3px; height:3px; background:#999; border-radius:100%; left:0; top:8px; }
+.rulBox p{ color:#666 }
+
+/* 갤러리 list */
+.galleryWrap{ display:flex; gap:15px; flex-wrap:wrap; }
+.galleryWrap .galleryList{ width:47%; }
+.galleryWrap .galleryList .thumbnall{ position:relative; width:100%; height:0; padding-top:calc(1330/1920*100%); border:1px solid #cacaca }
+.galleryWrap .galleryList .thumbnall img{ position:absolute; top:0; left:0; width:100%; height:100%; }
+.galleryWrap .galleryList .proTxt sup{ vertical-align:bottom; padding-right:3px; }
+.galleryWrap .galleryList .proTxt .gend{ padding:1px 5px; font-size:12px; color:#fff; border-radius:5px; font-weight:500 }
+.galleryWrap .galleryList .proTxt .gend_M{ background:#0088DC }
+.galleryWrap .galleryList .proTxt .gend_W{ background:#EA1A20 }
+.galleryWrap .galleryList .proTxt li{ line-height:1.3 }
+
+/* 갤러리 view */
+.editImgSlide { max-width:380px; width:100%; }
+.editImgSlideBox .swiper-slide{ width:100%; }
+.editImgSlideBox .swiper-slide img{ width:100%; height:100%; object-fit: contain; }
+@media(max-width:380px){
+  .editImgSlide { max-width:300px; width:100%; }
+}
+
+/* 펜싱 동영상 */
+.videoThumb{ position:relative; width:100%; height:0; padding-top:calc(1330/1920*100%); }
+.videoThumb iframe{ position:absolute; top:0; left:0; width:100%; height:100%; }
+
+/* 스포츠 윤리센터 */
+.sportCenter { margin:30px 0 0; }
+.sportCenter h3{ position:relative; text-align:center; font-weight:600; font-size:20px; color:#000; margin:auto; }
+.sportCenter h3 img{ vertical-align:middle; margin-right:5px; margin-top:-5px; width:25px; height:25px; }
+.sportCenter h3 span{ display:block; font-size:16px; color:#666; font-weight:400; margin-top:10px; padding-left:30px; }
+.sportCenter .centTit{ font-size:16px; color:#333; font-weight:600; margin-top:40px; }
+.sportCenter .centTit span{ color:#EA002C; font-size:16px; }
+.sportCenter .sportDiv{ position:relative; text-align:center; padding-top:30px; }
+.sportCenter .sportDiv img{ position:relative; width:100px; height:100px; z-index:1; }
+.sportCenter .sportDiv > div{ width:100%; background:#f5f5f5; margin-top:-60px; padding:70px 20px 30px; display:flex; flex-direction:column; align-items:center; border-radius:30px; box-sizing:border-box; }
+.sportCenter .sportDiv div h4{ position:relative; font-size:18px; padding-left:15px; color:#000; font-weight:600 }
+.sportCenter .sportDiv div h4:after{ content:''; position:absolute; width:8px; height:8px; background:#EA002C; left:0; top:13px }
+.sportCenter .sportDiv div > p{ margin-top:10px; color:#666; font-size:14px; }
+.sportCenter .sportDiv div .sportUl{ display:flex; flex-direction:column; gap:20px; margin-top:30px; width:100%; }
+.sportCenter .sportDiv div .sportUl .sportBox{ background:#fff; border-radius:20px; padding:20px; text-align:left; }
+.sportCenter .sportDiv div .sportUl .sportBox p{ font-size:18px; font-weight:600; }
+.sportCenter .sportDiv div .sportUl .sportBox ul{ margin-top:20px; }
+.sportCenter .sportDiv div .sportUl .sportBox ul li{ position:relative; font-size:14px; padding:5px 0 5px 10px; }
+.sportCenter .sportDiv div .sportUl .sportBox ul li:after{ content:''; position:absolute; width:3px; height:3px; background:#666; border-radius:100%; left:0; top:18px; }
+.sportCenter .sportDiv div .sportUl .sportBox ul li strong{ font-weight:600; font-size:14px; }
+
+/* 협회에게 바란다 테이블 윗부분 */
+.wisth_wrap{ padding:15px; border:1px solid #d7d7d7; background:#fff; text-align:center; font-size:18px; line-height:1.5; color:#666; margin:20px 0; box-shadow:3px 3px 3px rgba(0,0,0,.3) }
+
+.prevTb .page_prev, .nextTb .page_next{ position:relative; }
+.prevTb .page_prev:after, .nextTb .page_next:after{ content:''; position:absolute; width:12px; height:15px; background:url(../images/prevTb.png)no-repeat; background-size:contain; left:0; }
+.prevTb span{ color:#666 }
+.prevTb .page_prev:after{ top:6px; }
+.nextTb .page_next:after{ transform:rotate(-180deg); top:1px; }
+
+/* 댓글달기 */
+.daesArea { padding:10px 0; border-top:1px dotted #cacaca; border-bottom:1px solid #e2e2e2  }
+.daesArea span{ font-size:14px; color:#666 }
+.daesArea strong{ font-size:14px; }
+.daesArea textarea{ resize:none }
+.deasWrap .deasList{ border-bottom:1px solid #e2e2e2; padding:20px 10px; }
+.deasWrap .deasList{  }
+
+/* 용어 tab */
+.termTabMenu + .termTabMenu{ margin-top:10px; border-top:1px solid #cacaca; padding:5px 0; }
+.termTabMenu li{ position:relative;  }
+.termTabMenu li a{ color:#666; font-size:14px; font-weight:400; }
+.termTabMenu li.active, .termTabMenu ul li.active{ color:#ed1c24; font-weight:600; }
+.termTabMenu li.active:after, .termTabMenu ul li:after a.on{ content:''; position:absolute; width:5px; height:5px; border-radius: 100%; right:0; top:0; background:#ed1c24 }
+.termTabMenu li.swiper-slide{ width:auto; font-size: 14px; color:#666; }
+
+/* 용어 */
+.termCont{ border-top:2px solid #ea002c; }
+.termCont .termList > div{ padding:10px; }
+.termCont .termList .termHeader{ position:relative; background:#fff; border-bottom:1px solid #d9d8d8; height:39px; }
+.termCont .termList .termHeader:after{ content:''; position:absolute; width:20px; height:7px; top:15px; right:20px; background:url('../images/arrow_down.png')no-repeat center; transition:.3s; }
+.termCont .termList .termHeader.active:after{ background:url(../images/arrow_up.png)no-repeat center }
+.termCont .termList .termHeader span{ font-weight:600; font-size:14px; }
+.termCont .termList .termMenu { display:none;}
+.termCont .termList .termMenu.active{ display:block; background:#f5f5f5; border-bottom:1px solid #d9d8d8; }
+.termCont .termList .termMenu p{ font-size:14px; }
+
+.termSch{ background:#f5f5f5; padding:10px 8px }
+.termSchBox{ padding:10px 0; background:#fff; }
+.termSchBox.on{ position:fixed; width:100%; top:0; left:0; z-index:999; box-shadow:0 3px 3px rgba(0,0,0,.3); padding:10px 15px }

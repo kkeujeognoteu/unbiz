@@ -1,0 +1,27 @@
+.con{background:#fff;padding:20px;margin-bottom:20px;border:1px solid rgba(54,64,74,0.08);    overflow: hidden;}
+
+.alignR{text-align:right;}
+
+.btnMd{padding:15px 25px;display:inline-block;font-size:14px;background:#039cfd;color:#fff;text-decoration:none;}
+.btnMd:hover{background:#0384d5;color:#fff;}
+.btnMd:active{background:#0067a8;color:#fff}
+.btnMd:focus{color:#fff}
+.btnMd.cancel{background:#696969}
+.btnMd.cancel:hover{background:#555555;color:#ffffff;}
+.btnMd.cancel:active{background:#333333;color:#ffffff;}
+.btnMd.cancel:focus{color:#ffffff;}
+.btnMd.delete{background:#ff6458;}
+.btnMd.delete:hover{background:#da5d54;color:#ffffff;}
+.btnMd.delete:active{background:#b54d46;color:#ffffff;}
+.btnMd.delete:focus{color:#ffffff;}
+
+
+/*Table View*/
+.table_view{width:100%;margin-bottom:1rem;border-spacing:0;border-collapse:collapse;display:table;border-bottom:1px solid #eceff4;  }
+.table_view tbody tr{border-bottom:1px solid #eceff4;}
+.table_view th,.table_view td{padding:12px 10px;line-height:1.5;}
+.table_view th{text-align:center;color:#315C93}
+.table_view th.tit{font-size:18px;color:#696969}
+.table_view th.tit span{margin-right:10px;color:#000;font-size:14px;}
+.table_view td .mainTxt{padding:20px;background:#f3f3f3;}
+

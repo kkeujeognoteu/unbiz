@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/style.css" rel="stylesheet" />
+    <title>리더보드</title>
+</head>
+<body>
+    <div class="contain">
+        <div class="header">
+            <div class="headerCont">
+                <h1 class="logo">
+                    <img src="./images/logo.png">
+                </h1>
+                <!--<div class="hamb_nav">
+                    <input id="check" type="checkbox">
+                    <label for="check">
+                        <div class="menu_hamb">
+                            <span class="hamburguer"></span>
+                        </div>
+                    </label>
+                    <ul class="ul_mb1">
+                        <li>
+                            <a href="">정보</a>
+                        </li>
+                        <li>
+                            <a href="">리더보드</a>
+                        </li>
+                    </ul>
+                </div>-->
+            </div>
+        </div>
+        <div class="section">
+            <div class="wrap">
+                <div class="playerInfoWrap">
+                    <div class="playerInfo">
+                        <div class="infoLeft">
+                            <p><img src="./images/gameLogo.svg"></p>
+                        </div>
+                        <div class="infoRight">
+                            <!--<h2>주니어 투어</h2>-->
+                            <p>한화 파이낸스 컵 2024</p>
+                            <ul>
+                                <li>제이드팰리스 GC(서(West), 동(East) 코스)</li>
+                                <li>2024. 08. 27(화)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabMenu">
+                    <ul>
+                        <li>정보</li>
+                        <li class="active">리더보드</li>
+                        <!--<li>홀별진행</li>
+                        <li>조별보기</li>-->
+                        <li>홀별성적</li>
+                        <li>출발시간표</li>
+                    </ul>
+                </div>
+                <div class="container">
+                    <div class="winner comon_leader">
+                        <h2>우승자</h2>
+                        <div class="winnerBox">
+                            <div class="winnerName">
+                                <p class="teamLogo">
+                                    <img src="./images/classic.svg">
+                                </p>
+                                <p>최원우</p>
+                            </div>
+                            <div class="winnerScore">
+                                <!--<div>
+                                    <span class="txt">상금</span>
+                                    <span class="score">0 won</span>
+                                </div>-->
+                                <div>
+                                    <span class="txt">합계</span>
+                                    <span class="score">133</span>
+                                </div>
+                                <div>
+                                    <span class="txt">Total</span>
+                                    <span class="score">-11</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playerTb comon_leader">
+                        <h2>CLASSIC</h2>
+                        <div class="leaderboard ">
+                            <table class="classic">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <p>순위</p>
+                                        </th>
+                                        <th>
+                                            <p>팀</p>
+                                        </th>
+                                        <th class="alignLeft">
+                                            <p>선수</p>
+                                        </th>
+                                        <th>
+                                            <p>HOLE</p>
+                                        </th>
+                                        <th>
+                                            <p>PAR</p>
+                                        </th>
+                                        <th>
+                                            <p>YARDS</p>
+                                        </th>
+                                        <th>
+                                            <p></p>
+                                        </th>
+                                        <th>
+                                            <p>SUM</p>
+                                        </th>
+                                        <th>
+                                            <p>THRU</p>
+                                        </th>
+                                        <th>
+                                            <p>TOTAL</p>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <p>1</p>
+                                        </td>
+                                        <td>
+                                            <p class="playTeamLogo">
+                                                <img src="./images/classic.svg">
+                                            </p>
+                                        </td>
+                                        <td class="alignLeft">
+                                            <p>최원우/A</p>
+                                        </td>
+                                        <td>
+                                            <p>1</p>
+                                        </td>
+                                        <td>
+                                            <p>4</p>
+                                        </td>
+                                        <td>
+                                            <p>416</p>
+                                        </td>
+                                        <td>
+                                            <p></p>
+                                        </td>
+                                        <td>
+                                            <p>-11</p>
+                                        </td>
+                                        <td>
+                                            <p>F</p>
+                                        </td>
+                                        <td>
+                                            <p>133</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="subTB">
+                                        <td colspan="10">
+                                            <div class="subLeaderBoard">
+                                                <div>
+                                                    <table class="subLeaderBox subBox_Left">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>HOLE</th>
+                                                                <th>1</th>
+                                                                <th>2</th>
+                                                                <th>3</th>
+                                                                <th>4</th>
+                                                                <th>5</th>
+                                                                <th>6</th>
+                                                                <th>7</th>
+                                                                <th>8</th>
+                                                                <th>9</th>
+                                                                <th class=""></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>PAR</td>
+                                                                <td>5</td>
+                                                                <td>4</td>
+                                                                <td>4</td>
+                                                                <td>5</td>
+                                                                <td>3</td>
+                                                                <td>4</td>
+                                                                <td>3</td>
+                                                                <td>4</td>
+                                                                <td>4</td>
+                                                                <td class="mobile">-</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>최원우</td>
+                                                                <td>3</td>
+                                                                <td>2</td>
+                                                                <td>3</td>
+                                                                <td>2</td>
+                                                                <td>2</td>
+                                                                <td>4</td>
+                                                                <td>2</td>
+                                                                <td>3</td>
+                                                                <td>4</td>
+                                                                <td class="mobile">-</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <table class="subLeaderBox subBox_Right">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>HOLE</th>
+                                                                <th>10</th>
+                                                                <th>11</th>
+                                                                <th>12</th>
+                                                                <th>13</th>
+                                                                <th>14</th>
+                                                                <th>15</th>
+                                                                <th>16</th>
+                                                                <th>17</th>
+                                                                <th>18</th>
+                                                                <th>TTL</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>PAR</td>
+                                                                <td>10</td>
+                                                                <td>11</td>
+                                                                <td>12</td>
+                                                                <td>13</td>
+                                                                <td>14</td>
+                                                                <td>15</td>
+                                                                <td>16</td>
+                                                                <td>17</td>
+                                                                <td>18</td>
+                                                                <td>-</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>최원우</td>
+                                                                <td>3</td>
+                                                                <td>2</td>
+                                                                <td>3</td>
+                                                                <td>2</td>
+                                                                <td>2</td>
+                                                                <td>4</td>
+                                                                <td>2</td>
+                                                                <td>3</td>
+                                                                <td>4</td>
+                                                                <td class="mobile">-</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>1</p>
+                                        </td>
+                                        <td>
+                                            <p class="playTeamLogo">
+                                                <img src="./images/classic.svg">
+                                            </p>
+                                        </td>
+                                        <td class="alignLeft">
+                                            <p>최원우/A</p>
+                                        </td>
+                                        <td>
+                                            <p>1</p>
+                                        </td>
+                                        <td>
+                                            <p>4</p>
+                                        </td>
+                                        <td>
+                                            <p>416</p>
+                                        </td>
+                                        <td>
+                                            <p></p>
+                                        </td>
+                                        <td>
+                                            <p>-11</p>
+                                        </td>
+                                        <td>
+                                            <p>F</p>
+                                        </td>
+                                        <td>
+                                            <p>133</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>1</p>
+                                        </td>
+                                        <td>
+                                            <p class="playTeamLogo">
+                                                <img src="./images/classic.svg">
+                                            </p>
+                                        </td>
+                                        <td class="alignLeft">
+                                            <p>최원우/A</p>
+                                        </td>
+                                        <td>
+                                            <p>1</p>
+                                        </td>
+                                        <td>
+                                            <p>4</p>
+                                        </td>
+                                        <td>
+                                            <p>416</p>
+                                        </td>
+                                        <td>
+                                            <p></p>
+                                        </td>
+                                        <td>
+                                            <p>-11</p>
+                                        </td>
+                                        <td>
+                                            <p>F</p>
+                                        </td>
+                                        <td>
+                                            <p>133</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+    
+                    <div class="playerTb comon_leader">
+                        <h2>NEO</h2>
+                        <div class="leaderboard ">
+                            <table class="neo">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <p>순위</p>
+                                        </th>
+                                        <th>
+                                            <p>팀</p>
+                                        </th>
+                                        <th class="alignLeft">
+                                            <p>선수</p>
+                                        </th>
+                                        <th>
+                                            <p>HOLE</p>
+                                        </th>
+                                        <th>
+                                            <p>PAR</p>
+                                        </th>
+                                        <th>
+                                            <p>YARDS</p>
+                                        </th>
+                                        <th>
+                                            <p></p>
+                                        </th>
+                                        <th>
+                                            <p>SUM</p>
+                                        </th>
+                                        <th>
+                                            <p>THRU</p>
+                                        </th>
+                                        <th>
+                                            <p>TOTAL</p>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <p>1</p>
+                                        </td>
+                                        <td>
+                                            <p class="playTeamLogo">
+                                                <img src="./images/neo.svg">
+                                            </p>
+                                        </td>
+                                        <td class="alignLeft">
+                                            <p>최원우/A</p>
+                                        </td>
+                                        <td>
+                                            <p>1</p>
+                                        </td>
+                                        <td>
+                                            <p>4</p>
+                                        </td>
+                                        <td>
+                                            <p>416</p>
+                                        </td>
+                                        <td>
+                                            <p></p>
+                                        </td>
+                                        <td>
+                                            <p>-11</p>
+                                        </td>
+                                        <td>
+                                            <p>F</p>
+                                        </td>
+                                        <td>
+                                            <p>133</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="subTB">
+                                        <td colspan="10">
+                                            <div class="subLeaderBoard">
+                                                <div>
+                                                    <table class="subLeaderBox subBox_Left">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>HOLE</th>
+                                                                <th>1</th>
+                                                                <th>2</th>
+                                                                <th>3</th>
+                                                                <th>4</th>
+                                                                <th>5</th>
+                                                                <th>6</th>
+                                                                <th>7</th>
+                                                                <th>8</th>
+                                                                <th>9</th>
+                                                                <th class=""></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>PAR</td>
+                                                                <td>5</td>
+                                                                <td>4</td>
+                                                                <td>4</td>
+                                                                <td>5</td>
+                                                                <td>3</td>
+                                                                <td>4</td>
+                                                                <td>3</td>
+                                                                <td>4</td>
+                                                                <td>4</td>
+                                                                <td class="mobile">-</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>최원우</td>
+                                                                <td>3</td>
+                                                                <td>2</td>
+                                                                <td>3</td>
+                                                                <td>2</td>
+                                                                <td>2</td>
+                                                                <td>4</td>
+                                                                <td>2</td>
+                                                                <td>3</td>
+                                                                <td>4</td>
+                                                                <td class="mobile">-</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <table class="subLeaderBox subBox_Right">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>HOLE</th>
+                                                                <th>10</th>
+                                                                <th>11</th>
+                                                                <th>12</th>
+                                                                <th>13</th>
+                                                                <th>14</th>
+                                                                <th>15</th>
+                                                                <th>16</th>
+                                                                <th>17</th>
+                                                                <th>18</th>
+                                                                <th>TTL</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>PAR</td>
+                                                                <td>10</td>
+                                                                <td>11</td>
+                                                                <td>12</td>
+                                                                <td>13</td>
+                                                                <td>14</td>
+                                                                <td>15</td>
+                                                                <td>16</td>
+                                                                <td>17</td>
+                                                                <td>18</td>
+                                                                <td>-</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>최원우</td>
+                                                                <td>3</td>
+                                                                <td>2</td>
+                                                                <td>3</td>
+                                                                <td>2</td>
+                                                                <td>2</td>
+                                                                <td>4</td>
+                                                                <td>2</td>
+                                                                <td>3</td>
+                                                                <td>4</td>
+                                                                <td class="mobile">-</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>1</p>
+                                        </td>
+                                        <td>
+                                            <p class="playTeamLogo">
+                                                <img src="./images/neo.svg">
+                                            </p>
+                                        </td>
+                                        <td class="alignLeft">
+                                            <p>최원우/A</p>
+                                        </td>
+                                        <td>
+                                            <p>1</p>
+                                        </td>
+                                        <td>
+                                            <p>4</p>
+                                        </td>
+                                        <td>
+                                            <p>416</p>
+                                        </td>
+                                        <td>
+                                            <p></p>
+                                        </td>
+                                        <td>
+                                            <p>-11</p>
+                                        </td>
+                                        <td>
+                                            <p>F</p>
+                                        </td>
+                                        <td>
+                                            <p>133</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>1</p>
+                                        </td>
+                                        <td>
+                                            <p class="playTeamLogo">
+                                                <img src="./images/neo.svg">
+                                            </p>
+                                        </td>
+                                        <td class="alignLeft">
+                                            <p>최원우/A</p>
+                                        </td>
+                                        <td>
+                                            <p>1</p>
+                                        </td>
+                                        <td>
+                                            <p>4</p>
+                                        </td>
+                                        <td>
+                                            <p>416</p>
+                                        </td>
+                                        <td>
+                                            <p></p>
+                                        </td>
+                                        <td>
+                                            <p>-11</p>
+                                        </td>
+                                        <td>
+                                            <p>F</p>
+                                        </td>
+                                        <td>
+                                            <p>133</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footerWRap">
+                <h1>
+                    <img src="./images/logo.png">
+                </h1>
+                <p>Copyright &copy; 2024 유엔비즈, Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

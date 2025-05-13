@@ -1,0 +1,50 @@
+/* 메인 콘텐츠 - 아이콘 */
+.section01 .mainCont .mainList li.ic_01 a p{ background:url(../images/main/icon01_off.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_02 a p{ background:url(../images/main/icon02_off.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_03 a p{ background:url(../images/main/icon03_off.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_04 a p{ background:url(../images/main/icon04_off.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_05 a p{ background:url(../images/main/icon05_off.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_06 a p{ background:url(../images/main/icon06_off.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_07 a p{ background:url(../images/main/icon07_off.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_08 a p{ background:url(../images/main/icon08_off.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_09 a p{ background:url(../images/main/icon09_off.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_10 a p{ background:url(../images/main/icon10_off.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_11 a p{ background:url(../images/main/icon11_off.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_12 a p{ background:url(../images/main/icon12_off.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_13 a p{ background:url(../images/main/icon13_off.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_14 a p{ background:url(../images/main/icon14_off.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_15 a p{ background:url(../images/main/icon15_off.png)no-repeat top center; }
+
+.section01 .mainCont .mainList li.ic_01:hover a p{ background:url(../images/main/icon01_on.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_02:hover a p{ background:url(../images/main/icon02_on.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_03:hover a p{ background:url(../images/main/icon03_on.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_04:hover a p{ background:url(../images/main/icon04_on.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_05:hover a p{ background:url(../images/main/icon05_on.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_06:hover a p{ background:url(../images/main/icon06_on.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_07:hover a p{ background:url(../images/main/icon07_on.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_08:hover a p{ background:url(../images/main/icon08_on.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_09:hover a p{ background:url(../images/main/icon09_on.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_10:hover a p{ background:url(../images/main/icon10_on.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_11:hover a p{ background:url(../images/main/icon11_on.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_12:hover a p{ background:url(../images/main/icon12_on.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_13:hover a p{ background:url(../images/main/icon13_on.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_14:hover a p{ background:url(../images/main/icon14_on.png)no-repeat top center; }
+.section01 .mainCont .mainList li.ic_01:hover a p{ background:url(../images/main/icon15_on.png)no-repeat top center; }
+
+
+/* 금주의 일정 아이콘 */
+.klg{ background:url(../images/main/KLEAGUE.svg)no-repeat; }
+.kbo{ background:url(../images/main/KBO.svg)no-repeat; }
+.kbl{ background:url(../images/main/KBL.svg)no-repeat; background-size:25px; }
+.wkbl{ background:url(../images/main/WKBL.svg)no-repeat; background-size:25px; }
+.kpga{ background:url(../images/main/player06.png)no-repeat; background-size:25px; }
+.klpga{ background:url(../images/main/play02.png)no-repeat; background-size:16px; }
+.kovo{ background:url(../images/main/player07.png)no-repeat; background-size:25px; }
+
+@media(max-width:780px){
+    .klg, .kbo, .kbl, .wkbl, .kpga, .klpga, .kovo{ background:none; }
+}
+
+@media(max-width:380px){
+
+}

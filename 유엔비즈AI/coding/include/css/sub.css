@@ -1,0 +1,80 @@
+header{ position:relative !important; }
+.main__footer{ position:relative; }
+.comWrap{ margin:60px auto; width:1280px; }
+
+/* 회사소개 */
+.common.about .wrap{ padding-bottom:0; }
+.aboutImg{ width:100%; height:335px; border-radius:20px; }
+.aboutImg img{ width:100%; height:100%; object-fit: cover; object-position:bottom; border-radius:20px; }
+.aboutTxt{ margin-top:60px; }
+.aboutTxt p{ font-size:45px; font-weight:400; line-height:1.2; text-align:center; }
+.b2cList01{ margin-top:100px; }
+.b2cList01 ul { display:flex; gap:80px; justify-content:center; }
+.b2cList01 ul li{ width:210px; text-align:center; }
+.b2cList01 ul li p{ position:relative; padding-top:250px; font-size:25px; font-weight:600 }
+.b2cList01 ul li p:after{ content:''; position:absolute; width:210px; height:215px; background-size:cover; top:0; left:0; }
+.b2cList01 ul li:nth-child(1) p:after{ background:url(../../images/icon01.png)no-repeat; }
+.b2cList01 ul li:nth-child(2) p:after{ background:url(../../images/icon02.png)no-repeat; }
+.b2cList01 ul li:nth-child(3) p:after{ background:url(../../images/icon03.png)no-repeat; }
+.b2cListCont{ position:relative; background:#f5f5f5; padding:128px 0; margin-top:100px; }
+.b2cListCont .b2cList02{ display:flex; width:1280px; margin: auto; }
+.b2cListCont .b2cList02 .b2cLeft{ width:220px; }
+.b2cListCont .b2cList02 .b2cLeft h3{ font-size:40px; font-weight:600; }
+.b2cListCont .b2cList02 .b2cLeft p{ font-size:20px; margin-top:20px; }
+.b2cListCont .b2cList02 .b2cRight{ width:670px; margin-left:390px; }
+.b2cListCont .b2cList02 .b2cRight li + li{ margin-top:50px; }
+.b2cListCont .b2cList02 .b2cRight li .b2cLstTitle{ padding-bottom:15px; }
+.b2cListCont .b2cList02 .b2cRight li .b2cLstTitle strong{ font-size:22px; font-weight:600 }
+.b2cListCont .b2cList02 .b2cRight li .b2cLstTitle span{ font-size:16px; margin-left:5px; }
+.b2cListCont .b2cList02 .b2cRight li .b2cLstTxt{ font-size:18px; line-height:1.2 }
+.b2cBottom{ position:relative; width:100%; height:300px; overflow:hidden; }
+.b2cBottom:after{ content:''; position:absolute; width:100%; height:100%; top:0; left:0; background:rgba(0,0,0,.3) }
+.b2cBottom img{ width:100%; height:100%; object-fit: cover; object-position: center; }
+
+/* 연혁 */
+.common { margin-top:291px; }
+.common .wrap{ padding:90px 0 }
+
+.common .wrap > h2{ position:relative; font-size:40px; font-weight:800; text-align:center; padding-bottom:20px; }
+.common .wrap > h2:before{ content:''; position:absolute; width:20px; height:2px; background:#65CC7C; bottom:0; left:49% }
+.common .wrap > h2:after{ content:''; position:absolute; width:20px; height:2px; background:#10492A; bottom:0; right:49%; }
+.common .wrap > p{ font-size:20px; text-align:center; margin-top:20px; }
+
+.hisWrap { margin-top:70px; } 
+.hisWrap .yearBg{ display:flex; align-items:center; justify-content: center; width:100%; height:270px; background-position:center center; background-size:cover; background-repeat:no-repeat; background-attachment:fixed; }
+.hisWrap .yearBg p{ font-size:100px; font-weight:800; color:#fff; -webkit-text-stroke:1px #10492A }
+.hisWrap .year_24{ background-image:url(../../images/yearsBg_01.png) }
+.historyBox{ width:1280px; margin:0 auto; padding-top:100px; }
+.historyBox .hisList{ display:flex; margin-bottom:30px; }
+.historyBox .hisList > div{ width:50%; }
+.historyBox .hisList .hisLeft{ position:relative; padding-right:35px; }
+.historyBox .hisList .hisLeft:after{ content:''; position:absolute; background:url(../../images/history.png)no-repeat; width:18px; height:18px; top:0; right:-10px; background-size:cover; z-index:1 }
+.historyBox .hisList .hisRight{ padding-left:35px; }
+.historyBox .hisList .historyTxt h3{ color:#10492A; font-weight:700; font-size:20px; }
+.historyBox .hisList .historyTxt li{ position:relative; font-size:20px; margin-top:20px; }
+.historyBox .hisList .hisRight li{ padding-left:20px; }
+.historyBox .hisList .hisLeft li{ padding-right:20px; }
+.historyBox .hisList .historyTxt li:after{ content:''; position:absolute; width:10px; height:1px; background:#000; top:10px; }
+.historyBox .hisList .hisRight li:after{ left:0; }
+.historyBox .hisList .hisLeft li:after{ right:0; }
+
+.historyBox .imgL .hisLeft{ border-right:1px dotted #000; }
+.historyBox .imgL .hisLeft p, .historyBox .imgR .hisLeft div{ text-align:right; }
+.historyBox .imgR .hisRight{ position:relative; display:flex; border-left:1px dotted #000 }
+
+.boardCont{ padding:0 80px; box-sizing:border-box }
+
+.bdSearch{ display:flex; background:#f1f1f1; padding:14px 25px; justify-content:space-between; align-items:center; }
+.bdSearch .searchBox{ position:relative; width:470px; height:40px; }
+.bdSearch .searchBox input[type="search"]{ width:100%; height:100%; border-bottom:3px solid #65CC7C; background:#fff; padding:10px 35px 10px 10px; }
+.sch_btn{ position:absolute; top:9px; right:7px; }
+.sch_btn button{ width:22px; height:22px; background:url(../../images/search.png) no-repeat;border:none; outline:none; padding:0; }
+.galleryBoard{ margin-top:60px;  }
+.galleryBoard .galleryWrap{ display:flex; flex-wrap:wrap; gap:56px; }
+.galleryBoard .galleryWrap .galleryList{ background:#fff; box-shadow:4px 4px 8px rgba(0,0,0,.2); width:30%; }
+.galleryBoard .galleryWrap .galleryList .glImg{ position:relative; width:100%; height:0; padding-top:calc(800/ 1000 * 100%); }
+.galleryBoard .galleryWrap .galleryList .glImg img{ position:absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; object-position:top; }
+.galleryBoard .galleryWrap .galleryList .glTxt{ padding:20px; }
+.galleryBoard .galleryWrap .galleryList .glTxt h3, .galleryBoard .galleryWrap .galleryList .glTxt p{ font-size:16px; }
+.galleryBoard .galleryWrap .galleryList .glTxt h3{ line-height:1.2 }
+.galleryBoard .galleryWrap .galleryList .glTxt p{ margin-top:20px; color:#A8A8A8; }
